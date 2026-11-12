@@ -19,6 +19,7 @@ class EditorController extends ChangeNotifier {
     DrawingDocument initial = DrawingDocument.empty,
     this.onCommit,
     int initialColor = 0x7CB342,
+    this.touchTolerance = 0,
   }) : _document = initial,
        _color = initialColor;
 
@@ -26,6 +27,10 @@ class EditorController extends ChangeNotifier {
 
   final PageTemplate template;
   final void Function(DrawingDocument document)? onCommit;
+
+  /// Tolerancia táctil del relleno, como fracción del lado mayor de la
+  /// lámina. La fija el nivel de la lámina al abrirla y no cambia después.
+  final double touchTolerance;
 
   DrawingDocument _document;
   final List<DrawingDocument> _undo = [];
@@ -85,7 +90,10 @@ class EditorController extends ChangeNotifier {
   /// Rellena la región visible superior bajo [scenePoint]. Devuelve `false`
   /// sin crear acción si se toca fuera o el color ya es el mismo.
   bool fillAt(Offset scenePoint) {
-    final id = template.regionAt(scenePoint);
+    final id = template.regionNear(
+      scenePoint,
+      template.viewBox.longestSide * touchTolerance,
+    );
     if (id == null) return false;
     if (_document.fillOf(id) == _color) return false;
     _commit(_document.withFill(id, _color));

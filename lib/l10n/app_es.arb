@@ -14,16 +14,37 @@
   "audioUnavailable": "Audio no disponible",
   "audioOff": "Desactivado",
   "narrationSemantics": "Narración: {state}",
-  "@narrationSemantics": {"placeholders": {"state": {"type": "String"}}},
+  "@narrationSemantics": {
+    "placeholders": {
+      "state": {
+        "type": "String"
+      }
+    }
+  },
   "ambienceSemantics": "Sonidos del bosque: {state}",
-  "@ambienceSemantics": {"placeholders": {"state": {"type": "String"}}},
+  "@ambienceSemantics": {
+    "placeholders": {
+      "state": {
+        "type": "String"
+      }
+    }
+  },
   "colorIn": "Colorear",
   "choosePage": "Elige una lámina",
   "difficultyEasy": "Fácil",
   "difficultyMedium": "Media",
   "difficultyDetailed": "Detallada",
   "pageCardSemantics": "{title}. Dificultad: {difficulty}",
-  "@pageCardSemantics": {"placeholders": {"title": {"type": "String"}, "difficulty": {"type": "String"}}},
+  "@pageCardSemantics": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "difficulty": {
+        "type": "String"
+      }
+    }
+  },
   "undo": "Deshacer",
   "tools": "Herramientas",
   "toolFill": "Rellenar",
@@ -42,7 +63,13 @@
   "nextPage": "Siguiente lámina",
   "backToPages": "Volver a las láminas",
   "canvasSemantics": "Lienzo de {title}. Toca para pintar. Usa dos dedos para ampliar y mover.",
-  "@canvasSemantics": {"placeholders": {"title": {"type": "String"}}},
+  "@canvasSemantics": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "resetZoom": "Ver todo el dibujo",
   "saveErrorTitle": "No pudimos guardar",
   "saveErrorBody": "Tu dibujo sigue abierto. Toca Reintentar para guardarlo.",
@@ -54,7 +81,13 @@
   "exploreChapters": "Explorar capítulos",
   "keepColoring": "Seguir coloreando",
   "drawingSemantics": "Dibujo: {title}",
-  "@drawingSemantics": {"placeholders": {"title": {"type": "String"}}},
+  "@drawingSemantics": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "adultsTitle": "Para adultos",
   "language": "Idioma",
   "sound": "Sonido",
@@ -82,5 +115,107 @@
   "colorPink": "Rosa",
   "colorBrown": "Café",
   "colorBlack": "Negro",
-  "colorWhite": "Blanco"
+  "colorWhite": "Blanco",
+  "ageSetupTitle": "¿Para qué edad buscas aventuras?",
+  "ageSetupHint": "Es opcional y solo sirve para sugerir láminas: todas siguen disponibles. Solo se guarda el rango en este dispositivo y puedes cambiarlo en Para adultos.",
+  "ageRangeClosed": "{min}–{max} años",
+  "@ageRangeClosed": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "ageRangeOpen": "{min}+ años",
+  "@ageRangeOpen": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "ageNoAnswer": "Prefiero no indicar",
+  "skip": "Omitir",
+  "continueLabel": "Continuar",
+  "cancel": "Cancelar",
+  "close": "Cerrar",
+  "suggestedAge": "Edad sugerida",
+  "suggestedAgeHint": "Ordena y sugiere láminas. No bloquea ninguna.",
+  "filterAll": "Todas",
+  "filterSemantics": "Filtro: {name}",
+  "@filterSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "levelSemantics": "Nivel {name}, {step} de {total}",
+  "@levelSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "recommended": "Sugerida",
+  "inProgress": "En progreso",
+  "filterEmpty": "Pronto habrá láminas de este nivel.",
+  "showAll": "Ver todas",
+  "moreColors": "Más colores",
+  "funFactTitle": "¿Sabías que…?",
+  "funFactButton": "Curiosidad",
+  "adventures": "Aventuras",
+  "adventuresOpen": "Ver aventuras",
+  "adultGateTitle": "Solo para adultos",
+  "adultGateQuestion": "¿Cuánto es {a} × {b}?",
+  "@adultGateQuestion": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "b": {
+        "type": "int"
+      }
+    }
+  },
+  "adultGateAnswer": "Respuesta",
+  "adultGateWrong": "No es correcto. Inténtalo de nuevo.",
+  "chapterFree": "Incluido gratis",
+  "chapterOwned": "Desbloqueado",
+  "chapterLocked": "No incluido",
+  "pagesAvailable": "{count} de {total} láminas disponibles",
+  "@pagesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "storeUnavailable": "Las compras no están disponibles en esta versión.",
+  "noAds": "TUKI no muestra anuncios.",
+  "buy": "Comprar",
+  "purchaseDone": "Compra completada.",
+  "purchaseCanceled": "Compra cancelada.",
+  "purchaseFailed": "No se pudo completar la compra.",
+  "bundleIncludes": "Incluye: {chapters}",
+  "@bundleIncludes": {
+    "placeholders": {
+      "chapters": {
+        "type": "String"
+      }
+    }
+  }
 }

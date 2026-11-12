@@ -22,6 +22,19 @@ final List<PaletteColor> kPalette = [
   PaletteColor(0xFFFFFF, (l) => l.colorWhite),
 ];
 
+/// Paleta inicial de las láminas fáciles: seis colores bien distintos.
+final List<PaletteColor> kStarterPalette = [
+  for (final rgb in const [
+    0xE53935,
+    0xFDD835,
+    0x7CB342,
+    0x1E88E5,
+    0xF06292,
+    0x8D6E63,
+  ])
+    kPalette.firstWhere((c) => c.rgb == rgb),
+];
+
 String paletteName(AppLocalizations l, int rgb) {
   for (final c in kPalette) {
     if (c.rgb == rgb) return c.name(l);

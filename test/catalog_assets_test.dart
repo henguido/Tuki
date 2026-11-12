@@ -77,10 +77,10 @@ void main() {
         'quetzal',
         'sendero',
       ]);
-      expect(chapter.pages.map((p) => p.difficulty), [
-        Difficulty.easy,
-        Difficulty.medium,
-        Difficulty.detailed,
+      expect(chapter.pages.map((p) => p.level.id), [
+        'easy',
+        'medium',
+        'detailed',
       ]);
       expect(chapter.title.of('es'), 'El bosque nuboso');
       expect(chapter.title.of('en'), 'The Cloud Forest');

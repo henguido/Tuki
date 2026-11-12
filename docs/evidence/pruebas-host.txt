@@ -1,101 +1,138 @@
-# 2026-11-12T14:04Z — Windows 11, Flutter 3.47.4, Dart 3.13.3
+# 2026-11-12T19:25Z — Windows 11, Flutter 3.47.4, Dart 3.13.3 — rama feature/niveles-edades
 $ dart format --output=none --set-exit-if-changed lib test tool integration_test
-Formatted 47 files (0 changed) in 0.24 seconds.
+Formatted 57 files (0 changed) in 0.33 seconds.
 exit=0
-
 $ flutter analyze
-Analyzing Tuki...                                               
-No issues found! (ran in 13.9s)
-
-$ flutter test
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
-F:/Tuki/test/tool/template_previews_test.dart: vista previa de quetzal-v1
-F:/Tuki/test/app_flow_test.dart: recorrido de la rana: pintar, guardar, volver y retomar
-F:/Tuki/test/app_flow_test.dart: recorrido de la rana: pintar, guardar, volver y retomar
-F:/Tuki/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
-F:/Tuki/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
-F:/Tuki/test/app_flow_test.dart: un error de lectura no abre un lienzo en blanco
-F:/Tuki/test/app_flow_test.dart: si falta la revisión de plantilla ofrece volver y preserva la obra
-F:/Tuki/test/app_flow_test.dart: A08: el idioma cambia interfaz, contenido y pista, y persiste
-F:/Tuki/test/app_flow_test.dart: cambiar de idioma con el editor abierto conserva la obra
-F:/Tuki/test/app_flow_test.dart: con el sonido desactivado la portada sigue disponible
-F:/Tuki/test/app_flow_test.dart: A04: zoom con dos dedos, rotación y toque en el punto exacto
-F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad tableta horizontal: lienzo a la izquierda y panel lateral
-F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad teléfono: herramientas y paleta bajo el lienzo
-F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad texto ampliado ×2 en teléfono: sin desbordes y con lienzo útil
-F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad texto ampliado ×2 en teléfono pequeño: sin desbordes y con lienzo útil
-F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
-F:/Tuki/test/app_flow_test.dart: A09: exportar desde el área de adultos y cancelar después
-All tests passed!
-
-Total: 88 pruebas, 0 fallos
+No issues found! (ran in 10.5s)
+$ flutter test --reporter expanded
++0: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++1: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++2: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++3: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++4: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++5: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++6: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++7: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++8: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++9: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++10: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++11: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++12: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++13: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++14: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++15: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++16: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++17: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++18: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++19: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++20: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++21: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++22: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++23: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++24: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++25: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++26: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++27: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++28: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++29: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++30: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++31: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++32: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++33: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++34: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++35: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++36: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++37: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++38: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++39: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++40: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++41: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++42: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++43: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++44: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++45: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++46: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++47: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++48: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++49: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++50: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++51: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++52: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++53: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++54: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++55: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++56: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++57: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++58: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++59: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++60: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++61: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++62: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++63: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++64: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++65: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++66: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++67: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++68: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++69: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++70: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++71: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++72: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++73: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++74: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++75: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++76: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++77: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++78: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++79: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++80: F:/Tuki/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++81: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++82: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++83: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++84: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++85: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++86: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++87: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++88: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++89: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++90: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++91: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++92: F:/Tuki/test/levels_test.dart: configuración inicial elegir 6–8 años lleva a Inicio y preselecciona Detallado
++93: F:/Tuki/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++94: F:/Tuki/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++95: F:/Tuki/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++96: F:/Tuki/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++97: F:/Tuki/test/levels_test.dart: Elige una lámina filtros Todas | Fácil | Medio | Detallado | Avanzado
++98: F:/Tuki/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++99: F:/Tuki/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++100: F:/Tuki/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++101: F:/Tuki/test/levels_test.dart: Elige una lámina en inglés: niveles y edades traducidos
++102: F:/Tuki/test/app_flow_test.dart: un error de lectura no abre un lienzo en blanco
++103: F:/Tuki/test/levels_test.dart: área de adultos: edad sugerida se cambia y se guarda al momento
++104: F:/Tuki/test/levels_test.dart: área de adultos: edad sugerida se cambia y se guarda al momento
++105: F:/Tuki/test/app_flow_test.dart: A08: el idioma cambia interfaz, contenido y pista, y persiste
++106: F:/Tuki/test/app_flow_test.dart: A08: el idioma cambia interfaz, contenido y pista, y persiste
++107: F:/Tuki/test/levels_test.dart: editor según el nivel de la lámina fácil: paleta corta ampliable; medio: paleta completa
++108: F:/Tuki/test/app_flow_test.dart: cambiar de idioma con el editor abierto conserva la obra
++109: F:/Tuki/test/levels_test.dart: curiosidades se abre a petición, en el idioma activo y sin audio
++110: F:/Tuki/test/app_flow_test.dart: con el sonido desactivado la portada sigue disponible
++111: F:/Tuki/test/levels_test.dart: curiosidades con narración: Escuchar la reproduce y cerrar la libera
++112: F:/Tuki/test/app_flow_test.dart: A04: zoom con dos dedos, rotación y toque en el punto exacto
++113: F:/Tuki/test/levels_test.dart: curiosidades con la narración desactivada no hay botón de audio
++114: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad tableta horizontal: lienzo a la izquierda y panel lateral
++115: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad tableta horizontal: lienzo a la izquierda y panel lateral
++116: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad tableta horizontal: lienzo a la izquierda y panel lateral
++117: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad tableta horizontal: lienzo a la izquierda y panel lateral
++118: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad tableta horizontal: lienzo a la izquierda y panel lateral
++119: F:/Tuki/test/levels_test.dart: control de adultos y área comercial Aventuras solo se abre con la respuesta correcta
++120: F:/Tuki/test/levels_test.dart: control de adultos y área comercial Aventuras solo se abre con la respuesta correcta
++121: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad texto ampliado ×2 en teléfono: sin desbordes y con lienzo útil
++122: F:/Tuki/test/levels_test.dart: control de adultos y área comercial capítulo de pago: Inicio lleva al control, no al contenido
++123: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad texto ampliado ×2 en teléfono pequeño: sin desbordes y con lienzo útil
++124: F:/Tuki/test/levels_test.dart: control de adultos y área comercial sin tienda: el capítulo de pago no ofrece compra
++125: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++126: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++127: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++128: F:/Tuki/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++129: F:/Tuki/test/app_flow_test.dart: A09: exportar desde el área de adultos y cancelar después
++130: All tests passed!

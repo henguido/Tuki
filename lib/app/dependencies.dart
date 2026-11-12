@@ -11,6 +11,7 @@ import '../features/adults/export_service.dart';
 import '../features/chapters/audio/audio_engine.dart';
 import '../features/chapters/audio/just_audio_engine.dart';
 import '../features/chapters/catalog.dart';
+import '../features/store/entitlements.dart';
 
 /// Dependencias compuestas al iniciar. Todo es local: no hay red.
 class AppDependencies {
@@ -20,6 +21,7 @@ class AppDependencies {
     required this.drawings,
     required this.preferences,
     required this.audio,
+    required this.entitlements,
     required ExportGateway exportGateway,
     PngRenderer? exportRenderer,
   }) : exporter = ExportService(
@@ -34,6 +36,7 @@ class AppDependencies {
   final DrawingsRepository drawings;
   final AppPreferences preferences;
   final AudioEngine audio;
+  final Entitlements entitlements;
   final ExportService exporter;
 
   /// Cierra la base de datos (pruebas de integración).
@@ -58,6 +61,11 @@ class AppDependencies {
       ),
       preferences: preferences,
       audio: JustAudioEngine(),
+      // Sin tienda en esta etapa: no hay compras ni cobros.
+      entitlements: await Entitlements.load(
+        catalog: catalog,
+        gateway: const DisabledPurchaseGateway(),
+      ),
       exportGateway: SystemExportGateway(),
     );
   }

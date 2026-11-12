@@ -4,9 +4,11 @@ import '../../app/dependencies.dart';
 import '../../app/theme.dart';
 import '../../app/widgets.dart';
 import '../../l10n/app_localizations.dart';
+import '../store/adventures_screen.dart';
+import 'age_setup.dart';
 import 'export_picker_screen.dart';
 
-/// Área de adultos: idioma, sonido y exportación.
+/// Área de adultos: idioma, edad sugerida, sonido, exportación y aventuras.
 class AdultsScreen extends StatelessWidget {
   const AdultsScreen({super.key});
 
@@ -52,6 +54,18 @@ class AdultsScreen extends StatelessWidget {
                         ),
                       ],
                     ],
+                  ),
+                  const SizedBox(height: 22),
+                  _SectionTitle(l.suggestedAge),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(l.suggestedAgeHint, style: tukiText(15)),
+                  ),
+                  AgeRangeOptions(
+                    selected: prefs.ageRangeId ?? AgeRangeOptions.noAnswer,
+                    onSelected: (id) => prefs.setAgeRange(
+                      id == AgeRangeOptions.noAnswer ? null : id,
+                    ),
                   ),
                   const SizedBox(height: 22),
                   _SectionTitle(l.sound),
@@ -116,6 +130,35 @@ class AdultsScreen extends StatelessWidget {
                           Flexible(
                             child: Text(
                               l.exportDrawing,
+                              style: tukiText(
+                                19,
+                                weight: 700,
+                                color: TukiColors.turquoise,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 22),
+                  _SectionTitle(l.adventures),
+                  TukiCard(
+                    key: const ValueKey('adventures-open'),
+                    onTap: () => openAdventures(context),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.lock_rounded,
+                            color: TukiColors.turquoise,
+                          ),
+                          const SizedBox(width: 10),
+                          Flexible(
+                            child: Text(
+                              l.adventuresOpen,
                               style: tukiText(
                                 19,
                                 weight: 700,

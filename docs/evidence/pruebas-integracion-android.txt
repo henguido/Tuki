@@ -1,4 +1,4 @@
-# 2026-11-12T14:06Z — Samsung SM-A325M (RF8R32GQWGL), Android 13 (API 33), dispositivo físico
+# 2026-11-12 (repetida en la rama feature/niveles-edades) — Samsung SM-A325M (RF8R32GQWGL), Android 13 (API 33), dispositivo físico
 $ flutter test integration_test -d RF8R32GQWGL
 00:00 +0: loading F:/Tuki/integration_test/app_test.dart
 √ Built build\app\outputs\flutter-apk\app-debug.apk

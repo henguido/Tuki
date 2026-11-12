@@ -1,4 +1,42 @@
 {
   "schemaVersion": 1,
+  "contentVersion": 2,
+  "levels": [
+    {
+      "id": "easy",
+      "order": 1,
+      "name": {"es": "Fácil", "en": "Easy"},
+      "minAge": 2,
+      "maxAge": 4,
+      "starterPalette": true,
+      "touchTolerance": 0.025
+    },
+    {
+      "id": "medium",
+      "order": 2,
+      "name": {"es": "Medio", "en": "Medium"},
+      "minAge": 4,
+      "maxAge": 6
+    },
+    {
+      "id": "detailed",
+      "order": 3,
+      "name": {"es": "Detallado", "en": "Detailed"},
+      "minAge": 6,
+      "maxAge": 8
+    },
+    {
+      "id": "advanced",
+      "order": 4,
+      "name": {"es": "Avanzado", "en": "Advanced"},
+      "minAge": 8
+    }
+  ],
+  "ageRanges": [
+    {"id": "2-4", "minAge": 2, "maxAge": 4, "recommendedLevel": "easy"},
+    {"id": "4-6", "minAge": 4, "maxAge": 6, "recommendedLevel": "medium"},
+    {"id": "6-8", "minAge": 6, "maxAge": 8, "recommendedLevel": "detailed"},
+    {"id": "8+", "minAge": 8, "recommendedLevel": "advanced"}
+  ],
   "chapters": ["bosque-nuboso/chapter.json"]
 }

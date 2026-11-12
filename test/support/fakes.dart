@@ -11,6 +11,7 @@ import 'package:tuki_little_adventures/features/adults/export_service.dart';
 import 'package:tuki_little_adventures/features/chapters/audio/audio_engine.dart';
 import 'package:tuki_little_adventures/features/chapters/catalog.dart';
 import 'package:tuki_little_adventures/features/editor/drawing_document.dart';
+import 'package:tuki_little_adventures/features/store/entitlements.dart';
 
 /// Repositorio en memoria con la misma semántica que el de Drift.
 /// Permite retrasar o hacer fallar escrituras.
@@ -201,13 +202,21 @@ class TestHarness {
     Map<String, Object> prefs = const {},
     MemoryDrawingsRepository? drawings,
     bool instantExportRender = false,
+    // La configuración inicial de edad tiene sus propias pruebas; el resto
+    // parte de una app que ya la mostró.
+    bool firstRun = false,
+    PurchaseGateway gateway = const DisabledPurchaseGateway(),
+    AssetStringLoader? assets,
   }) async {
-    SharedPreferences.setMockInitialValues(prefs);
-    final repo = CatalogRepository(preloadedAssets());
+    SharedPreferences.setMockInitialValues({
+      if (!firstRun) 'ageSetupDone': true,
+      ...prefs,
+    });
+    final repo = CatalogRepository(assets ?? preloadedAssets());
     final catalog = await repo.load();
     final memory = drawings ?? MemoryDrawingsRepository();
     final audio = FakeAudioEngine();
-    final gateway = FakeExportGateway();
+    final exportGateway = FakeExportGateway();
     final deps = AppDependencies(
       catalogRepository: repo,
       catalog: catalog,
@@ -216,12 +225,13 @@ class TestHarness {
         deviceLocale: Locale(deviceLanguage),
       ),
       audio: audio,
-      exportGateway: gateway,
+      entitlements: await Entitlements.load(catalog: catalog, gateway: gateway),
+      exportGateway: exportGateway,
       // El render real necesita reloj real; se prueba aparte.
       exportRenderer: instantExportRender
           ? (_, _) async => Uint8List.fromList([0x89, 0x50, 0x4E, 0x47])
           : null,
     );
-    return TestHarness._(deps, memory, audio, gateway);
+    return TestHarness._(deps, memory, audio, exportGateway);
   }
 }
