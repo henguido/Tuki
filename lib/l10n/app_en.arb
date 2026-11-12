@@ -77,5 +77,107 @@
   "colorPink": "Pink",
   "colorBrown": "Brown",
   "colorBlack": "Black",
-  "colorWhite": "White"
+  "colorWhite": "White",
+  "ageSetupTitle": "What age are you looking for adventures for?",
+  "ageSetupHint": "This is optional and only used to suggest pages: every page stays available. Only the range is stored on this device, and you can change it under For grown-ups.",
+  "ageRangeClosed": "Ages {min}–{max}",
+  "@ageRangeClosed": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "ageRangeOpen": "Ages {min}+",
+  "@ageRangeOpen": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "ageNoAnswer": "I'd rather not say",
+  "skip": "Skip",
+  "continueLabel": "Continue",
+  "cancel": "Cancel",
+  "close": "Close",
+  "suggestedAge": "Suggested age",
+  "suggestedAgeHint": "Sorts and suggests pages. It never locks any.",
+  "filterAll": "All",
+  "filterSemantics": "Filter: {name}",
+  "@filterSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "levelSemantics": "Level {name}, {step} of {total}",
+  "@levelSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "recommended": "Suggested",
+  "inProgress": "In progress",
+  "filterEmpty": "Pages for this level are coming soon.",
+  "showAll": "Show all",
+  "moreColors": "More colors",
+  "funFactTitle": "Did you know?",
+  "funFactButton": "Fun fact",
+  "adventures": "Adventures",
+  "adventuresOpen": "See adventures",
+  "adultGateTitle": "Grown-ups only",
+  "adultGateQuestion": "What is {a} × {b}?",
+  "@adultGateQuestion": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "b": {
+        "type": "int"
+      }
+    }
+  },
+  "adultGateAnswer": "Answer",
+  "adultGateWrong": "That is not right. Try again.",
+  "chapterFree": "Included for free",
+  "chapterOwned": "Unlocked",
+  "chapterLocked": "Not included",
+  "pagesAvailable": "{count} of {total} pages available",
+  "@pagesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "storeUnavailable": "Purchases are not available in this version.",
+  "noAds": "TUKI shows no ads.",
+  "buy": "Buy",
+  "purchaseDone": "Purchase completed.",
+  "purchaseCanceled": "Purchase canceled.",
+  "purchaseFailed": "The purchase could not be completed.",
+  "bundleIncludes": "Includes: {chapters}",
+  "@bundleIncludes": {
+    "placeholders": {
+      "chapters": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -259,4 +259,134 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get colorWhite => 'White';
+
+  @override
+  String get ageSetupTitle => 'What age are you looking for adventures for?';
+
+  @override
+  String get ageSetupHint =>
+      'This is optional and only used to suggest pages: every page stays available. Only the range is stored on this device, and you can change it under For grown-ups.';
+
+  @override
+  String ageRangeClosed(int min, int max) {
+    return 'Ages $min–$max';
+  }
+
+  @override
+  String ageRangeOpen(int min) {
+    return 'Ages $min+';
+  }
+
+  @override
+  String get ageNoAnswer => 'I\'d rather not say';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get continueLabel => 'Continue';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get suggestedAge => 'Suggested age';
+
+  @override
+  String get suggestedAgeHint =>
+      'Sorts and suggests pages. It never locks any.';
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String filterSemantics(String name) {
+    return 'Filter: $name';
+  }
+
+  @override
+  String levelSemantics(String name, int step, int total) {
+    return 'Level $name, $step of $total';
+  }
+
+  @override
+  String get recommended => 'Suggested';
+
+  @override
+  String get inProgress => 'In progress';
+
+  @override
+  String get filterEmpty => 'Pages for this level are coming soon.';
+
+  @override
+  String get showAll => 'Show all';
+
+  @override
+  String get moreColors => 'More colors';
+
+  @override
+  String get funFactTitle => 'Did you know?';
+
+  @override
+  String get funFactButton => 'Fun fact';
+
+  @override
+  String get adventures => 'Adventures';
+
+  @override
+  String get adventuresOpen => 'See adventures';
+
+  @override
+  String get adultGateTitle => 'Grown-ups only';
+
+  @override
+  String adultGateQuestion(int a, int b) {
+    return 'What is $a × $b?';
+  }
+
+  @override
+  String get adultGateAnswer => 'Answer';
+
+  @override
+  String get adultGateWrong => 'That is not right. Try again.';
+
+  @override
+  String get chapterFree => 'Included for free';
+
+  @override
+  String get chapterOwned => 'Unlocked';
+
+  @override
+  String get chapterLocked => 'Not included';
+
+  @override
+  String pagesAvailable(int count, int total) {
+    return '$count of $total pages available';
+  }
+
+  @override
+  String get storeUnavailable => 'Purchases are not available in this version.';
+
+  @override
+  String get noAds => 'TUKI shows no ads.';
+
+  @override
+  String get buy => 'Buy';
+
+  @override
+  String get purchaseDone => 'Purchase completed.';
+
+  @override
+  String get purchaseCanceled => 'Purchase canceled.';
+
+  @override
+  String get purchaseFailed => 'The purchase could not be completed.';
+
+  @override
+  String bundleIncludes(String chapters) {
+    return 'Includes: $chapters';
+  }
 }

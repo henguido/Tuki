@@ -565,6 +565,234 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Blanco'**
   String get colorWhite;
+
+  /// No description provided for @ageSetupTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Para qué edad buscas aventuras?'**
+  String get ageSetupTitle;
+
+  /// No description provided for @ageSetupHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Es opcional y solo sirve para sugerir láminas: todas siguen disponibles. Solo se guarda el rango en este dispositivo y puedes cambiarlo en Para adultos.'**
+  String get ageSetupHint;
+
+  /// No description provided for @ageRangeClosed.
+  ///
+  /// In es, this message translates to:
+  /// **'{min}–{max} años'**
+  String ageRangeClosed(int min, int max);
+
+  /// No description provided for @ageRangeOpen.
+  ///
+  /// In es, this message translates to:
+  /// **'{min}+ años'**
+  String ageRangeOpen(int min);
+
+  /// No description provided for @ageNoAnswer.
+  ///
+  /// In es, this message translates to:
+  /// **'Prefiero no indicar'**
+  String get ageNoAnswer;
+
+  /// No description provided for @skip.
+  ///
+  /// In es, this message translates to:
+  /// **'Omitir'**
+  String get skip;
+
+  /// No description provided for @continueLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Continuar'**
+  String get continueLabel;
+
+  /// No description provided for @cancel.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar'**
+  String get cancel;
+
+  /// No description provided for @close.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar'**
+  String get close;
+
+  /// No description provided for @suggestedAge.
+  ///
+  /// In es, this message translates to:
+  /// **'Edad sugerida'**
+  String get suggestedAge;
+
+  /// No description provided for @suggestedAgeHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Ordena y sugiere láminas. No bloquea ninguna.'**
+  String get suggestedAgeHint;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In es, this message translates to:
+  /// **'Todas'**
+  String get filterAll;
+
+  /// No description provided for @filterSemantics.
+  ///
+  /// In es, this message translates to:
+  /// **'Filtro: {name}'**
+  String filterSemantics(String name);
+
+  /// No description provided for @levelSemantics.
+  ///
+  /// In es, this message translates to:
+  /// **'Nivel {name}, {step} de {total}'**
+  String levelSemantics(String name, int step, int total);
+
+  /// No description provided for @recommended.
+  ///
+  /// In es, this message translates to:
+  /// **'Sugerida'**
+  String get recommended;
+
+  /// No description provided for @inProgress.
+  ///
+  /// In es, this message translates to:
+  /// **'En progreso'**
+  String get inProgress;
+
+  /// No description provided for @filterEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'Pronto habrá láminas de este nivel.'**
+  String get filterEmpty;
+
+  /// No description provided for @showAll.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver todas'**
+  String get showAll;
+
+  /// No description provided for @moreColors.
+  ///
+  /// In es, this message translates to:
+  /// **'Más colores'**
+  String get moreColors;
+
+  /// No description provided for @funFactTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Sabías que…?'**
+  String get funFactTitle;
+
+  /// No description provided for @funFactButton.
+  ///
+  /// In es, this message translates to:
+  /// **'Curiosidad'**
+  String get funFactButton;
+
+  /// No description provided for @adventures.
+  ///
+  /// In es, this message translates to:
+  /// **'Aventuras'**
+  String get adventures;
+
+  /// No description provided for @adventuresOpen.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver aventuras'**
+  String get adventuresOpen;
+
+  /// No description provided for @adultGateTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Solo para adultos'**
+  String get adultGateTitle;
+
+  /// No description provided for @adultGateQuestion.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Cuánto es {a} × {b}?'**
+  String adultGateQuestion(int a, int b);
+
+  /// No description provided for @adultGateAnswer.
+  ///
+  /// In es, this message translates to:
+  /// **'Respuesta'**
+  String get adultGateAnswer;
+
+  /// No description provided for @adultGateWrong.
+  ///
+  /// In es, this message translates to:
+  /// **'No es correcto. Inténtalo de nuevo.'**
+  String get adultGateWrong;
+
+  /// No description provided for @chapterFree.
+  ///
+  /// In es, this message translates to:
+  /// **'Incluido gratis'**
+  String get chapterFree;
+
+  /// No description provided for @chapterOwned.
+  ///
+  /// In es, this message translates to:
+  /// **'Desbloqueado'**
+  String get chapterOwned;
+
+  /// No description provided for @chapterLocked.
+  ///
+  /// In es, this message translates to:
+  /// **'No incluido'**
+  String get chapterLocked;
+
+  /// No description provided for @pagesAvailable.
+  ///
+  /// In es, this message translates to:
+  /// **'{count} de {total} láminas disponibles'**
+  String pagesAvailable(int count, int total);
+
+  /// No description provided for @storeUnavailable.
+  ///
+  /// In es, this message translates to:
+  /// **'Las compras no están disponibles en esta versión.'**
+  String get storeUnavailable;
+
+  /// No description provided for @noAds.
+  ///
+  /// In es, this message translates to:
+  /// **'TUKI no muestra anuncios.'**
+  String get noAds;
+
+  /// No description provided for @buy.
+  ///
+  /// In es, this message translates to:
+  /// **'Comprar'**
+  String get buy;
+
+  /// No description provided for @purchaseDone.
+  ///
+  /// In es, this message translates to:
+  /// **'Compra completada.'**
+  String get purchaseDone;
+
+  /// No description provided for @purchaseCanceled.
+  ///
+  /// In es, this message translates to:
+  /// **'Compra cancelada.'**
+  String get purchaseCanceled;
+
+  /// No description provided for @purchaseFailed.
+  ///
+  /// In es, this message translates to:
+  /// **'No se pudo completar la compra.'**
+  String get purchaseFailed;
+
+  /// No description provided for @bundleIncludes.
+  ///
+  /// In es, this message translates to:
+  /// **'Incluye: {chapters}'**
+  String bundleIncludes(String chapters);
 }
 
 class _AppLocalizationsDelegate

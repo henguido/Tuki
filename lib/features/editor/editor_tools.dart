@@ -7,15 +7,30 @@ import 'palette.dart';
 
 /// Herramientas, grosor y paleta. Horizontal bajo el lienzo en teléfono;
 /// vertical en el panel lateral de tableta.
-class EditorToolPanel extends StatelessWidget {
+class EditorToolPanel extends StatefulWidget {
   const EditorToolPanel({
     super.key,
     required this.controller,
     required this.vertical,
+    this.starterPalette = false,
   });
 
   final EditorController controller;
   final bool vertical;
+
+  /// Empieza con la paleta corta y un botón «Más colores». Ninguna
+  /// herramienta ni color deja de estar disponible.
+  final bool starterPalette;
+
+  @override
+  State<EditorToolPanel> createState() => _EditorToolPanelState();
+}
+
+class _EditorToolPanelState extends State<EditorToolPanel> {
+  bool _expanded = false;
+
+  EditorController get controller => widget.controller;
+  bool get vertical => widget.vertical;
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +62,24 @@ class EditorToolPanel extends StatelessWidget {
           maintainState: true,
           child: _SizeSelector(controller: controller),
         );
-        final swatches = [
-          for (final c in kPalette)
+        // Un color fuera de la paleta corta (obra retomada) la amplía.
+        final short =
+            widget.starterPalette &&
+            !_expanded &&
+            kStarterPalette.any((c) => c.rgb == controller.color);
+        final swatches = <Widget>[
+          for (final c in short ? kStarterPalette : kPalette)
             _Swatch(
               key: ValueKey('color-${c.rgb.toRadixString(16)}'),
               rgb: c.rgb,
               name: c.name(l),
               selected: controller.color == c.rgb,
               onTap: () => controller.color = c.rgb,
+            ),
+          if (short)
+            _MoreColors(
+              label: l.moreColors,
+              onTap: () => setState(() => _expanded = true),
             ),
         ];
 
@@ -304,6 +329,51 @@ class _SizeSelector extends StatelessWidget {
             ),
           ),
       ],
+    );
+  }
+}
+
+class _MoreColors extends StatelessWidget {
+  const _MoreColors({required this.label, required this.onTap});
+
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: label,
+      excludeSemantics: true,
+      child: Tooltip(
+        message: label,
+        excludeFromSemantics: true,
+        child: InkResponse(
+          key: const ValueKey('palette-more'),
+          onTap: onTap,
+          radius: 28,
+          child: SizedBox(
+            width: 52,
+            height: 52,
+            child: Center(
+              child: Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: TukiColors.surface,
+                  border: Border.all(color: TukiColors.turquoise, width: 2),
+                ),
+                child: const Icon(
+                  Icons.add_rounded,
+                  color: TukiColors.turquoise,
+                  size: 28,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'svg_path.dart';
@@ -42,11 +43,44 @@ class PageTemplate {
 
   /// Región visible superior que contiene [scenePoint], o `null`.
   String? regionAt(ui.Offset scenePoint) {
-    if (!viewBox.contains(scenePoint)) return null;
+    final i = _indexAt(scenePoint);
+    return i < 0 ? null : regions[i].id;
+  }
+
+  int _indexAt(ui.Offset scenePoint) {
+    if (!viewBox.contains(scenePoint)) return -1;
     for (var i = regions.length - 1; i >= 0; i--) {
-      if (regions[i].path.contains(scenePoint)) return regions[i].id;
+      if (regions[i].path.contains(scenePoint)) return i;
     }
-    return null;
+    return -1;
+  }
+
+  /// Como [regionAt], con tolerancia para dedos pequeños: si el toque cae en
+  /// el fondo (la primera región) pero a menos de [radius] de una figura, se
+  /// elige la figura más presente alrededor del toque.
+  String? regionNear(ui.Offset scenePoint, double radius) {
+    final exact = _indexAt(scenePoint);
+    if (exact != 0 || radius <= 0 || regions.length < 2) {
+      return exact < 0 ? null : regions[exact].id;
+    }
+    final votes = <int, int>{};
+    for (final r in [radius * 0.5, radius]) {
+      for (var k = 0; k < 8; k++) {
+        final a = k * math.pi / 4;
+        final i = _indexAt(
+          scenePoint + ui.Offset(math.cos(a), math.sin(a)) * r,
+        );
+        if (i > 0) votes[i] = (votes[i] ?? 0) + 1;
+      }
+    }
+    if (votes.isEmpty) return regions[0].id;
+    var best = votes.keys.first;
+    for (final e in votes.entries) {
+      if (e.value > votes[best]! || (e.value == votes[best] && e.key > best)) {
+        best = e.key;
+      }
+    }
+    return regions[best].id;
   }
 
   bool hasRegion(String id) => regions.any((r) => r.id == id);

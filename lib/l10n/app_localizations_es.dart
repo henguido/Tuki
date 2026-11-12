@@ -259,4 +259,135 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get colorWhite => 'Blanco';
+
+  @override
+  String get ageSetupTitle => '¿Para qué edad buscas aventuras?';
+
+  @override
+  String get ageSetupHint =>
+      'Es opcional y solo sirve para sugerir láminas: todas siguen disponibles. Solo se guarda el rango en este dispositivo y puedes cambiarlo en Para adultos.';
+
+  @override
+  String ageRangeClosed(int min, int max) {
+    return '$min–$max años';
+  }
+
+  @override
+  String ageRangeOpen(int min) {
+    return '$min+ años';
+  }
+
+  @override
+  String get ageNoAnswer => 'Prefiero no indicar';
+
+  @override
+  String get skip => 'Omitir';
+
+  @override
+  String get continueLabel => 'Continuar';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get close => 'Cerrar';
+
+  @override
+  String get suggestedAge => 'Edad sugerida';
+
+  @override
+  String get suggestedAgeHint =>
+      'Ordena y sugiere láminas. No bloquea ninguna.';
+
+  @override
+  String get filterAll => 'Todas';
+
+  @override
+  String filterSemantics(String name) {
+    return 'Filtro: $name';
+  }
+
+  @override
+  String levelSemantics(String name, int step, int total) {
+    return 'Nivel $name, $step de $total';
+  }
+
+  @override
+  String get recommended => 'Sugerida';
+
+  @override
+  String get inProgress => 'En progreso';
+
+  @override
+  String get filterEmpty => 'Pronto habrá láminas de este nivel.';
+
+  @override
+  String get showAll => 'Ver todas';
+
+  @override
+  String get moreColors => 'Más colores';
+
+  @override
+  String get funFactTitle => '¿Sabías que…?';
+
+  @override
+  String get funFactButton => 'Curiosidad';
+
+  @override
+  String get adventures => 'Aventuras';
+
+  @override
+  String get adventuresOpen => 'Ver aventuras';
+
+  @override
+  String get adultGateTitle => 'Solo para adultos';
+
+  @override
+  String adultGateQuestion(int a, int b) {
+    return '¿Cuánto es $a × $b?';
+  }
+
+  @override
+  String get adultGateAnswer => 'Respuesta';
+
+  @override
+  String get adultGateWrong => 'No es correcto. Inténtalo de nuevo.';
+
+  @override
+  String get chapterFree => 'Incluido gratis';
+
+  @override
+  String get chapterOwned => 'Desbloqueado';
+
+  @override
+  String get chapterLocked => 'No incluido';
+
+  @override
+  String pagesAvailable(int count, int total) {
+    return '$count de $total láminas disponibles';
+  }
+
+  @override
+  String get storeUnavailable =>
+      'Las compras no están disponibles en esta versión.';
+
+  @override
+  String get noAds => 'TUKI no muestra anuncios.';
+
+  @override
+  String get buy => 'Comprar';
+
+  @override
+  String get purchaseDone => 'Compra completada.';
+
+  @override
+  String get purchaseCanceled => 'Compra cancelada.';
+
+  @override
+  String get purchaseFailed => 'No se pudo completar la compra.';
+
+  @override
+  String bundleIncludes(String chapters) {
+    return 'Incluye: $chapters';
+  }
 }

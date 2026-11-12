@@ -10,6 +10,7 @@ import 'drawing_canvas.dart';
 import 'drawing_document.dart';
 import 'editor_controller.dart';
 import 'editor_tools.dart';
+import 'fun_fact.dart';
 import 'save_coordinator.dart';
 
 /// Pantalla desde la que se abrió el editor. Volver regresa a ella.
@@ -93,6 +94,8 @@ class _EditorScreenState extends State<EditorScreen> {
           template: template,
           initial: stored?.document ?? DrawingDocument.empty,
           onCommit: saver.submit,
+          // El nivel es el de la lámina: no cambia mientras se colorea.
+          touchTolerance: _page.level.touchTolerance,
         );
         _state = _LoadState.ready;
       });
@@ -255,6 +258,14 @@ class _EditorScreenState extends State<EditorScreen> {
       onPressed: _next,
     );
     final status = SaveStatusView(saver: saver);
+    final funFact = _page.funFact == null
+        ? null
+        : TukiRoundButton(
+            key: const ValueKey('editor-fun-fact'),
+            icon: Icons.lightbulb_rounded,
+            label: l.funFactButton,
+            onPressed: () => showFunFact(context, _page),
+          );
 
     return PopScope(
       canPop: false,
@@ -295,6 +306,10 @@ class _EditorScreenState extends State<EditorScreen> {
                                       ),
                                     ),
                                   ),
+                                  if (funFact != null) ...[
+                                    funFact,
+                                    const SizedBox(width: 8),
+                                  ],
                                   undoButton,
                                 ],
                               ),
@@ -327,6 +342,8 @@ class _EditorScreenState extends State<EditorScreen> {
                                     child: EditorToolPanel(
                                       controller: controller,
                                       vertical: true,
+                                      starterPalette:
+                                          _page.level.starterPalette,
                                     ),
                                   ),
                                 ),
@@ -360,6 +377,10 @@ class _EditorScreenState extends State<EditorScreen> {
                             ),
                           ),
                           const SizedBox(width: 8),
+                          if (funFact != null) ...[
+                            funFact,
+                            const SizedBox(width: 8),
+                          ],
                           undoButton,
                         ],
                       ),
@@ -379,6 +400,7 @@ class _EditorScreenState extends State<EditorScreen> {
                               EditorToolPanel(
                                 controller: controller,
                                 vertical: false,
+                                starterPalette: _page.level.starterPalette,
                               ),
                               const SizedBox(height: 6),
                               Row(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../features/adults/age_setup.dart';
 import '../features/chapters/home_shell.dart';
 import '../l10n/app_localizations.dart';
 import 'dependencies.dart';
@@ -25,7 +26,10 @@ class TukiApp extends StatelessWidget {
           locale: Locale(deps.preferences.languageCode),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
-          home: const HomeShell(),
+          // Primera apertura: configuración breve y opcional de edad.
+          home: deps.preferences.ageSetupDone
+              ? const HomeShell()
+              : const AgeSetupScreen(),
         ),
       ),
     );

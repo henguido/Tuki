@@ -3,13 +3,16 @@ import 'dart:ui' show Locale;
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Preferencias persistentes: idioma, narración y ambiente.
+/// Preferencias persistentes: idioma, narración, ambiente y rango de edad
+/// sugerido. Del niño solo se guarda ese rango, nunca datos personales.
 class AppPreferences extends ChangeNotifier {
   AppPreferences._(this._store, this._deviceLanguage);
 
   static const String _kLanguage = 'language';
   static const String _kNarration = 'narrationEnabled';
   static const String _kAmbience = 'ambienceEnabled';
+  static const String _kAgeRange = 'ageRange';
+  static const String _kAgeSetupDone = 'ageSetupDone';
   static const List<String> supportedLanguages = ['es', 'en'];
 
   final SharedPreferences _store;
@@ -46,6 +49,24 @@ class AppPreferences extends ChangeNotifier {
 
   Future<void> setAmbienceEnabled(bool value) async {
     await _store.setBool(_kAmbience, value);
+    notifyListeners();
+  }
+
+  /// Rango de edad elegido por un adulto (`id` del catálogo), o `null` si
+  /// prefirió no indicarlo.
+  String? get ageRangeId => _store.getString(_kAgeRange);
+
+  /// La configuración inicial ya se mostró (se eligiera rango o no).
+  bool get ageSetupDone => _store.getBool(_kAgeSetupDone) ?? false;
+
+  /// Guarda el rango (o lo borra con `null`) y da por hecha la configuración.
+  Future<void> setAgeRange(String? id) async {
+    if (id == null) {
+      await _store.remove(_kAgeRange);
+    } else {
+      await _store.setString(_kAgeRange, id);
+    }
+    await _store.setBool(_kAgeSetupDone, true);
     notifyListeners();
   }
 }

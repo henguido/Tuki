@@ -130,11 +130,26 @@ void main() {
     expect(h.audio.narration.playing, false);
     expect(h.audio.ambience.playing, false);
     expect(find.text('Elige una lámina'), findsOneWidget);
-    for (final t in ['La rana en la hoja', 'El quetzal', 'El sendero']) {
+    for (final t in [
+      'La rana en la hoja',
+      'El quetzal',
+      'El sendero del bosque',
+    ]) {
       expect(find.text(t), findsOneWidget);
     }
-    for (final d in ['Fácil', 'Media', 'Detallada']) {
-      expect(find.text(d), findsOneWidget);
+    // Cada tarjeta muestra su nivel (los mismos nombres están en los filtros).
+    for (final (page, level) in [
+      ('rana-en-la-hoja', 'Fácil'),
+      ('quetzal', 'Medio'),
+      ('sendero', 'Detallado'),
+    ]) {
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey('page-$page')),
+          matching: find.text(level),
+        ),
+        findsOneWidget,
+      );
     }
     expect(h.drawings.rows, isEmpty, reason: 'visitar no crea obras');
   });
@@ -254,7 +269,7 @@ void main() {
       expect(find.text('El quetzal'), findsOneWidget);
       await tester.tap(find.text('Siguiente lámina'));
       await tester.pumpAndSettle();
-      expect(find.text('El sendero'), findsOneWidget);
+      expect(find.text('El sendero del bosque'), findsOneWidget);
       expect(find.text('Siguiente lámina'), findsNothing);
       expect(find.text('Volver a las láminas'), findsOneWidget);
     }
@@ -682,6 +697,10 @@ void main() {
           await tester.tap(find.byKey(const ValueKey('cover-color')));
           await tester.pumpAndSettle();
           expect(tester.takeException(), isNull, reason: 'Láminas');
+          await tester.ensureVisible(
+            find.byKey(const ValueKey('page-rana-en-la-hoja')),
+          );
+          await tester.pumpAndSettle();
           await tester.tap(find.byKey(const ValueKey('page-rana-en-la-hoja')));
           await tester.pumpAndSettle();
           expect(tester.takeException(), isNull, reason: 'Editor');
@@ -764,7 +783,9 @@ void main() {
       await tester.pumpAndSettle();
       await check('Láminas');
       expect(
-        find.bySemanticsLabel('La rana en la hoja. Dificultad: Fácil'),
+        find.bySemanticsLabel(
+          'La rana en la hoja. Dificultad: Fácil. 2–4 años',
+        ),
         findsOneWidget,
       );
       await tester.tap(find.byKey(const ValueKey('page-rana-en-la-hoja')));
@@ -804,10 +825,18 @@ void main() {
         'Deshacer',
         'Borrador',
         'Rojo',
-        'Naranja',
+        'Más colores',
+        'Curiosidad',
       ]) {
         expect(find.bySemanticsLabel(label), findsOneWidget, reason: label);
       }
+      // La lámina fácil empieza con la paleta corta; el resto sigue a un
+      // toque.
+      expect(find.bySemanticsLabel('Naranja'), findsNothing);
+      await tester.tap(find.byKey(const ValueKey('palette-more')));
+      await tester.pumpAndSettle();
+      expect(find.bySemanticsLabel('Naranja'), findsOneWidget);
+      await check('Editor con paleta completa');
       expect(
         find.bySemanticsLabel(RegExp('^Lienzo de La rana en la hoja')),
         findsOneWidget,
@@ -837,6 +866,12 @@ void main() {
     await pumpApp(tester, h);
     await tester.tap(find.byKey(const ValueKey('settings')));
     await tester.pumpAndSettle();
+    // La exportación queda bajo la sección de edad sugerida.
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('export-open')),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     await tester.tap(find.byKey(const ValueKey('export-open')));
     await tester.pumpAndSettle();
 

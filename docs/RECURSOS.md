@@ -7,6 +7,7 @@ Estado al 12 de noviembre de 2026. «Provisional» significa integrado y funcion
 | `assets/chapters/bosque-nuboso/cover.webp` | Portada del capítulo (1122 × 1402, sin texto) | Ilustración entregada por el cliente (`Descubrimientos en el bosque nuboso.png`), recodificada a WebP con `tool/assets/build_assets.py` | **Por confirmar con el cliente** (autoría y derechos de uso) | Provisional | Sustituir el archivo con el mismo nombre; conviene una versión más alta para que rana y quetzal no queden al borde | Pendiente |
 | `assets/chapters/bosque-nuboso/pages/rana-en-la-hoja-v1.json` | Lámina fácil (12 regiones) | Dibujo vectorial original creado para esta entrega; fuente en `tool/build_templates.dart` | Obra original del proyecto | Provisional | Publicar `rana-en-la-hoja-v2.json` (`revision: 2`) y declarar la v1 en `previousTemplates` | Pendiente |
 | `assets/chapters/bosque-nuboso/pages/quetzal-v1.json` | Lámina media (24 regiones) | Ídem | Obra original del proyecto | Provisional | Ídem, `quetzal-v2.json` | Pendiente |
+| `assets/chapters/bosque-nuboso/chapter.json` (`description`, `funFact`) | Descripciones y curiosidades de las 3 láminas disponibles (es/en) | Redactadas para esta entrega | Obra original del proyecto | Provisional | Editar el manifiesto y subir `contentVersion` | Pendiente (revisión educativa) |
 | `assets/chapters/bosque-nuboso/pages/sendero-v1.json` | Lámina detallada (48 regiones) | Ídem | Obra original del proyecto | Provisional | Ídem, `sendero-v2.json` | Pendiente |
 | `assets/chapters/bosque-nuboso/audio/intro_es.mp3` | Narración en español (9,1 s) | Voz sintética «Microsoft Helena Desktop» (SAPI de Windows) generada con `tool/assets/speak.ps1` | **Verificar** los términos de las voces de Microsoft antes de distribuir; válida solo para QA interno | Provisional | Grabación con locutor; mismo nombre de archivo | Pendiente |
 | `assets/chapters/bosque-nuboso/audio/intro_en.mp3` | Narración en inglés (9,8 s) | Voz sintética «Microsoft Zira Desktop», mismo script | Ídem | Provisional | Ídem | Pendiente |
@@ -14,6 +15,15 @@ Estado al 12 de noviembre de 2026. «Provisional» significa integrado y funcion
 | `android/app/src/main/res/mipmap-*/ic_launcher.png`, `ios/Runner/Assets.xcassets/AppIcon.appiconset/*`, `assets/brand/icon.png` | Icono de la app | Dibujo original generado en `tool/assets/build_assets.py` | Obra original del proyecto | Provisional | Sustituir los PNG (o adoptar un generador de iconos) cuando exista la marca definitiva | Pendiente |
 | `assets/fonts/Fredoka-Variable.ttf` | Tipografía redondeada de la interfaz | The Fredoka Project Authors, vía Google Fonts | SIL Open Font License 1.1 (`assets/fonts/OFL.txt`) | **Definitivo** | — | No requiere |
 | Iconos de la interfaz | Material Icons | Incluidos con Flutter | Apache 2.0 | **Definitivo** | — | No requiere |
+
+## Recursos que faltan
+
+| Recurso | Cantidad | Detalle |
+|---|---|---|
+| Ilustraciones para colorear | 12 | Mariposa, colibrí, tucán, flor tropical (Fácil); perezoso, mono, coatí, helechos (Medio); orquídeas, ranas del bosque, árbol gigante, cascada (Detallado). Originales o con derechos comerciales comprobados, en el formato de plantilla del README. Inventario en `NIVELES.md` |
+| Curiosidades | 12 | Una por lámina pendiente, en español e inglés |
+| Narración de curiosidades | 30 | 15 láminas × 2 idiomas. Hoy no existe ninguna; la app solo muestra «Escuchar» cuando el manifiesto la declara |
+| Láminas de nivel Avanzado | Por definir | Ampliación gratuita prevista; el nivel existe y su filtro avisa de que está vacío |
 
 ## Referencias que NO se integraron
 

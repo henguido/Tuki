@@ -24,6 +24,8 @@ dependencies:
   # Exportación PNG mediante diálogos del sistema (guardar / compartir).
   file_picker: ^13.3.3
   share_plus: ^13.3.1
+  # Verificación de integridad (SHA-256) de paquetes de contenido.
+  crypto: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -45,19 +45,26 @@
 
 **Host**
 
-- ✅ `flutter test`: 88 de 88.
+- ✅ `flutter test`: 130 de 130 (88 de la primera entrega + 42 de niveles, edades, acceso y paquetes).
 
 ## Evidencia
 
 | Archivo | Contenido |
 |---|---|
-| `evidence/pruebas-host.txt` | Formato, análisis y lista de las 88 pruebas |
+| `evidence/pruebas-host.txt` | Formato, análisis y lista de las 130 pruebas |
+| `evidence/android-edad-configuracion.png`, `android-adultos-edad.png` | Configuración inicial de edad y sección en Para adultos |
+| `evidence/android-laminas-filtro-sugerido.png`, `android-laminas-todas.png` | Filtro sugerido (6–8) y vista Todas con «Sugerida» |
+| `evidence/android-editor-facil.png`, `android-curiosidad.png`, `android-control-adultos.png` | Paleta corta, curiosidad y control de adultos |
 | `evidence/pruebas-integracion-android.txt` | Salida de la prueba de integración en el teléfono |
 | `evidence/android-a05-1…3-*.png` | Antes de cerrar el proceso, Inicio tras reabrir, obra retomada y editada |
 | `evidence/android-a07-*.png` | Quetzal y sendero (última lámina) |
 | `evidence/android-a08-*.png` | Voz y ambiente activos, estado tras segundo plano, interfaz en inglés |
 | `evidence/android-a09-*.png` | Diálogo de guardado, PNG exportado, aviso de exportado y de cancelado |
 | `evidence/android-portada.png`, `android-inicio-continuar.png`, `android-galeria.png`, `android-adultos.png` | Pantallas |
+
+## Niveles y edades
+
+La matriz de esta ampliación (13 requisitos, automatizada y en teléfono) está en [`NIVELES.md`](NIVELES.md#7-pruebas). Las capturas `android-a0x-*` son de la primera entrega: la pantalla de láminas y el editor fácil han cambiado desde entonces. A01–A10 se volvieron a ejecutar automatizadas y la prueba de integración se repitió en el teléfono; el recorrido manual A01–A10 no se repitió completo.
 
 ## Comandos ejecutados
 

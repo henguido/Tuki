@@ -9,6 +9,7 @@ import '../adults/adults_screen.dart';
 import '../editor/editor_screen.dart';
 import '../gallery/drawing_preview.dart';
 import '../gallery/gallery_view.dart';
+import '../store/adventures_screen.dart';
 import 'catalog.dart';
 import 'cover_screen.dart';
 
@@ -255,6 +256,11 @@ class _ChapterCard extends StatelessWidget {
   final double imageHeight;
 
   void _open(BuildContext context) {
+    // Un capítulo no incluido solo lleva al área protegida para adultos.
+    if (!AppScope.of(context).entitlements.isUnlocked(chapter)) {
+      openAdventures(context);
+      return;
+    }
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => CoverScreen(chapterId: chapter.id),
@@ -266,6 +272,7 @@ class _ChapterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final title = chapter.title.of(contentLanguage(context));
+    final unlocked = AppScope.of(context).entitlements.isUnlocked(chapter);
     return Container(
       decoration: BoxDecoration(
         color: TukiColors.surface,
@@ -307,8 +314,8 @@ class _ChapterCard extends StatelessWidget {
                   const SizedBox(height: 6),
                   TukiPrimaryButton(
                     key: ValueKey('explore-${chapter.id}'),
-                    label: l.explore,
-                    icon: Icons.brush_rounded,
+                    label: unlocked ? l.explore : l.adultsTitle,
+                    icon: unlocked ? Icons.brush_rounded : Icons.lock_rounded,
                     onPressed: () => _open(context),
                   ),
                 ],

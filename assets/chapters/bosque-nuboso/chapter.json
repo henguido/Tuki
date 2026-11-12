@@ -1,6 +1,8 @@
 {
   "schemaVersion": 1,
+  "contentVersion": 2,
   "id": "bosque-nuboso",
+  "access": {"type": "free"},
   "cover": "cover.webp",
   "title": {"es": "El bosque nuboso", "en": "The Cloud Forest"},
   "intro": {
@@ -13,19 +15,118 @@
     {
       "id": "rana-en-la-hoja",
       "difficulty": "easy",
+      "contentVersion": 2,
       "title": {"es": "La rana en la hoja", "en": "The Frog on the Leaf"},
+      "description": {
+        "es": "Una rana grande descansa sobre una hoja.",
+        "en": "A big frog rests on a leaf."
+      },
+      "funFact": {
+        "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
+        "en": "Many forest frogs sleep on leaves during the day and come out at night."
+      },
       "template": "pages/rana-en-la-hoja-v1.json"
+    },
+    {
+      "id": "mariposa",
+      "difficulty": "easy",
+      "status": "planned",
+      "title": {"es": "La mariposa", "en": "The Butterfly"}
+    },
+    {
+      "id": "colibri",
+      "difficulty": "easy",
+      "status": "planned",
+      "title": {"es": "El colibrí", "en": "The Hummingbird"}
+    },
+    {
+      "id": "tucan",
+      "difficulty": "easy",
+      "status": "planned",
+      "title": {"es": "El tucán", "en": "The Toucan"}
+    },
+    {
+      "id": "flor-tropical",
+      "difficulty": "easy",
+      "status": "planned",
+      "title": {"es": "La flor tropical", "en": "The Tropical Flower"}
     },
     {
       "id": "quetzal",
       "difficulty": "medium",
+      "contentVersion": 2,
       "title": {"es": "El quetzal", "en": "The Quetzal"},
+      "description": {
+        "es": "Un quetzal posado en una rama, con su cola larga.",
+        "en": "A quetzal perched on a branch, with its long tail."
+      },
+      "funFact": {
+        "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
+        "en": "The quetzal lives in humid forests and has very long tail feathers."
+      },
       "template": "pages/quetzal-v1.json"
+    },
+    {
+      "id": "perezoso",
+      "difficulty": "medium",
+      "status": "planned",
+      "title": {"es": "El perezoso", "en": "The Sloth"}
+    },
+    {
+      "id": "mono",
+      "difficulty": "medium",
+      "status": "planned",
+      "title": {"es": "El mono", "en": "The Monkey"}
+    },
+    {
+      "id": "coati",
+      "difficulty": "medium",
+      "status": "planned",
+      "title": {"es": "El coatí", "en": "The Coati"}
+    },
+    {
+      "id": "helechos",
+      "difficulty": "medium",
+      "status": "planned",
+      "title": {"es": "Los helechos", "en": "The Ferns"}
+    },
+    {
+      "id": "orquideas",
+      "difficulty": "detailed",
+      "status": "planned",
+      "title": {"es": "Las orquídeas", "en": "The Orchids"}
+    },
+    {
+      "id": "ranas-del-bosque",
+      "difficulty": "detailed",
+      "status": "planned",
+      "title": {"es": "Las ranas del bosque", "en": "The Forest Frogs"}
+    },
+    {
+      "id": "arbol-gigante",
+      "difficulty": "detailed",
+      "status": "planned",
+      "title": {"es": "El árbol gigante", "en": "The Giant Tree"}
+    },
+    {
+      "id": "cascada",
+      "difficulty": "detailed",
+      "status": "planned",
+      "title": {"es": "La cascada", "en": "The Waterfall"}
     },
     {
       "id": "sendero",
       "difficulty": "detailed",
-      "title": {"es": "El sendero", "en": "The Forest Trail"},
+      "contentVersion": 2,
+      "title": {"es": "El sendero del bosque", "en": "The Forest Trail"},
+      "description": {
+        "es": "Un sendero que cruza el bosque entre los árboles.",
+        "en": "A trail that crosses the forest among the trees."
+      },
+      "funFact": {
+        "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
+        "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
+      },
       "template": "pages/sendero-v1.json"
     }
   ]

@@ -1,10 +1,11 @@
 # TUKI — Little Adventures
 
 Guía ilustrada bilingüe (español / inglés) para colorear la naturaleza de Costa Rica.
-Primera entrega: capítulo **El bosque nuboso** con tres láminas editables (La rana en la hoja, El quetzal, El sendero), narración, ambiente y exportación a PNG. Todo funciona sin red.
+Capítulo **El bosque nuboso** con tres láminas editables (La rana en la hoja, El quetzal, El sendero del bosque) de las 15 previstas, clasificadas por dificultad y edad sugerida, con curiosidades, narración, ambiente y exportación a PNG. Todo funciona sin red.
 
 Estado: **desarrollo y QA local**. Publicación, compras, cuentas, analítica y servicios en línea pertenecen a otra etapa.
 
+- Niveles, edades, inventario de las 15 láminas, monetización futura y contenido: [docs/NIVELES.md](docs/NIVELES.md)
 - Matriz de aceptación y evidencia: [docs/ACEPTACION.md](docs/ACEPTACION.md)
 - Inventario de recursos (origen, licencia, estado): [docs/RECURSOS.md](docs/RECURSOS.md)
 
@@ -21,11 +22,11 @@ Necesitas un teléfono Android 7 o posterior y el archivo `app-debug.apk` (se ge
 **Recorrido** (anota cualquier paso que no coincida)
 
 1. **Activa el modo avión** antes de abrir la app por primera vez.
-2. Abre **TUKI**. Debes ver «TUKI — Little Adventures», la tarjeta *El bosque nuboso* y el botón **Explorar**. No debe aparecer «Continuar mi dibujo».
+2. Abre **TUKI**. La primera vez aparece **¿Para qué edad buscas aventuras?**: elige un rango y **Continuar**, o toca **Omitir**. No pide ningún dato del niño. Después debes ver «TUKI — Little Adventures», la tarjeta *El bosque nuboso* y el botón **Explorar**. No debe aparecer «Continuar mi dibujo».
 3. Toca **Mis dibujos**: mensaje de galería vacía y botón **Explorar capítulos**. Tócalo.
 4. Toca **Explorar**. En la portada toca **Escuchar** (suena la narración y el botón dice «Pausar») y **Sonidos** (ambiente del bosque; baja de volumen mientras habla la voz y vuelve a subir cuando termina).
-5. Toca **Colorear**. El audio se detiene y aparecen tres láminas: Fácil, Media, Detallada.
-6. Abre **La rana en la hoja**. Con **Rellenar**, elige un color y toca el cuerpo y luego la hoja: solo cambia la zona tocada.
+5. Toca **Colorear**. El audio se detiene y aparece **Elige una lámina** con los filtros **Todas | Fácil | Medio | Detallado | Avanzado**. Si elegiste una edad, su filtro llega seleccionado; toca **Todas** para ver las tres láminas, con nivel (hojas), edad sugerida y la marca **Sugerida**. **Avanzado** avisa de que aún no hay láminas. Cualquier lámina se puede abrir.
+6. Abre **La rana en la hoja**. Es una lámina fácil: empieza con seis colores y el botón **+** muestra el resto. Con **Rellenar**, elige un color y toca el cuerpo y luego la hoja: solo cambia la zona tocada. La bombilla abre la **curiosidad** de la lámina (solo texto: aún no hay narración).
 7. Elige **Pincel** y dibuja encima. Cambia a **Rellenar** y cambia el color del cuerpo: el trazo sigue ahí.
 8. Elige **Borrador** y borra parte del trazo. Toca **Deshacer** varias veces: cada toque revierte una acción.
 9. Con dos dedos amplía y mueve el lienzo; pinta de nuevo: la pintura cae donde tocas. El botón redondo de la esquina del lienzo vuelve a mostrar todo el dibujo. Gira el teléfono: las herramientas pasan a un panel lateral y el dibujo conserva su proporción.
@@ -33,7 +34,7 @@ Necesitas un teléfono Android 7 o posterior y el archivo `app-debug.apk` (se ge
 11. **Cierra la app por completo** (recientes → deslizar) y vuelve a abrirla.
 12. En Inicio aparece **Continuar mi dibujo**: tócalo. El dibujo vuelve con rellenos y trazos y se puede seguir editando.
 13. Toca **Siguiente lámina** dos veces (quetzal, sendero). En El sendero el botón dice **Volver a las láminas**. Prueba también la flecha **Volver** y el botón atrás del sistema desde cada lámina.
-14. En Inicio toca el engranaje (**Para adultos**). Cambia a **English**: la pantalla se traduce al momento. Vuelve a la portada y comprueba que **Listen** usa la narración en inglés. Cierra y abre la app: sigue en inglés.
+14. En Inicio toca el engranaje (**Para adultos**). En **Edad sugerida** cambia el rango y comprueba que «Elige una lámina» lo refleja. Abajo, **Ver aventuras** pide resolver una multiplicación antes de abrir; dentro solo debe verse *El bosque nuboso — Incluido gratis — 3 de 15 láminas disponibles*, sin precios ni botones de compra. Cambia a **English**: la pantalla se traduce al momento. Vuelve a la portada y comprueba que **Listen** usa la narración en inglés. Cierra y abre la app: sigue en inglés.
 15. En *Para adultos* toca **Exportar un dibujo**, elige uno y toca **Guardar PNG**. En el diálogo del sistema toca **Guardar**: aparece «Copia PNG exportada» y el archivo `tuki-<lámina>.png` queda donde elegiste.
 16. Repite **Guardar PNG** y esta vez pulsa atrás en el diálogo: aparece «Exportación cancelada» y el dibujo sigue en *Mis dibujos*.
 
@@ -57,6 +58,7 @@ Dependencias resueltas (el `pubspec.lock` se versiona):
 | just_audio, audio_session | 0.10.6, 0.2.4 | Narración, ambiente e interrupciones |
 | file_picker | 13.3.3 | Diálogo del sistema «Guardar PNG» |
 | share_plus | 13.3.1 | Hoja del sistema «Compartir» |
+| crypto | 3.0.8 | SHA-256 de paquetes de contenido |
 | intl + flutter_localizations | 0.20.3 | Interfaz con ARB / gen_l10n |
 | build_runner, flutter_lints | 2.17.1, 6.0.0 | Desarrollo |
 
@@ -78,7 +80,7 @@ flutter pub get
 dart run build_runner build          # regenera lib/data/local/database.g.dart
 dart format lib test tool integration_test
 flutter analyze
-flutter test                         # 88 pruebas en el host
+flutter test                         # 130 pruebas en el host
 flutter test integration_test -d <id-del-dispositivo>
 flutter build apk --debug            # build/app/outputs/flutter-apk/app-debug.apk
 dart run tool/build_templates.dart   # regenera las plantillas (ver aviso abajo)
@@ -109,11 +111,13 @@ Objetivo de despliegue: iOS 15.0. La app no declara permisos de micrófono, ubic
 ```
 lib/
   app/                 composición de dependencias, tema, widgets comunes
-  features/chapters/   catálogo, Inicio, portada, láminas y audio
+  features/chapters/   catálogo, niveles, recomendación, Inicio, portada, láminas y audio
   features/editor/     motor de dibujo y pantalla del editor
   features/gallery/    Mis dibujos y miniaturas
-  features/adults/     idioma, sonido y exportación PNG
+  features/adults/     idioma, edad sugerida, sonido y exportación PNG
+  features/store/      derechos de acceso, control de adultos y «Aventuras» (sin tienda)
   data/local/          Drift/SQLite y preferencias
+  data/content/        instalador de paquetes de contenido (sin conectar)
   l10n/                ARB es/en (gen_l10n)
 assets/chapters/       catálogo, manifiesto, portada, audio y plantillas
 test/  integration_test/  tool/
@@ -126,7 +130,7 @@ test/  integration_test/  tool/
 
 ## Contrato de contenido
 
-`assets/chapters/catalog.json` (`schemaVersion: 1`) lista manifiestos relativos al catálogo; cada manifiesto declara rutas relativas a su carpeta. El formato es el de la especificación, con una extensión opcional por lámina:
+`assets/chapters/catalog.json` (`schemaVersion: 1`) lista manifiestos relativos al catálogo; cada manifiesto declara rutas relativas a su carpeta. Además declara `levels` (niveles con edad sugerida), `ageRanges`, `contentVersion` y, en el futuro, `bundles`. Cada lámina admite `description`, `funFact`, `funFactAudio`, `minAge`/`maxAge`, `contentVersion` y `status` (`available` | `planned`); cada capítulo, `access`. Todos son opcionales y están descritos en [docs/NIVELES.md](docs/NIVELES.md). Extensión para revisiones de plantilla:
 
 ```json
 "previousTemplates": { "1": "pages/rana-en-la-hoja-v1.json" }
@@ -153,5 +157,7 @@ Al cambiar el esquema: sube `schemaVersion`, añade el paso en `onUpgrade`, vuel
 
 - Arte de las láminas, narraciones, ambiente e icono son **provisionales** (ver inventario).
 - El bucle del ambiente es MP3: puede oírse un corte mínimo al repetirse.
-- El área de adultos se abre directamente desde el engranaje, como en los mockups; no hay barrera parental.
+- **Solo 3 de las 15 láminas del capítulo tienen ilustración.** Las otras 12 están registradas como pendientes y no se muestran.
+- Las curiosidades no tienen narración.
+- El área de adultos se abre directamente desde el engranaje, como en los mockups; el control de adultos protege solo «Aventuras».
 - En pantallas muy estrechas el título de la portada tapa parte de la ilustración.

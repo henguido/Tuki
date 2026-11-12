@@ -58,6 +58,8 @@ void main() {
     await deps.preferences.setLanguage('es');
     await deps.preferences.setNarrationEnabled(true);
     await deps.preferences.setAmbienceEnabled(true);
+    // La configuración inicial de edad se prueba en el host.
+    await deps.preferences.setAgeRange(null);
     await tester.pumpWidget(TukiApp(deps: deps));
     await settle(tester);
 
@@ -119,7 +121,7 @@ void main() {
     await tapScene(tester, const Offset(495, 560)); // vientre
     await waitFor(tester, find.text('Guardado'));
     await tester.tap(find.byKey(const ValueKey('editor-next')));
-    await waitFor(tester, find.text('El sendero'));
+    await waitFor(tester, find.text('El sendero del bosque'));
     await waitFor(tester, find.text('Volver a las láminas'));
     await tester.tap(find.byKey(const ValueKey('editor-next')));
     await settle(tester);
