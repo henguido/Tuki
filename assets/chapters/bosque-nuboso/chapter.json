@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "bosque-nuboso",
+  "cover": "cover.webp",
+  "title": {"es": "El bosque nuboso", "en": "The Cloud Forest"},
+  "intro": {
+    "es": "En este bosque, las nubes pasan entre los árboles. ¿Ves la rana entre las hojas?",
+    "en": "In this forest, clouds drift between the trees. Can you spot the frog among the leaves?"
+  },
+  "narration": {"es": "audio/intro_es.mp3", "en": "audio/intro_en.mp3"},
+  "ambience": "audio/bosque.mp3",
+  "pages": [
+    {
+      "id": "rana-en-la-hoja",
+      "difficulty": "easy",
+      "title": {"es": "La rana en la hoja", "en": "The Frog on the Leaf"},
+      "template": "pages/rana-en-la-hoja-v1.json"
+    },
+    {
+      "id": "quetzal",
+      "difficulty": "medium",
+      "title": {"es": "El quetzal", "en": "The Quetzal"},
+      "template": "pages/quetzal-v1.json"
+    },
+    {
+      "id": "sendero",
+      "difficulty": "detailed",
+      "title": {"es": "El sendero", "en": "The Forest Trail"},
+      "template": "pages/sendero-v1.json"
+    }
+  ]
+}

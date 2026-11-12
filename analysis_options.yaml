@@ -1,0 +1,14 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - lib/l10n/app_localizations*.dart
+    - "**/*.g.dart"
+    - android/**
+    - ios/**
+
+linter:
+  rules:
+    # Los parámetros con nombre no pueden inicializar campos privados.
+    prefer_initializing_formals: false

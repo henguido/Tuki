@@ -1,0 +1,48 @@
+name: tuki_little_adventures
+description: "TUKI — Little Adventures. Guía ilustrada para colorear la naturaleza de Costa Rica."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.3
+  # Persistencia de obras (SQLite).
+  drift: ^2.35.0
+  path_provider: ^2.1.6
+  path: ^1.9.1
+  # Preferencias de idioma y sonido.
+  shared_preferences: ^2.5.6
+  # Narración y ambiente locales, con interrupciones del sistema.
+  just_audio: ^0.10.6
+  audio_session: ^0.2.4
+  # Exportación PNG mediante diálogos del sistema (guardar / compartir).
+  file_picker: ^13.3.3
+  share_plus: ^13.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  drift_dev: ^2.35.0
+  build_runner: ^2.4.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/chapters/
+    - assets/chapters/bosque-nuboso/
+    - assets/chapters/bosque-nuboso/audio/
+    - assets/chapters/bosque-nuboso/pages/
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka-Variable.ttf

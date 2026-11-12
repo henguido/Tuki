@@ -1,0 +1,8 @@
+# 2026-11-12T14:06Z — Samsung SM-A325M (RF8R32GQWGL), Android 13 (API 33), dispositivo físico
+$ flutter test integration_test -d RF8R32GQWGL
+00:00 +0: loading F:/Tuki/integration_test/app_test.dart
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+00:00 +0: recorrido completo: escuchar, colorear, guardar y avanzar
+00:19 +1: tras reabrir la base: continuar, editar y exportar PNG
+00:23 +2: (tearDownAll)
+00:24 +2: All tests passed!
