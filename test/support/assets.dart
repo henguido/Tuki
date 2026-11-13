@@ -10,6 +10,15 @@ Future<String> readAssetFromDisk(String assetPath) =>
 
 CatalogRepository diskCatalog() => CatalogRepository(readAssetFromDisk);
 
+/// Catálogo con el capítulo de tres láminas v1 (ver `kChapterFixture`).
+CatalogRepository legacyCatalog() => CatalogRepository(
+  (path) => readAssetFromDisk(
+    path == 'assets/chapters/bosque-nuboso/chapter.json'
+        ? 'test/fixtures/chapter_tres_laminas.json'
+        : path,
+  ),
+);
+
 PageTemplate loadTemplateFile(String name) => PageTemplate.fromJson(
   jsonDecode(
     File('assets/chapters/bosque-nuboso/pages/$name').readAsStringSync(),

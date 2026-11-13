@@ -47,7 +47,7 @@ AssetStringLoader assetsWithPaidChapter() => assetsWith({
         'chapters': ['extra'],
       },
     ],
-  extraAsset: readJson(chapterAsset)
+  extraAsset: readJson(kChapterFixture)
     ..['id'] = 'extra'
     ..['title'] = {'es': 'La costa', 'en': 'The Coast'}
     ..['access'] = {'type': 'pack', 'productId': 'pack.extra'},
@@ -116,7 +116,7 @@ void main() {
     late Chapter forest;
 
     setUpAll(() async {
-      catalog = await diskCatalog().load();
+      catalog = await legacyCatalog().load();
       forest = catalog.chapterById(chapter)!;
     });
 
@@ -188,7 +188,7 @@ void main() {
     test(
       'un manifiesto anterior, sin niveles ni edades, sigue cargando',
       () async {
-        final legacy = readJson(chapterAsset)
+        final legacy = readJson(kChapterFixture)
           ..remove('contentVersion')
           ..remove('access');
         legacy['pages'] = [
@@ -228,7 +228,7 @@ void main() {
         'name': {'es': 'Experto', 'en': 'Expert'},
         'minAge': 10,
       });
-      final manifest = readJson(chapterAsset);
+      final manifest = readJson(kChapterFixture);
       (manifest['pages'] as List)
               .cast<Map<String, dynamic>>()
               .last['difficulty'] =
@@ -246,7 +246,7 @@ void main() {
         CatalogRepository(assetsWith(o)).load(),
         throwsA(isA<CatalogFormatException>()),
       );
-      final manifest = readJson(chapterAsset);
+      final manifest = readJson(kChapterFixture);
       (manifest['pages'] as List).cast<Map<String, dynamic>>()[1]['status'] =
           'borrador';
       await bad({chapterAsset: manifest});
@@ -274,7 +274,7 @@ void main() {
     late Chapter forest;
 
     setUpAll(() async {
-      catalog = await diskCatalog().load();
+      catalog = await legacyCatalog().load();
       forest = catalog.chapterById(chapter)!;
     });
 
@@ -707,7 +707,7 @@ void main() {
     testWidgets('con narración: Escuchar la reproduce y cerrar la libera', (
       tester,
     ) async {
-      final manifest = readJson(chapterAsset);
+      final manifest = readJson(kChapterFixture);
       (manifest['pages'] as List).cast<Map<String, dynamic>>().firstWhere(
         (p) => p['id'] == 'quetzal',
       )['funFactAudio'] = {
@@ -749,7 +749,7 @@ void main() {
     testWidgets('con la narración desactivada no hay botón de audio', (
       tester,
     ) async {
-      final manifest = readJson(chapterAsset);
+      final manifest = readJson(kChapterFixture);
       (manifest['pages'] as List)
           .cast<Map<String, dynamic>>()
           .first['funFactAudio'] = {

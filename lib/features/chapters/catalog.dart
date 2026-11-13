@@ -159,6 +159,8 @@ class CatalogPage {
     this.description,
     this.funFact,
     this.funFactAudioAssets = const {},
+    this.thumbnailAsset,
+    this.artId,
     this.minAgeOverride,
     this.maxAgeOverride,
     this.contentVersion = 1,
@@ -176,6 +178,13 @@ class CatalogPage {
 
   /// Narración de la curiosidad por idioma, si existe.
   final Map<String, String> funFactAudioAssets;
+
+  /// Miniatura PNG de la lámina en blanco. Sin ella, la miniatura se
+  /// dibuja a partir de la plantilla.
+  final String? thumbnailAsset;
+
+  /// Identificador de la ilustración de origen (p. ej. `E01`).
+  final String? artId;
 
   final int? minAgeOverride;
   final int? maxAgeOverride;
@@ -609,6 +618,10 @@ class CatalogRepository {
             for (final e in (funFactAudio ?? const {}).entries)
               e.key: resolve(asset, e.value),
           },
+          thumbnailAsset: raw['thumbnail'] == null
+              ? null
+              : resolve(asset, _req<String>(raw, 'thumbnail', where)),
+          artId: raw['artId'] is String ? raw['artId'] as String : null,
           minAgeOverride: minAge,
           maxAgeOverride: maxAge,
           contentVersion: _optVersion(raw, where),

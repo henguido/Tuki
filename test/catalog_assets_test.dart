@@ -65,7 +65,7 @@ void main() {
     late CatalogRepository repo;
 
     setUpAll(() async {
-      repo = diskCatalog();
+      repo = legacyCatalog();
       catalog = await repo.load();
     });
 

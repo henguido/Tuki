@@ -6,6 +6,7 @@ Capítulo **El bosque nuboso** con tres láminas editables (La rana en la hoja, 
 Estado: **desarrollo y QA local**. Publicación, compras, cuentas, analítica y servicios en línea pertenecen a otra etapa.
 
 - Niveles, edades, inventario de las 15 láminas, monetización futura y contenido: [docs/NIVELES.md](docs/NIVELES.md)
+- **Las 60 láminas** (conversión, matriz de aprobación, cambios por ilustración y pendientes): [docs/laminas/INFORME.md](docs/laminas/INFORME.md)
 - Matriz de aceptación y evidencia: [docs/ACEPTACION.md](docs/ACEPTACION.md)
 - Inventario de recursos (origen, licencia, estado): [docs/RECURSOS.md](docs/RECURSOS.md)
 
@@ -80,7 +81,7 @@ flutter pub get
 dart run build_runner build          # regenera lib/data/local/database.g.dart
 dart format lib test tool integration_test
 flutter analyze
-flutter test                         # 130 pruebas en el host
+flutter test                         # 199 pruebas en el host
 flutter test integration_test -d <id-del-dispositivo>
 flutter build apk --debug            # build/app/outputs/flutter-apk/app-debug.apk
 dart run tool/build_templates.dart   # regenera las plantillas (ver aviso abajo)
@@ -157,7 +158,7 @@ Al cambiar el esquema: sube `schemaVersion`, añade el paso en `onUpgrade`, vuel
 
 - Arte de las láminas, narraciones, ambiente e icono son **provisionales** (ver inventario).
 - El bucle del ambiente es MP3: puede oírse un corte mínimo al repetirse.
-- **Solo 3 de las 15 láminas del capítulo tienen ilustración.** Las otras 12 están registradas como pendientes y no se muestran.
+- El capítulo tiene 60 láminas (15 temas × 4 niveles) convertidas desde ilustraciones y verificadas con el motor del editor; solo 7 se han abierto en un dispositivo y ninguna tiene aprobación artística (ver `docs/laminas/INFORME.md`).
 - Las curiosidades no tienen narración.
 - El área de adultos se abre directamente desde el engranaje, como en los mockups; el control de adultos protege solo «Aventuras».
 - En pantallas muy estrechas el título de la portada tapa parte de la ilustración.

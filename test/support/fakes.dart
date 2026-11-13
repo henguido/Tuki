@@ -177,12 +177,22 @@ class FakeExportGateway implements ExportGateway {
   }
 }
 
+/// Capítulo de tres láminas dibujadas a mano (plantillas v1) con el que se
+/// escribieron las pruebas del motor y de la navegación. El catálogo real,
+/// con las 60 láminas, se prueba en `laminas_test.dart`.
+const String kChapterAsset = 'assets/chapters/bosque-nuboso/chapter.json';
+const String kChapterFixture = 'test/fixtures/chapter_tres_laminas.json';
+
 /// Lector de assets que resuelve en microtareas (apto para testWidgets).
-AssetStringLoader preloadedAssets() {
+/// Salvo que se pida [realCatalog], el capítulo es [kChapterFixture].
+AssetStringLoader preloadedAssets({bool realCatalog = false}) {
   final cache = <String, String>{};
   return (path) {
     try {
-      return Future.value(cache[path] ??= File(path).readAsStringSync());
+      final file = !realCatalog && path == kChapterAsset
+          ? kChapterFixture
+          : path;
+      return Future.value(cache[path] ??= File(file).readAsStringSync());
     } catch (e) {
       return Future.error(e);
     }

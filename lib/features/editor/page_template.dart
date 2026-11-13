@@ -24,14 +24,22 @@ class TemplateOutline {
   final double width;
 }
 
+/// Tinta de una lámina vectorizada desde un dibujo: formas negras cerradas
+/// (líneas con su grosor real) que se pintan encima de todo.
+class TemplateInk {
+  TemplateInk(this.path);
+  final ui.Path path;
+}
+
 /// Plantilla de una lámina: regiones coloreables (de fondo a frente) y
-/// contornos que se dibujan siempre encima.
+/// contornos o tinta que se dibujan siempre encima.
 class PageTemplate {
   PageTemplate({
     required this.revision,
     required this.viewBox,
     required this.regions,
     required this.outlines,
+    this.inks = const [],
   });
 
   static const int supportedSchemaVersion = 1;
@@ -40,6 +48,7 @@ class PageTemplate {
   final ui.Rect viewBox;
   final List<TemplateRegion> regions;
   final List<TemplateOutline> outlines;
+  final List<TemplateInk> inks;
 
   /// Región visible superior que contiene [scenePoint], o `null`.
   String? regionAt(ui.Offset scenePoint) {
@@ -156,11 +165,34 @@ class PageTemplate {
       }
     }
 
+    // `inks` es opcional: las plantillas dibujadas a mano no lo usan.
+    final inks = <TemplateInk>[];
+    final rawInks = json['inks'];
+    if (rawInks != null && rawInks is! List) {
+      throw TemplateFormatException('inks debe ser una lista');
+    }
+    for (final raw in (rawInks as List<dynamic>? ?? const [])) {
+      final m = (raw as Map).cast<String, dynamic>();
+      final SvgPathData data;
+      try {
+        data = SvgPathData.parse(req<String>(m, 'path', 'tinta'));
+      } on SvgPathFormatException catch (e) {
+        throw TemplateFormatException('Tinta: ${e.message}');
+      }
+      if (!data.everySubpathClosed) {
+        throw TemplateFormatException(
+          'Tinta: cada subtrazado debe cerrarse con Z',
+        );
+      }
+      inks.add(TemplateInk(data.toPath()));
+    }
+
     return PageTemplate(
       revision: revision,
       viewBox: ui.Rect.fromLTWH(x, y, w, h),
       regions: regions,
       outlines: outlines,
+      inks: inks,
     );
   }
 }

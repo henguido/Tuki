@@ -53,6 +53,15 @@ abstract final class DrawingRenderer {
       stroke.strokeWidth = outline.width;
       canvas.drawPath(outline.path, stroke);
     }
+    if (template.inks.isNotEmpty) {
+      final ink = Paint()
+        ..style = PaintingStyle.fill
+        ..isAntiAlias = true
+        ..color = outlineColor;
+      for (final shape in template.inks) {
+        canvas.drawPath(shape.path, ink);
+      }
+    }
     canvas.restore();
   }
 

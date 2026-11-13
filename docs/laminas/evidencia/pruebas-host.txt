@@ -1,0 +1,204 @@
+# 2026-11-13T06:25Z — Windows 11, Flutter 3.47.4 — rama feature/laminas-60
+$ flutter analyze
+No issues found! (ran in 12.6s)
+$ flutter test --reporter expanded
++0: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++1: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++2: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++3: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++4: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++5: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++6: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++7: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++8: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++9: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++10: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++11: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++12: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++13: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++14: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++15: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++16: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++17: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++18: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++19: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++20: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++21: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++22: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++23: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++24: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++25: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++26: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++27: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++28: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++29: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++30: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++31: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++32: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++33: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++34: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++35: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++36: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++37: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++38: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++39: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++40: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++41: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++42: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++43: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++44: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++45: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++46: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++47: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++48: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++49: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++50: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++51: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++52: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++53: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++54: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++55: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++56: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++57: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++58: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++59: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++60: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++61: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++62: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++63: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++64: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++65: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++66: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++67: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++68: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++69: F:/Tuki-laminas-60/test/app_flow_test.dart: A01: primera apertura sin datos ni red
++70: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++71: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++72: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++73: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++74: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++75: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++76: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++77: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++78: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++79: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++80: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++81: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++82: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++83: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++84: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++85: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++86: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++87: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++88: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++89: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++90: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++91: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++92: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++93: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++94: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++95: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++96: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++97: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++98: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++99: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++100: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++101: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++102: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++103: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++104: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++105: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++106: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++107: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++108: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++109: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++110: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++111: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++112: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++113: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++114: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++115: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++116: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++117: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++118: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++119: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++120: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++121: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++122: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++123: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++124: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++125: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++126: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++127: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++128: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++129: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++130: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++131: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++132: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++133: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++134: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++135: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++136: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++137: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++138: F:/Tuki-laminas-60/test/laminas_app_test.dart: cada nivel ofrece sus 15 láminas, con miniatura
++139: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++140: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++141: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++142: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++143: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++144: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++145: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++146: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++147: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++148: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++149: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++150: F:/Tuki-laminas-60/test/app_flow_test.dart: A07: rana → quetzal → sendero y regreso desde cada origen
++151: F:/Tuki-laminas-60/test/laminas_app_test.dart: lámina horizontal D08 en teléfono vertical: sin deformar ni desbordar
++152: F:/Tuki-laminas-60/test/levels_test.dart: Elige una lámina filtros Todas | Fácil | Medio | Detallado | Avanzado
++153: F:/Tuki-laminas-60/test/levels_test.dart: Elige una lámina filtros Todas | Fácil | Medio | Detallado | Avanzado
++154: F:/Tuki-laminas-60/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++155: F:/Tuki-laminas-60/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++156: F:/Tuki-laminas-60/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++157: F:/Tuki-laminas-60/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++158: F:/Tuki-laminas-60/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++159: F:/Tuki-laminas-60/test/app_flow_test.dart: A06: error de escritura ofrece Reintentar y conserva la obra
++160: F:/Tuki-laminas-60/test/laminas_app_test.dart: lámina horizontal D08 en teléfono pequeño: sin deformar ni desbordar
++161: F:/Tuki-laminas-60/test/levels_test.dart: Elige una lámina las obras guardadas antes siguen ahí y marcan progreso
++162: F:/Tuki-laminas-60/test/levels_test.dart: Elige una lámina las obras guardadas antes siguen ahí y marcan progreso
++163: F:/Tuki-laminas-60/test/app_flow_test.dart: un error de lectura no abre un lienzo en blanco
++164: F:/Tuki-laminas-60/test/app_flow_test.dart: un error de lectura no abre un lienzo en blanco
++165: F:/Tuki-laminas-60/test/app_flow_test.dart: un error de lectura no abre un lienzo en blanco
++166: F:/Tuki-laminas-60/test/laminas_app_test.dart: lámina horizontal D08 en teléfono horizontal: sin deformar ni desbordar
++167: F:/Tuki-laminas-60/test/laminas_app_test.dart: lámina horizontal D08 en teléfono horizontal: sin deformar ni desbordar
++168: F:/Tuki-laminas-60/test/laminas_app_test.dart: lámina horizontal D08 en teléfono horizontal: sin deformar ni desbordar
++169: F:/Tuki-laminas-60/test/levels_test.dart: área de adultos: edad sugerida se cambia y se guarda al momento
++170: F:/Tuki-laminas-60/test/app_flow_test.dart: A08: el idioma cambia interfaz, contenido y pista, y persiste
++171: F:/Tuki-laminas-60/test/app_flow_test.dart: A08: el idioma cambia interfaz, contenido y pista, y persiste
++172: F:/Tuki-laminas-60/test/app_flow_test.dart: A08: el idioma cambia interfaz, contenido y pista, y persiste
++173: F:/Tuki-laminas-60/test/levels_test.dart: editor según el nivel de la lámina fácil: paleta corta ampliable; medio: paleta completa
++174: F:/Tuki-laminas-60/test/laminas_app_test.dart: pintar, deshacer, salir y retomar una lámina avanzada
++175: F:/Tuki-laminas-60/test/laminas_app_test.dart: pintar, deshacer, salir y retomar una lámina avanzada
++176: F:/Tuki-laminas-60/test/levels_test.dart: curiosidades se abre a petición, en el idioma activo y sin audio
++177: F:/Tuki-laminas-60/test/levels_test.dart: curiosidades se abre a petición, en el idioma activo y sin audio
++178: F:/Tuki-laminas-60/test/levels_test.dart: curiosidades se abre a petición, en el idioma activo y sin audio
++179: F:/Tuki-laminas-60/test/app_flow_test.dart: A04: zoom con dos dedos, rotación y toque en el punto exacto
++180: F:/Tuki-laminas-60/test/app_flow_test.dart: A04: zoom con dos dedos, rotación y toque en el punto exacto
++181: F:/Tuki-laminas-60/test/app_flow_test.dart: A04: zoom con dos dedos, rotación y toque en el punto exacto
++182: F:/Tuki-laminas-60/test/levels_test.dart: curiosidades con la narración desactivada no hay botón de audio
++183: F:/Tuki-laminas-60/test/levels_test.dart: curiosidades con la narración desactivada no hay botón de audio
++184: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad teléfono: herramientas y paleta bajo el lienzo
++185: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad teléfono: herramientas y paleta bajo el lienzo
++186: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad teléfono: herramientas y paleta bajo el lienzo
++187: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad teléfono: herramientas y paleta bajo el lienzo
++188: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad teléfono: herramientas y paleta bajo el lienzo
++189: F:/Tuki-laminas-60/test/levels_test.dart: control de adultos y área comercial Aventuras solo se abre con la respuesta correcta
++190: F:/Tuki-laminas-60/test/levels_test.dart: control de adultos y área comercial Aventuras solo se abre con la respuesta correcta
++191: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad texto ampliado ×2 en teléfono pequeño: sin desbordes y con lienzo útil
++192: F:/Tuki-laminas-60/test/levels_test.dart: control de adultos y área comercial capítulo de pago: Inicio lleva al control, no al contenido
++193: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++194: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++195: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++196: F:/Tuki-laminas-60/test/app_flow_test.dart: A10: adaptación y accesibilidad áreas táctiles de 48 dp y etiquetas para lector de pantalla
++197: F:/Tuki-laminas-60/test/levels_test.dart: sin publicidad ni rastreo el código de la app no contiene direcciones web
++198: F:/Tuki-laminas-60/test/app_flow_test.dart: A09: exportar desde el área de adultos y cancelar después
++199: All tests passed!
