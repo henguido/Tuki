@@ -1,0 +1,61 @@
+﻿id,pagina,nivel,orientacion,zonas_originales,regiones,brillos_exentos,multiparte,min_dp_360,kb,prueba_carga,prueba_regiones,prueba_relleno_individual,prueba_sin_fugas,prueba_deshacer,prueba_guardado,prueba_zoom_y_orientacion,prueba_tacto_del_nivel,motor,dispositivo,notas
+E01,rana-en-la-hoja,Fácil,vertical,13,11,2,1,22.3,13,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,rendimiento + pintada a mano,9 regiones: por debajo de la guía del nivel (15–30).
+E02,e02-mariposa,Fácil,vertical,22,19,0,1,29.3,14,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,prueba de integración,
+E03,e03-colibri,Fácil,vertical,18,13,0,3,21.7,14,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,13 regiones: por debajo de la guía del nivel (15–30).
+E04,e04-tucan,Fácil,vertical,34,25,0,5,21.5,19,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+E05,e05-flor-tropical,Fácil,vertical,14,8,0,2,46.5,10,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,8 regiones: por debajo de la guía del nivel (15–30).
+E06,e06-quetzal,Fácil,vertical,23,14,0,3,20.4,14,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,Pico retocado para que se lea como quetzal; pendiente de aprobación artística. 14 regiones: por debajo de la guía del nivel (15–30).
+E07,e07-perezoso,Fácil,vertical,29,16,0,4,20.4,17,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+E08,e08-mono,Fácil,vertical,36,20,0,7,20.5,22,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+E09,e09-coati,Fácil,vertical,44,27,0,8,20.0,24,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+E10,e10-helechos,Fácil,vertical,15,8,0,3,26.2,16,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,8 regiones: por debajo de la guía del nivel (15–30).
+E11,e11-orquideas,Fácil,vertical,13,12,0,1,30.3,11,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,12 regiones: por debajo de la guía del nivel (15–30).
+E12,e12-ranas-del-bosque,Fácil,vertical,53,17,2,8,21.1,30,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+E13,e13-arbol-gigante,Fácil,vertical,28,14,0,3,20.0,19,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,14 regiones: por debajo de la guía del nivel (15–30).
+E14,e14-cascada,Fácil,vertical,15,11,0,2,29.3,13,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,11 regiones: por debajo de la guía del nivel (15–30).
+E15,e15-sendero,Fácil,vertical,20,16,0,2,21.4,16,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M01,m01-rana-en-la-hoja,Medio,vertical,89,28,4,12,14.5,37,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,24 regiones: por debajo de la guía del nivel (30–55).
+M02,m02-mariposa,Medio,vertical,44,32,0,4,15.8,27,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M03,m03-colibri,Medio,vertical,25,21,0,2,17.1,18,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,21 regiones: por debajo de la guía del nivel (30–55).
+M04,m04-tucan,Medio,vertical,35,29,0,2,15.2,21,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,29 regiones: por debajo de la guía del nivel (30–55).
+M05,m05-flor-tropical,Medio,horizontal,18,10,0,3,22.8,15,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,10 regiones: por debajo de la guía del nivel (30–55).
+M06,quetzal,Medio,vertical,114,51,0,22,14.4,43,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,rendimiento,
+M07,m07-perezoso,Medio,vertical,62,31,0,11,16.3,30,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M08,m08-mono,Medio,vertical,79,39,1,13,14.5,38,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M09,m09-coati,Medio,vertical,69,38,0,8,14.5,34,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M10,m10-helechos,Medio,vertical,80,43,0,12,14.7,34,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M11,m11-orquideas,Medio,vertical,43,30,0,5,16.1,22,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M12,m12-ranas-del-bosque,Medio,vertical,54,37,1,11,14.6,29,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M13,m13-arbol-gigante,Medio,vertical,56,20,0,9,14.8,32,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,20 regiones: por debajo de la guía del nivel (30–55).
+M14,m14-cascada,Medio,vertical,56,36,0,12,15.5,28,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+M15,m15-sendero,Medio,vertical,63,38,0,13,15.2,33,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D01,d01-rana-en-la-hoja,Detallado,horizontal,131,78,2,19,9.3,50,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D02,d02-mariposa,Detallado,vertical,36,33,0,2,12.2,20,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,Dibujo más sencillo de lo que corresponde a Detallado. 33 regiones: por debajo de la guía del nivel (55–90).
+D03,d03-colibri,Detallado,horizontal,121,76,1,25,9.4,45,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D04,d04-tucan,Detallado,horizontal,138,91,1,25,9.3,50,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D05,d05-flor-tropical,Detallado,vertical,106,57,0,24,10.3,46,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D06,d06-quetzal,Detallado,vertical,137,78,0,30,10.1,55,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D07,d07-perezoso,Detallado,horizontal,111,54,0,22,9.2,40,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,54 regiones: por debajo de la guía del nivel (55–90).
+D08,d08-mono,Detallado,horizontal,101,79,1,14,6.7,40,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D09,d09-coati,Detallado,horizontal,166,94,0,23,6.9,51,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,94 regiones: por encima de la guía del nivel (55–90).
+D10,d10-helechos,Detallado,horizontal,157,90,0,30,6.7,63,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D11,d11-orquideas,Detallado,vertical,164,95,0,30,10.1,56,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,95 regiones: por encima de la guía del nivel (55–90).
+D12,d12-ranas-del-bosque,Detallado,horizontal,121,77,3,22,6.8,43,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+D13,d13-arbol-gigante,Detallado,vertical,195,78,0,33,10.1,61,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,Incluye puerta de fantasía y animales secundarios (decisión de arte).
+D14,d14-cascada,Detallado,horizontal,188,95,0,35,6.8,56,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,rendimiento,95 regiones: por encima de la guía del nivel (55–90).
+D15,sendero,Detallado,vertical,85,59,0,12,10.2,39,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A01,a01-rana-en-la-hoja,Avanzado,horizontal,194,117,4,34,6.6,67,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A02,a02-mariposa,Avanzado,vertical,329,141,1,68,7.3,87,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A03,a03-colibri,Avanzado,vertical,455,142,2,91,7.3,103,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A04,a04-tucan,Avanzado,vertical,510,142,2,93,7.3,103,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A05,a05-flor-tropical,Avanzado,vertical,315,142,2,58,7.2,86,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A06,a06-quetzal,Avanzado,vertical,362,141,1,73,7.3,90,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A07,a07-perezoso,Avanzado,vertical,431,142,2,92,7.2,91,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A08,a08-mono,Avanzado,vertical,735,142,2,102,7.2,144,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pintada a mano,
+A09,a09-coati,Avanzado,vertical,915,142,2,109,7.2,157,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A10,a10-helechos,Avanzado,vertical,816,140,0,102,7.2,165,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,rendimiento + pintada a mano,
+A11,a11-orquideas,Avanzado,vertical,648,140,0,99,7.2,139,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A12,a12-ranas-del-bosque,Avanzado,vertical,474,143,3,97,7.3,109,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,
+A13,a13-arbol-gigante,Avanzado,vertical,1155,140,0,114,7.2,181,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,rendimiento,
+A14,a14-cascada,Avanzado,vertical,343,140,0,65,7.2,91,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,Incluye animales secundarios (decisión de arte).
+A15,a15-sendero,Avanzado,vertical,669,142,2,99,7.2,128,ok,ok,ok,ok,ok,ok,ok,ok,aprobada,pendiente,Incluye animales secundarios (decisión de arte).

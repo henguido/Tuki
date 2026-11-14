@@ -82,7 +82,16 @@ class _DrawingPreviewState extends State<DrawingPreview> {
   Future<PageTemplate>? _future;
   CatalogRepository? _repo;
 
+  /// Una lámina sin pintar con miniatura propia no necesita cargar la
+  /// plantilla: en una lista de 60 tarjetas eso ahorra leer 60 JSON.
+  bool get _usesThumbnail =>
+      widget.drawing == null && widget.page.thumbnailAsset != null;
+
   void _resolve() {
+    if (_usesThumbnail) {
+      _future = null;
+      return;
+    }
     _future = _repo!.loadTemplate(
       widget.page,
       revision: widget.drawing?.templateRevision,
@@ -103,6 +112,7 @@ class _DrawingPreviewState extends State<DrawingPreview> {
   void didUpdateWidget(DrawingPreview old) {
     super.didUpdateWidget(old);
     if (old.page.id != widget.page.id ||
+        (old.drawing == null) != (widget.drawing == null) ||
         old.drawing?.templateRevision != widget.drawing?.templateRevision) {
       _resolve();
     }
@@ -110,6 +120,18 @@ class _DrawingPreviewState extends State<DrawingPreview> {
 
   @override
   Widget build(BuildContext context) {
+    if (_usesThumbnail) {
+      return Image.asset(
+        widget.page.thumbnailAsset!,
+        fit: BoxFit.contain,
+        excludeFromSemantics: true,
+        errorBuilder: (_, _, _) => const Icon(
+          Icons.image_not_supported_outlined,
+          color: TukiColors.turquoise,
+          size: 36,
+        ),
+      );
+    }
     return FutureBuilder<PageTemplate>(
       future: _future,
       builder: (context, snapshot) {

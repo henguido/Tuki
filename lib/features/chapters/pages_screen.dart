@@ -78,40 +78,56 @@ class _PagesScreenState extends State<PagesScreen> {
                   // ampliado en un teléfono pequeño todo sigue al alcance.
                   Expanded(
                     child: DrawingsBuilder(
-                      builder: (context, drawings) => ListView(
-                        padding: const EdgeInsets.only(bottom: 16, top: 6),
-                        children: [
-                          Semantics(
-                            header: true,
-                            child: Text(
-                              l.choosePage,
-                              style: tukiText(28, weight: 700),
+                      builder: (context, drawings) => CustomScrollView(
+                        slivers: [
+                          SliverPadding(
+                            padding: const EdgeInsets.only(top: 6),
+                            sliver: SliverList.list(
+                              children: [
+                                Semantics(
+                                  header: true,
+                                  child: Text(
+                                    l.choosePage,
+                                    style: tukiText(28, weight: 700),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                _FilterBar(
+                                  levels: deps.catalog.levels,
+                                  selected: _filter,
+                                  onSelected: (id) =>
+                                      setState(() => _filter = id),
+                                ),
+                                const SizedBox(height: 10),
+                                if (pages.isEmpty)
+                                  _EmptyLevel(
+                                    onShowAll: () =>
+                                        setState(() => _filter = null),
+                                  ),
+                              ],
                             ),
                           ),
-                          const SizedBox(height: 8),
-                          _FilterBar(
-                            levels: deps.catalog.levels,
-                            selected: _filter,
-                            onSelected: (id) => setState(() => _filter = id),
+                          // Con 60 láminas las tarjetas se construyen al
+                          // desplazarse, no todas de una vez.
+                          SliverPadding(
+                            padding: const EdgeInsets.only(bottom: 16),
+                            sliver: SliverList.builder(
+                              itemCount: pages.length,
+                              itemBuilder: (context, i) => Padding(
+                                padding: const EdgeInsets.only(bottom: 12),
+                                child: _PageCard(
+                                  chapterId: widget.chapterId,
+                                  page: pages[i],
+                                  drawing: _drawingOf(drawings, pages[i]),
+                                  // La marca distingue láminas solo cuando
+                                  // se ven todos los niveles.
+                                  recommended:
+                                      _filter == null &&
+                                      recommender.isRecommended(pages[i]),
+                                ),
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 10),
-                          if (pages.isEmpty)
-                            _EmptyLevel(
-                              onShowAll: () => setState(() => _filter = null),
-                            ),
-                          for (final page in pages) ...[
-                            _PageCard(
-                              chapterId: widget.chapterId,
-                              page: page,
-                              drawing: _drawingOf(drawings, page),
-                              // La marca distingue láminas solo cuando se
-                              // ven todos los niveles.
-                              recommended:
-                                  _filter == null &&
-                                  recommender.isRecommended(page),
-                            ),
-                            const SizedBox(height: 12),
-                          ],
                         ],
                       ),
                     ),

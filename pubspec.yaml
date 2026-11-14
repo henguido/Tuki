@@ -44,6 +44,7 @@ flutter:
     - assets/chapters/bosque-nuboso/
     - assets/chapters/bosque-nuboso/audio/
     - assets/chapters/bosque-nuboso/pages/
+    - assets/chapters/bosque-nuboso/thumbs/
   fonts:
     - family: Fredoka
       fonts:

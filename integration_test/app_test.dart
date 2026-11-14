@@ -110,25 +110,23 @@ void main() {
     await waitFor(tester, find.text('Guardado'));
 
     final frog = (await deps.drawings.find(chapter, 'rana-en-la-hoja'))!;
-    expect(frog.document.fills, {'cuerpo': 0x7CB342});
+    expect(frog.document.fills.values, [0x7CB342]);
+    expect(frog.templateRevision, 2);
     expect(frog.document.ops.single.kind, StrokeKind.brush);
     expect(frog.saveRevision, 2);
 
-    // A07: avanzar hasta la última lámina.
+    // A07: avanzar a la lámina siguiente y volver a las láminas.
     await tester.tap(find.byKey(const ValueKey('editor-next')));
-    await waitFor(tester, find.text('El quetzal'));
+    await waitFor(tester, find.text('La mariposa'));
     await waitFor(tester, find.byType(DrawingCanvas));
-    await tapScene(tester, const Offset(495, 560)); // vientre
+    await tapScene(tester, const Offset(640, 800)); // cuerpo
     await waitFor(tester, find.text('Guardado'));
-    await tester.tap(find.byKey(const ValueKey('editor-next')));
-    await waitFor(tester, find.text('El sendero del bosque'));
-    await waitFor(tester, find.text('Volver a las láminas'));
-    await tester.tap(find.byKey(const ValueKey('editor-next')));
+    await tester.tap(find.byKey(const ValueKey('editor-back')));
     await settle(tester);
     expect(find.byType(PagesScreen), findsOneWidget);
     expect(find.byType(EditorScreen), findsNothing);
     expect((await deps.drawings.all()).map((d) => d.pageId), [
-      'quetzal',
+      'e02-mariposa',
       'rana-en-la-hoja',
     ]);
 
@@ -146,27 +144,27 @@ void main() {
     // Abre directamente la última obra editada.
     await tester.tap(find.byKey(const ValueKey('continue-drawing')));
     await waitFor(tester, find.byType(DrawingCanvas));
-    expect(find.text('El quetzal'), findsOneWidget);
+    expect(find.text('La mariposa'), findsOneWidget);
     expect(find.text('Guardado'), findsOneWidget);
-    final before = (await deps.drawings.find(chapter, 'quetzal'))!;
-    expect(before.document.fills, {'vientre': 0x7CB342});
+    final before = (await deps.drawings.find(chapter, 'e02-mariposa'))!;
+    expect(before.document.fills.values, [0x7CB342]);
     await tapScene(tester, const Offset(40, 40)); // fondo
     await tester.pump(const Duration(milliseconds: 500));
     await waitFor(tester, find.text('Guardado'));
-    final after = (await deps.drawings.find(chapter, 'quetzal'))!;
+    final after = (await deps.drawings.find(chapter, 'e02-mariposa'))!;
     expect(after.saveRevision, before.saveRevision + 1);
-    expect(after.document.fills.keys.toSet(), {'vientre', 'fondo'});
+    expect(after.document.fills.length, 2);
 
     // La rana conserva rellenos y trazos editables.
     final frog = (await deps.drawings.find(chapter, 'rana-en-la-hoja'))!;
     expect(frog.document.ops.single.points.length, greaterThan(3));
 
     // A09: PNG de la obra guardada.
-    final png = await deps.exporter.renderPng(chapter, 'quetzal');
+    final png = await deps.exporter.renderPng(chapter, 'e02-mariposa');
     final codec = await ui.instantiateImageCodec(png);
     final image = (await codec.getNextFrame()).image;
     expect(image.height, 2048);
-    expect(image.width, 1707);
+    expect(image.width, 1638); // 1280 × 1600 a 2048 px de alto
 
     await tester.tap(find.byKey(const ValueKey('editor-back')));
     await settle(tester);

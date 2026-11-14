@@ -1,61 +1,137 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 2,
+  "contentVersion": 3,
   "id": "bosque-nuboso",
-  "access": {"type": "free"},
+  "access": {
+    "type": "free"
+  },
   "cover": "cover.webp",
-  "title": {"es": "El bosque nuboso", "en": "The Cloud Forest"},
+  "title": {
+    "es": "El bosque nuboso",
+    "en": "The Cloud Forest"
+  },
   "intro": {
     "es": "En este bosque, las nubes pasan entre los árboles. ¿Ves la rana entre las hojas?",
     "en": "In this forest, clouds drift between the trees. Can you spot the frog among the leaves?"
   },
-  "narration": {"es": "audio/intro_es.mp3", "en": "audio/intro_en.mp3"},
+  "narration": {
+    "es": "audio/intro_es.mp3",
+    "en": "audio/intro_en.mp3"
+  },
   "ambience": "audio/bosque.mp3",
   "pages": [
     {
       "id": "rana-en-la-hoja",
+      "artId": "E01",
       "difficulty": "easy",
-      "contentVersion": 2,
-      "title": {"es": "La rana en la hoja", "en": "The Frog on the Leaf"},
+      "contentVersion": 3,
+      "title": {
+        "es": "La rana en la hoja",
+        "en": "The Frog on the Leaf"
+      },
       "description": {
-        "es": "Una rana grande descansa sobre una hoja.",
-        "en": "A big frog rests on a leaf."
+        "es": "Una rana descansa sobre una hoja.",
+        "en": "A frog rests on a leaf."
       },
       "funFact": {
         "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
         "en": "Many forest frogs sleep on leaves during the day and come out at night."
       },
-      "template": "pages/rana-en-la-hoja-v1.json"
+      "template": "pages/rana-en-la-hoja-v2.json",
+      "thumbnail": "thumbs/rana-en-la-hoja.png",
+      "previousTemplates": {
+        "1": "pages/rana-en-la-hoja-v1.json"
+      }
     },
     {
-      "id": "mariposa",
+      "id": "e02-mariposa",
+      "artId": "E02",
       "difficulty": "easy",
-      "status": "planned",
-      "title": {"es": "La mariposa", "en": "The Butterfly"}
+      "contentVersion": 3,
+      "title": {
+        "es": "La mariposa",
+        "en": "The Butterfly"
+      },
+      "description": {
+        "es": "Una mariposa con las alas abiertas.",
+        "en": "A butterfly with its wings open."
+      },
+      "funFact": {
+        "es": "Las mariposas sienten el sabor con las patas.",
+        "en": "Butterflies taste with their feet."
+      },
+      "template": "pages/e02-mariposa-v1.json",
+      "thumbnail": "thumbs/e02-mariposa.png"
     },
     {
-      "id": "colibri",
+      "id": "e03-colibri",
+      "artId": "E03",
       "difficulty": "easy",
-      "status": "planned",
-      "title": {"es": "El colibrí", "en": "The Hummingbird"}
+      "contentVersion": 3,
+      "title": {
+        "es": "El colibrí",
+        "en": "The Hummingbird"
+      },
+      "description": {
+        "es": "Un colibrí vuela junto a una flor.",
+        "en": "A hummingbird flies next to a flower."
+      },
+      "funFact": {
+        "es": "El colibrí puede volar hacia atrás.",
+        "en": "A hummingbird can fly backwards."
+      },
+      "template": "pages/e03-colibri-v1.json",
+      "thumbnail": "thumbs/e03-colibri.png"
     },
     {
-      "id": "tucan",
+      "id": "e04-tucan",
+      "artId": "E04",
       "difficulty": "easy",
-      "status": "planned",
-      "title": {"es": "El tucán", "en": "The Toucan"}
+      "contentVersion": 3,
+      "title": {
+        "es": "El tucán",
+        "en": "The Toucan"
+      },
+      "description": {
+        "es": "Un tucán posado en una rama.",
+        "en": "A toucan perched on a branch."
+      },
+      "funFact": {
+        "es": "El pico del tucán es muy grande, pero pesa poco.",
+        "en": "A toucan's beak is very big, but it is light."
+      },
+      "template": "pages/e04-tucan-v1.json",
+      "thumbnail": "thumbs/e04-tucan.png"
     },
     {
-      "id": "flor-tropical",
+      "id": "e05-flor-tropical",
+      "artId": "E05",
       "difficulty": "easy",
-      "status": "planned",
-      "title": {"es": "La flor tropical", "en": "The Tropical Flower"}
+      "contentVersion": 3,
+      "title": {
+        "es": "La flor tropical",
+        "en": "The Tropical Flower"
+      },
+      "description": {
+        "es": "Una flor de hibisco con sus hojas.",
+        "en": "A hibiscus flower with its leaves."
+      },
+      "funFact": {
+        "es": "Muchas flores de hibisco duran abiertas un solo día.",
+        "en": "Many hibiscus flowers stay open for just one day."
+      },
+      "template": "pages/e05-flor-tropical-v1.json",
+      "thumbnail": "thumbs/e05-flor-tropical.png"
     },
     {
-      "id": "quetzal",
-      "difficulty": "medium",
-      "contentVersion": 2,
-      "title": {"es": "El quetzal", "en": "The Quetzal"},
+      "id": "e06-quetzal",
+      "artId": "E06",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "El quetzal",
+        "en": "The Quetzal"
+      },
       "description": {
         "es": "Un quetzal posado en una rama, con su cola larga.",
         "en": "A quetzal perched on a branch, with its long tail."
@@ -64,61 +140,178 @@
         "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
         "en": "The quetzal lives in humid forests and has very long tail feathers."
       },
-      "template": "pages/quetzal-v1.json"
+      "template": "pages/e06-quetzal-v1.json",
+      "thumbnail": "thumbs/e06-quetzal.png"
     },
     {
-      "id": "perezoso",
-      "difficulty": "medium",
-      "status": "planned",
-      "title": {"es": "El perezoso", "en": "The Sloth"}
+      "id": "e07-perezoso",
+      "artId": "E07",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "El perezoso",
+        "en": "The Sloth"
+      },
+      "description": {
+        "es": "Un perezoso cuelga de una rama.",
+        "en": "A sloth hangs from a branch."
+      },
+      "funFact": {
+        "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
+        "en": "The sloth moves very slowly and spends almost all its life in the trees."
+      },
+      "template": "pages/e07-perezoso-v1.json",
+      "thumbnail": "thumbs/e07-perezoso.png"
     },
     {
-      "id": "mono",
-      "difficulty": "medium",
-      "status": "planned",
-      "title": {"es": "El mono", "en": "The Monkey"}
+      "id": "e08-mono",
+      "artId": "E08",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "El mono",
+        "en": "The Monkey"
+      },
+      "description": {
+        "es": "Un mono juega entre las ramas.",
+        "en": "A monkey plays among the branches."
+      },
+      "funFact": {
+        "es": "Algunos monos usan la cola para sujetarse a las ramas.",
+        "en": "Some monkeys use their tails to hold on to branches."
+      },
+      "template": "pages/e08-mono-v1.json",
+      "thumbnail": "thumbs/e08-mono.png"
     },
     {
-      "id": "coati",
-      "difficulty": "medium",
-      "status": "planned",
-      "title": {"es": "El coatí", "en": "The Coati"}
+      "id": "e09-coati",
+      "artId": "E09",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "El coatí",
+        "en": "The Coati"
+      },
+      "description": {
+        "es": "Un coatí camina por el bosque.",
+        "en": "A coati walks through the forest."
+      },
+      "funFact": {
+        "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
+        "en": "The coati looks for food with its long snout and walks with its tail up."
+      },
+      "template": "pages/e09-coati-v1.json",
+      "thumbnail": "thumbs/e09-coati.png"
     },
     {
-      "id": "helechos",
-      "difficulty": "medium",
-      "status": "planned",
-      "title": {"es": "Los helechos", "en": "The Ferns"}
+      "id": "e10-helechos",
+      "artId": "E10",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "Los helechos",
+        "en": "The Ferns"
+      },
+      "description": {
+        "es": "Helechos del bosque.",
+        "en": "Forest ferns."
+      },
+      "funFact": {
+        "es": "Las hojas nuevas de los helechos nacen enrolladas.",
+        "en": "New fern leaves start out curled up."
+      },
+      "template": "pages/e10-helechos-v1.json",
+      "thumbnail": "thumbs/e10-helechos.png"
     },
     {
-      "id": "orquideas",
-      "difficulty": "detailed",
-      "status": "planned",
-      "title": {"es": "Las orquídeas", "en": "The Orchids"}
+      "id": "e11-orquideas",
+      "artId": "E11",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las orquídeas",
+        "en": "The Orchids"
+      },
+      "description": {
+        "es": "Orquídeas en flor.",
+        "en": "Orchids in bloom."
+      },
+      "funFact": {
+        "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
+        "en": "Many orchids grow on trees without harming them."
+      },
+      "template": "pages/e11-orquideas-v1.json",
+      "thumbnail": "thumbs/e11-orquideas.png"
     },
     {
-      "id": "ranas-del-bosque",
-      "difficulty": "detailed",
-      "status": "planned",
-      "title": {"es": "Las ranas del bosque", "en": "The Forest Frogs"}
+      "id": "e12-ranas-del-bosque",
+      "artId": "E12",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las ranas del bosque",
+        "en": "The Forest Frogs"
+      },
+      "description": {
+        "es": "Ranas entre las hojas.",
+        "en": "Frogs among the leaves."
+      },
+      "funFact": {
+        "es": "Las ranas absorben agua a través de la piel.",
+        "en": "Frogs take in water through their skin."
+      },
+      "template": "pages/e12-ranas-del-bosque-v1.json",
+      "thumbnail": "thumbs/e12-ranas-del-bosque.png"
     },
     {
-      "id": "arbol-gigante",
-      "difficulty": "detailed",
-      "status": "planned",
-      "title": {"es": "El árbol gigante", "en": "The Giant Tree"}
+      "id": "e13-arbol-gigante",
+      "artId": "E13",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "El árbol gigante",
+        "en": "The Giant Tree"
+      },
+      "description": {
+        "es": "Un árbol grande del bosque.",
+        "en": "A big forest tree."
+      },
+      "funFact": {
+        "es": "En un árbol grande del bosque viven muchas plantas y animales.",
+        "en": "Many plants and animals live on a big forest tree."
+      },
+      "template": "pages/e13-arbol-gigante-v1.json",
+      "thumbnail": "thumbs/e13-arbol-gigante.png"
     },
     {
-      "id": "cascada",
-      "difficulty": "detailed",
-      "status": "planned",
-      "title": {"es": "La cascada", "en": "The Waterfall"}
+      "id": "e14-cascada",
+      "artId": "E14",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "La cascada",
+        "en": "The Waterfall"
+      },
+      "description": {
+        "es": "Una cascada entre las rocas.",
+        "en": "A waterfall among the rocks."
+      },
+      "funFact": {
+        "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
+        "en": "A waterfall forms when a river falls from a high place."
+      },
+      "template": "pages/e14-cascada-v1.json",
+      "thumbnail": "thumbs/e14-cascada.png"
     },
     {
-      "id": "sendero",
-      "difficulty": "detailed",
-      "contentVersion": 2,
-      "title": {"es": "El sendero del bosque", "en": "The Forest Trail"},
+      "id": "e15-sendero",
+      "artId": "E15",
+      "difficulty": "easy",
+      "contentVersion": 3,
+      "title": {
+        "es": "El sendero del bosque",
+        "en": "The Forest Trail"
+      },
       "description": {
         "es": "Un sendero que cruza el bosque entre los árboles.",
         "en": "A trail that crosses the forest among the trees."
@@ -127,7 +320,914 @@
         "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
         "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
       },
-      "template": "pages/sendero-v1.json"
+      "template": "pages/e15-sendero-v1.json",
+      "thumbnail": "thumbs/e15-sendero.png"
+    },
+    {
+      "id": "m01-rana-en-la-hoja",
+      "artId": "M01",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "La rana en la hoja",
+        "en": "The Frog on the Leaf"
+      },
+      "description": {
+        "es": "Una rana descansa sobre una hoja.",
+        "en": "A frog rests on a leaf."
+      },
+      "funFact": {
+        "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
+        "en": "Many forest frogs sleep on leaves during the day and come out at night."
+      },
+      "template": "pages/m01-rana-en-la-hoja-v1.json",
+      "thumbnail": "thumbs/m01-rana-en-la-hoja.png"
+    },
+    {
+      "id": "m02-mariposa",
+      "artId": "M02",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "La mariposa",
+        "en": "The Butterfly"
+      },
+      "description": {
+        "es": "Una mariposa con las alas abiertas.",
+        "en": "A butterfly with its wings open."
+      },
+      "funFact": {
+        "es": "Las mariposas sienten el sabor con las patas.",
+        "en": "Butterflies taste with their feet."
+      },
+      "template": "pages/m02-mariposa-v1.json",
+      "thumbnail": "thumbs/m02-mariposa.png"
+    },
+    {
+      "id": "m03-colibri",
+      "artId": "M03",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El colibrí",
+        "en": "The Hummingbird"
+      },
+      "description": {
+        "es": "Un colibrí vuela junto a una flor.",
+        "en": "A hummingbird flies next to a flower."
+      },
+      "funFact": {
+        "es": "El colibrí puede volar hacia atrás.",
+        "en": "A hummingbird can fly backwards."
+      },
+      "template": "pages/m03-colibri-v1.json",
+      "thumbnail": "thumbs/m03-colibri.png"
+    },
+    {
+      "id": "m04-tucan",
+      "artId": "M04",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El tucán",
+        "en": "The Toucan"
+      },
+      "description": {
+        "es": "Un tucán posado en una rama.",
+        "en": "A toucan perched on a branch."
+      },
+      "funFact": {
+        "es": "El pico del tucán es muy grande, pero pesa poco.",
+        "en": "A toucan's beak is very big, but it is light."
+      },
+      "template": "pages/m04-tucan-v1.json",
+      "thumbnail": "thumbs/m04-tucan.png"
+    },
+    {
+      "id": "m05-flor-tropical",
+      "artId": "M05",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "La flor tropical",
+        "en": "The Tropical Flower"
+      },
+      "description": {
+        "es": "Una flor de hibisco con sus hojas.",
+        "en": "A hibiscus flower with its leaves."
+      },
+      "funFact": {
+        "es": "Muchas flores de hibisco duran abiertas un solo día.",
+        "en": "Many hibiscus flowers stay open for just one day."
+      },
+      "template": "pages/m05-flor-tropical-v1.json",
+      "thumbnail": "thumbs/m05-flor-tropical.png"
+    },
+    {
+      "id": "quetzal",
+      "artId": "M06",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El quetzal",
+        "en": "The Quetzal"
+      },
+      "description": {
+        "es": "Un quetzal posado en una rama, con su cola larga.",
+        "en": "A quetzal perched on a branch, with its long tail."
+      },
+      "funFact": {
+        "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
+        "en": "The quetzal lives in humid forests and has very long tail feathers."
+      },
+      "template": "pages/quetzal-v2.json",
+      "thumbnail": "thumbs/quetzal.png",
+      "previousTemplates": {
+        "1": "pages/quetzal-v1.json"
+      }
+    },
+    {
+      "id": "m07-perezoso",
+      "artId": "M07",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El perezoso",
+        "en": "The Sloth"
+      },
+      "description": {
+        "es": "Un perezoso cuelga de una rama.",
+        "en": "A sloth hangs from a branch."
+      },
+      "funFact": {
+        "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
+        "en": "The sloth moves very slowly and spends almost all its life in the trees."
+      },
+      "template": "pages/m07-perezoso-v1.json",
+      "thumbnail": "thumbs/m07-perezoso.png"
+    },
+    {
+      "id": "m08-mono",
+      "artId": "M08",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El mono",
+        "en": "The Monkey"
+      },
+      "description": {
+        "es": "Un mono juega entre las ramas.",
+        "en": "A monkey plays among the branches."
+      },
+      "funFact": {
+        "es": "Algunos monos usan la cola para sujetarse a las ramas.",
+        "en": "Some monkeys use their tails to hold on to branches."
+      },
+      "template": "pages/m08-mono-v1.json",
+      "thumbnail": "thumbs/m08-mono.png"
+    },
+    {
+      "id": "m09-coati",
+      "artId": "M09",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El coatí",
+        "en": "The Coati"
+      },
+      "description": {
+        "es": "Un coatí camina por el bosque.",
+        "en": "A coati walks through the forest."
+      },
+      "funFact": {
+        "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
+        "en": "The coati looks for food with its long snout and walks with its tail up."
+      },
+      "template": "pages/m09-coati-v1.json",
+      "thumbnail": "thumbs/m09-coati.png"
+    },
+    {
+      "id": "m10-helechos",
+      "artId": "M10",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "Los helechos",
+        "en": "The Ferns"
+      },
+      "description": {
+        "es": "Helechos del bosque.",
+        "en": "Forest ferns."
+      },
+      "funFact": {
+        "es": "Las hojas nuevas de los helechos nacen enrolladas.",
+        "en": "New fern leaves start out curled up."
+      },
+      "template": "pages/m10-helechos-v1.json",
+      "thumbnail": "thumbs/m10-helechos.png"
+    },
+    {
+      "id": "m11-orquideas",
+      "artId": "M11",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las orquídeas",
+        "en": "The Orchids"
+      },
+      "description": {
+        "es": "Orquídeas en flor.",
+        "en": "Orchids in bloom."
+      },
+      "funFact": {
+        "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
+        "en": "Many orchids grow on trees without harming them."
+      },
+      "template": "pages/m11-orquideas-v1.json",
+      "thumbnail": "thumbs/m11-orquideas.png"
+    },
+    {
+      "id": "m12-ranas-del-bosque",
+      "artId": "M12",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las ranas del bosque",
+        "en": "The Forest Frogs"
+      },
+      "description": {
+        "es": "Ranas entre las hojas.",
+        "en": "Frogs among the leaves."
+      },
+      "funFact": {
+        "es": "Las ranas absorben agua a través de la piel.",
+        "en": "Frogs take in water through their skin."
+      },
+      "template": "pages/m12-ranas-del-bosque-v1.json",
+      "thumbnail": "thumbs/m12-ranas-del-bosque.png"
+    },
+    {
+      "id": "m13-arbol-gigante",
+      "artId": "M13",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El árbol gigante",
+        "en": "The Giant Tree"
+      },
+      "description": {
+        "es": "Un árbol grande del bosque.",
+        "en": "A big forest tree."
+      },
+      "funFact": {
+        "es": "En un árbol grande del bosque viven muchas plantas y animales.",
+        "en": "Many plants and animals live on a big forest tree."
+      },
+      "template": "pages/m13-arbol-gigante-v1.json",
+      "thumbnail": "thumbs/m13-arbol-gigante.png"
+    },
+    {
+      "id": "m14-cascada",
+      "artId": "M14",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "La cascada",
+        "en": "The Waterfall"
+      },
+      "description": {
+        "es": "Una cascada entre las rocas.",
+        "en": "A waterfall among the rocks."
+      },
+      "funFact": {
+        "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
+        "en": "A waterfall forms when a river falls from a high place."
+      },
+      "template": "pages/m14-cascada-v1.json",
+      "thumbnail": "thumbs/m14-cascada.png"
+    },
+    {
+      "id": "m15-sendero",
+      "artId": "M15",
+      "difficulty": "medium",
+      "contentVersion": 3,
+      "title": {
+        "es": "El sendero del bosque",
+        "en": "The Forest Trail"
+      },
+      "description": {
+        "es": "Un sendero que cruza el bosque entre los árboles.",
+        "en": "A trail that crosses the forest among the trees."
+      },
+      "funFact": {
+        "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
+        "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
+      },
+      "template": "pages/m15-sendero-v1.json",
+      "thumbnail": "thumbs/m15-sendero.png"
+    },
+    {
+      "id": "d01-rana-en-la-hoja",
+      "artId": "D01",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "La rana en la hoja",
+        "en": "The Frog on the Leaf"
+      },
+      "description": {
+        "es": "Una rana descansa sobre una hoja.",
+        "en": "A frog rests on a leaf."
+      },
+      "funFact": {
+        "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
+        "en": "Many forest frogs sleep on leaves during the day and come out at night."
+      },
+      "template": "pages/d01-rana-en-la-hoja-v1.json",
+      "thumbnail": "thumbs/d01-rana-en-la-hoja.png"
+    },
+    {
+      "id": "d02-mariposa",
+      "artId": "D02",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "La mariposa",
+        "en": "The Butterfly"
+      },
+      "description": {
+        "es": "Una mariposa con las alas abiertas.",
+        "en": "A butterfly with its wings open."
+      },
+      "funFact": {
+        "es": "Las mariposas sienten el sabor con las patas.",
+        "en": "Butterflies taste with their feet."
+      },
+      "template": "pages/d02-mariposa-v1.json",
+      "thumbnail": "thumbs/d02-mariposa.png"
+    },
+    {
+      "id": "d03-colibri",
+      "artId": "D03",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El colibrí",
+        "en": "The Hummingbird"
+      },
+      "description": {
+        "es": "Un colibrí vuela junto a una flor.",
+        "en": "A hummingbird flies next to a flower."
+      },
+      "funFact": {
+        "es": "El colibrí puede volar hacia atrás.",
+        "en": "A hummingbird can fly backwards."
+      },
+      "template": "pages/d03-colibri-v1.json",
+      "thumbnail": "thumbs/d03-colibri.png"
+    },
+    {
+      "id": "d04-tucan",
+      "artId": "D04",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El tucán",
+        "en": "The Toucan"
+      },
+      "description": {
+        "es": "Un tucán posado en una rama.",
+        "en": "A toucan perched on a branch."
+      },
+      "funFact": {
+        "es": "El pico del tucán es muy grande, pero pesa poco.",
+        "en": "A toucan's beak is very big, but it is light."
+      },
+      "template": "pages/d04-tucan-v1.json",
+      "thumbnail": "thumbs/d04-tucan.png"
+    },
+    {
+      "id": "d05-flor-tropical",
+      "artId": "D05",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "La flor tropical",
+        "en": "The Tropical Flower"
+      },
+      "description": {
+        "es": "Una flor de hibisco con sus hojas.",
+        "en": "A hibiscus flower with its leaves."
+      },
+      "funFact": {
+        "es": "Muchas flores de hibisco duran abiertas un solo día.",
+        "en": "Many hibiscus flowers stay open for just one day."
+      },
+      "template": "pages/d05-flor-tropical-v1.json",
+      "thumbnail": "thumbs/d05-flor-tropical.png"
+    },
+    {
+      "id": "d06-quetzal",
+      "artId": "D06",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El quetzal",
+        "en": "The Quetzal"
+      },
+      "description": {
+        "es": "Un quetzal posado en una rama, con su cola larga.",
+        "en": "A quetzal perched on a branch, with its long tail."
+      },
+      "funFact": {
+        "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
+        "en": "The quetzal lives in humid forests and has very long tail feathers."
+      },
+      "template": "pages/d06-quetzal-v1.json",
+      "thumbnail": "thumbs/d06-quetzal.png"
+    },
+    {
+      "id": "d07-perezoso",
+      "artId": "D07",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El perezoso",
+        "en": "The Sloth"
+      },
+      "description": {
+        "es": "Un perezoso cuelga de una rama.",
+        "en": "A sloth hangs from a branch."
+      },
+      "funFact": {
+        "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
+        "en": "The sloth moves very slowly and spends almost all its life in the trees."
+      },
+      "template": "pages/d07-perezoso-v1.json",
+      "thumbnail": "thumbs/d07-perezoso.png"
+    },
+    {
+      "id": "d08-mono",
+      "artId": "D08",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El mono",
+        "en": "The Monkey"
+      },
+      "description": {
+        "es": "Un mono juega entre las ramas.",
+        "en": "A monkey plays among the branches."
+      },
+      "funFact": {
+        "es": "Algunos monos usan la cola para sujetarse a las ramas.",
+        "en": "Some monkeys use their tails to hold on to branches."
+      },
+      "template": "pages/d08-mono-v1.json",
+      "thumbnail": "thumbs/d08-mono.png"
+    },
+    {
+      "id": "d09-coati",
+      "artId": "D09",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El coatí",
+        "en": "The Coati"
+      },
+      "description": {
+        "es": "Un coatí camina por el bosque.",
+        "en": "A coati walks through the forest."
+      },
+      "funFact": {
+        "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
+        "en": "The coati looks for food with its long snout and walks with its tail up."
+      },
+      "template": "pages/d09-coati-v1.json",
+      "thumbnail": "thumbs/d09-coati.png"
+    },
+    {
+      "id": "d10-helechos",
+      "artId": "D10",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "Los helechos",
+        "en": "The Ferns"
+      },
+      "description": {
+        "es": "Helechos del bosque.",
+        "en": "Forest ferns."
+      },
+      "funFact": {
+        "es": "Las hojas nuevas de los helechos nacen enrolladas.",
+        "en": "New fern leaves start out curled up."
+      },
+      "template": "pages/d10-helechos-v1.json",
+      "thumbnail": "thumbs/d10-helechos.png"
+    },
+    {
+      "id": "d11-orquideas",
+      "artId": "D11",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las orquídeas",
+        "en": "The Orchids"
+      },
+      "description": {
+        "es": "Orquídeas en flor.",
+        "en": "Orchids in bloom."
+      },
+      "funFact": {
+        "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
+        "en": "Many orchids grow on trees without harming them."
+      },
+      "template": "pages/d11-orquideas-v1.json",
+      "thumbnail": "thumbs/d11-orquideas.png"
+    },
+    {
+      "id": "d12-ranas-del-bosque",
+      "artId": "D12",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las ranas del bosque",
+        "en": "The Forest Frogs"
+      },
+      "description": {
+        "es": "Ranas entre las hojas.",
+        "en": "Frogs among the leaves."
+      },
+      "funFact": {
+        "es": "Las ranas absorben agua a través de la piel.",
+        "en": "Frogs take in water through their skin."
+      },
+      "template": "pages/d12-ranas-del-bosque-v1.json",
+      "thumbnail": "thumbs/d12-ranas-del-bosque.png"
+    },
+    {
+      "id": "d13-arbol-gigante",
+      "artId": "D13",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El árbol gigante",
+        "en": "The Giant Tree"
+      },
+      "description": {
+        "es": "Un árbol grande del bosque.",
+        "en": "A big forest tree."
+      },
+      "funFact": {
+        "es": "En un árbol grande del bosque viven muchas plantas y animales.",
+        "en": "Many plants and animals live on a big forest tree."
+      },
+      "template": "pages/d13-arbol-gigante-v1.json",
+      "thumbnail": "thumbs/d13-arbol-gigante.png"
+    },
+    {
+      "id": "d14-cascada",
+      "artId": "D14",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "La cascada",
+        "en": "The Waterfall"
+      },
+      "description": {
+        "es": "Una cascada entre las rocas.",
+        "en": "A waterfall among the rocks."
+      },
+      "funFact": {
+        "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
+        "en": "A waterfall forms when a river falls from a high place."
+      },
+      "template": "pages/d14-cascada-v1.json",
+      "thumbnail": "thumbs/d14-cascada.png"
+    },
+    {
+      "id": "sendero",
+      "artId": "D15",
+      "difficulty": "detailed",
+      "contentVersion": 3,
+      "title": {
+        "es": "El sendero del bosque",
+        "en": "The Forest Trail"
+      },
+      "description": {
+        "es": "Un sendero que cruza el bosque entre los árboles.",
+        "en": "A trail that crosses the forest among the trees."
+      },
+      "funFact": {
+        "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
+        "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
+      },
+      "template": "pages/sendero-v2.json",
+      "thumbnail": "thumbs/sendero.png",
+      "previousTemplates": {
+        "1": "pages/sendero-v1.json"
+      }
+    },
+    {
+      "id": "a01-rana-en-la-hoja",
+      "artId": "A01",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "La rana en la hoja",
+        "en": "The Frog on the Leaf"
+      },
+      "description": {
+        "es": "Una rana descansa sobre una hoja.",
+        "en": "A frog rests on a leaf."
+      },
+      "funFact": {
+        "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
+        "en": "Many forest frogs sleep on leaves during the day and come out at night."
+      },
+      "template": "pages/a01-rana-en-la-hoja-v1.json",
+      "thumbnail": "thumbs/a01-rana-en-la-hoja.png"
+    },
+    {
+      "id": "a02-mariposa",
+      "artId": "A02",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "La mariposa",
+        "en": "The Butterfly"
+      },
+      "description": {
+        "es": "Una mariposa con las alas abiertas.",
+        "en": "A butterfly with its wings open."
+      },
+      "funFact": {
+        "es": "Las mariposas sienten el sabor con las patas.",
+        "en": "Butterflies taste with their feet."
+      },
+      "template": "pages/a02-mariposa-v1.json",
+      "thumbnail": "thumbs/a02-mariposa.png"
+    },
+    {
+      "id": "a03-colibri",
+      "artId": "A03",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El colibrí",
+        "en": "The Hummingbird"
+      },
+      "description": {
+        "es": "Un colibrí vuela junto a una flor.",
+        "en": "A hummingbird flies next to a flower."
+      },
+      "funFact": {
+        "es": "El colibrí puede volar hacia atrás.",
+        "en": "A hummingbird can fly backwards."
+      },
+      "template": "pages/a03-colibri-v1.json",
+      "thumbnail": "thumbs/a03-colibri.png"
+    },
+    {
+      "id": "a04-tucan",
+      "artId": "A04",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El tucán",
+        "en": "The Toucan"
+      },
+      "description": {
+        "es": "Un tucán posado en una rama.",
+        "en": "A toucan perched on a branch."
+      },
+      "funFact": {
+        "es": "El pico del tucán es muy grande, pero pesa poco.",
+        "en": "A toucan's beak is very big, but it is light."
+      },
+      "template": "pages/a04-tucan-v1.json",
+      "thumbnail": "thumbs/a04-tucan.png"
+    },
+    {
+      "id": "a05-flor-tropical",
+      "artId": "A05",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "La flor tropical",
+        "en": "The Tropical Flower"
+      },
+      "description": {
+        "es": "Una flor de hibisco con sus hojas.",
+        "en": "A hibiscus flower with its leaves."
+      },
+      "funFact": {
+        "es": "Muchas flores de hibisco duran abiertas un solo día.",
+        "en": "Many hibiscus flowers stay open for just one day."
+      },
+      "template": "pages/a05-flor-tropical-v1.json",
+      "thumbnail": "thumbs/a05-flor-tropical.png"
+    },
+    {
+      "id": "a06-quetzal",
+      "artId": "A06",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El quetzal",
+        "en": "The Quetzal"
+      },
+      "description": {
+        "es": "Un quetzal posado en una rama, con su cola larga.",
+        "en": "A quetzal perched on a branch, with its long tail."
+      },
+      "funFact": {
+        "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
+        "en": "The quetzal lives in humid forests and has very long tail feathers."
+      },
+      "template": "pages/a06-quetzal-v1.json",
+      "thumbnail": "thumbs/a06-quetzal.png"
+    },
+    {
+      "id": "a07-perezoso",
+      "artId": "A07",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El perezoso",
+        "en": "The Sloth"
+      },
+      "description": {
+        "es": "Un perezoso cuelga de una rama.",
+        "en": "A sloth hangs from a branch."
+      },
+      "funFact": {
+        "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
+        "en": "The sloth moves very slowly and spends almost all its life in the trees."
+      },
+      "template": "pages/a07-perezoso-v1.json",
+      "thumbnail": "thumbs/a07-perezoso.png"
+    },
+    {
+      "id": "a08-mono",
+      "artId": "A08",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El mono",
+        "en": "The Monkey"
+      },
+      "description": {
+        "es": "Un mono juega entre las ramas.",
+        "en": "A monkey plays among the branches."
+      },
+      "funFact": {
+        "es": "Algunos monos usan la cola para sujetarse a las ramas.",
+        "en": "Some monkeys use their tails to hold on to branches."
+      },
+      "template": "pages/a08-mono-v1.json",
+      "thumbnail": "thumbs/a08-mono.png"
+    },
+    {
+      "id": "a09-coati",
+      "artId": "A09",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El coatí",
+        "en": "The Coati"
+      },
+      "description": {
+        "es": "Un coatí camina por el bosque.",
+        "en": "A coati walks through the forest."
+      },
+      "funFact": {
+        "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
+        "en": "The coati looks for food with its long snout and walks with its tail up."
+      },
+      "template": "pages/a09-coati-v1.json",
+      "thumbnail": "thumbs/a09-coati.png"
+    },
+    {
+      "id": "a10-helechos",
+      "artId": "A10",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "Los helechos",
+        "en": "The Ferns"
+      },
+      "description": {
+        "es": "Helechos del bosque.",
+        "en": "Forest ferns."
+      },
+      "funFact": {
+        "es": "Las hojas nuevas de los helechos nacen enrolladas.",
+        "en": "New fern leaves start out curled up."
+      },
+      "template": "pages/a10-helechos-v1.json",
+      "thumbnail": "thumbs/a10-helechos.png"
+    },
+    {
+      "id": "a11-orquideas",
+      "artId": "A11",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las orquídeas",
+        "en": "The Orchids"
+      },
+      "description": {
+        "es": "Orquídeas en flor.",
+        "en": "Orchids in bloom."
+      },
+      "funFact": {
+        "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
+        "en": "Many orchids grow on trees without harming them."
+      },
+      "template": "pages/a11-orquideas-v1.json",
+      "thumbnail": "thumbs/a11-orquideas.png"
+    },
+    {
+      "id": "a12-ranas-del-bosque",
+      "artId": "A12",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "Las ranas del bosque",
+        "en": "The Forest Frogs"
+      },
+      "description": {
+        "es": "Ranas entre las hojas.",
+        "en": "Frogs among the leaves."
+      },
+      "funFact": {
+        "es": "Las ranas absorben agua a través de la piel.",
+        "en": "Frogs take in water through their skin."
+      },
+      "template": "pages/a12-ranas-del-bosque-v1.json",
+      "thumbnail": "thumbs/a12-ranas-del-bosque.png"
+    },
+    {
+      "id": "a13-arbol-gigante",
+      "artId": "A13",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El árbol gigante",
+        "en": "The Giant Tree"
+      },
+      "description": {
+        "es": "Un árbol grande del bosque.",
+        "en": "A big forest tree."
+      },
+      "funFact": {
+        "es": "En un árbol grande del bosque viven muchas plantas y animales.",
+        "en": "Many plants and animals live on a big forest tree."
+      },
+      "template": "pages/a13-arbol-gigante-v1.json",
+      "thumbnail": "thumbs/a13-arbol-gigante.png"
+    },
+    {
+      "id": "a14-cascada",
+      "artId": "A14",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "La cascada",
+        "en": "The Waterfall"
+      },
+      "description": {
+        "es": "Una cascada entre las rocas.",
+        "en": "A waterfall among the rocks."
+      },
+      "funFact": {
+        "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
+        "en": "A waterfall forms when a river falls from a high place."
+      },
+      "template": "pages/a14-cascada-v1.json",
+      "thumbnail": "thumbs/a14-cascada.png"
+    },
+    {
+      "id": "a15-sendero",
+      "artId": "A15",
+      "difficulty": "advanced",
+      "contentVersion": 3,
+      "title": {
+        "es": "El sendero del bosque",
+        "en": "The Forest Trail"
+      },
+      "description": {
+        "es": "Un sendero que cruza el bosque entre los árboles.",
+        "en": "A trail that crosses the forest among the trees."
+      },
+      "funFact": {
+        "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
+        "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
+      },
+      "template": "pages/a15-sendero-v1.json",
+      "thumbnail": "thumbs/a15-sendero.png"
     }
   ]
 }
