@@ -141,7 +141,7 @@ Lectura: hasta Detallado el pintado cabe en 16 ms incluso en depuración. **En A
 ```bash
 python tool/laminas/corregir_e06.py <ilustraciones>/organizadas/facil/E06_quetzal.webp
 python tool/laminas/convertir.py <ilustraciones>/organizadas     # numpy, opencv, scipy, scikit-image
-flutter test test/laminas_test.dart                              # escribe tool/laminas/aprobacion.json
+TUKI_WRITE_APPROVAL_EVIDENCE=1 flutter test test/laminas_test.dart # escribe tool/laminas/aprobacion.json
 python tool/laminas/manifiesto.py                                # publica solo las aprobadas
 python tool/laminas/contacto.py && python tool/laminas/informe.py
 flutter test

@@ -11,6 +11,7 @@ import 'page_template.dart';
 /// exportación: fondo y rellenos → capa de trazos → contornos.
 abstract final class DrawingRenderer {
   static const Color outlineColor = Color(0xFF17383A);
+  static final Expando<ui.Picture> _inkPictures = Expando<ui.Picture>();
 
   /// Pinta en coordenadas de la lámina. Quien llama aplica la transformación.
   static void paint(
@@ -43,7 +44,20 @@ abstract final class DrawingRenderer {
       canvas.restore();
     }
 
-    // 3. Contornos siempre visibles.
+    // 3. Contornos siempre visibles. La geometría de esta capa no cambia
+    // durante la edición. Grabarla una vez evita reconstruir cientos de
+    // operaciones de trazado en cada movimiento del pincel (sobre todo en
+    // las láminas avanzadas).
+    canvas.drawPicture(_inkPicture(template));
+    canvas.restore();
+  }
+
+  static ui.Picture _inkPicture(PageTemplate template) {
+    final cached = _inkPictures[template];
+    if (cached != null) return cached;
+
+    final recorder = ui.PictureRecorder();
+    final canvas = Canvas(recorder)..clipRect(template.viewBox);
     final stroke = Paint()
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
@@ -62,7 +76,9 @@ abstract final class DrawingRenderer {
         canvas.drawPath(shape.path, ink);
       }
     }
-    canvas.restore();
+    final picture = recorder.endRecording();
+    _inkPictures[template] = picture;
+    return picture;
   }
 
   static void _paintOp(Canvas canvas, StrokeOp op) {

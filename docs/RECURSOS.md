@@ -1,6 +1,6 @@
 # Inventario de recursos
 
-Estado al 12 de noviembre de 2026. «Provisional» significa integrado y funcional, pendiente de sustituir o aprobar. La aprobación se registra por recurso en la última columna.
+Estado al 14 de noviembre de 2026. «Provisional» significa integrado y funcional, pendiente de sustituir o aprobar. La aprobación se registra por recurso en la última columna.
 
 | Archivo | Qué es | Origen / autoría | Licencia | Estado | Para reemplazarlo | Aprobación |
 |---|---|---|---|---|---|---|
@@ -20,16 +20,16 @@ Estado al 12 de noviembre de 2026. «Provisional» significa integrado y funcion
 
 | Recurso | Cantidad | Detalle |
 |---|---|---|
-| Ilustraciones para colorear | 12 | Mariposa, colibrí, tucán, flor tropical (Fácil); perezoso, mono, coatí, helechos (Medio); orquídeas, ranas del bosque, árbol gigante, cascada (Detallado). Originales o con derechos comerciales comprobados, en el formato de plantilla del README. Inventario en `NIVELES.md` |
+| Derechos de las 60 ilustraciones | 60 | Las plantillas están integradas para QA, pero su distribución requiere confirmar la procedencia y los derechos comerciales de cada fuente registrada por SHA-256. |
 | Curiosidades | 12 | Una por lámina pendiente, en español e inglés |
 | Narración de curiosidades | 30 | 15 láminas × 2 idiomas. Hoy no existe ninguna; la app solo muestra «Escuchar» cuando el manifiesto la declara |
-| Láminas de nivel Avanzado | Por definir | Ampliación gratuita prevista; el nivel existe y su filtro avisa de que está vacío |
+| Aprobación artística y prueba infantil | 60 | La validación automática no sustituye la revisión de arte ni las pruebas de tacto por edades. |
 
 ## Referencias que NO se integraron
 
 | Archivo | Motivo |
 |---|---|
-| `Cute Toucan Clipart Bundle … Etsy` (tucán) | Referencia de estilo. **No se integra sin licencia verificada.** Si se adquiere, registrar aquí el comprobante y los términos (uso en apps, redistribución). |
+| [`Cute Toucan Clipart Bundle … Etsy`](https://www.etsy.com/listing/1738970186/) (tucán) | Referencia de estilo. La descripción consultada el 14-11-2026 afirma permitir productos y aplicaciones comerciales y prohíbe la reventa directa del recurso. Esto no demuestra compra, autoría del vendedor ni los términos entregados con el archivo. **No se integra para publicación** hasta conservar recibo, ZIP original, texto de licencia vigente y confirmación de que un icono de app derivado está permitido. |
 | `Explora y colorea el bosque nuboso.png`, `Pantallas de coloreado del bosque nuboso.png`, `mockups_el_bosque_nuboso_v2.pdf` | Referencias de interfaz y navegación. Contienen textos y controles incrustados; no se usan como recurso. |
 
 ## Cómo se generan los recursos provisionales
