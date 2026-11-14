@@ -49,3 +49,7 @@ app.*.map.json
 
 # Informes de Gradle
 /android/build/
+
+# Banco artístico local: conserva fuentes y auditorías sin empaquetarlas ni
+# subir archivos grandes cuya procedencia/licencia aún debe documentarse.
+/ilustraciones/
