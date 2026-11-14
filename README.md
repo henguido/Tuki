@@ -9,6 +9,7 @@ Estado: **desarrollo y QA local**. Publicación, compras, cuentas, analítica y 
 - **Las 60 láminas** (conversión, matriz de aprobación, cambios por ilustración y pendientes): [docs/laminas/INFORME.md](docs/laminas/INFORME.md)
 - Matriz de aceptación y evidencia: [docs/ACEPTACION.md](docs/ACEPTACION.md)
 - Inventario de recursos (origen, licencia, estado): [docs/RECURSOS.md](docs/RECURSOS.md)
+- Privacidad y lista previa a publicación: [docs/PRIVACIDAD.md](docs/PRIVACIDAD.md)
 
 ## Para Ema: instalar y repetir el recorrido de aceptación (Android)
 
@@ -35,7 +36,7 @@ Necesitas un teléfono Android 7 o posterior y el archivo `app-debug.apk` (se ge
 11. **Cierra la app por completo** (recientes → deslizar) y vuelve a abrirla.
 12. En Inicio aparece **Continuar mi dibujo**: tócalo. El dibujo vuelve con rellenos y trazos y se puede seguir editando.
 13. Toca **Siguiente lámina** dos veces (quetzal, sendero). En El sendero el botón dice **Volver a las láminas**. Prueba también la flecha **Volver** y el botón atrás del sistema desde cada lámina.
-14. En Inicio toca el engranaje (**Para adultos**). En **Edad sugerida** cambia el rango y comprueba que «Elige una lámina» lo refleja. Abajo, **Ver aventuras** pide resolver una multiplicación antes de abrir; dentro solo debe verse *El bosque nuboso — Incluido gratis — 3 de 15 láminas disponibles*, sin precios ni botones de compra. Cambia a **English**: la pantalla se traduce al momento. Vuelve a la portada y comprueba que **Listen** usa la narración en inglés. Cierra y abre la app: sigue en inglés.
+14. En Inicio toca el engranaje (**Para adultos**). En **Edad sugerida** cambia el rango y comprueba que «Elige una lámina» lo refleja. Abajo, **Ver aventuras** pide resolver una multiplicación antes de abrir; dentro solo debe verse *El bosque nuboso — Incluido gratis — 60 de 60 láminas disponibles*, sin precios ni botones de compra. Cambia a **English**: la pantalla se traduce al momento. Vuelve a la portada y comprueba que **Listen** usa la narración en inglés. Cierra y abre la app: sigue en inglés.
 15. En *Para adultos* toca **Exportar un dibujo**, elige uno y toca **Guardar PNG**. En el diálogo del sistema toca **Guardar**: aparece «Copia PNG exportada» y el archivo `tuki-<lámina>.png` queda donde elegiste.
 16. Repite **Guardar PNG** y esta vez pulsa atrás en el diálogo: aparece «Exportación cancelada» y el dibujo sigue en *Mis dibujos*.
 

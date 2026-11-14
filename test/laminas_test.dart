@@ -1,8 +1,9 @@
 // Validación de las 60 láminas con el motor real del editor.
 //
 // Lee cada plantilla generada por tool/laminas/convertir.py y sus sondas
-// (tool/laminas/validacion/<ID>.json), ejecuta las comprobaciones y escribe
-// la matriz en tool/laminas/aprobacion.json. Una lámina solo se aprueba si
+// (tool/laminas/validacion/<ID>.json) y ejecuta las comprobaciones. Solo
+// reescribe la evidencia con TUKI_WRITE_APPROVAL_EVIDENCE=1, para que una
+// prueba normal o CI nunca ensucie el checkout. Una lámina solo se aprueba si
 // pasa todas; tool/laminas/manifiesto.py publica únicamente las aprobadas.
 //
 // Lo que este archivo NO puede comprobar (necesita un dispositivo) queda
@@ -68,9 +69,11 @@ void main() {
   final matriz = <String, Map<String, Object?>>{};
 
   tearDownAll(() {
-    File('tool/laminas/aprobacion.json').writeAsStringSync(
-      '${const JsonEncoder.withIndent(' ').convert(matriz)}\n',
-    );
+    if (Platform.environment['TUKI_WRITE_APPROVAL_EVIDENCE'] == '1') {
+      File('tool/laminas/aprobacion.json').writeAsStringSync(
+        '${const JsonEncoder.withIndent(' ').convert(matriz)}\n',
+      );
+    }
   });
 
   for (final id in ids) {

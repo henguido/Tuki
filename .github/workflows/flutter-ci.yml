@@ -1,0 +1,53 @@
+name: Flutter CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - feature/**
+      - codex/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flutter-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.4
+          cache: true
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed lib test tool integration_test
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run host tests
+        run: flutter test --reporter expanded
+
+      - name: Build QA APK
+        run: flutter build apk --debug
+
+      - name: Upload QA APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuki-qa-debug-${{ github.sha }}
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
