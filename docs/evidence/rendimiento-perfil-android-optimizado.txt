@@ -1,0 +1,102 @@
+Resolving dependencies...
+Downloading packages...
+  built_collection 5.1.2 (6.0.0 available)
+  code_assets 1.2.1 (2.2.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  hooks 2.0.2 (2.2.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  native_toolchain_c 0.19.2 (0.19.6 available)
+  objective_c 9.5.0 (9.6.4 available)
+  petitparser 7.0.2 (7.1.0 available)
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences_foundation 2.5.7 (2.6.2 available)
+  sqlite3 3.5.2 (3.9.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+15 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleProfile'...                        
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/C:/Users/hen_g/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Running Gradle task 'assembleProfile'...                           61.3s
+√ Built build\app\outputs\flutter-apk\app-profile.apk (84.6MB)
+Installing build\app\outputs\flutter-apk\app-profile.apk...        27.4s
+I/SurfaceView@76ba57a(17409): surfaceChanged -- format=4 w=1080 h=2274
+I/SurfaceView@76ba57a(17409): surfaceChanged (1080,2274) 1 #8 io.flutter.embedding.android.FlutterSurfaceView{76ba57a V.E...... ......ID 0,0-1080,2274}
+I/SurfaceView@76ba57a(17409): surfaceRedrawNeeded
+V/SurfaceView@76ba57a(17409): Layout: x=0 y=0 w=1080 h=2274, frame=Rect(0, 0 - 1080, 2274)
+I/Choreographer(17409): Skipped 138 frames!  The application may be doing too much work on its main thread.
+I/e_adventures.qa(17409): Compiler allocated 6246KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:50730/nD2GkCvfI9w=/
+VMServiceFlutterDriver: Isolate found with number: 8118279508449251
+VMServiceFlutterDriver: Isolate 8118279508449251 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter (17409): 00:00 +0: carga y fotogramas al pintar
+E/ion     (17409): ioctl c0044901 failed with code -1: Invalid argument
+VMServiceFlutterDriver: Connected to Flutter application.
+D/hw-ProcessState(17409): Binder ioctl to enable oneway spam detection failed: Invalid argument
+I/BLASTBufferQueue(17409): [SurfaceView[dev.tukiapp.tuki_little_adventures.qa/dev.tukiapp.tuki_little_adventures.MainActivity]@0#1](f:0,a:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(17409): [SurfaceView[dev.tukiapp.tuki_little_adventures.qa/dev.tukiapp.tuki_little_adventures.MainActivity]@0#1](f:0,a:1) acquireNextBufferLocked size=1080x2274 mFrameNumber=1 applyTransaction=true mTimestamp=1321399018817836(auto) mPendingTransactions.size=0 graphicBufferId=74771085656064 transform=0
+I/ViewRootImpl@6985b1b[MainActivity](17409): Setup new sync id=0
+I/ViewRootImpl@6985b1b[MainActivity](17409): Setting syncFrameCallback
+I/ViewRootImpl@6985b1b[MainActivity](17409): registerCallbacksForSync syncBuffer=false
+D/SurfaceView@76ba57a(17409): updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1080, 2274] surfaceSize = 1080x2274
+I/SurfaceView@76ba57a(17409): uSP: rtp = Rect(0, 0 - 1080, 2274) rtsw = 1080 rtsh = 2274
+I/ViewRootImpl@6985b1b[MainActivity](17409): mWNT: t=0xb400006f4f1e3800 mBlastBufferQueue=0xb400006f3dfc4980 fn= 1 caller= android.view.ViewRootImpl.lambda$applyTransactionOnDraw$11$android-view-ViewRootImpl:12865 android.view.ViewRootImpl$$ExternalSyntheticLambda1.onFrameDraw:4 android.graphics.HardwareRenderer$FrameDrawingCallback.onFrameDraw:924 
+I/SurfaceView@76ba57a(17409): onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+I/ViewRootImpl@6985b1b[MainActivity](17409): Received frameDrawingCallback syncResult=0 frameNum=1.
+I/ViewRootImpl@6985b1b[MainActivity](17409): Setting up sync and frameCommitCallback
+I/SurfaceView@76ba57a(17409): aOrMT: ViewRootImpl@6985b1b[MainActivity] t = android.view.SurfaceControl$Transaction@bb0ce48 fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1537 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:373 
+I/ViewRootImpl@6985b1b[MainActivity](17409): mWNT: t=0xb400006f4f25b000 mBlastBufferQueue=0xb400006f3dfc4980 fn= 1 caller= android.view.SurfaceView.applyOrMergeTransaction:1455 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1537 
+I/BLASTBufferQueue(17409): [ViewRootImpl@6985b1b[MainActivity]#0](f:0,a:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(17409): [ViewRootImpl@6985b1b[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=1080x2400 mFrameNumber=1 applyTransaction=true mTimestamp=1321399052357298(auto) mPendingTransactions.size=0 graphicBufferId=74771085656065 transform=0
+I/ViewRootImpl@6985b1b[MainActivity](17409): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+D/OpenGLRenderer(17409): CFMS:: SetUp Pid : 17409    Tid : 17434
+W/Parcel  (17409): Expecting binder but got null!
+I/ViewRootImpl@6985b1b[MainActivity](17409): onSyncComplete
+I/ViewRootImpl@6985b1b[MainActivity](17409): setupSync seqId=0 mSyncId=0 fn=1 caller=android.view.ViewRootImpl$$ExternalSyntheticLambda11.accept:6 android.window.SurfaceSyncer.lambda$setupSync$1$android-window-SurfaceSyncer:128 android.window.SurfaceSyncer$$ExternalSyntheticLambda1.accept:8 android.window.SurfaceSyncer$SyncSet.checkIfSyncIsComplete:382 android.window.SurfaceSyncer$SyncSet.markSyncReady:359 android.window.SurfaceSyncer.markSyncReady:151 android.view.ViewRootImpl.performTraversals:4503 
+I/ViewRootImpl@6985b1b[MainActivity](17409): reportDrawFinished seqId=0 mSyncId=-1 fn=1 mSurfaceChangedTransaction=0xb400007011462f00
+I/SurfaceView@76ba57a(17409): finishedDrawing
+I/ViewRootImpl@6985b1b[MainActivity](17409): MSG_WINDOW_FOCUS_CHANGED 1 0
+I/ViewRootImpl@6985b1b[MainActivity](17409): mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0xb400006f44651800}
+D/InputMethodManager(17409): startInputInner - Id : 0
+I/InputMethodManager(17409): startInputInner - mService.startInputOrWindowGainedFocus
+I/DecorView(17409): notifyKeepScreenOnChanged: keepScreenOn=false
+I/ViewRootImpl@6985b1b[MainActivity](17409): performTraversals mFirst=false windowShouldResize=false viewVisibilityChanged=false mForceNextWindowRelayout=false params={(0,0)(fillxfill) sim={adjust=resize} ty=BASE_APPLICATION fmt=TRANSLUCENT wanim=0x1030001
+I/ViewRootImpl@6985b1b[MainActivity](17409):   fl=81810100
+I/ViewRootImpl@6985b1b[MainActivity](17409):   pfl=12020040
+I/ViewRootImpl@6985b1b[MainActivity](17409):   vsysui=2500
+I/ViewRootImpl@6985b1b[MainActivity](17409):   apr=LIGHT_STATUS_BARS
+I/ViewRootImpl@6985b1b[MainActivity](17409):   bhv=DEFAULT
+I/ViewRootImpl@6985b1b[MainActivity](17409):   fitSides= naviIconColor=0}
+I/ViewRootImpl@6985b1b[MainActivity](17409): updateBlastSurfaceIfNeeded mBlastBufferQueue=0xb400006f3dfc4980 isSameSurfaceControl=true
+I/BLASTBufferQueue(17409): update, w= 1080 h= 2400 mName = ViewRootImpl@6985b1b[MainActivity] mNativeObject= 0xb400006f3dfc4980 sc.mNativeObject= 0xb400006f42236620 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:2898 android.view.ViewRootImpl.relayoutWindow:9847 android.view.ViewRootImpl.performTraversals:3884 android.view.ViewRootImpl.doTraversal:3116 android.view.ViewRootImpl$TraversalRunnable.run:10885 android.view.Choreographer$CallbackRecord.run:1301 
+I/ViewRootImpl@6985b1b[MainActivity](17409): Relayout returned: old=(0,0,1080,2400) new=(0,0,1080,2400) req=(1080,2400)0 dur=15 res=0x0 s={true 0xb400006f44651800} ch=false seqId=0
+D/InputMethodManager(17409): startInputInner - Id : 0
+D/InsetsController(17409): onStateChanged: InsetsState: {mDisplayFrame=Rect(0, 0 - 1080, 2400), mDisplayCutout=DisplayCutout{insets=Rect(0, 80 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 80), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2400 physicalDisplayWidth=1080 physicalDisplayHeight=2400 density={2.625} cutoutSpec={M 0,0 H -27.42857142857143 V 30.47619047619048 H 27.42857142857143 V 0 H 0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}}}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=84, center=Point(84, 84)}, RoundedCorner{position=TopRight, radius=84, center=Point(996, 84)}, RoundedCorner{position=BottomRight, radius=84, center=Point(996, 2316)}, RoundedCorner{position=BottomLeft, radius=84, center=Point(84, 2316)}]}  mRoundedCornerFrame=Rect(0, 0 - 1080, 2400), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(964, 0 - 1080, 80) rotation=0}, mSources= { InsetsSource: {mType=ITYPE_STATUS_BAR, mFrame=[0,0][1080,80], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_NAVIGATION_BAR, mFrame=[0,2274][1080,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_LEFT_GESTURES, mFrame=[0,0][0,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_RIGHT_GESTURES, mFrame=[1080,0][1080,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_TOP_MANDATORY_GESTURES, mFrame=[0,0][1080,112], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_BOTTOM_MANDATORY_GESTURES, mFrame=[0,2274][1080,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_LEFT_DISPLAY_CUTOUT, mFrame=[0,0][-100000,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_TOP_DISPLAY_CUTOUT, mFrame=[0,0][1080,80], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_RIGHT_DISPLAY_CUTOUT, mFrame=[100000,0][1080,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_BOTTOM_DISPLAY_CUTOUT, mFrame=[0,100000][1080,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_TOP_TAPPABLE_ELEMENT, mFrame=[0,0][1080,80], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_BOTTOM_TAPPABLE_ELEMENT, mFrame=[0,2274][1080,2400], mVisible=true, mInsetsRoundedCornerFrame=false}, InsetsSource: {mType=ITYPE_IME, mFrame=[0,0][0,0], mVisibleFrame=[0,1409][1080,2400], mVisible=false, mInsetsRoundedCornerFrame=false} } host=dev.tukiapp.tuki_little_adventures.qa/dev.tukiapp.tuki_little_adventures.MainActivity from=android.view.ViewRootImpl$ViewRootHandler.handleMessageImpl:6740
+W/OnBackInvokedCallback(17409): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(17409): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/ProfileInstaller(17409): Installing profile for dev.tukiapp.tuki_little_adventures.qa
+I/flutter (17409): RENDIMIENTO {"pagina":"rana-en-la-hoja","artId":"E01","regiones":11,"abrir_ms":469,"fotogramas_trazo":122,"build_ms_media":5.1,"raster_ms_media":11.5,"raster_ms_p90":13.8,"toque_relleno_ms":36.0}
+W/OnBackInvokedCallback(17409): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(17409): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (17409): RENDIMIENTO {"pagina":"quetzal","artId":"M06","regiones":51,"abrir_ms":554,"fotogramas_trazo":123,"build_ms_media":6.8,"raster_ms_media":13.7,"raster_ms_p90":14.8,"toque_relleno_ms":38.1}
+W/OnBackInvokedCallback(17409): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(17409): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (17409): RENDIMIENTO {"pagina":"d14-cascada","artId":"D14","regiones":95,"abrir_ms":498,"fotogramas_trazo":124,"build_ms_media":6.6,"raster_ms_media":14.4,"raster_ms_p90":15.3,"toque_relleno_ms":35.8}
+W/OnBackInvokedCallback(17409): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(17409): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (17409): RENDIMIENTO {"pagina":"a10-helechos","artId":"A10","regiones":140,"abrir_ms":611,"fotogramas_trazo":95,"build_ms_media":10.6,"raster_ms_media":33.1,"raster_ms_p90":33.4,"toque_relleno_ms":55.1}
+W/OnBackInvokedCallback(17409): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(17409): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (17409): RENDIMIENTO {"pagina":"a13-arbol-gigante","artId":"A13","regiones":140,"abrir_ms":687,"fotogramas_trazo":95,"build_ms_media":10.1,"raster_ms_media":31.2,"raster_ms_p90":31.7,"toque_relleno_ms":47.0}
+I/flutter (17409): 00:26 +1: (tearDownAll)
+I/flutter (17409): 00:26 +2: All tests passed!
+All tests passed.

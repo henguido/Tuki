@@ -27,9 +27,22 @@ android {
         // flag during build.
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        manifestPlaceholders["appLabel"] = "TUKI"
     }
 
     buildTypes {
+        debug {
+            // QA vive junto a la app normal. Las herramientas de integración
+            // pueden retirar este paquete sin borrar dibujos del usuario.
+            applicationIdSuffix = ".qa"
+            versionNameSuffix = "-qa"
+            manifestPlaceholders["appLabel"] = "TUKI QA"
+        }
+        getByName("profile") {
+            applicationIdSuffix = ".qa"
+            versionNameSuffix = "-qa"
+            manifestPlaceholders["appLabel"] = "TUKI QA"
+        }
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.

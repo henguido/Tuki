@@ -68,10 +68,10 @@ Dependencias resueltas (el `pubspec.lock` se versiona):
 
 | Plataforma | Identificador | Dónde |
 |---|---|---|
-| Android `applicationId` / `namespace` | `dev.tukiapp.tuki_little_adventures` | `android/app/build.gradle.kts` |
+| Android `applicationId` / `namespace` | Release: `dev.tukiapp.tuki_little_adventures`; debug QA: `dev.tukiapp.tuki_little_adventures.qa`; namespace: `dev.tukiapp.tuki_little_adventures` | `android/app/build.gradle.kts` |
 | iOS bundle ID | `dev.tukiapp.tukiLittleAdventures` | `ios/Runner.xcodeproj` |
 | Paquete Dart | `tuki_little_adventures` | `pubspec.yaml` |
-| Nombre en el lanzador | `TUKI` | `AndroidManifest.xml`, `Info.plist` |
+| Nombre en el lanzador | Release: `TUKI`; debug: `TUKI QA` | `AndroidManifest.xml`, `Info.plist` |
 
 **Confirmar los definitivos antes de preparar firma o distribución.** El APK actual va firmado con la clave de depuración.
 

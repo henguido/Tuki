@@ -1,0 +1,93 @@
+Resolving dependencies...
+Downloading packages...
+  built_collection 5.1.2 (6.0.0 available)
+  code_assets 1.2.1 (2.2.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  hooks 2.0.2 (2.2.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  native_toolchain_c 0.19.2 (0.19.6 available)
+  objective_c 9.5.0 (9.6.4 available)
+  petitparser 7.0.2 (7.1.0 available)
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences_foundation 2.5.7 (2.6.2 available)
+  sqlite3 3.5.2 (3.9.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+15 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/hen_g/.codex/visualizations/2026/11/14/01a1da93-f00a-7390-9477-1d82529f97fb/tuki-physical/integration_test/laminas_60_device_test.dart
+Running Gradle task 'assembleDebug'...                          
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/C:/Users/hen_g/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Running Gradle task 'assembleDebug'...                             38.9s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...          39.7s
+00:00 +0: las 60 láminas: interacción, persistencia y rendimiento
+LAMINA_60 {"artId":"E01","pagina":"rana-en-la-hoja","nivel":"easy","orientacion":"vertical","regiones":11,"carga_ms":2194,"relleno_guardado_ms":899,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E02","pagina":"e02-mariposa","nivel":"easy","orientacion":"vertical","regiones":19,"carga_ms":827,"relleno_guardado_ms":255,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E03","pagina":"e03-colibri","nivel":"easy","orientacion":"vertical","regiones":13,"carga_ms":709,"relleno_guardado_ms":194,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E04","pagina":"e04-tucan","nivel":"easy","orientacion":"vertical","regiones":25,"carga_ms":797,"relleno_guardado_ms":253,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E05","pagina":"e05-flor-tropical","nivel":"easy","orientacion":"vertical","regiones":8,"carga_ms":774,"relleno_guardado_ms":225,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E06","pagina":"e06-quetzal","nivel":"easy","orientacion":"vertical","regiones":14,"carga_ms":718,"relleno_guardado_ms":253,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E07","pagina":"e07-perezoso","nivel":"easy","orientacion":"vertical","regiones":16,"carga_ms":697,"relleno_guardado_ms":245,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E08","pagina":"e08-mono","nivel":"easy","orientacion":"vertical","regiones":20,"carga_ms":730,"relleno_guardado_ms":203,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E09","pagina":"e09-coati","nivel":"easy","orientacion":"vertical","regiones":27,"carga_ms":702,"relleno_guardado_ms":236,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E10","pagina":"e10-helechos","nivel":"easy","orientacion":"vertical","regiones":8,"carga_ms":735,"relleno_guardado_ms":226,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E11","pagina":"e11-orquideas","nivel":"easy","orientacion":"vertical","regiones":12,"carga_ms":719,"relleno_guardado_ms":169,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E12","pagina":"e12-ranas-del-bosque","nivel":"easy","orientacion":"vertical","regiones":17,"carga_ms":681,"relleno_guardado_ms":184,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E13","pagina":"e13-arbol-gigante","nivel":"easy","orientacion":"vertical","regiones":14,"carga_ms":682,"relleno_guardado_ms":188,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E14","pagina":"e14-cascada","nivel":"easy","orientacion":"vertical","regiones":11,"carga_ms":698,"relleno_guardado_ms":218,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"E15","pagina":"e15-sendero","nivel":"easy","orientacion":"vertical","regiones":16,"carga_ms":691,"relleno_guardado_ms":215,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M01","pagina":"m01-rana-en-la-hoja","nivel":"medium","orientacion":"vertical","regiones":28,"carga_ms":595,"relleno_guardado_ms":149,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M02","pagina":"m02-mariposa","nivel":"medium","orientacion":"vertical","regiones":32,"carga_ms":690,"relleno_guardado_ms":181,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M03","pagina":"m03-colibri","nivel":"medium","orientacion":"vertical","regiones":21,"carga_ms":665,"relleno_guardado_ms":156,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M04","pagina":"m04-tucan","nivel":"medium","orientacion":"vertical","regiones":29,"carga_ms":639,"relleno_guardado_ms":186,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M05","pagina":"m05-flor-tropical","nivel":"medium","orientacion":"horizontal","regiones":10,"carga_ms":625,"relleno_guardado_ms":236,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M06","pagina":"quetzal","nivel":"medium","orientacion":"vertical","regiones":51,"carga_ms":663,"relleno_guardado_ms":217,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M07","pagina":"m07-perezoso","nivel":"medium","orientacion":"vertical","regiones":31,"carga_ms":657,"relleno_guardado_ms":137,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M08","pagina":"m08-mono","nivel":"medium","orientacion":"vertical","regiones":39,"carga_ms":633,"relleno_guardado_ms":190,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M09","pagina":"m09-coati","nivel":"medium","orientacion":"vertical","regiones":38,"carga_ms":670,"relleno_guardado_ms":227,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M10","pagina":"m10-helechos","nivel":"medium","orientacion":"vertical","regiones":43,"carga_ms":624,"relleno_guardado_ms":225,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M11","pagina":"m11-orquideas","nivel":"medium","orientacion":"vertical","regiones":30,"carga_ms":626,"relleno_guardado_ms":238,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M12","pagina":"m12-ranas-del-bosque","nivel":"medium","orientacion":"vertical","regiones":37,"carga_ms":692,"relleno_guardado_ms":230,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M13","pagina":"m13-arbol-gigante","nivel":"medium","orientacion":"vertical","regiones":20,"carga_ms":649,"relleno_guardado_ms":226,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M14","pagina":"m14-cascada","nivel":"medium","orientacion":"vertical","regiones":36,"carga_ms":637,"relleno_guardado_ms":174,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"M15","pagina":"m15-sendero","nivel":"medium","orientacion":"vertical","regiones":38,"carga_ms":572,"relleno_guardado_ms":198,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D01","pagina":"d01-rana-en-la-hoja","nivel":"detailed","orientacion":"horizontal","regiones":78,"carga_ms":697,"relleno_guardado_ms":202,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D02","pagina":"d02-mariposa","nivel":"detailed","orientacion":"vertical","regiones":33,"carga_ms":666,"relleno_guardado_ms":191,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D03","pagina":"d03-colibri","nivel":"detailed","orientacion":"horizontal","regiones":76,"carga_ms":614,"relleno_guardado_ms":218,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D04","pagina":"d04-tucan","nivel":"detailed","orientacion":"horizontal","regiones":91,"carga_ms":637,"relleno_guardado_ms":207,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D05","pagina":"d05-flor-tropical","nivel":"detailed","orientacion":"vertical","regiones":57,"carga_ms":628,"relleno_guardado_ms":227,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D06","pagina":"d06-quetzal","nivel":"detailed","orientacion":"vertical","regiones":78,"carga_ms":642,"relleno_guardado_ms":240,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D07","pagina":"d07-perezoso","nivel":"detailed","orientacion":"horizontal","regiones":54,"carga_ms":581,"relleno_guardado_ms":205,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D08","pagina":"d08-mono","nivel":"detailed","orientacion":"horizontal","regiones":79,"carga_ms":626,"relleno_guardado_ms":231,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D09","pagina":"d09-coati","nivel":"detailed","orientacion":"horizontal","regiones":94,"carga_ms":722,"relleno_guardado_ms":149,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D10","pagina":"d10-helechos","nivel":"detailed","orientacion":"horizontal","regiones":90,"carga_ms":610,"relleno_guardado_ms":222,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D11","pagina":"d11-orquideas","nivel":"detailed","orientacion":"vertical","regiones":95,"carga_ms":613,"relleno_guardado_ms":158,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D12","pagina":"d12-ranas-del-bosque","nivel":"detailed","orientacion":"horizontal","regiones":77,"carga_ms":612,"relleno_guardado_ms":210,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D13","pagina":"d13-arbol-gigante","nivel":"detailed","orientacion":"vertical","regiones":78,"carga_ms":622,"relleno_guardado_ms":230,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D14","pagina":"d14-cascada","nivel":"detailed","orientacion":"horizontal","regiones":95,"carga_ms":650,"relleno_guardado_ms":162,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"D15","pagina":"sendero","nivel":"detailed","orientacion":"vertical","regiones":59,"carga_ms":586,"relleno_guardado_ms":185,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A01","pagina":"a01-rana-en-la-hoja","nivel":"advanced","orientacion":"horizontal","regiones":117,"carga_ms":661,"relleno_guardado_ms":223,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A02","pagina":"a02-mariposa","nivel":"advanced","orientacion":"vertical","regiones":141,"carga_ms":667,"relleno_guardado_ms":228,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A03","pagina":"a03-colibri","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":763,"relleno_guardado_ms":195,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A04","pagina":"a04-tucan","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":650,"relleno_guardado_ms":187,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A05","pagina":"a05-flor-tropical","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":689,"relleno_guardado_ms":194,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A06","pagina":"a06-quetzal","nivel":"advanced","orientacion":"vertical","regiones":141,"carga_ms":673,"relleno_guardado_ms":192,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A07","pagina":"a07-perezoso","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":687,"relleno_guardado_ms":206,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A08","pagina":"a08-mono","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":773,"relleno_guardado_ms":198,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A09","pagina":"a09-coati","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":785,"relleno_guardado_ms":208,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A10","pagina":"a10-helechos","nivel":"advanced","orientacion":"vertical","regiones":140,"carga_ms":800,"relleno_guardado_ms":210,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A11","pagina":"a11-orquideas","nivel":"advanced","orientacion":"vertical","regiones":140,"carga_ms":736,"relleno_guardado_ms":141,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A12","pagina":"a12-ranas-del-bosque","nivel":"advanced","orientacion":"vertical","regiones":143,"carga_ms":793,"relleno_guardado_ms":145,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A13","pagina":"a13-arbol-gigante","nivel":"advanced","orientacion":"vertical","regiones":140,"carga_ms":751,"relleno_guardado_ms":221,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A14","pagina":"a14-cascada","nivel":"advanced","orientacion":"vertical","regiones":140,"carga_ms":664,"relleno_guardado_ms":174,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+LAMINA_60 {"artId":"A15","pagina":"a15-sendero","nivel":"advanced","orientacion":"vertical","regiones":142,"carga_ms":664,"relleno_guardado_ms":213,"relleno":"ok","pincel":"ok","deshacer":"ok","zoom":"ok","guardado":"ok","reapertura":"ok"}
+02:34 +1: (tearDownAll)
+02:35 +1: All tests passed!
