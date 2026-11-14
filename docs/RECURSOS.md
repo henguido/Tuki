@@ -12,7 +12,7 @@ Estado al 14 de noviembre de 2026. «Provisional» significa integrado y funcion
 | `assets/chapters/bosque-nuboso/audio/intro_es.mp3` | Narración en español (9,1 s) | Voz sintética «Microsoft Helena Desktop» (SAPI de Windows) generada con `tool/assets/speak.ps1` | **Verificar** los términos de las voces de Microsoft antes de distribuir; válida solo para QA interno | Provisional | Grabación con locutor; mismo nombre de archivo | Pendiente |
 | `assets/chapters/bosque-nuboso/audio/intro_en.mp3` | Narración en inglés (9,8 s) | Voz sintética «Microsoft Zira Desktop», mismo script | Ídem | Provisional | Ídem | Pendiente |
 | `assets/chapters/bosque-nuboso/audio/bosque.mp3` | Ambiente en bucle (32 s) | Sintetizado desde cero en `tool/assets/build_assets.py` (ruido filtrado, gotas, cantos) | Obra original del proyecto | Provisional | Grabación de campo o librería con licencia; mismo nombre | Pendiente |
-| `android/app/src/main/res/mipmap-*/ic_launcher.png`, `ios/Runner/Assets.xcassets/AppIcon.appiconset/*`, `assets/brand/icon.png` | Icono de la app | Dibujo original generado en `tool/assets/build_assets.py` | Obra original del proyecto | Provisional | Sustituir los PNG (o adoptar un generador de iconos) cuando exista la marca definitiva | Pendiente |
+| `assets/branding/tuki-icon-master.png`, `android/app/src/main/res/mipmap-*/ic_launcher.png`, `ios/Runner/Assets.xcassets/AppIcon.appiconset/*`, `assets/brand/icon.png` | Icono de la app | Adaptación cuadrada del JPG entregado por el cliente `Cute Toucan Clipart Bundle _ Tropical Bird Nursery Art (digital Download) - Etsy Israel.jpg` (SHA-256 `82125094A8B7F090D2BF2CE74A8900AC04FF5456413E4A614C1561A7A4DDD66A`), generada con edición de imagen de OpenAI; maestro SHA-256 `C9FA00A9232DD8520AAD06F3362FB02ED9C83BF66DE50DE2CDA38ED173F76F1E` | **Por confirmar**: conservar recibo, ZIP original y licencia que permita expresamente un icono derivado para una aplicación comercial | Provisional, integrado por solicitud del cliente | Sustituir el maestro y regenerar tamaños cuando exista arte con licencia verificada | Pendiente de licencia |
 | `assets/fonts/Fredoka-Variable.ttf` | Tipografía redondeada de la interfaz | The Fredoka Project Authors, vía Google Fonts | SIL Open Font License 1.1 (`assets/fonts/OFL.txt`) | **Definitivo** | — | No requiere |
 | Iconos de la interfaz | Material Icons | Incluidos con Flutter | Apache 2.0 | **Definitivo** | — | No requiere |
 
@@ -29,7 +29,6 @@ Estado al 14 de noviembre de 2026. «Provisional» significa integrado y funcion
 
 | Archivo | Motivo |
 |---|---|
-| [`Cute Toucan Clipart Bundle … Etsy`](https://www.etsy.com/listing/1738970186/) (tucán) | Referencia de estilo. La descripción consultada el 14-11-2026 afirma permitir productos y aplicaciones comerciales y prohíbe la reventa directa del recurso. Esto no demuestra compra, autoría del vendedor ni los términos entregados con el archivo. **No se integra para publicación** hasta conservar recibo, ZIP original, texto de licencia vigente y confirmación de que un icono de app derivado está permitido. |
 | `Explora y colorea el bosque nuboso.png`, `Pantallas de coloreado del bosque nuboso.png`, `mockups_el_bosque_nuboso_v2.pdf` | Referencias de interfaz y navegación. Contienen textos y controles incrustados; no se usan como recurso. |
 
 ## Cómo se generan los recursos provisionales
