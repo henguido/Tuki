@@ -1,6 +1,9 @@
 // Recorrido de aceptación sobre la app real (catálogo, SQLite, audio y PNG).
 //
-//   flutter test integration_test -d <dispositivo>
+//   flutter drive --debug -d <dispositivo> \
+//     --target integration_test/app_test.dart \
+//     --driver test_driver/integration_test.dart \
+//     -P tukiIntegrationTest=true --keep-app-running
 //
 // Usa una base de datos propia (tuki_itest.sqlite) para no tocar las obras
 // de la app instalada.

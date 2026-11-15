@@ -1,5 +1,10 @@
 // Recorrido exhaustivo de las 60 láminas en un dispositivo Android real.
 //
+//   flutter drive --debug -d <id> \
+//     --target integration_test/laminas_60_device_test.dart \
+//     --driver test_driver/integration_test.dart \
+//     -P tukiIntegrationTest=true --keep-app-running
+//
 // Usa una base de datos exclusiva para QA; no toca las obras de la app normal.
 // Por cada lámina comprueba carga/render, relleno, pincel, deshacer, zoom,
 // guardado y reapertura, y emite una línea LAMINA_60 con evidencia medible.
@@ -14,6 +19,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:tuki_little_adventures/app/app.dart';
 import 'package:tuki_little_adventures/app/dependencies.dart';
 import 'package:tuki_little_adventures/features/editor/drawing_canvas.dart';
+import 'package:tuki_little_adventures/features/editor/drawing_document.dart';
 import 'package:tuki_little_adventures/features/editor/editor_screen.dart';
 import 'package:tuki_little_adventures/features/editor/page_template.dart';
 
@@ -141,11 +147,30 @@ void main() {
       await gesture.moveBy(const Offset(36, 0));
       await gesture.up();
       await tester.pump();
+      var stored = await deps.drawings.find(_chapterId, page.id);
+      expect(stored, isNotNull, reason: '${page.artId}: pincel guardado');
+      expect(stored!.document.ops.single.kind, StrokeKind.brush);
+
+      await tester.tap(find.byKey(const ValueKey('tool-eraser')));
+      final erase = await tester.startGesture(start + const Offset(18, -18));
+      await erase.moveBy(const Offset(0, 36));
+      await erase.up();
+      await tester.pump(const Duration(milliseconds: 250));
+      stored = await deps.drawings.find(_chapterId, page.id);
+      expect(stored!.document.ops, hasLength(2));
+      expect(stored.document.ops.last.kind, StrokeKind.eraser);
+
+      // Deshace primero el borrador y después el pincel. Rehacer no existe
+      // todavía en el producto y se registra como no aplicable.
+      await tester.tap(find.byKey(const ValueKey('editor-undo')));
+      await tester.pump(const Duration(milliseconds: 100));
+      stored = await deps.drawings.find(_chapterId, page.id);
+      expect(stored!.document.ops.single.kind, StrokeKind.brush);
       await tester.tap(find.byKey(const ValueKey('editor-undo')));
       await _waitFor(tester, find.text('Guardado'));
       await _zoomAndReset(tester);
 
-      var stored = await deps.drawings.find(_chapterId, page.id);
+      stored = await deps.drawings.find(_chapterId, page.id);
       expect(stored, isNotNull, reason: '${page.artId}: guardado');
       expect(stored!.document.fills.keys, contains(expectedRegion));
       expect(stored.document.ops, isEmpty, reason: '${page.artId}: deshacer');
@@ -170,7 +195,7 @@ void main() {
 
       // ignore: avoid_print
       print(
-        'LAMINA_60 ${jsonEncode({'artId': page.artId, 'pagina': page.id, 'nivel': page.level.id, 'orientacion': template.viewBox.width > template.viewBox.height ? 'horizontal' : 'vertical', 'regiones': template.regions.length, 'carga_ms': loadMs, 'relleno_guardado_ms': fillMs, 'relleno': 'ok', 'pincel': 'ok', 'deshacer': 'ok', 'zoom': 'ok', 'guardado': 'ok', 'reapertura': 'ok'})}',
+        'LAMINA_60 ${jsonEncode({'artId': page.artId, 'pagina': page.id, 'nivel': page.level.id, 'orientacion': template.viewBox.width > template.viewBox.height ? 'horizontal' : 'vertical', 'regiones': template.regions.length, 'carga_ms': loadMs, 'relleno_guardado_ms': fillMs, 'relleno': 'ok', 'pincel': 'ok', 'borrador': 'ok', 'deshacer': 'ok', 'rehacer': 'no disponible', 'zoom': 'ok', 'guardado': 'ok', 'reapertura': 'ok'})}',
       );
 
       await tester.tap(find.byKey(const ValueKey('editor-back')));

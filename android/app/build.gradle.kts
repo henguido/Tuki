@@ -4,6 +4,9 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val isIntegrationTest =
+    providers.gradleProperty("tukiIntegrationTest").orNull == "true"
+
 android {
     namespace = "dev.tukiapp.tuki_little_adventures"
     compileSdk = flutter.compileSdkVersion
@@ -33,15 +36,17 @@ android {
     buildTypes {
         debug {
             // QA vive junto a la app normal. Las herramientas de integración
-            // pueden retirar este paquete sin borrar dibujos del usuario.
-            applicationIdSuffix = ".qa"
-            versionNameSuffix = "-qa"
-            manifestPlaceholders["appLabel"] = "TUKI QA"
+            // usan otro paquete porque Flutter puede retirarlo al terminar.
+            applicationIdSuffix = if (isIntegrationTest) ".qa.integration" else ".qa"
+            versionNameSuffix = if (isIntegrationTest) "-integration" else "-qa"
+            manifestPlaceholders["appLabel"] =
+                if (isIntegrationTest) "TUKI Test" else "TUKI QA"
         }
         getByName("profile") {
-            applicationIdSuffix = ".qa"
-            versionNameSuffix = "-qa"
-            manifestPlaceholders["appLabel"] = "TUKI QA"
+            applicationIdSuffix = if (isIntegrationTest) ".qa.integration" else ".qa"
+            versionNameSuffix = if (isIntegrationTest) "-integration" else "-qa"
+            manifestPlaceholders["appLabel"] =
+                if (isIntegrationTest) "TUKI Test" else "TUKI QA"
         }
         release {
             // TODO: Add your own signing config for the release build.
