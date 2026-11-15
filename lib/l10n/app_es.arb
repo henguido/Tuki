@@ -90,6 +90,9 @@
     }
   },
   "adultsTitle": "Para adultos",
+  "privacy": "Privacidad",
+  "privacyPolicy": "Política de privacidad",
+  "privacyOpenError": "No se pudo abrir la política de privacidad.",
   "language": "Idioma",
   "sound": "Sonido",
   "narration": "Narración",

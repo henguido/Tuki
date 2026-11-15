@@ -40,7 +40,8 @@
 - [ ] Adjuntar evidencia de derechos para las 60 ilustraciones y audios.
 - [x] Publicar `docs/play/privacy-site/tuki.artwebcr.com/privacy/index.html` en
   `https://tuki.artwebcr.com/privacy`.
-- [ ] Enlazar la política desde una pantalla accesible dentro de TUKI.
+- [x] Enlazar la política desde el área adulta de TUKI, con control parental y
+  apertura exclusiva de `https://tuki.artwebcr.com/privacy`.
 - [ ] Completar Data Safety, público objetivo/Families e IARC.
 - [ ] Confirmar que no hay anuncios, compras ni SDK de rastreo en el AAB final.
 - [ ] Completar TalkBack manual sin conceder permisos inesperados.

@@ -410,6 +410,24 @@ abstract class AppLocalizations {
   /// **'Para adultos'**
   String get adultsTitle;
 
+  /// No description provided for @privacy.
+  ///
+  /// In es, this message translates to:
+  /// **'Privacidad'**
+  String get privacy;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In es, this message translates to:
+  /// **'Política de privacidad'**
+  String get privacyPolicy;
+
+  /// No description provided for @privacyOpenError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se pudo abrir la política de privacidad.'**
+  String get privacyOpenError;
+
   /// No description provided for @language.
   ///
   /// In es, this message translates to:
