@@ -181,6 +181,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get adultsTitle => 'For grown-ups';
 
   @override
+  String get privacy => 'Privacy';
+
+  @override
+  String get privacyPolicy => 'Privacy policy';
+
+  @override
+  String get privacyOpenError => 'The privacy policy could not be opened.';
+
+  @override
   String get language => 'Language';
 
   @override

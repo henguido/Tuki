@@ -4,11 +4,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tuki_little_adventures/data/local/drawings_repository.dart';
 import 'package:tuki_little_adventures/data/local/preferences.dart';
 import 'package:tuki_little_adventures/features/adults/age_setup.dart';
+import 'package:tuki_little_adventures/features/adults/privacy_service.dart';
 import 'package:tuki_little_adventures/features/chapters/catalog.dart';
 import 'package:tuki_little_adventures/features/chapters/cover_screen.dart';
 import 'package:tuki_little_adventures/features/chapters/recommendation.dart';
@@ -610,6 +612,46 @@ void main() {
     });
   });
 
+  group('área de adultos: privacidad', () {
+    const channel = MethodChannel(
+      'dev.tukiapp.tuki_little_adventures/external_url',
+    );
+
+    testWidgets('el enlace exige control adulto y abre solo la URL oficial', (
+      tester,
+    ) async {
+      MethodCall? received;
+      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(channel, (
+        call,
+      ) async {
+        received = call;
+        return true;
+      });
+      addTearDown(
+        () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+          channel,
+          null,
+        ),
+      );
+
+      final h = await TestHarness.create();
+      await pumpApp(tester, h);
+      await tester.tap(find.byKey(const ValueKey('settings')));
+      await tester.pumpAndSettle();
+      final link = find.byKey(const ValueKey('privacy-policy-open'));
+      await tester.scrollUntilVisible(link, 300);
+      await tester.tap(link);
+      await tester.pumpAndSettle();
+
+      expect(find.text('Solo para adultos'), findsOneWidget);
+      expect(received, isNull);
+      await answerGate(tester);
+      await tester.pumpAndSettle();
+      expect(received?.method, 'open');
+      expect(received?.arguments, {'url': privacyPolicyUrl});
+    });
+  });
+
   group('editor según el nivel de la lámina', () {
     test('tolerancia táctil: un toque junto a una figura la rellena', () {
       final frog = loadTemplateFile('rana-en-la-hoja-v1.json');
@@ -1016,17 +1058,19 @@ void main() {
       }
     });
 
-    test('el código de la app no contiene direcciones web', () {
+    test('el código solo contiene la URL oficial de privacidad', () {
+      final urls = <String>{};
       for (final f in Directory(
         'lib',
       ).listSync(recursive: true).whereType<File>()) {
         if (!f.path.endsWith('.dart')) continue;
-        expect(
-          RegExp(r'https?://').hasMatch(f.readAsStringSync()),
-          false,
-          reason: f.path,
+        urls.addAll(
+          RegExp(r'https?://[^\s\x27\x22]+')
+              .allMatches(f.readAsStringSync())
+              .map((m) => m.group(0)!),
         );
       }
+      expect(urls, {privacyPolicyUrl});
     });
   });
 }

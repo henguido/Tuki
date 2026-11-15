@@ -15,13 +15,21 @@ preservada, SHA-256, procedencia conocida y estado jurídico.
 - La conversión a JSON, limpieza de regiones y pruebas funcionales están
   documentadas; ese trabajo técnico no crea por sí mismo derechos sobre la
   imagen fuente.
+- La auditoría local realmente disponible está en `ilustraciones/_auditoria`;
+  el directorio hermano `F:\Tuki\ilustraciones_auditoria` indicado en una
+  solicitud posterior no existe. La auditoría preservada registra 70 archivos
+  iniciales, 69 contenidos únicos, un duplicado exacto y ninguna eliminación.
+- M02 tiene evidencia adicional: fue generada específicamente para TUKI y su
+  especificación está conservada en `ilustraciones/INVENTARIO_TUKI.md`. Sigue
+  pendiente identificar la cuenta generadora y confirmar las entradas usadas.
 
-Los [Términos de uso de OpenAI](https://openai.com/policies/terms-of-use/)
-indican que, entre OpenAI y la persona usuaria y en la medida permitida por la
-ley, esta conserva sus derechos sobre la entrada y posee la salida. Esto no
-autoriza entradas de terceros ni garantiza exclusividad: por eso aún hace falta
-identificar la cuenta que generó cada archivo, los términos que le aplicaban y
-confirmar que sus entradas/referencias eran utilizables.
+Los [Términos de uso de OpenAI](https://openai.com/policies/terms-of-use/),
+vigentes desde el 1 de enero de 2026, indican que, entre OpenAI y la persona
+usuaria y en la medida permitida por la ley, esta conserva sus derechos sobre la
+entrada y posee la salida. También exigen que la persona usuaria tenga los
+derechos, licencias y permisos necesarios sobre la entrada, y advierten que una
+salida puede no ser única. Esto no autoriza referencias de terceros ni prueba
+qué cuenta generó los archivos.
 
 ## Evidencia mínima aceptable por recurso
 

@@ -1,6 +1,6 @@
 # Privacidad y seguridad infantil
 
-Estado al 14 de noviembre de 2026. Este documento describe la compilación de
+Estado al 15 de noviembre de 2026. Este documento describe la compilación de
 QA; no sustituye la política de privacidad pública ni la revisión legal previa
 a distribuir la aplicación.
 
@@ -16,8 +16,11 @@ a distribuir la aplicación.
   una persona adulta elige guardar o compartir un PNG mediante el diálogo del
   sistema. El destino elegido puede aplicar sus propias prácticas de datos.
 - La compilación de depuración de Android incluye `INTERNET` para las herramientas
-  de Flutter. La aplicación no contiene clientes ni destinos de red. La
-  compilación de publicación debe volver a auditarse antes de distribuirse.
+  de Flutter. La aplicación no contiene clientes de red. Desde el área adulta
+  puede abrir en el navegador del sistema únicamente
+  `https://tuki.artwebcr.com/privacy`; Android valida esquema y host antes de
+  entregar el enlace. La variante release elimina `INTERNET` y
+  `ACCESS_NETWORK_STATE`.
 
 ## Compras
 
@@ -33,9 +36,10 @@ y restauración.
    IARC y seguridad de datos en Play Console. Aunque la pista interna está
    exenta de mostrar la sección pública de seguridad de datos, esto no elimina
    la obligación de revisar Families antes de producción.
-2. Alojar una política de privacidad propia de TUKI en una URL HTTPS pública,
-   sin inicio de sesión ni PDF, y enlazarla tanto en la ficha como dentro de la
-   app. El archivo presente es evidencia técnica, no esa página pública.
+2. Mantener disponible la política propia publicada en
+   `https://tuki.artwebcr.com/privacy`, enlazada en la ficha y desde el área
+   adulta de la app. El acceso interno está implementado detrás del control de
+   adultos y limitado a ese destino HTTPS.
 3. Confirmar identificador definitivo, propietario, clave de carga y Play App
    Signing antes del primer AAB. La configuración `release` rechaza la clave de
    depuración y exige credenciales externas a Git; un artefacto de validación

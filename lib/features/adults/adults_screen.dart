@@ -8,6 +8,7 @@ import '../store/adventures_screen.dart';
 import '../store/adult_gate.dart';
 import 'age_setup.dart';
 import 'export_picker_screen.dart';
+import 'privacy_service.dart';
 
 /// Área de adultos: idioma, edad sugerida, sonido, exportación y aventuras.
 class AdultsScreen extends StatelessWidget {
@@ -18,6 +19,16 @@ class AdultsScreen extends StatelessWidget {
     await Navigator.of(
       context,
     ).push(MaterialPageRoute<void>(builder: (_) => const ExportPickerScreen()));
+  }
+
+  Future<void> _openPrivacy(BuildContext context) async {
+    if (!await showAdultGate(context) || !context.mounted) return;
+    final opened = await const PrivacyService().openPolicy();
+    if (!opened && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(AppLocalizations.of(context).privacyOpenError)),
+      );
+    }
   }
 
   @override
@@ -134,6 +145,35 @@ class AdultsScreen extends StatelessWidget {
                           Flexible(
                             child: Text(
                               l.exportDrawing,
+                              style: tukiText(
+                                19,
+                                weight: 700,
+                                color: TukiColors.turquoise,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 22),
+                  _SectionTitle(l.privacy),
+                  TukiCard(
+                    key: const ValueKey('privacy-policy-open'),
+                    onTap: () => _openPrivacy(context),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.privacy_tip_outlined,
+                            color: TukiColors.turquoise,
+                          ),
+                          const SizedBox(width: 10),
+                          Flexible(
+                            child: Text(
+                              l.privacyPolicy,
                               style: tukiText(
                                 19,
                                 weight: 700,
