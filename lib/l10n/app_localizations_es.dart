@@ -83,6 +83,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get undo => 'Deshacer';
 
   @override
+  String get redo => 'Rehacer';
+
+  @override
   String get tools => 'Herramientas';
 
   @override

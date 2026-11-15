@@ -28,10 +28,23 @@ y restauración.
 
 ## Lista previa a publicación
 
-1. Confirmar los identificadores definitivos, firma y propietario de las fichas.
-2. Revisar las políticas vigentes de Google Play Families y Apple Kids Category.
-3. Publicar una política de privacidad con responsable y canal de contacto.
-4. Verificar el manifiesto final y las declaraciones de privacidad de cada SDK.
-5. Completar pruebas de accesibilidad, compra/restauración y control de adultos.
-6. No publicar arte, audio ni iconos sin procedencia y licencia comercial
+1. Declarar con precisión el público infantil, contenido, anuncios, clasificación
+   IARC y seguridad de datos en Play Console. Aunque la pista interna está
+   exenta de mostrar la sección pública de seguridad de datos, esto no elimina
+   la obligación de revisar Families antes de producción.
+2. Alojar una política de privacidad propia de TUKI en una URL HTTPS pública,
+   sin inicio de sesión ni PDF, y enlazarla tanto en la ficha como dentro de la
+   app. El archivo presente es evidencia técnica, no esa página pública.
+3. Confirmar identificador definitivo, propietario, clave de carga y Play App
+   Signing antes del primer AAB. La configuración `release` actual usa firma de
+   depuración y no debe subirse.
+4. Mantener `targetSdkVersion` 36 o superior: es el mínimo para apps nuevas y
+   actualizaciones en Google Play desde el 31 de agosto de 2026. La APK QA
+   auditada ya compila y apunta a API 36.
+5. Verificar el manifiesto final y las declaraciones de privacidad de cada SDK.
+   La APK QA solicita `INTERNET` y `ACCESS_NETWORK_STATE`; la variante final
+   debe justificar o retirar ambos. No hay permisos sensibles.
+6. Completar pruebas humanas de TalkBack, texto ampliado, rotación y sesión con
+   niños antes de producción. La automatización no sustituye esa evaluación.
+7. No publicar arte, audio ni iconos sin procedencia y licencia comercial
    documentadas en `docs/RECURSOS.md`.

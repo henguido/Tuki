@@ -196,7 +196,7 @@ void main() {
     });
   });
 
-  group('deshacer (A03)', () {
+  group('deshacer y rehacer (A03)', () {
     test('revierte cada acción y persiste el resultado como cambio nuevo', () {
       final p = pointIn(frog, 'hoja');
       expect(c.canUndo, false);
@@ -216,6 +216,7 @@ void main() {
 
       expect(c.undo(), true);
       expect(c.document, afterBrush);
+      expect(c.canRedo, true);
       expect(c.undo(), true);
       expect(c.document, afterFill);
       expect(c.undo(), true);
@@ -227,11 +228,45 @@ void main() {
       expect(commits.last, DrawingDocument.empty);
     });
 
+    test('rehace relleno, pincel y borrador; una acción nueva lo invalida', () {
+      c.fillAt(pointIn(frog, 'hoja'));
+      final afterFill = c.document;
+      c.tool = EditorTool.brush;
+      c.startStroke(const Offset(100, 500));
+      c.extendStroke(const Offset(600, 500));
+      c.endStroke();
+      final afterBrush = c.document;
+      c.tool = EditorTool.eraser;
+      c.startStroke(const Offset(300, 500));
+      c.endStroke();
+      final afterEraser = c.document;
+
+      expect(c.undo(), true);
+      expect(c.undo(), true);
+      expect(c.undo(), true);
+      expect(c.redo(), true);
+      expect(c.document, afterFill);
+      expect(c.redo(), true);
+      expect(c.document, afterBrush);
+      expect(c.redo(), true);
+      expect(c.document, afterEraser);
+      expect(c.canRedo, false);
+      expect(c.redo(), false);
+
+      expect(c.undo(), true);
+      c.tool = EditorTool.fill;
+      c.color = blue;
+      c.fillAt(pointIn(frog, 'cuerpo'));
+      expect(c.canRedo, false);
+      expect(commits.last, c.document);
+    });
+
     test('el historial es de la sesión', () {
       c.fillAt(pointIn(frog, 'hoja'));
       final reopened = EditorController(template: frog, initial: c.document);
       expect(reopened.document.fills, {'hoja': red});
       expect(reopened.canUndo, false);
+      expect(reopened.canRedo, false);
     });
   });
 

@@ -168,6 +168,10 @@ void main() {
       tester.getSemantics(find.byKey(const ValueKey('editor-undo'))),
       isSemantics(isButton: true, isEnabled: false, hasEnabledState: true),
     );
+    expect(
+      tester.getSemantics(find.byKey(const ValueKey('editor-redo'))),
+      isSemantics(isButton: true, isEnabled: false, hasEnabledState: true),
+    );
     await tester.tap(find.byKey(const ValueKey('editor-undo')));
     await tester.pumpAndSettle();
     expect(h.drawings.rows, isEmpty);
@@ -208,6 +212,14 @@ void main() {
     expect(doc.fills, {'cuerpo': leafGreen});
     expect(row(h, 'rana-en-la-hoja')!.saveRevision, 3);
 
+    // Rehacer restaura y persiste exactamente la acción deshecha.
+    await tester.tap(find.byKey(const ValueKey('editor-redo')));
+    await tester.pumpAndSettle();
+    doc = row(h, 'rana-en-la-hoja')!.document;
+    expect(doc.ops.single.kind, StrokeKind.brush);
+    expect(doc.fills, {'cuerpo': leafGreen});
+    expect(row(h, 'rana-en-la-hoja')!.saveRevision, 4);
+
     // Volver → Láminas → Portada → Inicio, que ahora ofrece continuar.
     await tester.tap(find.byKey(const ValueKey('editor-back')));
     await tester.pumpAndSettle();
@@ -228,7 +240,7 @@ void main() {
       'cuerpo': leafGreen,
       'hoja': leafGreen,
     });
-    expect(row(h, 'rana-en-la-hoja')!.saveRevision, 4);
+    expect(row(h, 'rana-en-la-hoja')!.saveRevision, 5);
 
     // El botón de regreso del sistema respeta el guardado y el origen.
     await tester.binding.handlePopRoute();

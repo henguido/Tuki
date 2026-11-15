@@ -11,7 +11,7 @@ enum StrokeSize { small, medium, large }
 
 /// Estado de sesión del editor y pila de acciones, independiente del widget.
 ///
-/// Cada acción confirmada (relleno, trazo, borrado o deshacer) produce un
+/// Cada acción confirmada (relleno, trazo, borrado, deshacer o rehacer) produce un
 /// documento nuevo y se notifica a [onCommit] para persistirlo.
 class EditorController extends ChangeNotifier {
   EditorController({
@@ -34,6 +34,7 @@ class EditorController extends ChangeNotifier {
 
   DrawingDocument _document;
   final List<DrawingDocument> _undo = [];
+  final List<DrawingDocument> _redo = [];
   EditorTool _tool = EditorTool.fill;
   int _color;
   StrokeSize _size = StrokeSize.medium;
@@ -44,6 +45,7 @@ class EditorController extends ChangeNotifier {
   int get color => _color;
   StrokeSize get strokeSize => _size;
   bool get canUndo => _undo.isNotEmpty;
+  bool get canRedo => _redo.isNotEmpty;
 
   /// Trazo en curso, todavía sin confirmar.
   StrokeOp? get provisional => _provisional;
@@ -82,6 +84,7 @@ class EditorController extends ChangeNotifier {
   void _commit(DrawingDocument next) {
     _undo.add(_document);
     if (_undo.length > maxUndo) _undo.removeAt(0);
+    _redo.clear();
     _document = next;
     notifyListeners();
     onCommit?.call(next);
@@ -144,7 +147,21 @@ class EditorController extends ChangeNotifier {
   bool undo() {
     if (_undo.isEmpty) return false;
     _provisional = null;
+    _redo.add(_document);
+    if (_redo.length > maxUndo) _redo.removeAt(0);
     _document = _undo.removeLast();
+    notifyListeners();
+    onCommit?.call(_document);
+    return true;
+  }
+
+  /// Reaplica la última acción deshecha y persiste el resultado.
+  bool redo() {
+    if (_redo.isEmpty) return false;
+    _provisional = null;
+    _undo.add(_document);
+    if (_undo.length > maxUndo) _undo.removeAt(0);
+    _document = _redo.removeLast();
     notifyListeners();
     onCommit?.call(_document);
     return true;
