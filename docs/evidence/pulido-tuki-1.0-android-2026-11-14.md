@@ -66,6 +66,9 @@ especulativo.
 - APK QA: `build/app/outputs/flutter-apk/app-debug.apk`, 204.567.721 bytes.
 - SHA-256:
   `4ECF880107BD77A4A5BE1210D0DBA7B016543D4BFE7BB3746A2DB8C4A579BA8A`.
+- Commit funcional: `f6084b8`. PR apilado en borrador: `#5` sobre el PR
+  `#4`. CI `43660854732`: aprobado en 6 min 22 s (formato, análisis, catálogo
+  y 60 plantillas, 200 pruebas, APK y artefacto).
 - Pendientes: TalkBack/texto ampliado/rotación manuales concluyentes, sesión con
   niños, tableta e iOS físicos, dirección artística y licencia de E06, mejora
-  demostrable de A10/A13, firma y configuración de Play, y CI/PR de esta rama.
+  demostrable de A10/A13, firma y configuración de Play.
