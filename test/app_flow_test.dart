@@ -886,6 +886,16 @@ void main() {
     );
     await tester.tap(find.byKey(const ValueKey('export-open')));
     await tester.pumpAndSettle();
+    final question = tester
+        .widget<Text>(find.textContaining('¿Cuánto es'))
+        .data!;
+    final factors = RegExp(r'(\d+) × (\d+)').firstMatch(question)!;
+    await tester.enterText(
+      find.byKey(const ValueKey('adult-gate-input')),
+      '${int.parse(factors[1]!) * int.parse(factors[2]!)}',
+    );
+    await tester.tap(find.byKey(const ValueKey('adult-gate-ok')));
+    await tester.pumpAndSettle();
 
     // Sin elegir obra no hay acción de exportar.
     expect(

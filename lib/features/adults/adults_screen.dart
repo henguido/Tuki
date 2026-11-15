@@ -5,12 +5,20 @@ import '../../app/theme.dart';
 import '../../app/widgets.dart';
 import '../../l10n/app_localizations.dart';
 import '../store/adventures_screen.dart';
+import '../store/adult_gate.dart';
 import 'age_setup.dart';
 import 'export_picker_screen.dart';
 
 /// Área de adultos: idioma, edad sugerida, sonido, exportación y aventuras.
 class AdultsScreen extends StatelessWidget {
   const AdultsScreen({super.key});
+
+  Future<void> _openExport(BuildContext context) async {
+    if (!await showAdultGate(context) || !context.mounted) return;
+    await Navigator.of(
+      context,
+    ).push(MaterialPageRoute<void>(builder: (_) => const ExportPickerScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,11 +120,7 @@ class AdultsScreen extends StatelessWidget {
                   _SectionTitle(l.drawings),
                   TukiCard(
                     key: const ValueKey('export-open'),
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) => const ExportPickerScreen(),
-                      ),
-                    ),
+                    onTap: () => _openExport(context),
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(minHeight: 40),
                       child: Row(
