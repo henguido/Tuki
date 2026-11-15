@@ -42,9 +42,11 @@ autorización a ArtwebCR/TUKI; por eso ninguno se declara publicable todavía.
 - Formato: 63 archivos, sin cambios pendientes.
 - `flutter analyze`: sin incidencias.
 - `flutter test`: 206/206 aprobadas.
-- La nueva prueba `test/art_provenance_test.dart` falla si cambia un hash, se
-  pierde una credencial C2PA, desaparece una plantilla o se rompe la cadena
-  especial del derivado E06.
+- La nueva prueba `test/art_provenance_test.dart` valida siempre el inventario,
+  registros, plantillas y la cadena especial de E06. Cuando los raster locales
+  están disponibles también recalcula los 60 hashes e inspecciona C2PA. GitHub
+  Actions omite explícitamente esos dos controles locales porque
+  `ilustraciones/` no se versiona; no presenta esa omisión como aprobación.
 
 ## Tucán oficial
 

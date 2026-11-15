@@ -18,6 +18,7 @@ List<String> _quotedCsvRow(String line) {
 String _sha256(File file) => sha256.convert(file.readAsBytesSync()).toString();
 
 void main() {
+  final localArtAvailable = Directory('ilustraciones/organizadas').existsSync();
   final lines = const LineSplitter()
       .convert(File('docs/play/inventario-licencias-60.csv').readAsStringSync())
       .where((line) => line.trim().isNotEmpty)
@@ -61,29 +62,41 @@ void main() {
     },
   );
 
-  test('los originales y las copias organizadas coinciden con sus SHA-256', () {
-    for (final row in rows) {
-      final source = File('ilustraciones/${row['archivo_fuente']}');
-      final organized = File('ilustraciones/${row['archivo_organizado']}');
-      expect(source.existsSync(), isTrue, reason: source.path);
-      expect(organized.existsSync(), isTrue, reason: organized.path);
-      expect(_sha256(source), row['sha256'], reason: row['id']);
-      expect(_sha256(organized), row['sha256'], reason: row['id']);
-    }
-  });
+  test(
+    'los originales y las copias organizadas coinciden con sus SHA-256',
+    () {
+      for (final row in rows) {
+        final source = File('ilustraciones/${row['archivo_fuente']}');
+        final organized = File('ilustraciones/${row['archivo_organizado']}');
+        expect(source.existsSync(), isTrue, reason: source.path);
+        expect(organized.existsSync(), isTrue, reason: organized.path);
+        expect(_sha256(source), row['sha256'], reason: row['id']);
+        expect(_sha256(organized), row['sha256'], reason: row['id']);
+      }
+    },
+    skip: localArtAvailable
+        ? false
+        : 'Los raster originales auditados no se versionan en Git.',
+  );
 
-  test('los 60 originales conservan credenciales de procedencia OpenAI', () {
-    for (final row in rows) {
-      final raw = latin1.decode(
-        File('ilustraciones/${row['archivo_fuente']}').readAsBytesSync(),
-      );
-      expect(raw, contains('c2pa.actions.v2'), reason: row['id']);
-      expect(raw, contains('ChatGPT'), reason: row['id']);
-      expect(raw, contains('OpenAI Media Service API'), reason: row['id']);
-      expect(raw, contains('trainedAlgorithmicMedia'), reason: row['id']);
-      expect(raw, contains(row['fecha_generacion_c2pa']!), reason: row['id']);
-    }
-  });
+  test(
+    'los 60 originales conservan credenciales de procedencia OpenAI',
+    () {
+      for (final row in rows) {
+        final raw = latin1.decode(
+          File('ilustraciones/${row['archivo_fuente']}').readAsBytesSync(),
+        );
+        expect(raw, contains('c2pa.actions.v2'), reason: row['id']);
+        expect(raw, contains('ChatGPT'), reason: row['id']);
+        expect(raw, contains('OpenAI Media Service API'), reason: row['id']);
+        expect(raw, contains('trainedAlgorithmicMedia'), reason: row['id']);
+        expect(raw, contains(row['fecha_generacion_c2pa']!), reason: row['id']);
+      }
+    },
+    skip: localArtAvailable
+        ? false
+        : 'Los raster originales auditados no se versionan en Git.',
+  );
 
   test(
     'cada fuente enlaza al registro de conversión y a una plantilla real',
