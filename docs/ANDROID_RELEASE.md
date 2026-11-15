@@ -7,8 +7,9 @@ Estado al 14 de noviembre de 2026. No autoriza publicación.
 - Nombre visible release: `TUKI`.
 - Application ID técnico y recomendado: `dev.tukiapp.tuki_little_adventures`.
   Es válido, ya identifica la variante probada y preserva compatibilidad. El
-  propietario debe confirmar que está disponible y que desea conservarlo antes
-  de crear la app o cargar el primer artefacto en Play Console.
+  propietario confirmó que se conservará. Play Console permite crear una nueva
+  aplicación, pero el identificador solo queda reservado al crearla o cargar el
+  primer artefacto; ninguna de esas acciones se realizó.
 - Versión candidata: `1.0.0` (`versionCode` 1).
 - QA: sufijo `.qa`, nombre `TUKI QA` y versión `1.0.0-qa`.
 - Integración: sufijo `.qa.integration`; no comparte los datos de QA.
@@ -22,6 +23,8 @@ La variante release no acepta la clave de depuración. Para crear un artefacto
 publicable:
 
 1. Crear y custodiar una clave de carga fuera del repositorio.
+   Debe ser exclusiva de TUKI (alias recomendado: `tuki-upload`); no reutilizar,
+   copiar ni exportar la clave privada de FutBeat.
 2. Guardar el archivo JKS fuera del repositorio, idealmente en una bóveda
    cifrada administrada por el propietario.
 3. Copiar `android/key.properties.example` a `android/key.properties` y dejar
@@ -55,9 +58,13 @@ control de adultos, entrega el PNG solo al destino que el adulto elige.
 ## Bloqueos de publicación
 
 - Clave de carga y Play App Signing no configurados.
-- Identidad legal, correo de privacidad y URL HTTPS todavía no aportados.
-- Disponibilidad y confirmación final del Application ID pendientes del
-  responsable antes de crear la aplicación en Play Console.
+- Datos legales que Play Console requiera y aprobación para hacer público el
+  correo todavía pendientes. La identidad pública `ArtwebCR` y el contacto
+  `henguido@gmail.com` están confirmados.
+- La URL HTTPS está elegida, pero aún sirve una página de error y requiere
+  desplegar la política preparada.
+- Disponibilidad efectiva del Application ID pendiente de reservarlo al crear
+  la aplicación en Play Console.
 - Licencia comercial del icono de tucán y derechos de las ilustraciones aún no
   documentados.
 - Declaraciones Play Console (público, Families, Data Safety, contenido e IARC)

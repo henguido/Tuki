@@ -2,23 +2,27 @@
 
 ## Decisiones irreversibles antes del primer AAB
 
-- [ ] Confirmar que `dev.tukiapp.tuki_little_adventures` es el package name
+- [x] Confirmar que `dev.tukiapp.tuki_little_adventures` es el package name
   definitivo. El primer artefacto lo fija en Play Console.
-- [ ] Confirmar propietario de la cuenta y nombre legal del desarrollador.
+- [x] Confirmar cuenta (`ArtwebCR`) y administrador autorizado
+  (`henguido@gmail.com`).
+- [ ] Confirmar los datos legales que solicite Play Console.
 - [ ] Confirmar que `versionCode` 1 no fue utilizado por una versión previa.
 
 ## Cuenta y aplicación
 
-- [ ] Cuenta de desarrollador verificada y activa.
+- [x] Acceso activo a la cuenta de desarrollador verificado.
 - [ ] Aplicación creada en Play Console sin publicar.
 - [ ] Idioma predeterminado y tipo app/juego confirmados.
 - [ ] Declaraciones de app gratuita y público objetivo confirmadas.
-- [ ] Acceso autorizado a Play Console disponible para el responsable.
+- [x] Acceso autorizado a Play Console disponible para el responsable.
 
 ## Firma y artefacto
 
 - [ ] Crear clave de carga con contraseña elegida y custodiada por el
   propietario; no inventarla ni guardarla en Git.
+- [ ] Usar una clave exclusiva de TUKI; no reutilizar ni exportar la clave
+  privada de FutBeat.
 - [ ] Guardar al menos dos respaldos cifrados y documentar custodios.
 - [ ] Completar `android/key.properties` solo con ruta y alias; suministrar las
   contraseñas desde el almacén seguro mediante las variables `TUKI_UPLOAD_*`.
@@ -33,7 +37,8 @@
 - [ ] Aportar licencia comercial verificable del tucán oficial; no cambiar su
   diseño sin una instrucción nueva del propietario.
 - [ ] Adjuntar evidencia de derechos para las 60 ilustraciones y audios.
-- [ ] Publicar política de privacidad en URL HTTPS y enlazarla dentro de TUKI.
+- [ ] Publicar `docs/play/privacy-site/tuki.artwebcr.com/privacy/index.html` en
+  `https://tuki.artwebcr.com/privacy` y enlazarla dentro de TUKI.
 - [ ] Completar Data Safety, público objetivo/Families e IARC.
 - [ ] Confirmar que no hay anuncios, compras ni SDK de rastreo en el AAB final.
 - [ ] Completar TalkBack manual sin conceder permisos inesperados.
