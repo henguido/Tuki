@@ -36,6 +36,9 @@ jobs:
       - name: Analyze
         run: flutter analyze
 
+      - name: Validate catalog and 60 templates
+        run: flutter test test/catalog_assets_test.dart test/laminas_test.dart --reporter expanded
+
       - name: Run host tests
         run: flutter test --reporter expanded
 
