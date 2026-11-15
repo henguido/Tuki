@@ -28,11 +28,14 @@ respuestas siguientes describen TUKI 1.0 en el commit auditado.
 - Sin SDK de anuncios, analítica, atribución, cuentas o compras.
 - Persistencia SQLite y preferencias locales.
 
+## Identidad ya confirmada
+
+- Nombre público del desarrollador: **ArtwebCR**.
+- Contacto público: **contact@artwebcr.com**.
+- URL publicada y verificada: **https://tuki.artwebcr.com/privacy**.
+
 ## Datos que debe aportar el propietario
 
-- Nombre legal del desarrollador.
-- Correo público y correo de privacidad.
-- URL HTTPS pública de política de privacidad.
 - País/jurisdicción y, si corresponde, dirección pública exigida por la cuenta.
 - Confirmación del público objetivo y edades seleccionadas.
 - Respuestas definitivas de contenido/IARC y acceso de revisores.

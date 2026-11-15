@@ -1,6 +1,6 @@
 # Copy to android/key.properties. Never commit the real file or keystore.
 # Paths are resolved from android/. Keep the upload keystore outside the repo.
 storeFile=C:/secure/path/tuki-upload-keystore.jks
-storePassword=REPLACE_OUTSIDE_GIT
 keyAlias=tuki-upload
-keyPassword=REPLACE_OUTSIDE_GIT
+# Passwords are read only from TUKI_UPLOAD_STORE_PASSWORD and
+# TUKI_UPLOAD_KEY_PASSWORD, supplied by the owner's secure secret store.
