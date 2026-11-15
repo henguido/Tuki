@@ -101,6 +101,9 @@ render más profunda.
 - Esta APK debug incluye el permiso `INTERNET` añadido por las herramientas de
   Flutter; la prueba sin conexión confirma que la experiencia evaluada funciona
   sin red, pero esta variante no debe describirse como release publicable.
+- GitHub Actions: ejecución `43657389783` aprobada en 5 min 39 s. Pasaron
+  formato, análisis, validación explícita del catálogo y las 60 plantillas,
+  regresión host, compilación de APK QA y publicación del artefacto.
 
 ## Pendientes reales
 
