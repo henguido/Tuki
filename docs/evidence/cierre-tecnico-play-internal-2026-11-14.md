@@ -86,4 +86,3 @@ otra aplicación y no heredaría datos ni actualizaciones de la identidad actual
 6. Completar Data Safety, público objetivo/Families, contenido e IARC.
 7. Aprobar diseño/encuadre si se exige un adaptive icon y capturar en inglés y
    nivel Detallado con la interfaz real.
-
