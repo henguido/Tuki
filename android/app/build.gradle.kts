@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
@@ -6,6 +8,35 @@ plugins {
 
 val isIntegrationTest =
     providers.gradleProperty("tukiIntegrationTest").orNull == "true"
+val allowUnsignedRelease =
+    providers.gradleProperty("tukiAllowUnsignedRelease").orNull == "true"
+val releasePropertiesFile = rootProject.file("key.properties")
+val releaseProperties = Properties().apply {
+    if (releasePropertiesFile.exists()) {
+        releasePropertiesFile.inputStream().use(::load)
+    }
+}
+val releasePropertyNames = listOf(
+    "storeFile",
+    "storePassword",
+    "keyAlias",
+    "keyPassword",
+)
+val hasReleaseSigning = releasePropertyNames.all {
+    !releaseProperties.getProperty(it).isNullOrBlank()
+}
+
+if (
+    gradle.startParameter.taskNames.any { it.contains("Release", ignoreCase = true) } &&
+    !hasReleaseSigning &&
+    !allowUnsignedRelease
+) {
+    throw GradleException(
+        "Release signing is not configured. Copy android/key.properties.example " +
+            "to android/key.properties and provide an upload key outside Git, or use " +
+            "-PtukiAllowUnsignedRelease=true only for a non-publishable validation build.",
+    )
+}
 
 android {
     namespace = "dev.tukiapp.tuki_little_adventures"
@@ -18,7 +49,8 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        // Confirm this identifier with the Play Console owner before the first
+        // upload: Play fixes the package name when the first artifact is added.
         applicationId = "dev.tukiapp.tuki_little_adventures"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
@@ -31,6 +63,17 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         manifestPlaceholders["appLabel"] = "TUKI"
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = rootProject.file(releaseProperties.getProperty("storeFile"))
+                storePassword = releaseProperties.getProperty("storePassword")
+                keyAlias = releaseProperties.getProperty("keyAlias")
+                keyPassword = releaseProperties.getProperty("keyPassword")
+            }
+        }
     }
 
     buildTypes {
@@ -49,9 +92,7 @@ android {
                 if (isIntegrationTest) "TUKI Test" else "TUKI QA"
         }
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = if (hasReleaseSigning) signingConfigs.getByName("release") else null
         }
     }
 }

@@ -1,7 +1,7 @@
 name: tuki_little_adventures
 description: "TUKI — Little Adventures. Guía ilustrada para colorear la naturaleza de Costa Rica."
 publish_to: 'none'
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.13.0
