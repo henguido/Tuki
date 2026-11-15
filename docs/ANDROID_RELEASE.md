@@ -58,11 +58,10 @@ control de adultos, entrega el PNG solo al destino que el adulto elige.
 ## Bloqueos de publicación
 
 - Clave de carga y Play App Signing no configurados.
-- Datos legales que Play Console requiera y aprobación para hacer público el
-  correo todavía pendientes. La identidad pública `ArtwebCR` y el contacto
-  `henguido@gmail.com` están confirmados.
-- La URL HTTPS está elegida, pero aún sirve una página de error y requiere
-  desplegar la política preparada.
+- Datos legales que Play Console requiera todavía pendientes. La identidad
+  pública `ArtwebCR` y el contacto `contact@artwebcr.com` están confirmados.
+- Política publicada y verificada en
+  `https://tuki.artwebcr.com/privacy`.
 - Disponibilidad efectiva del Application ID pendiente de reservarlo al crear
   la aplicación en Play Console.
 - Licencia comercial del icono de tucán y derechos de las ilustraciones aún no

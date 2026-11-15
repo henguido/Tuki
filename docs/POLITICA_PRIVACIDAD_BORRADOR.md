@@ -1,16 +1,15 @@
-# Política de privacidad de TUKI — candidata para publicación
+# Política de privacidad de TUKI
 
 Última actualización: 14 de noviembre de 2026.
 
-> Candidata técnica preparada para `https://tuki.artwebcr.com/privacy`. Antes de
-> publicarla, el propietario debe aprobar el texto y confirmar que describe el
-> artefacto exacto que se enviará a Google Play.
+Publicada en **https://tuki.artwebcr.com/privacy**. Debe revalidarse contra el
+artefacto exacto antes de cada entrega a Google Play.
 
 ## Responsable
 
 TUKI — Little Adventures es publicada en Google Play por **ArtwebCR** como una
 aplicación independiente. Consultas de privacidad:
-**henguido@gmail.com**.
+**contact@artwebcr.com**.
 
 ## Datos que utiliza la aplicación
 
@@ -49,14 +48,10 @@ adultos.
 ## Cambios y contacto
 
 Los cambios materiales se reflejarán en esta política y en su fecha de
-actualización. Para consultas o solicitudes: **henguido@gmail.com**.
+actualización. Para consultas o solicitudes: **contact@artwebcr.com**.
 
-## Pendientes antes de publicación
+## Mantenimiento antes de cada publicación de la app
 
-- Confirmar que `ArtwebCR` es el nombre público definitivo y que
-  `henguido@gmail.com` puede mostrarse como contacto público.
-- Publicar esta política en una URL HTTPS pública, estable, accesible sin inicio
-  de sesión y no en PDF: **https://tuki.artwebcr.com/privacy**.
 - Añadir esa URL a la ficha de Play y a una pantalla accesible dentro de TUKI.
 - Revalidar dependencias, manifiesto release y formulario Data Safety contra el
   AAB exacto que se vaya a subir.

@@ -31,13 +31,11 @@ respuestas siguientes describen TUKI 1.0 en el commit auditado.
 ## Identidad ya confirmada
 
 - Nombre público del desarrollador: **ArtwebCR**.
-- Contacto autorizado: **henguido@gmail.com**.
-- URL prevista: **https://tuki.artwebcr.com/privacy** (pendiente de configurar;
-  actualmente el subdominio responde 404).
+- Contacto público: **contact@artwebcr.com**.
+- URL publicada y verificada: **https://tuki.artwebcr.com/privacy**.
 
 ## Datos que debe aportar el propietario
 
-- Confirmación de que el nombre público y el correo pueden exponerse en la ficha.
 - País/jurisdicción y, si corresponde, dirección pública exigida por la cuenta.
 - Confirmación del público objetivo y edades seleccionadas.
 - Respuestas definitivas de contenido/IARC y acceso de revisores.

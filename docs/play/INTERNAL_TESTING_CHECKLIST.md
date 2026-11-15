@@ -6,6 +6,7 @@
   definitivo. El primer artefacto lo fija en Play Console.
 - [x] Confirmar cuenta (`ArtwebCR`) y administrador autorizado
   (`henguido@gmail.com`).
+- [x] Confirmar contacto público (`contact@artwebcr.com`).
 - [ ] Confirmar los datos legales que solicite Play Console.
 - [ ] Confirmar que `versionCode` 1 no fue utilizado por una versión previa.
 
@@ -37,8 +38,9 @@
 - [ ] Aportar licencia comercial verificable del tucán oficial; no cambiar su
   diseño sin una instrucción nueva del propietario.
 - [ ] Adjuntar evidencia de derechos para las 60 ilustraciones y audios.
-- [ ] Publicar `docs/play/privacy-site/tuki.artwebcr.com/privacy/index.html` en
-  `https://tuki.artwebcr.com/privacy` y enlazarla dentro de TUKI.
+- [x] Publicar `docs/play/privacy-site/tuki.artwebcr.com/privacy/index.html` en
+  `https://tuki.artwebcr.com/privacy`.
+- [ ] Enlazar la política desde una pantalla accesible dentro de TUKI.
 - [ ] Completar Data Safety, público objetivo/Families e IARC.
 - [ ] Confirmar que no hay anuncios, compras ni SDK de rastreo en el AAB final.
 - [ ] Completar TalkBack manual sin conceder permisos inesperados.
