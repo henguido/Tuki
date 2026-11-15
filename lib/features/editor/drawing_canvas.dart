@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
@@ -34,11 +37,107 @@ class DrawingCanvasState extends State<DrawingCanvas> {
   double _startDistance = 1;
   double _startZoom = 1;
   Offset _lastFocal = Offset.zero;
+  ui.Image? _backgroundImage;
+  ui.Image? _inkImage;
+  Map<String, int>? _rasterizedFills;
+  Timer? _backgroundTimer;
+  int _backgroundGeneration = 0;
+  int _inkGeneration = 0;
 
   /// Transformación vigente (para pruebas e inspección).
   CanvasViewport? get viewport => _viewport;
 
   EditorController get _c => widget.controller;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(_refreshRasterLayers);
+    _refreshInk();
+    _refreshRasterLayers();
+  }
+
+  @override
+  void didUpdateWidget(DrawingCanvas oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.controller == widget.controller) return;
+    oldWidget.controller.removeListener(_refreshRasterLayers);
+    widget.controller.addListener(_refreshRasterLayers);
+    _replaceRasterLayers(null, null);
+    _rasterizedFills = null;
+    _refreshInk();
+    _refreshRasterLayers();
+  }
+
+  void _refreshRasterLayers() {
+    final fills = _c.document.fills;
+    if (identical(fills, _rasterizedFills)) return;
+    _rasterizedFills = fills;
+    _backgroundTimer?.cancel();
+    _backgroundGeneration++;
+    final previousBackground = _backgroundImage;
+    _backgroundImage = null;
+    _retireImage(previousBackground);
+    if (mounted) setState(() {});
+    final document = _c.document;
+    _backgroundTimer = Timer(const Duration(milliseconds: 40), () {
+      final generation = _backgroundGeneration;
+      DrawingRenderer.rasterBackground(_c.template, document).then((image) {
+        if (!mounted || generation != _backgroundGeneration) {
+          image.dispose();
+          return;
+        }
+        _retireImage(_backgroundImage);
+        _backgroundImage = image;
+        setState(() {});
+      });
+    });
+  }
+
+  void _refreshInk() {
+    final generation = ++_inkGeneration;
+    DrawingRenderer.rasterInk(_c.template).then((image) {
+      if (!mounted || generation != _inkGeneration) {
+        image.dispose();
+        return;
+      }
+      _retireImage(_inkImage);
+      _inkImage = image;
+      setState(() {});
+    });
+  }
+
+  void _replaceRasterLayers(ui.Image? background, ui.Image? ink) {
+    final previousBackground = _backgroundImage;
+    final previousInk = _inkImage;
+    _backgroundImage = background;
+    _inkImage = ink;
+    _retireImage(previousBackground);
+    _retireImage(previousInk);
+  }
+
+  void _retireImage(ui.Image? image) {
+    if (image == null) return;
+    // El RenderCustomPaint anterior puede recibir un último repintado por el
+    // ChangeNotifier en el mismo frame. Dos límites de frame garantizan que
+    // el painter que conservaba esta imagen ya fue reemplazado.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => image.dispose());
+    });
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(_refreshRasterLayers);
+    _backgroundTimer?.cancel();
+    _backgroundGeneration++;
+    _inkGeneration++;
+    _backgroundImage?.dispose();
+    _inkImage?.dispose();
+    _backgroundImage = null;
+    _inkImage = null;
+    super.dispose();
+  }
 
   (Offset, Offset) _firstTwo() {
     final it = _pointers.values.iterator..moveNext();
@@ -154,7 +253,12 @@ class DrawingCanvasState extends State<DrawingCanvas> {
                   child: RepaintBoundary(
                     child: CustomPaint(
                       key: const ValueKey('drawing-canvas'),
-                      painter: _CanvasPainter(_c, vp),
+                      painter: _CanvasPainter(
+                        _c,
+                        vp,
+                        backgroundImage: _backgroundImage,
+                        inkImage: _inkImage,
+                      ),
                       size: Size.infinite,
                     ),
                   ),
@@ -196,10 +300,17 @@ class DrawingCanvasState extends State<DrawingCanvas> {
 }
 
 class _CanvasPainter extends CustomPainter {
-  _CanvasPainter(this.controller, this.viewport) : super(repaint: controller);
+  _CanvasPainter(
+    this.controller,
+    this.viewport, {
+    this.backgroundImage,
+    this.inkImage,
+  }) : super(repaint: controller);
 
   final EditorController controller;
   final CanvasViewport viewport;
+  final ui.Image? backgroundImage;
+  final ui.Image? inkImage;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -210,6 +321,8 @@ class _CanvasPainter extends CustomPainter {
       controller.template,
       controller.document,
       provisional: controller.provisional,
+      backgroundImage: backgroundImage,
+      inkImage: inkImage,
     );
     canvas.restore();
   }

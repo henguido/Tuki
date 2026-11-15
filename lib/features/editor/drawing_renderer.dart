@@ -19,19 +19,18 @@ abstract final class DrawingRenderer {
     PageTemplate template,
     DrawingDocument document, {
     StrokeOp? provisional,
+    ui.Image? backgroundImage,
+    ui.Image? inkImage,
   }) {
     final box = template.viewBox;
     canvas.save();
     canvas.clipRect(box);
 
     // 1. Fondo y rellenos.
-    canvas.drawRect(box, Paint()..color = const Color(0xFFFFFFFF));
-    final fill = Paint()..style = PaintingStyle.fill;
-    // Las regiones se apilan de fondo a frente y son opacas: una región sin
-    // relleno se pinta en blanco para tapar lo que queda detrás.
-    for (final region in template.regions) {
-      fill.color = Color(0xFF000000 | document.fillOf(region.id));
-      canvas.drawPath(region.path, fill);
+    if (backgroundImage == null) {
+      _paintBackground(canvas, template, document);
+    } else {
+      _drawRaster(canvas, backgroundImage, box);
     }
 
     // 2. Trazos en su propia capa: el borrador solo afecta a esta capa.
@@ -48,8 +47,68 @@ abstract final class DrawingRenderer {
     // durante la edición. Grabarla una vez evita reconstruir cientos de
     // operaciones de trazado en cada movimiento del pincel (sobre todo en
     // las láminas avanzadas).
-    canvas.drawPicture(_inkPicture(template));
+    if (inkImage == null) {
+      canvas.drawPicture(_inkPicture(template));
+    } else {
+      _drawRaster(canvas, inkImage, box);
+    }
     canvas.restore();
+  }
+
+  static void _paintBackground(
+    Canvas canvas,
+    PageTemplate template,
+    DrawingDocument document,
+  ) {
+    canvas.drawRect(template.viewBox, Paint()..color = const Color(0xFFFFFFFF));
+    final fill = Paint()..style = PaintingStyle.fill;
+    for (final region in template.regions) {
+      fill.color = Color(0xFF000000 | document.fillOf(region.id));
+      canvas.drawPath(region.path, fill);
+    }
+  }
+
+  static void _drawRaster(Canvas canvas, ui.Image image, Rect destination) {
+    canvas.drawImageRect(
+      image,
+      Rect.fromLTWH(0, 0, image.width.toDouble(), image.height.toDouble()),
+      destination,
+      Paint()..filterQuality = FilterQuality.medium,
+    );
+  }
+
+  /// Rasteriza las capas estáticas para que un gesto de pincel no vuelva a
+  /// recorrer cientos de rutas complejas en cada fotograma.
+  static Future<ui.Image> rasterBackground(
+    PageTemplate template,
+    DrawingDocument document,
+  ) => _rasterPicture(
+    template,
+    (canvas) => _paintBackground(canvas, template, document),
+  );
+
+  static Future<ui.Image> rasterInk(PageTemplate template) => _rasterPicture(
+    template,
+    (canvas) => canvas.drawPicture(_inkPicture(template)),
+  );
+
+  static Future<ui.Image> _rasterPicture(
+    PageTemplate template,
+    void Function(Canvas) paint,
+  ) async {
+    final size = pixelSize(template, template.viewBox.longestSide.round());
+    final box = template.viewBox;
+    final recorder = ui.PictureRecorder();
+    final canvas = Canvas(recorder);
+    canvas.scale(size.width / box.width, size.height / box.height);
+    canvas.translate(-box.left, -box.top);
+    paint(canvas);
+    final picture = recorder.endRecording();
+    try {
+      return await picture.toImage(size.width, size.height);
+    } finally {
+      picture.dispose();
+    }
   }
 
   static ui.Picture _inkPicture(PageTemplate template) {
