@@ -20,7 +20,9 @@
 - [ ] Crear clave de carga con contraseña elegida y custodiada por el
   propietario; no inventarla ni guardarla en Git.
 - [ ] Guardar al menos dos respaldos cifrados y documentar custodios.
-- [ ] Completar `android/key.properties` localmente.
+- [ ] Completar `android/key.properties` solo con ruta y alias; suministrar las
+  contraseñas desde el almacén seguro mediante las variables `TUKI_UPLOAD_*`.
+- [ ] Probar que uno de los respaldos cifrados permite recuperar la clave.
 - [ ] Activar Play App Signing.
 - [ ] Generar AAB firmado desde un commit limpio.
 - [ ] Verificar certificado, SHA-256, package, versión, permisos y tamaño.

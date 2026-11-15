@@ -16,15 +16,18 @@ val releaseProperties = Properties().apply {
         releasePropertiesFile.inputStream().use(::load)
     }
 }
-val releasePropertyNames = listOf(
-    "storeFile",
-    "storePassword",
-    "keyAlias",
-    "keyPassword",
-)
-val hasReleaseSigning = releasePropertyNames.all {
-    !releaseProperties.getProperty(it).isNullOrBlank()
-}
+val uploadStoreFile = releaseProperties.getProperty("storeFile")
+val uploadKeyAlias = releaseProperties.getProperty("keyAlias")
+val uploadStorePassword =
+    providers.environmentVariable("TUKI_UPLOAD_STORE_PASSWORD").orNull
+val uploadKeyPassword =
+    providers.environmentVariable("TUKI_UPLOAD_KEY_PASSWORD").orNull
+val hasReleaseSigning = listOf(
+    uploadStoreFile,
+    uploadKeyAlias,
+    uploadStorePassword,
+    uploadKeyPassword,
+).all { !it.isNullOrBlank() }
 
 if (
     gradle.startParameter.taskNames.any { it.contains("Release", ignoreCase = true) } &&
@@ -33,7 +36,9 @@ if (
 ) {
     throw GradleException(
         "Release signing is not configured. Copy android/key.properties.example " +
-            "to android/key.properties and provide an upload key outside Git, or use " +
+            "to android/key.properties, provide an upload key outside Git, and expose " +
+            "TUKI_UPLOAD_STORE_PASSWORD and TUKI_UPLOAD_KEY_PASSWORD from a secure " +
+            "secret store; or use " +
             "-PtukiAllowUnsignedRelease=true only for a non-publishable validation build.",
     )
 }
@@ -68,10 +73,10 @@ android {
     signingConfigs {
         if (hasReleaseSigning) {
             create("release") {
-                storeFile = rootProject.file(releaseProperties.getProperty("storeFile"))
-                storePassword = releaseProperties.getProperty("storePassword")
-                keyAlias = releaseProperties.getProperty("keyAlias")
-                keyPassword = releaseProperties.getProperty("keyPassword")
+                storeFile = rootProject.file(uploadStoreFile!!)
+                storePassword = uploadStorePassword
+                keyAlias = uploadKeyAlias
+                keyPassword = uploadKeyPassword
             }
         }
     }
