@@ -1,8 +1,11 @@
 # TUKI — Declaración de producción de recursos gráficos
 
-**Proyecto:** TUKI — Little Adventures  
-**Responsable:** ArtwebCR  
-**Colección:** El bosque nuboso  
+**Proyecto:** TUKI — Little Adventures
+
+**Responsable:** ArtwebCR
+
+**Colección:** El bosque nuboso
+
 **Contenido:** 60 ilustraciones infantiles originales, organizadas en cuatro
 niveles de dificultad.
 
