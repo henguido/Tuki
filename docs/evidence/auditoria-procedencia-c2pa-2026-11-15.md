@@ -34,6 +34,13 @@ Se reconstruyó la procedencia técnica de 27 recursos. Los 60 todavía necesita
 una declaración del responsable de la cuenta sobre entradas/referencias y una
 autorización a ArtwebCR/TUKI; por eso ninguno se declara publicable todavía.
 
+ArtwebCR aportó posteriormente
+`docs/play/DECLARACION_PRODUCCION_GRAFICA.md`, que documenta su dirección
+creativa y responsabilidad sobre selección, estilo, edades, revisión,
+preparación e integración de las 60 piezas. La propia declaración mantiene los
+derechos y referencias en revisión, por lo que la clasificación jurídica no se
+eleva todavía.
+
 ## Validación técnica
 
 - `master` verificado en

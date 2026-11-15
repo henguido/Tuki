@@ -44,6 +44,11 @@ void main() {
       expect(rows, hasLength(60));
       expect(rows.map((row) => row['id']).toSet(), hasLength(60));
       for (final row in rows) {
+        expect(
+          row['evidencia_documental'],
+          contains('docs/play/DECLARACION_PRODUCCION_GRAFICA.md'),
+          reason: '${row['id']}: declaración de producción',
+        );
         for (final field in [
           'id',
           'nivel',

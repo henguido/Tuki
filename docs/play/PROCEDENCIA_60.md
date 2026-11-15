@@ -60,6 +60,14 @@ prompts faltantes ni se atribuyeron referencias externas.
 
 ## Derechos pendientes
 
+ArtwebCR aportó la declaración conservada en
+`docs/play/DECLARACION_PRODUCCION_GRAFICA.md`. Esta acredita dirección creativa,
+selección temática, revisión, preparación técnica, integración y destino de la
+colección completa. También declara expresamente que la documentación de
+derechos y referencias sigue en revisión; por ello fortalece la cadena de
+producción, pero no convierte por sí sola los recursos en “acreditados para
+publicación”.
+
 Los términos de OpenAI vigentes desde el 1 de enero de 2026 establecen que,
 entre OpenAI y la persona usuaria y en la medida permitida por la ley, esta
 conserva los derechos sobre la entrada y posee la salida. También exigen contar
