@@ -11,6 +11,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:drift/native.dart';
 import 'package:flutter/painting.dart';
@@ -185,7 +186,7 @@ void main() {
         fugas.take(3).join(' '),
       );
 
-      // 5. Deshacer: cada relleno se revierte, hasta la lámina en blanco.
+      // 5. Deshacer y rehacer: cada relleno recorre ambas pilas sin pérdida.
       var pasos = 0;
       while (controller.undo()) {
         pasos++;
@@ -194,6 +195,15 @@ void main() {
         'deshacer',
         pasos == sondas.length && controller.document.isEmpty,
         '$pasos pasos',
+      );
+      var rehechos = 0;
+      while (controller.redo()) {
+        rehechos++;
+      }
+      anota(
+        'rehacer',
+        rehechos == sondas.length && controller.document == pintado,
+        '$rehechos pasos',
       );
 
       // 6. Guardado y recuperación en SQLite (en memoria).
@@ -304,13 +314,79 @@ void main() {
         'kb': archivo.lengthSync() ~/ 1024,
         'host_carga_ms': cargaMs,
         'host_pintado_ms': pintaMs,
-        'rehacer': 'no aplica: el editor no tiene rehacer',
+        'rehacer': pruebas['rehacer'],
         'rendimiento_android': 'pendiente de dispositivo',
         'tacto_real': 'pendiente de dispositivo',
       };
       expect(fallos, isEmpty, reason: id);
     });
   }
+
+  test('la caché raster conserva visualmente A10 y A13', () async {
+    final repository = diskCatalog();
+    final catalog = await repository.load();
+    final chapter = catalog.chapterById('bosque-nuboso')!;
+
+    for (final pageId in ['a10-helechos', 'a13-arbol-gigante']) {
+      final page = chapter.pageById(pageId)!;
+      final template = await repository.loadTemplate(page);
+      var document = DrawingDocument.empty;
+      for (var i = 0; i < template.regions.length; i += 9) {
+        document = document.withFill(template.regions[i].id, _color(i));
+      }
+      final side = template.viewBox.longestSide.round();
+      final vector = await DrawingRenderer.toImage(
+        template,
+        document,
+        maxSide: side,
+      );
+      final background = await DrawingRenderer.rasterBackground(
+        template,
+        document,
+      );
+      final ink = await DrawingRenderer.rasterInk(template);
+      final size = DrawingRenderer.pixelSize(template, side);
+      final recorder = ui.PictureRecorder();
+      final canvas = Canvas(recorder)
+        ..scale(
+          size.width / template.viewBox.width,
+          size.height / template.viewBox.height,
+        )
+        ..translate(-template.viewBox.left, -template.viewBox.top);
+      DrawingRenderer.paint(
+        canvas,
+        template,
+        document,
+        backgroundImage: background,
+        inkImage: ink,
+      );
+      final picture = recorder.endRecording();
+      final raster = await picture.toImage(size.width, size.height);
+      final vectorBytes = (await vector.toByteData())!;
+      final rasterBytes = (await raster.toByteData())!;
+      var totalDifference = 0;
+      var visiblyDifferent = 0;
+      for (var i = 0; i < vectorBytes.lengthInBytes; i += 4) {
+        var pixelDifference = 0;
+        for (var channel = 0; channel < 3; channel++) {
+          pixelDifference +=
+              (vectorBytes.getUint8(i + channel) -
+                      rasterBytes.getUint8(i + channel))
+                  .abs();
+        }
+        totalDifference += pixelDifference;
+        if (pixelDifference > 30) visiblyDifferent++;
+      }
+      final pixels = size.width * size.height;
+      expect(totalDifference / (pixels * 3), lessThan(2), reason: pageId);
+      expect(visiblyDifferent / pixels, lessThan(0.02), reason: pageId);
+      vector.dispose();
+      background.dispose();
+      ink.dispose();
+      raster.dispose();
+      picture.dispose();
+    }
+  });
 
   test('el catálogo publica solo láminas aprobadas, con miniatura', () async {
     final aprobacion = File('tool/laminas/aprobacion.json');

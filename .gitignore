@@ -44,6 +44,11 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Android release signing: private keys and credentials never enter Git.
+/android/key.properties
+*.jks
+*.keystore
+
 # Widget Preview related
 .widget_preview/
 

@@ -12,8 +12,9 @@ a distribuir la aplicación.
   rango opcional y se guarda solo en el dispositivo para ordenar sugerencias.
 - Los dibujos, preferencias y derechos simulados se guardan localmente. La app
   no los transmite.
-- La exportación ocurre solo cuando una persona adulta elige guardar o compartir
-  un PNG mediante el diálogo del sistema.
+- La exportación está protegida por el control de adultos y ocurre solo cuando
+  una persona adulta elige guardar o compartir un PNG mediante el diálogo del
+  sistema. El destino elegido puede aplicar sus propias prácticas de datos.
 - La compilación de depuración de Android incluye `INTERNET` para las herramientas
   de Flutter. La aplicación no contiene clientes ni destinos de red. La
   compilación de publicación debe volver a auditarse antes de distribuirse.
@@ -36,14 +37,15 @@ y restauración.
    sin inicio de sesión ni PDF, y enlazarla tanto en la ficha como dentro de la
    app. El archivo presente es evidencia técnica, no esa página pública.
 3. Confirmar identificador definitivo, propietario, clave de carga y Play App
-   Signing antes del primer AAB. La configuración `release` actual usa firma de
-   depuración y no debe subirse.
+   Signing antes del primer AAB. La configuración `release` rechaza la clave de
+   depuración y exige credenciales externas a Git; un artefacto de validación
+   explícitamente no firmado no es publicable.
 4. Mantener `targetSdkVersion` 36 o superior: es el mínimo para apps nuevas y
    actualizaciones en Google Play desde el 31 de agosto de 2026. La APK QA
    auditada ya compila y apunta a API 36.
 5. Verificar el manifiesto final y las declaraciones de privacidad de cada SDK.
-   La APK QA solicita `INTERNET` y `ACCESS_NETWORK_STATE`; la variante final
-   debe justificar o retirar ambos. No hay permisos sensibles.
+   La APK QA solicita `INTERNET` y `ACCESS_NETWORK_STATE` para herramientas de
+   depuración; la variante release los elimina. No hay permisos sensibles.
 6. Completar pruebas humanas de TalkBack, texto ampliado, rotación y sesión con
    niños antes de producción. La automatización no sustituye esa evaluación.
 7. No publicar arte, audio ni iconos sin procedencia y licencia comercial
