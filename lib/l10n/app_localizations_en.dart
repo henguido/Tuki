@@ -83,6 +83,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get undo => 'Undo';
 
   @override
+  String get redo => 'Redo';
+
+  @override
   String get tools => 'Tools';
 
   @override

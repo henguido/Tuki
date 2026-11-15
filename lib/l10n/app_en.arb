@@ -22,6 +22,7 @@
   "difficultyDetailed": "Detailed",
   "pageCardSemantics": "{title}. Difficulty: {difficulty}",
   "undo": "Undo",
+  "redo": "Redo",
   "tools": "Tools",
   "toolFill": "Fill",
   "toolBrush": "Brush",

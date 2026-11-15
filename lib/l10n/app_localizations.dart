@@ -230,6 +230,12 @@ abstract class AppLocalizations {
   /// **'Deshacer'**
   String get undo;
 
+  /// No description provided for @redo.
+  ///
+  /// In es, this message translates to:
+  /// **'Rehacer'**
+  String get redo;
+
   /// No description provided for @tools.
   ///
   /// In es, this message translates to:

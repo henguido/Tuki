@@ -46,6 +46,7 @@
     }
   },
   "undo": "Deshacer",
+  "redo": "Rehacer",
   "tools": "Herramientas",
   "toolFill": "Rellenar",
   "toolBrush": "Pincel",

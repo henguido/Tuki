@@ -160,12 +160,18 @@ void main() {
       expect(stored!.document.ops, hasLength(2));
       expect(stored.document.ops.last.kind, StrokeKind.eraser);
 
-      // Deshace primero el borrador y después el pincel. Rehacer no existe
-      // todavía en el producto y se registra como no aplicable.
+      // Deshace y rehace el borrador, luego deja deshechos borrador y pincel.
       await tester.tap(find.byKey(const ValueKey('editor-undo')));
       await tester.pump(const Duration(milliseconds: 100));
       stored = await deps.drawings.find(_chapterId, page.id);
       expect(stored!.document.ops.single.kind, StrokeKind.brush);
+      await tester.tap(find.byKey(const ValueKey('editor-redo')));
+      await tester.pump(const Duration(milliseconds: 100));
+      stored = await deps.drawings.find(_chapterId, page.id);
+      expect(stored!.document.ops, hasLength(2));
+      expect(stored.document.ops.last.kind, StrokeKind.eraser);
+      await tester.tap(find.byKey(const ValueKey('editor-undo')));
+      await tester.pump(const Duration(milliseconds: 100));
       await tester.tap(find.byKey(const ValueKey('editor-undo')));
       await _waitFor(tester, find.text('Guardado'));
       await _zoomAndReset(tester);
@@ -195,7 +201,7 @@ void main() {
 
       // ignore: avoid_print
       print(
-        'LAMINA_60 ${jsonEncode({'artId': page.artId, 'pagina': page.id, 'nivel': page.level.id, 'orientacion': template.viewBox.width > template.viewBox.height ? 'horizontal' : 'vertical', 'regiones': template.regions.length, 'carga_ms': loadMs, 'relleno_guardado_ms': fillMs, 'relleno': 'ok', 'pincel': 'ok', 'borrador': 'ok', 'deshacer': 'ok', 'rehacer': 'no disponible', 'zoom': 'ok', 'guardado': 'ok', 'reapertura': 'ok'})}',
+        'LAMINA_60 ${jsonEncode({'artId': page.artId, 'pagina': page.id, 'nivel': page.level.id, 'orientacion': template.viewBox.width > template.viewBox.height ? 'horizontal' : 'vertical', 'regiones': template.regions.length, 'carga_ms': loadMs, 'relleno_guardado_ms': fillMs, 'relleno': 'ok', 'pincel': 'ok', 'borrador': 'ok', 'deshacer': 'ok', 'rehacer': 'ok', 'zoom': 'ok', 'guardado': 'ok', 'reapertura': 'ok'})}',
       );
 
       await tester.tap(find.byKey(const ValueKey('editor-back')));

@@ -251,6 +251,15 @@ class _EditorScreenState extends State<EditorScreen> {
         onPressed: controller.canUndo ? controller.undo : null,
       ),
     );
+    final redoButton = ListenableBuilder(
+      listenable: controller,
+      builder: (context, _) => TukiRoundButton(
+        key: const ValueKey('editor-redo'),
+        icon: Icons.redo_rounded,
+        label: l.redo,
+        onPressed: controller.canRedo ? controller.redo : null,
+      ),
+    );
     final nextButton = TukiPrimaryButton(
       key: const ValueKey('editor-next'),
       compact: true,
@@ -311,6 +320,8 @@ class _EditorScreenState extends State<EditorScreen> {
                                     const SizedBox(width: 8),
                                   ],
                                   undoButton,
+                                  const SizedBox(width: 8),
+                                  redoButton,
                                 ],
                               ),
                               const SizedBox(height: 10),
@@ -382,6 +393,8 @@ class _EditorScreenState extends State<EditorScreen> {
                             const SizedBox(width: 8),
                           ],
                           undoButton,
+                          const SizedBox(width: 8),
+                          redoButton,
                         ],
                       ),
                       const SizedBox(height: 8),
