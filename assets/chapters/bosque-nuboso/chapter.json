@@ -546,10 +546,11 @@
         "es": "Algunos monos usan la cola para sujetarse a las ramas.",
         "en": "Some monkeys use their tails to hold on to branches."
       },
-      "template": "pages/m08-mono-v2.json",
+      "template": "pages/m08-mono-v3.json",
       "thumbnail": "thumbs/m08-mono.png",
       "previousTemplates": {
-        "1": "pages/m08-mono-v1.json"
+        "1": "pages/m08-mono-v1.json",
+        "2": "pages/m08-mono-v2.json"
       }
     },
     {

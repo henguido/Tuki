@@ -205,18 +205,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - garras agrupadas con el extremo de la pata delantera
 - 17 zonas pequeñas agrupadas con su vecina
 
-## M08 · `m08-mono` (revisión 2)
+## M08 · `m08-mono` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 19_45_05-6.webp` → `M08_mono.webp` (1122 × 1402 px), SHA-256 `46bc074d6da627b6…`
-- Lienzo: 1280 × 1600 (vertical); trazo 12.0 px; tinta que toca el marco: 3.7 %
-- huecos de trazo cerrados (307 px)
-- 1 contornos abiertos cerrados con tinta
-- 1 huecos diminutos absorbidos por la tinta
-- 3 brillos sobre tinta conservados como regiones propias
-- rama separada por la mano reunida con el tronco
-- oreja derecha agrupada con el pelo
-- flor superior separada del cielo
-- 35 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M08.png`, SHA-256 `66c3198629811ce1…`.
+- Se separó el musgo de la rama superior izquierda y se reconstruyeron los contornos de las plantas de ambos pies y sus almohadillas.
+- Las plantas tienen relleno independiente para utilizar con zoom. Las almohadillas de ambos pies comparten una región.
+- Las revisiones 1 y 2 se conservan para abrir los dibujos guardados.
 
 ## M09 · `m09-coati` (revisión 2)
 

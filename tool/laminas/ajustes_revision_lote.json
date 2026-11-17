@@ -111,12 +111,18 @@
     ]
   },
   "M08": {
+    "revision": 3,
     "reflejos": [[755, 542], [697, 596]],
+    "trazos": ["musgo separado de la rama y contornos de las plantas de los pies y sus almohadillas reconstruidos"],
     "grupos": [
       [[[41, 556], [584, 245]], "rama separada por la mano reunida con el tronco"],
       [[[618, 429], [868, 500], [866, 566]], "oreja derecha agrupada con el pelo"],
-      [[[287, 108], [349, 123]], "flor superior separada del cielo"]
-    ]
+      [[[287, 108], [349, 123]], "flor superior separada del cielo"],
+      [[[92, 202], [154, 161]], "musgo colgante separado de la madera"],
+      [[[881, 1034], [906, 956], [947, 962], [959, 986], [579, 1129], [603, 1054], [641, 1061], [653, 1082]], "almohadillas de los dos pies con relleno propio"],
+      [[[867, 972], [562, 1070]], "plantas de los pies reunidas y separadas de las piernas"]
+    ],
+    "detalles_finos": [[867, 972]]
   },
   "M09": {
     "reflejos": [[952, 713], [794, 753], [1077, 817]],
