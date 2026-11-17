@@ -26,12 +26,14 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (352 px)
 - 5 zonas pequeñas agrupadas con su vecina
 
-## E04 · `e04-tucan` (revisión 1)
+## E04 · `e04-tucan` (revisión 2)
 
 - Original: `Tucán caricaturesco en el bosque nuboso-3.webp` → `E04_tucan.webp` (1122 × 1402 px), SHA-256 `7ba5b21443515c40…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E04.png`. Se cerró el contorno donde la hoja superior derecha se une con la rama.
 - Lienzo: 1280 × 1600 (vertical); trazo 15.6 px; tinta que toca el marco: 4.1 %
-- huecos de trazo cerrados (576 px)
-- 9 zonas pequeñas agrupadas con su vecina
+- huecos de trazo cerrados (595 px)
+- 4 tramos de la rama agrupados en una región propia
+- 8 zonas pequeñas agrupadas con su vecina
 
 ## E05 · `e05-flor-tropical` (revisión 1)
 

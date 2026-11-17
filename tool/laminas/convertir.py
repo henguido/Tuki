@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id == 'E03' else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04'} else 1
 
 
 def leer_gris(ruta):
@@ -262,20 +262,33 @@ def procesar(art_id, tema_id, fuente, original):
         cambios.append(
             f'{len(brillos)} brillos sobre tinta conservados como regiones propias')
 
+    agrupadas_a_mano = 0
+    if art_id == 'E04':
+        # Los cuatro tramos de la rama forman una sola pieza, interrumpida
+        # por la cola y las patas. Las sondas usan el lienzo de 1280 × 1600.
+        tramos = [int(zonas[y, x]) for x, y in
+                  ((45, 1299), (379, 1214), (612, 1181), (798, 1147))]
+        if len(set(tramos)) != 4 or 0 in tramos:
+            raise ValueError('E04: las sondas deben identificar cuatro tramos de rama')
+        for tramo in tramos[1:]:
+            g.unir(tramo, tramos[0])
+        agrupadas_a_mano = len(tramos) - 1
+        cambios.append('4 tramos de la rama agrupados en una región propia')
+
     while True:
         chicos = [a for a in g.area if pequeno(a) and g.vec.get(a)]
         if not chicos:
             break
         a = min(chicos, key=lambda k: g.area[k])
         g.unir(a, g.mejor_vecino(a))
-    por_minimo = n - len(g.area)
+    por_minimo = n - len(g.area) - agrupadas_a_mano
     while len(g.area) - len(brillos) > nivel['tope']:
         candidatos = [k for k in g.area if g.vec.get(k)]
         if not candidatos:
             break
         a = min(candidatos, key=lambda k: g.area[k])
         g.unir(a, g.mejor_vecino(a))
-    por_tope = n - por_minimo - len(g.area)
+    por_tope = n - por_minimo - agrupadas_a_mano - len(g.area)
     if por_minimo:
         cambios.append(
             f'{por_minimo} zonas pequeñas agrupadas con su vecina')

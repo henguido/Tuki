@@ -103,8 +103,11 @@
         "es": "El pico del tucán es muy grande, pero pesa poco.",
         "en": "A toucan's beak is very big, but it is light."
       },
-      "template": "pages/e04-tucan-v1.json",
-      "thumbnail": "thumbs/e04-tucan.png"
+      "template": "pages/e04-tucan-v2.json",
+      "thumbnail": "thumbs/e04-tucan.png",
+      "previousTemplates": {
+        "1": "pages/e04-tucan-v1.json"
+      }
     },
     {
       "id": "e05-flor-tropical",
