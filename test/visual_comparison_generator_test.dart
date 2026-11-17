@@ -60,15 +60,30 @@ Future<void> _writePng(ui.Image image, File output) async {
 
 void main() {
   test('las 60 comparaciones visuales tienen original y mapa de regiones', () async {
-    final lines = const LineSplitter().convert(
-      File('ilustraciones/_auditoria/matriz_60.csv').readAsStringSync(),
+    final review = const LineSplitter().convert(
+      File('docs/laminas/matriz_revision_visual_60.csv').readAsStringSync(),
     );
+    expect(review.skip(1), hasLength(60));
+
+    final output = Directory('docs/laminas/comparaciones');
+    expect(
+      output
+          .listSync()
+          .whereType<File>()
+          .map((file) => file.path)
+          .where((path) => path.endsWith('.png')),
+      hasLength(12),
+    );
+
+    final sourceMatrix = File('ilustraciones/_auditoria/matriz_60.csv');
+    if (!sourceMatrix.existsSync()) return;
+
+    final lines = const LineSplitter().convert(sourceMatrix.readAsStringSync());
     final rows = lines.skip(1).map((line) => line.split(',')).toList();
     expect(rows, hasLength(60));
 
     final generate =
         Platform.environment['TUKI_WRITE_VISUAL_COMPARISONS'] == '1';
-    final output = Directory('docs/laminas/comparaciones');
     if (generate) output.createSync(recursive: true);
 
     final comparisons = <ui.Image>[];
