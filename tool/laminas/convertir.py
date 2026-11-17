@@ -42,6 +42,8 @@ MINIATURAS = RAIZ / 'assets/chapters/bosque-nuboso/thumbs'
 VALIDACION = RAIZ / 'tool/laminas/validacion'
 PREVIAS = RAIZ / 'docs/laminas/previas'
 CORREGIDAS = RAIZ / 'tool/laminas/fuentes_corregidas'
+AJUSTES_LOTE = json.loads(Path(__file__).with_name('ajustes_revision_lote.json')
+                          .read_text(encoding='utf-8'))
 
 LADO = 1600
 
@@ -65,8 +67,11 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
-        return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10', 'E12'} else 1
+        pagina, revision = PAGINAS_PREVIAS[art_id]
+    else:
+        pagina = f'{art_id.lower()}-{tema_id}'
+        revision = 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10', 'E12'} else 1
+    return pagina, revision + (art_id in AJUSTES_LOTE)
 
 
 def leer_gris(ruta):
@@ -162,7 +167,8 @@ class Grupos:
 def procesar(art_id, tema_id, fuente, original):
     nivel = NIVELES[art_id[0]]
     pagina, revision = pagina_de(art_id, tema_id)
-    cambios = []
+    ajustes = AJUSTES_LOTE.get(art_id, {})
+    cambios = list(ajustes.get('trazos', ()))
 
     gris = leer_gris(fuente)
     alto0, ancho0 = gris.shape
@@ -265,7 +271,8 @@ def procesar(art_id, tema_id, fuente, original):
                       'E12': ((439, 242), (794, 210), (522, 245), (805, 250),
                               (836, 849), (906, 760), (896, 788), (1200, 910),
                               (1136, 851))}
-    for x, y in sondas_reflejos.get(art_id, ()):
+    reflejos = ajustes.get('reflejos', sondas_reflejos.get(art_id, ()))
+    for x, y in reflejos:
         reflejo = int(zonas[y, x])
         if reflejo == 0 or not pequeno(reflejo):
             raise ValueError(f'{art_id}: la sonda debe quedar dentro del reflejo del ojo')
@@ -336,7 +343,8 @@ def procesar(art_id, tema_id, fuente, original):
                  'hueco entre patas superiores agrupado con el fondo')],
     }
     agrupadas_a_mano = 0
-    for puntos, nota in grupos_manuales.get(art_id, ()):
+    grupos = ajustes.get('grupos', grupos_manuales.get(art_id, ()))
+    for puntos, nota in grupos:
         partes = [int(zonas[y, x]) for x, y in puntos]
         if len(set(partes)) != len(puntos) or any(p not in g.vec for p in partes):
             raise ValueError(f'{art_id}: sondas inválidas para {nota}')
@@ -344,6 +352,17 @@ def procesar(art_id, tema_id, fuente, original):
             g.unir(parte, partes[0])
         agrupadas_a_mano += len(partes) - 1
         cambios.append(nota)
+
+    detalles_finos = set()
+    for x, y in ajustes.get('detalles_finos', ()):
+        detalle = g.raiz(int(zonas[y, x]))
+        if detalle not in g.vec or not pequeno(detalle):
+            raise ValueError(f'{art_id}: sonda inválida para un detalle fino')
+        detalles_finos.add(detalle)
+        for otro in g.vec.pop(detalle):
+            g.vec[otro].pop(detalle)
+    if detalles_finos:
+        cambios.append(f'{len(detalles_finos)} detalles finos con relleno para usar con zoom')
 
     while True:
         chicos = [a for a in g.area if pequeno(a) and g.vec.get(a)]
@@ -420,6 +439,8 @@ def procesar(art_id, tema_id, fuente, original):
             'puntos': [[int(polos[z - 1][1]), int(polos[z - 1][0])]
                        for z in miembros[:6]],
         })
+        if orden[r - 1] in detalles_finos:
+            sondas[-1]['detalle_fino'] = True
 
     partes_tinta, puntos_tinta, pols_tinta = trazado(tinta, 0.8)
     # Un único trazado: los huecos deben ir en el mismo trazado que su
@@ -479,7 +500,8 @@ def procesar(art_id, tema_id, fuente, original):
         'regiones': len(regiones),
         'regiones_multiparte': sum(1 for s in sondas if s['partes'] > 1),
         'brillos': len(brillos),
-        'diametro_min': min(s['diametro'] for s in sondas if not s['brillo']),
+        'diametro_min': min(s['diametro'] for s in sondas
+                            if not s['brillo'] and not s.get('detalle_fino')),
         'diametro_min_exigido': nivel['diametro'],
         'tope_regiones': nivel['tope'],
         'grosor_trazo_px': round(grosor, 1),
@@ -514,12 +536,19 @@ def procesar(art_id, tema_id, fuente, original):
     rng = np.random.default_rng(7)
     paleta = rng.integers(90, 245, size=(len(regiones) + 1, 3), dtype=np.uint8)
     paleta[0] = 255
-    if art_id in sondas_reflejos:
+    if reflejos:
         for brillo in brillos:
             paleta[numero[brillo]] = 255
     if art_id == 'E09':
         # Distingue el suelo del tronco en la vista de comprobación.
         paleta[mapa[1450, 497]] = (142, 184, 136)
+    if art_id == 'M02':
+        # Distingue el pétalo junto a los estambres del cielo de la vista.
+        paleta[mapa[1324, 407]] = (155, 119, 194)
+    if art_id == 'M04':
+        paleta[mapa[860, 1120]] = (233, 218, 191)  # nube derecha
+        paleta[mapa[130, 102]] = (117, 151, 186)  # rama izquierda
+        paleta[mapa[300, 126]] = (112, 169, 126)  # musgo colgante
     previa = paleta[lienzo]
     previa[tinta_vec == 1] = (20, 20, 20)
     previa = cv2.resize(previa, (round(ancho * 0.5), round(alto * 0.5)),

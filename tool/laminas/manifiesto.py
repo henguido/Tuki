@@ -125,8 +125,13 @@ def main():
                     'template': m['plantilla'].split('bosque-nuboso/')[1],
                     'thumbnail': f"thumbs/{m['pagina']}.png",
                 })
-                if m['pagina'] in PREVIAS:
-                    pagina['previousTemplates'] = PREVIAS[m['pagina']]
+                anteriores = dict(PREVIAS.get(m['pagina'], {}))
+                for revision in range(1, m['revision']):
+                    anterior = f"pages/{m['pagina']}-v{revision}.json"
+                    if (CAPITULO.parent / anterior).is_file():
+                        anteriores[str(revision)] = anterior
+                if anteriores:
+                    pagina['previousTemplates'] = anteriores
             else:
                 pagina['status'] = 'planned'
             paginas.append(pagina)

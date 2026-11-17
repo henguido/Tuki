@@ -222,7 +222,11 @@ void main() {
     final (region, point) = firstProbe('E01');
     await tapScene(tester, point);
     final row = h.drawings.rows['$chapter/rana-en-la-hoja']!;
-    expect(row.templateRevision, 2);
+    final page = h.deps.catalog
+        .chapterById(chapter)!
+        .pageById('rana-en-la-hoja')!;
+    final current = await h.deps.catalogRepository.loadTemplate(page);
+    expect(row.templateRevision, current.revision);
     expect(row.document.fills.keys, [region]);
   });
 }

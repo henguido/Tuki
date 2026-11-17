@@ -3,20 +3,21 @@
 Los originales no se modifican: están en `ilustraciones/` y se identifican aquí por su SHA-256.
 Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo solo figura lo que cambia el dibujo o su comportamiento.
 
-## E01 · `rana-en-la-hoja` (revisión 2)
+## E01 · `rana-en-la-hoja` (revisión 3)
 
 - Original: `Rana sonriente sobre una hoja-1.webp` → `E01_rana-en-la-hoja.webp` (1199 × 1312 px), SHA-256 `6d66f325075f2746…`
 - Lienzo: 1462 × 1600 (vertical); trazo 24.0 px; tinta que toca el marco: 0.0 %
 - huecos de trazo cerrados (311 px)
-- 2 brillos sobre tinta conservados como regiones propias
-- 2 zonas pequeñas agrupadas con su vecina
+- 4 brillos sobre tinta conservados como regiones propias
+- partes visibles de la hoja reunidas
 
-## E02 · `e02-mariposa` (revisión 1)
+## E02 · `e02-mariposa` (revisión 2)
 
 - Original: `Mariposa feliz para colorear-1.webp` → `E02_mariposa.webp` (1122 × 1402 px), SHA-256 `885133699561f542…`
 - Lienzo: 1280 × 1600 (vertical); trazo 20.0 px; tinta que toca el marco: 0.0 %
 - huecos de trazo cerrados (185 px)
-- 3 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- 1 zonas pequeñas agrupadas con su vecina
 
 ## E03 · `e03-colibri` (revisión 2)
 
@@ -60,12 +61,18 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Los tramos de la rama comparten color, al igual que las nueve garras y las dos manchas de la cara en sus respectivas regiones. Los reflejos de los ojos y el centro de la flor tienen regiones propias.
 - El hueco entre los brazos se pinta con el fondo inferior.
 
-## E08 · `e08-mono` (revisión 1)
+## E08 · `e08-mono` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_03_56-2.webp` → `E08_mono.webp` (1122 × 1402 px), SHA-256 `180020a1d1ece3c5…`
 - Lienzo: 1280 × 1600 (vertical); trazo 17.6 px; tinta que toca el marco: 4.4 %
 - huecos de trazo cerrados (579 px)
-- 16 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- tramos de la rama reunidos
+- brazo, dedos y cola pintados con el cuerpo del mono
+- plantas de los pies reunidas
+- hoja superior separada del fondo
+- hueco entre la oreja y el brazo pintado con el cielo
+- 6 zonas pequeñas agrupadas con su vecina
 
 ## E09 · `e09-coati` (revisión 2)
 
@@ -81,12 +88,13 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Lienzo: 1280 × 1600 (vertical); trazo 24.0 px; tinta que toca el marco: 0.0 %
 - Se redibujó la composición con un tallo continuo por helecho y sin líneas de suelo. Los helechos, la roca, los pétalos, el centro y las dos hojas de la flor tienen rellenos propios.
 
-## E11 · `e11-orquideas` (revisión 1)
+## E11 · `e11-orquideas` (revisión 2)
 
 - Original: `Orquídea en blanco y negro-2.webp` → `E11_orquideas.webp` (1254 × 1254 px), SHA-256 `f4531b9f9e01d225…`
 - Lienzo: 1600 × 1600 (vertical); trazo 32.0 px; tinta que toca el marco: 0.9 %
 - huecos de trazo cerrados (156 px)
-- 1 zonas pequeñas agrupadas con su vecina
+- huecos alrededor del tallo pintados con el fondo
+- tallo estrecho agrupado con la hoja derecha
 
 ## E12 · `e12-ranas-del-bosque` (revisión 2)
 
@@ -96,78 +104,98 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Los ojos tienen regiones propias para sus detalles blancos. Las manchas y lenguas comparten un relleno de detalle. Las patas y los huecos entre ellas se asignaron a las ranas y al fondo, respectivamente.
 - Se separaron la vegetación, las rocas y el suelo, y se reunieron las partes de las hojas divididas por nervaduras.
 
-## E13 · `e13-arbol-gigante` (revisión 1)
+## E13 · `e13-arbol-gigante` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_12-7.webp` → `E13_arbol-gigante.webp` (1122 × 1402 px), SHA-256 `5cde9872f97c4af3…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E13.png`, SHA-256 `6b29f31e72f94a6a…`.
 - Lienzo: 1280 × 1600 (vertical); trazo 16.0 px; tinta que toca el marco: 1.1 %
-- huecos de trazo cerrados (557 px)
-- 14 zonas pequeñas agrupadas con su vecina
+- contorno del tronco prolongado hasta la hoja izquierda
+- huecos de trazo cerrados (560 px)
+- huecos entre las ramas pintados con el cielo
+- hojas izquierdas agrupadas en una región de follaje
+- hojas derechas agrupadas en una región de follaje
+- 5 zonas pequeñas agrupadas con su vecina
 
-## E14 · `e14-cascada` (revisión 1)
+## E14 · `e14-cascada` (revisión 2)
 
 - Original: `Cascada infantil entre rocas-3.webp` → `E14_cascada.webp` (1254 × 1254 px), SHA-256 `70590c990a187ba3…`
 - Lienzo: 1600 × 1600 (vertical); trazo 20.4 px; tinta que toca el marco: 3.7 %
 - huecos de trazo cerrados (167 px)
-- 4 zonas pequeñas agrupadas con su vecina
+- salpicaduras agrupadas con el agua de la caída
 
-## E15 · `e15-sendero` (revisión 1)
+## E15 · `e15-sendero` (revisión 2)
 
 - Original: `Sendero forestal para colorear-4.webp` → `E15_sendero.webp` (1199 × 1312 px), SHA-256 `2068afcd54b20e2d…`
 - Lienzo: 1462 × 1600 (vertical); trazo 20.0 px; tinta que toca el marco: 0.0 %
 - huecos de trazo cerrados (266 px)
-- 4 zonas pequeñas agrupadas con su vecina
+- cielo reunido entre las ramas y detrás de los árboles
 
-## M01 · `m01-rana-en-la-hoja` (revisión 1)
+## M01 · `m01-rana-en-la-hoja` (revisión 2)
 
 - Original: `Rana sonriente sobre una hoja tropical.webp` → `M01_rana-en-la-hoja.webp` (1254 × 1254 px), SHA-256 `b552a725388802ea…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M01.png`, SHA-256 `77aae872bf911d78…`. Se redibujaron manchas abiertas de la frente, el lomo y las patas. Se completaron los contornos de las zonas marcadas a la derecha y se restauraron los tramos débiles de las hojas de la izquierda, incluida la punta inferior de la hoja grande.
+- El hueco entre las hojas junto a la pata izquierda toma el relleno del fondo. Las hojas del rincón inferior derecho se pintan con la planta del primer plano.
 - Lienzo: 1600 × 1600 (vertical); trazo 10.0 px; tinta que toca el marco: 10.3 %
 - 2 motas de tinta eliminadas
-- huecos de trazo cerrados (781 px)
+- huecos de trazo cerrados (808 px)
 - 3 contornos abiertos cerrados con tinta
 - 8 huecos diminutos absorbidos por la tinta
 - 4 brillos sobre tinta conservados como regiones propias
 - 61 zonas pequeñas agrupadas con su vecina
 
-## M02 · `m02-mariposa` (revisión 1)
+## M02 · `m02-mariposa` (revisión 2)
 
 - Original: `mariposa-tuki-nivel-medio-v1.png` → `M02_mariposa.png` (1199 × 1312 px), SHA-256 `97463970e49eb34a…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M02.png`, SHA-256 `b34347586fee37d0…`. Se cerraron los contornos del musgo y se restauraron las uniones de los estambres.
 - Lienzo: 1462 × 1600 (vertical); trazo 12.8 px; tinta que toca el marco: 2.3 %
-- huecos de trazo cerrados (209 px)
+- huecos de trazo cerrados (226 px)
 - 1 contornos abiertos cerrados con tinta
-- 12 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- puntas de las antenas separadas del cielo
+- Cada flor tiene un relleno propio para sus estambres, utilizable con zoom.
+- 4 zonas pequeñas agrupadas con su vecina
 
-## M03 · `m03-colibri` (revisión 1)
+## M03 · `m03-colibri` (revisión 2)
 
+- Se completó el borde inferior de la rama sobre el musgo colgante. Fuente corregida: `tool/laminas/fuentes_corregidas/M03.png`, SHA-256 `aa44570c2f0c7004…`.
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_44_58-2.webp` → `M03_colibri.webp` (1122 × 1402 px), SHA-256 `fe2f8643592ef644…`
 - Lienzo: 1280 × 1600 (vertical); trazo 18.0 px; tinta que toca el marco: 4.3 %
 - huecos de trazo cerrados (93 px)
-- 4 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- tallo agrupado con la hoja izquierda
+- 1 zonas pequeñas agrupadas con su vecina
 
-## M04 · `m04-tucan` (revisión 1)
+## M04 · `m04-tucan` (revisión 2)
 
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M04.png`, SHA-256 `998529a7cdc5ded7…`. Se separó el musgo de la rama izquierda y se redibujó la figura derecha como una nube de borde redondeado.
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_45_00-3.webp` → `M04_tucan.webp` (1122 × 1402 px), SHA-256 `e2d439d020f845d6…`
 - Lienzo: 1280 × 1600 (vertical); trazo 18.0 px; tinta que toca el marco: 4.5 %
 - huecos de trazo cerrados (114 px)
-- 6 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- garras pintadas con el pecho del tucán
 
-## M05 · `m05-flor-tropical` (revisión 1)
+## M05 · `m05-flor-tropical` (revisión 2)
 
 - Original: `Hibisco en blanco y negro-1.webp` → `M05_flor-tropical.webp` (1312 × 1199 px), SHA-256 `415dae6316498b6d…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M05.png`, SHA-256 `d31c7decefa8245c…`.
 - Lienzo: 1600 × 1462 (horizontal); trazo 18.4 px; tinta que toca el marco: 0.0 %
-- huecos de trazo cerrados (141 px)
-- 1 contornos abiertos cerrados con tinta
+- ambos bordes del pistilo completados junto a las anteras inferiores
+- huecos de trazo cerrados (142 px)
 - 2 huecos diminutos absorbidos por la tinta
-- 8 zonas pequeñas agrupadas con su vecina
+- anteras reunidas con el pistilo
+- 1 zonas pequeñas agrupadas con su vecina
 
-## M06 · `quetzal` (revisión 2)
+## M06 · `quetzal` (revisión 3)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_18-10.webp` → `M06_quetzal.webp` (1122 × 1402 px), SHA-256 `c3a357b39530aa16…`
 - Lienzo: 1280 × 1600 (vertical); trazo 11.6 px; tinta que toca el marco: 10.2 %
 - 1 motas de tinta eliminadas
 - huecos de trazo cerrados (548 px)
-- 63 zonas pequeñas agrupadas con su vecina
+- 1 brillos sobre tinta conservados como regiones propias
+- plumas largas de la cola separadas del fondo
+- 59 zonas pequeñas agrupadas con su vecina
 
-## M07 · `m07-perezoso` (revisión 1)
+## M07 · `m07-perezoso` (revisión 2)
 
 - Original: `Perezoso sonriente en la selva tropical-6.webp` → `M07_perezoso.webp` (1122 × 1402 px), SHA-256 `7688deeb0987891e…`
 - Lienzo: 1280 × 1600 (vertical); trazo 12.8 px; tinta que toca el marco: 11.2 %
@@ -175,76 +203,99 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (295 px)
 - 1 contornos abiertos cerrados con tinta
 - 2 huecos diminutos absorbidos por la tinta
-- 31 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- tramos de la rama reunidos
+- garras agrupadas con el extremo de la pata delantera
+- 17 zonas pequeñas agrupadas con su vecina
 
-## M08 · `m08-mono` (revisión 1)
+## M08 · `m08-mono` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_45_05-6.webp` → `M08_mono.webp` (1122 × 1402 px), SHA-256 `46bc074d6da627b6…`
 - Lienzo: 1280 × 1600 (vertical); trazo 12.0 px; tinta que toca el marco: 3.7 %
 - huecos de trazo cerrados (307 px)
 - 1 contornos abiertos cerrados con tinta
 - 1 huecos diminutos absorbidos por la tinta
-- 1 brillos sobre tinta conservados como regiones propias
-- 40 zonas pequeñas agrupadas con su vecina
+- 3 brillos sobre tinta conservados como regiones propias
+- rama separada por la mano reunida con el tronco
+- oreja derecha agrupada con el pelo
+- flor superior separada del cielo
+- 35 zonas pequeñas agrupadas con su vecina
 
-## M09 · `m09-coati` (revisión 1)
+## M09 · `m09-coati` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_45_07-7.webp` → `M09_coati.webp` (1122 × 1402 px), SHA-256 `fddab038bc1bb38d…`
 - Lienzo: 1280 × 1600 (vertical); trazo 13.2 px; tinta que toca el marco: 4.7 %
 - huecos de trazo cerrados (314 px)
 - 4 contornos abiertos cerrados con tinta
-- 31 zonas pequeñas agrupadas con su vecina
+- 3 brillos sobre tinta conservados como regiones propias
+- oreja trasera agrupada con la cabeza
+- 26 zonas pequeñas agrupadas con su vecina
 
-## M10 · `m10-helechos` (revisión 1)
+## M10 · `m10-helechos` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_45_08-8.webp` → `M10_helechos.webp` (1122 × 1402 px), SHA-256 `ad2c09c7a36c20a5…`
 - Lienzo: 1280 × 1600 (vertical); trazo 14.0 px; tinta que toca el marco: 4.8 %
 - huecos de trazo cerrados (437 px)
 - 3 contornos abiertos cerrados con tinta
 - 1 huecos diminutos absorbidos por la tinta
-- 37 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- helecho pequeño izquierdo separado del fondo
+- helecho pequeño derecho separado del fondo
+- 16 zonas pequeñas agrupadas con su vecina
 
-## M11 · `m11-orquideas` (revisión 1)
+## M11 · `m11-orquideas` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_03-5.webp` → `M11_orquideas.webp` (1122 × 1402 px), SHA-256 `6ca9f7407e6d9211…`
 - Lienzo: 1280 × 1600 (vertical); trazo 16.8 px; tinta que toca el marco: 3.6 %
 - huecos de trazo cerrados (104 px)
-- 13 zonas pequeñas agrupadas con su vecina
+- huecos entre flores y tallos pintados con el fondo
+- tallos estrechos agrupados con la hoja derecha
+- 9 zonas pequeñas agrupadas con su vecina
 
-## M12 · `m12-ranas-del-bosque` (revisión 1)
+## M12 · `m12-ranas-del-bosque` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_06-6.webp` → `M12_ranas-del-bosque.webp` (1122 × 1402 px), SHA-256 `76632d6465e0e2ae…`
 - Lienzo: 1280 × 1600 (vertical); trazo 15.6 px; tinta que toca el marco: 10.6 %
 - huecos de trazo cerrados (173 px)
 - 2 contornos abiertos cerrados con tinta
 - 2 huecos diminutos absorbidos por la tinta
-- 1 brillos sobre tinta conservados como regiones propias
-- 17 zonas pequeñas agrupadas con su vecina
+- 4 brillos sobre tinta conservados como regiones propias
+- 14 zonas pequeñas agrupadas con su vecina
 
-## M13 · `m13-arbol-gigante` (revisión 1)
+## M13 · `m13-arbol-gigante` (revisión 2)
 
 - Original: `Árbol frondoso con raíces y hojas tropicales-3.webp` → `M13_arbol-gigante.webp` (1199 × 1312 px), SHA-256 `b32e35b3713c1661…`
 - Lienzo: 1462 × 1600 (vertical); trazo 12.0 px; tinta que toca el marco: 0.0 %
 - huecos de trazo cerrados (327 px)
 - 2 huecos diminutos absorbidos por la tinta
-- 36 zonas pequeñas agrupadas con su vecina
+- hojas de las copas izquierdas separadas de la copa
+- hojas de la copa derecha separadas de la copa
+- 27 zonas pequeñas agrupadas con su vecina
 
-## M14 · `m14-cascada` (revisión 1)
+## M14 · `m14-cascada` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_14-8.webp` → `M14_cascada.webp` (1122 × 1402 px), SHA-256 `0ea758f57097f620…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M14.png`, SHA-256 `a8ab0ee084881349…`.
 - Lienzo: 1280 × 1600 (vertical); trazo 15.2 px; tinta que toca el marco: 9.5 %
-- huecos de trazo cerrados (219 px)
+- borde de la caída izquierda continuado hasta la espuma
+- huecos de trazo cerrados (222 px)
 - 2 contornos abiertos cerrados con tinta
 - 1 huecos diminutos absorbidos por la tinta
-- 20 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- salpicaduras pintadas con el agua de la caída
+- 14 zonas pequeñas agrupadas con su vecina
 
-## M15 · `m15-sendero` (revisión 1)
+## M15 · `m15-sendero` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_16-9.webp` → `M15_sendero.webp` (1122 × 1402 px), SHA-256 `44eb009a220aa369…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M15.png`, SHA-256 `b8e6893f31f2664e…`.
 - Lienzo: 1280 × 1600 (vertical); trazo 14.0 px; tinta que toca el marco: 8.8 %
-- huecos de trazo cerrados (223 px)
+- rama prolongada hasta el musgo del árbol y copa intermedia cerrada
+- huecos de trazo cerrados (225 px)
 - 3 contornos abiertos cerrados con tinta
-- 25 zonas pequeñas agrupadas con su vecina
+- vientre y garras pintados con el tucán
+- tramos de la rama separados del cielo
+- 22 zonas pequeñas agrupadas con su vecina
 
 ## D01 · `d01-rana-en-la-hoja` (revisión 1)
 
@@ -257,22 +308,25 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 2 brillos sobre tinta conservados como regiones propias
 - 53 zonas pequeñas agrupadas con su vecina
 
-## D02 · `d02-mariposa` (revisión 1)
+## D02 · `d02-mariposa` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_44_54-1.webp` → `D02_mariposa.webp` (1122 × 1402 px), SHA-256 `53b1bb97af635bf0…`
 - Lienzo: 1280 × 1600 (vertical); trazo 18.0 px; tinta que toca el marco: 3.5 %
 - huecos de trazo cerrados (67 px)
 - 1 contornos abiertos cerrados con tinta
-- 3 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- 1 zonas pequeñas agrupadas con su vecina
 
-## D03 · `d03-colibri` (revisión 1)
+## D03 · `d03-colibri` (revisión 2)
 
 - Original: `Colibrí entre hibiscos tropicales-3.webp` → `D03_colibri.webp` (1312 × 1199 px), SHA-256 `72561ed0c8a71cc2…`
 - Lienzo: 1600 × 1462 (horizontal); trazo 11.2 px; tinta que toca el marco: 14.9 %
 - huecos de trazo cerrados (516 px)
 - 11 contornos abiertos cerrados con tinta
 - 1 brillos sobre tinta conservados como regiones propias
-- 45 zonas pequeñas agrupadas con su vecina
+- pico agrupado con la cabeza y separado del cielo
+- garras agrupadas con el vientre
+- 41 zonas pequeñas agrupadas con su vecina
 
 ## D04 · `d04-tucan` (revisión 1)
 
@@ -284,16 +338,17 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 1 brillos sobre tinta conservados como regiones propias
 - 47 zonas pequeñas agrupadas con su vecina
 
-## D05 · `d05-flor-tropical` (revisión 1)
+## D05 · `d05-flor-tropical` (revisión 2)
 
 - Original: `Hibisco tropical entre hojas selváticas-8.webp` → `D05_flor-tropical.webp` (1230 × 1278 px), SHA-256 `462fb06e9e046e28…`
 - Lienzo: 1540 × 1600 (vertical); trazo 12.0 px; tinta que toca el marco: 18.6 %
 - 4 motas de tinta eliminadas
 - huecos de trazo cerrados (547 px)
 - 9 contornos abiertos cerrados con tinta
-- 49 zonas pequeñas agrupadas con su vecina
+- pistilo y anteras reunidos en una región propia
+- 40 zonas pequeñas agrupadas con su vecina
 
-## D06 · `d06-quetzal` (revisión 1)
+## D06 · `d06-quetzal` (revisión 2)
 
 - Original: `Quetzal entre flores tropicales-9.webp` → `D06_quetzal.webp` (1199 × 1312 px), SHA-256 `54eb7e1e18dd9048…`
 - Lienzo: 1462 × 1600 (vertical); trazo 11.2 px; tinta que toca el marco: 14.5 %
@@ -301,9 +356,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (808 px)
 - 3 contornos abiertos cerrados con tinta
 - 4 huecos diminutos absorbidos por la tinta
-- 59 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- garras separadas de la rama y agrupadas con el pecho
+- tramos visibles de madera agrupados
+- 55 zonas pequeñas agrupadas con su vecina
 
-## D07 · `d07-perezoso` (revisión 1)
+## D07 · `d07-perezoso` (revisión 2)
 
 - Original: `Pereza Feliz en la Jungla Tropical-10.webp` → `D07_perezoso.webp` (1312 × 1199 px), SHA-256 `bd097fcf808ee0d8…`
 - Lienzo: 1600 × 1462 (horizontal); trazo 13.2 px; tinta que toca el marco: 29.2 %
@@ -311,54 +369,64 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (643 px)
 - 4 contornos abiertos cerrados con tinta
 - 2 huecos diminutos absorbidos por la tinta
-- 57 zonas pequeñas agrupadas con su vecina
+- 3 brillos sobre tinta conservados como regiones propias
+- tramos de madera reunidos a través de las garras
+- garras agrupadas con el pelaje
+- 45 zonas pequeñas agrupadas con su vecina
 
-## D08 · `d08-mono` (revisión 1)
+## D08 · `d08-mono` (revisión 2)
 
 - Original: `Mono divertido en la jungla tropical.webp` → `D08_mono.webp` (1536 × 1024 px), SHA-256 `941657b5f615cc92…`
 - Lienzo: 1600 × 1067 (horizontal); trazo 10.0 px; tinta que toca el marco: 14.7 %
 - huecos de trazo cerrados (489 px)
 - 1 contornos abiertos cerrados con tinta
 - 1 huecos diminutos absorbidos por la tinta
-- 1 brillos sobre tinta conservados como regiones propias
-- 22 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- rama reunida bajo la mano del mono
+- 21 zonas pequeñas agrupadas con su vecina
 
-## D09 · `d09-coati` (revisión 1)
+## D09 · `d09-coati` (revisión 2)
 
 - Original: `Coatí en la selva tropical.webp` → `D09_coati.webp` (1536 × 1024 px), SHA-256 `90a0d3cff49fe9d9…`
 - Lienzo: 1600 × 1067 (horizontal); trazo 8.4 px; tinta que toca el marco: 17.5 %
 - huecos de trazo cerrados (1316 px)
 - 8 contornos abiertos cerrados con tinta
 - 7 huecos diminutos absorbidos por la tinta
-- 72 zonas pequeñas agrupadas con su vecina
+- 2 brillos sobre tinta conservados como regiones propias
+- oreja lejana separada del cielo
+- 69 zonas pequeñas agrupadas con su vecina
 
-## D10 · `d10-helechos` (revisión 1)
+## D10 · `d10-helechos` (revisión 2)
 
 - Original: `Selva tropical de helechos en blanco y negro.webp` → `D10_helechos.webp` (1536 × 1024 px), SHA-256 `e4a03e12f2b7f5af…`
 - Lienzo: 1600 × 1067 (horizontal); trazo 8.0 px; tinta que toca el marco: 8.6 %
 - huecos de trazo cerrados (1204 px)
 - 10 contornos abiertos cerrados con tinta
 - 11 huecos diminutos absorbidos por la tinta
-- 67 zonas pequeñas agrupadas con su vecina
+- brote izquierdo agrupado con el helecho del mismo lado
+- brote central agrupado con el follaje inferior
+- 61 zonas pequeñas agrupadas con su vecina
 
-## D11 · `d11-orquideas` (revisión 1)
+## D11 · `d11-orquideas` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 19_45_10-9.webp` → `D11_orquideas.webp` (1122 × 1402 px), SHA-256 `e4f0d38568704cbb…`
 - Lienzo: 1280 × 1600 (vertical); trazo 11.6 px; tinta que toca el marco: 8.6 %
 - huecos de trazo cerrados (621 px)
 - 4 contornos abiertos cerrados con tinta
 - 1 huecos diminutos absorbidos por la tinta
-- 69 zonas pequeñas agrupadas con su vecina
+- 1 brillos sobre tinta conservados como regiones propias
+- centro de la orquídea alta separado del paisaje
+- 66 zonas pequeñas agrupadas con su vecina
 
-## D12 · `d12-ranas-del-bosque` (revisión 1)
+## D12 · `d12-ranas-del-bosque` (revisión 2)
 
 - Original: `Ranas arborícolas bajo la lluvia tropical.webp` → `D12_ranas-del-bosque.webp` (1536 × 1024 px), SHA-256 `b40d682557867d4b…`
 - Lienzo: 1600 × 1067 (horizontal); trazo 10.0 px; tinta que toca el marco: 9.1 %
 - huecos de trazo cerrados (454 px)
 - 12 contornos abiertos cerrados con tinta
 - 1 huecos diminutos absorbidos por la tinta
-- 3 brillos sobre tinta conservados como regiones propias
-- 44 zonas pequeñas agrupadas con su vecina
+- 6 brillos sobre tinta conservados como regiones propias
+- 41 zonas pequeñas agrupadas con su vecina
 
 ## D13 · `d13-arbol-gigante` (revisión 1)
 
@@ -380,14 +448,15 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 89 zonas pequeñas agrupadas con su vecina
 - 4 zonas más agrupadas para no superar 95 regiones
 
-## D15 · `sendero` (revisión 2)
+## D15 · `sendero` (revisión 3)
 
 - Original: `Sendero selvático entre flores y árboles-4.webp` → `D15_sendero.webp` (1199 × 1312 px), SHA-256 `29baef89ee9bfada…`
 - Lienzo: 1462 × 1600 (vertical); trazo 14.4 px; tinta que toca el marco: 12.7 %
 - huecos de trazo cerrados (360 px)
 - 3 contornos abiertos cerrados con tinta
 - 2 huecos diminutos absorbidos por la tinta
-- 26 zonas pequeñas agrupadas con su vecina
+- huecos entre las ramas pintados con el cielo
+- 22 zonas pequeñas agrupadas con su vecina
 
 ## A01 · `a01-rana-en-la-hoja` (revisión 1)
 
@@ -400,7 +469,7 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 4 brillos sobre tinta conservados como regiones propias
 - 77 zonas pequeñas agrupadas con su vecina
 
-## A02 · `a02-mariposa` (revisión 1)
+## A02 · `a02-mariposa` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 22_01_32-5.webp` → `A02_mariposa.webp` (1122 × 1402 px), SHA-256 `aa53a4f447185ad7…`
 - Lienzo: 1280 × 1600 (vertical); trazo 7.2 px; tinta que toca el marco: 18.1 %
@@ -408,9 +477,10 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (1787 px)
 - 32 contornos abiertos cerrados con tinta
 - 19 huecos diminutos absorbidos por la tinta
-- 1 brillos sobre tinta conservados como regiones propias
-- 145 zonas pequeñas agrupadas con su vecina
-- 43 zonas más agrupadas para no superar 140 regiones
+- 2 brillos sobre tinta conservados como regiones propias
+- puntas de las antenas separadas del cielo
+- 144 zonas pequeñas agrupadas con su vecina
+- 41 zonas más agrupadas para no superar 140 regiones
 
 ## A03 · `a03-colibri` (revisión 1)
 
@@ -460,7 +530,7 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 186 zonas pequeñas agrupadas con su vecina
 - 35 zonas más agrupadas para no superar 140 regiones
 
-## A07 · `a07-perezoso` (revisión 1)
+## A07 · `a07-perezoso` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 22_01_44-10.webp` → `A07_perezoso.webp` (1122 × 1402 px), SHA-256 `ced5d85e411174de…`
 - Lienzo: 1280 × 1600 (vertical); trazo 8.0 px; tinta que toca el marco: 22.3 %
@@ -468,11 +538,11 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (3104 px)
 - 18 contornos abiertos cerrados con tinta
 - 44 huecos diminutos absorbidos por la tinta
-- 2 brillos sobre tinta conservados como regiones propias
-- 243 zonas pequeñas agrupadas con su vecina
+- 3 brillos sobre tinta conservados como regiones propias
+- 242 zonas pequeñas agrupadas con su vecina
 - 46 zonas más agrupadas para no superar 140 regiones
 
-## A08 · `a08-mono` (revisión 1)
+## A08 · `a08-mono` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 22_57_05-1.webp` → `A08_mono.webp` (1122 × 1402 px), SHA-256 `09ed14726aea907a…`
 - Lienzo: 1280 × 1600 (vertical); trazo 6.0 px; tinta que toca el marco: 29.6 %
@@ -481,8 +551,9 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 28 contornos abiertos cerrados con tinta
 - 134 huecos diminutos absorbidos por la tinta
 - 2 brillos sobre tinta conservados como regiones propias
+- orejas agrupadas en una región propia
 - 566 zonas pequeñas agrupadas con su vecina
-- 27 zonas más agrupadas para no superar 140 regiones
+- 26 zonas más agrupadas para no superar 140 regiones
 
 ## A09 · `a09-coati` (revisión 1)
 
@@ -541,7 +612,7 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 996 zonas pequeñas agrupadas con su vecina
 - 19 zonas más agrupadas para no superar 140 regiones
 
-## A14 · `a14-cascada` (revisión 1)
+## A14 · `a14-cascada` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 22_01_25-2.webp` → `A14_cascada.webp` (1122 × 1402 px), SHA-256 `408ea1890973af5e…`
 - Lienzo: 1280 × 1600 (vertical); trazo 7.2 px; tinta que toca el marco: 21.9 %
@@ -549,7 +620,8 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (2183 px)
 - 14 contornos abiertos cerrados con tinta
 - 20 huecos diminutos absorbidos por la tinta
-- 183 zonas pequeñas agrupadas con su vecina
+- gotas de la caída agrupadas con la espuma
+- 175 zonas pequeñas agrupadas con su vecina
 - 20 zonas más agrupadas para no superar 140 regiones
 
 ## A15 · `a15-sendero` (revisión 1)

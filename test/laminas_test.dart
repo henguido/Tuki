@@ -351,13 +351,17 @@ void main() {
       }
       anota('zoom_y_orientacion', encaje.isEmpty, encaje.join(' '));
 
-      // 10. Tacto: diámetro mínimo exigido por el nivel (sin contar brillos).
+      // 10. Tacto: diámetro mínimo sin contar brillos ni detalles para zoom.
       final minimo = (medidas['diametro_min'] as num).toDouble();
       final exigido = (medidas['diametro_min_exigido'] as num).toDouble();
       final brillos = sondas.where((s) => s['brillo'] == true).length;
+      final diametrosTactiles = sondas
+          .where((s) => s['brillo'] != true && s['detalle_fino'] != true)
+          .map((s) => (s['diametro'] as num).toDouble());
       anota(
         'tacto_del_nivel',
-        minimo >= exigido &&
+        minimo == diametrosTactiles.reduce(math.min) &&
+            minimo >= exigido &&
             template.regions.length - brillos <=
                 (medidas['tope_regiones'] as int) &&
             medidas['nivel'] == _niveles[id[0]],
@@ -468,7 +472,8 @@ void main() {
 
   test('el catálogo publica solo láminas aprobadas, con miniatura', () async {
     final aprobacion = File('tool/laminas/aprobacion.json');
-    final catalog = await diskCatalog().load();
+    final repo = diskCatalog();
+    final catalog = await repo.load();
     final capitulo = catalog.chapterById('bosque-nuboso')!;
     final todas = capitulo.pages.length + capitulo.plannedPages.length;
     expect(todas, 60);
@@ -480,15 +485,18 @@ void main() {
       60,
       reason: 'identificadores únicos',
     );
-    // Las tres páginas que ya existían conservan su identificador y siguen
-    // pudiendo abrir las obras guardadas con la plantilla anterior.
-    for (final id in ['rana-en-la-hoja', 'quetzal', 'sendero']) {
-      final page = capitulo.pageById(id);
-      if (page == null) continue;
-      expect(page.previousTemplateAssets.keys, [1], reason: id);
-      final repo = diskCatalog();
-      await repo.load();
-      expect((await repo.loadTemplate(page, revision: 1)).revision, 1);
+    // Todas las revisiones publicadas pueden abrir obras guardadas.
+    for (final page in capitulo.pages) {
+      final current = await repo.loadTemplate(page);
+      final anteriores = [for (var rev = 1; rev < current.revision; rev++) rev];
+      expect(
+        page.previousTemplateAssets.keys,
+        unorderedEquals(anteriores),
+        reason: page.id,
+      );
+      for (final rev in anteriores) {
+        expect((await repo.loadTemplate(page, revision: rev)).revision, rev);
+      }
     }
     if (!aprobacion.existsSync()) return;
     final matrizGuardada =

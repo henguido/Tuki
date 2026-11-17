@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'support/assets.dart';
+
 List<String> _quotedCsvRow(String line) {
   if (!line.startsWith('"') || !line.endsWith('"')) {
     throw FormatException('Fila CSV sin comillas', line);
@@ -105,21 +107,31 @@ void main() {
 
   test(
     'cada fuente enlaza al registro de conversión y a una plantilla real',
-    () {
+    () async {
+      final chapter = (await diskCatalog().load()).chapterById(
+        'bosque-nuboso',
+      )!;
+      final pages = {for (final page in chapter.pages) page.artId: page};
       for (final row in rows) {
-        final validationFile = File(
-          'tool/laminas/validacion/${row['id']}.json',
-        );
-        expect(validationFile.existsSync(), isTrue, reason: row['id']);
+        final artId = row['id'];
+        final validationFile = File('tool/laminas/validacion/$artId.json');
+        expect(validationFile.existsSync(), isTrue, reason: artId);
         final validation = jsonDecode(
           validationFile.readAsStringSync(),
         ) as Map<String, dynamic>;
-        final expectedHash = row['id'] == 'E06'
-            ? _sha256(File('tool/laminas/fuentes_corregidas/E06.png'))
+        final corrected = File('tool/laminas/fuentes_corregidas/$artId.png');
+        final expectedHash = corrected.existsSync()
+            ? _sha256(corrected)
             : row['sha256'];
-        expect(validation['sha256_fuente'], expectedHash, reason: row['id']);
-        expect(File(validation['plantilla'] as String).existsSync(), isTrue);
-        expect(row['plantilla'], validation['plantilla'], reason: row['id']);
+        expect(validation['sha256_fuente'], expectedHash, reason: artId);
+        final page = pages[artId]!;
+        expect(validation['plantilla'], page.templateAsset, reason: artId);
+        expect(File(page.templateAsset).existsSync(), isTrue, reason: artId);
+        expect(
+          [page.templateAsset, ...page.previousTemplateAssets.values],
+          contains(row['plantilla']),
+          reason: artId,
+        );
       }
     },
   );

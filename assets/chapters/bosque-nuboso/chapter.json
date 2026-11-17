@@ -37,10 +37,11 @@
         "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
         "en": "Many forest frogs sleep on leaves during the day and come out at night."
       },
-      "template": "pages/rana-en-la-hoja-v2.json",
+      "template": "pages/rana-en-la-hoja-v3.json",
       "thumbnail": "thumbs/rana-en-la-hoja.png",
       "previousTemplates": {
-        "1": "pages/rana-en-la-hoja-v1.json"
+        "1": "pages/rana-en-la-hoja-v1.json",
+        "2": "pages/rana-en-la-hoja-v2.json"
       }
     },
     {
@@ -60,8 +61,11 @@
         "es": "Las mariposas sienten el sabor con las patas.",
         "en": "Butterflies taste with their feet."
       },
-      "template": "pages/e02-mariposa-v1.json",
-      "thumbnail": "thumbs/e02-mariposa.png"
+      "template": "pages/e02-mariposa-v2.json",
+      "thumbnail": "thumbs/e02-mariposa.png",
+      "previousTemplates": {
+        "1": "pages/e02-mariposa-v1.json"
+      }
     },
     {
       "id": "e03-colibri",
@@ -195,8 +199,11 @@
         "es": "Algunos monos usan la cola para sujetarse a las ramas.",
         "en": "Some monkeys use their tails to hold on to branches."
       },
-      "template": "pages/e08-mono-v1.json",
-      "thumbnail": "thumbs/e08-mono.png"
+      "template": "pages/e08-mono-v2.json",
+      "thumbnail": "thumbs/e08-mono.png",
+      "previousTemplates": {
+        "1": "pages/e08-mono-v1.json"
+      }
     },
     {
       "id": "e09-coati",
@@ -261,8 +268,11 @@
         "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
         "en": "Many orchids grow on trees without harming them."
       },
-      "template": "pages/e11-orquideas-v1.json",
-      "thumbnail": "thumbs/e11-orquideas.png"
+      "template": "pages/e11-orquideas-v2.json",
+      "thumbnail": "thumbs/e11-orquideas.png",
+      "previousTemplates": {
+        "1": "pages/e11-orquideas-v1.json"
+      }
     },
     {
       "id": "e12-ranas-del-bosque",
@@ -304,8 +314,11 @@
         "es": "En un árbol grande del bosque viven muchas plantas y animales.",
         "en": "Many plants and animals live on a big forest tree."
       },
-      "template": "pages/e13-arbol-gigante-v1.json",
-      "thumbnail": "thumbs/e13-arbol-gigante.png"
+      "template": "pages/e13-arbol-gigante-v2.json",
+      "thumbnail": "thumbs/e13-arbol-gigante.png",
+      "previousTemplates": {
+        "1": "pages/e13-arbol-gigante-v1.json"
+      }
     },
     {
       "id": "e14-cascada",
@@ -324,8 +337,11 @@
         "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
         "en": "A waterfall forms when a river falls from a high place."
       },
-      "template": "pages/e14-cascada-v1.json",
-      "thumbnail": "thumbs/e14-cascada.png"
+      "template": "pages/e14-cascada-v2.json",
+      "thumbnail": "thumbs/e14-cascada.png",
+      "previousTemplates": {
+        "1": "pages/e14-cascada-v1.json"
+      }
     },
     {
       "id": "e15-sendero",
@@ -344,8 +360,11 @@
         "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
         "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
       },
-      "template": "pages/e15-sendero-v1.json",
-      "thumbnail": "thumbs/e15-sendero.png"
+      "template": "pages/e15-sendero-v2.json",
+      "thumbnail": "thumbs/e15-sendero.png",
+      "previousTemplates": {
+        "1": "pages/e15-sendero-v1.json"
+      }
     },
     {
       "id": "m01-rana-en-la-hoja",
@@ -364,8 +383,11 @@
         "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
         "en": "Many forest frogs sleep on leaves during the day and come out at night."
       },
-      "template": "pages/m01-rana-en-la-hoja-v1.json",
-      "thumbnail": "thumbs/m01-rana-en-la-hoja.png"
+      "template": "pages/m01-rana-en-la-hoja-v2.json",
+      "thumbnail": "thumbs/m01-rana-en-la-hoja.png",
+      "previousTemplates": {
+        "1": "pages/m01-rana-en-la-hoja-v1.json"
+      }
     },
     {
       "id": "m02-mariposa",
@@ -384,8 +406,11 @@
         "es": "Las mariposas sienten el sabor con las patas.",
         "en": "Butterflies taste with their feet."
       },
-      "template": "pages/m02-mariposa-v1.json",
-      "thumbnail": "thumbs/m02-mariposa.png"
+      "template": "pages/m02-mariposa-v2.json",
+      "thumbnail": "thumbs/m02-mariposa.png",
+      "previousTemplates": {
+        "1": "pages/m02-mariposa-v1.json"
+      }
     },
     {
       "id": "m03-colibri",
@@ -404,8 +429,11 @@
         "es": "El colibrí puede volar hacia atrás.",
         "en": "A hummingbird can fly backwards."
       },
-      "template": "pages/m03-colibri-v1.json",
-      "thumbnail": "thumbs/m03-colibri.png"
+      "template": "pages/m03-colibri-v2.json",
+      "thumbnail": "thumbs/m03-colibri.png",
+      "previousTemplates": {
+        "1": "pages/m03-colibri-v1.json"
+      }
     },
     {
       "id": "m04-tucan",
@@ -424,8 +452,11 @@
         "es": "El pico del tucán es muy grande, pero pesa poco.",
         "en": "A toucan's beak is very big, but it is light."
       },
-      "template": "pages/m04-tucan-v1.json",
-      "thumbnail": "thumbs/m04-tucan.png"
+      "template": "pages/m04-tucan-v2.json",
+      "thumbnail": "thumbs/m04-tucan.png",
+      "previousTemplates": {
+        "1": "pages/m04-tucan-v1.json"
+      }
     },
     {
       "id": "m05-flor-tropical",
@@ -444,8 +475,11 @@
         "es": "Muchas flores de hibisco duran abiertas un solo día.",
         "en": "Many hibiscus flowers stay open for just one day."
       },
-      "template": "pages/m05-flor-tropical-v1.json",
-      "thumbnail": "thumbs/m05-flor-tropical.png"
+      "template": "pages/m05-flor-tropical-v2.json",
+      "thumbnail": "thumbs/m05-flor-tropical.png",
+      "previousTemplates": {
+        "1": "pages/m05-flor-tropical-v1.json"
+      }
     },
     {
       "id": "quetzal",
@@ -464,10 +498,11 @@
         "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
         "en": "The quetzal lives in humid forests and has very long tail feathers."
       },
-      "template": "pages/quetzal-v2.json",
+      "template": "pages/quetzal-v3.json",
       "thumbnail": "thumbs/quetzal.png",
       "previousTemplates": {
-        "1": "pages/quetzal-v1.json"
+        "1": "pages/quetzal-v1.json",
+        "2": "pages/quetzal-v2.json"
       }
     },
     {
@@ -487,8 +522,11 @@
         "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
         "en": "The sloth moves very slowly and spends almost all its life in the trees."
       },
-      "template": "pages/m07-perezoso-v1.json",
-      "thumbnail": "thumbs/m07-perezoso.png"
+      "template": "pages/m07-perezoso-v2.json",
+      "thumbnail": "thumbs/m07-perezoso.png",
+      "previousTemplates": {
+        "1": "pages/m07-perezoso-v1.json"
+      }
     },
     {
       "id": "m08-mono",
@@ -507,8 +545,11 @@
         "es": "Algunos monos usan la cola para sujetarse a las ramas.",
         "en": "Some monkeys use their tails to hold on to branches."
       },
-      "template": "pages/m08-mono-v1.json",
-      "thumbnail": "thumbs/m08-mono.png"
+      "template": "pages/m08-mono-v2.json",
+      "thumbnail": "thumbs/m08-mono.png",
+      "previousTemplates": {
+        "1": "pages/m08-mono-v1.json"
+      }
     },
     {
       "id": "m09-coati",
@@ -527,8 +568,11 @@
         "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
         "en": "The coati looks for food with its long snout and walks with its tail up."
       },
-      "template": "pages/m09-coati-v1.json",
-      "thumbnail": "thumbs/m09-coati.png"
+      "template": "pages/m09-coati-v2.json",
+      "thumbnail": "thumbs/m09-coati.png",
+      "previousTemplates": {
+        "1": "pages/m09-coati-v1.json"
+      }
     },
     {
       "id": "m10-helechos",
@@ -547,8 +591,11 @@
         "es": "Las hojas nuevas de los helechos nacen enrolladas.",
         "en": "New fern leaves start out curled up."
       },
-      "template": "pages/m10-helechos-v1.json",
-      "thumbnail": "thumbs/m10-helechos.png"
+      "template": "pages/m10-helechos-v2.json",
+      "thumbnail": "thumbs/m10-helechos.png",
+      "previousTemplates": {
+        "1": "pages/m10-helechos-v1.json"
+      }
     },
     {
       "id": "m11-orquideas",
@@ -567,8 +614,11 @@
         "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
         "en": "Many orchids grow on trees without harming them."
       },
-      "template": "pages/m11-orquideas-v1.json",
-      "thumbnail": "thumbs/m11-orquideas.png"
+      "template": "pages/m11-orquideas-v2.json",
+      "thumbnail": "thumbs/m11-orquideas.png",
+      "previousTemplates": {
+        "1": "pages/m11-orquideas-v1.json"
+      }
     },
     {
       "id": "m12-ranas-del-bosque",
@@ -587,8 +637,11 @@
         "es": "Las ranas absorben agua a través de la piel.",
         "en": "Frogs take in water through their skin."
       },
-      "template": "pages/m12-ranas-del-bosque-v1.json",
-      "thumbnail": "thumbs/m12-ranas-del-bosque.png"
+      "template": "pages/m12-ranas-del-bosque-v2.json",
+      "thumbnail": "thumbs/m12-ranas-del-bosque.png",
+      "previousTemplates": {
+        "1": "pages/m12-ranas-del-bosque-v1.json"
+      }
     },
     {
       "id": "m13-arbol-gigante",
@@ -607,8 +660,11 @@
         "es": "En un árbol grande del bosque viven muchas plantas y animales.",
         "en": "Many plants and animals live on a big forest tree."
       },
-      "template": "pages/m13-arbol-gigante-v1.json",
-      "thumbnail": "thumbs/m13-arbol-gigante.png"
+      "template": "pages/m13-arbol-gigante-v2.json",
+      "thumbnail": "thumbs/m13-arbol-gigante.png",
+      "previousTemplates": {
+        "1": "pages/m13-arbol-gigante-v1.json"
+      }
     },
     {
       "id": "m14-cascada",
@@ -627,8 +683,11 @@
         "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
         "en": "A waterfall forms when a river falls from a high place."
       },
-      "template": "pages/m14-cascada-v1.json",
-      "thumbnail": "thumbs/m14-cascada.png"
+      "template": "pages/m14-cascada-v2.json",
+      "thumbnail": "thumbs/m14-cascada.png",
+      "previousTemplates": {
+        "1": "pages/m14-cascada-v1.json"
+      }
     },
     {
       "id": "m15-sendero",
@@ -647,8 +706,11 @@
         "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
         "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
       },
-      "template": "pages/m15-sendero-v1.json",
-      "thumbnail": "thumbs/m15-sendero.png"
+      "template": "pages/m15-sendero-v2.json",
+      "thumbnail": "thumbs/m15-sendero.png",
+      "previousTemplates": {
+        "1": "pages/m15-sendero-v1.json"
+      }
     },
     {
       "id": "d01-rana-en-la-hoja",
@@ -687,8 +749,11 @@
         "es": "Las mariposas sienten el sabor con las patas.",
         "en": "Butterflies taste with their feet."
       },
-      "template": "pages/d02-mariposa-v1.json",
-      "thumbnail": "thumbs/d02-mariposa.png"
+      "template": "pages/d02-mariposa-v2.json",
+      "thumbnail": "thumbs/d02-mariposa.png",
+      "previousTemplates": {
+        "1": "pages/d02-mariposa-v1.json"
+      }
     },
     {
       "id": "d03-colibri",
@@ -707,8 +772,11 @@
         "es": "El colibrí puede volar hacia atrás.",
         "en": "A hummingbird can fly backwards."
       },
-      "template": "pages/d03-colibri-v1.json",
-      "thumbnail": "thumbs/d03-colibri.png"
+      "template": "pages/d03-colibri-v2.json",
+      "thumbnail": "thumbs/d03-colibri.png",
+      "previousTemplates": {
+        "1": "pages/d03-colibri-v1.json"
+      }
     },
     {
       "id": "d04-tucan",
@@ -747,8 +815,11 @@
         "es": "Muchas flores de hibisco duran abiertas un solo día.",
         "en": "Many hibiscus flowers stay open for just one day."
       },
-      "template": "pages/d05-flor-tropical-v1.json",
-      "thumbnail": "thumbs/d05-flor-tropical.png"
+      "template": "pages/d05-flor-tropical-v2.json",
+      "thumbnail": "thumbs/d05-flor-tropical.png",
+      "previousTemplates": {
+        "1": "pages/d05-flor-tropical-v1.json"
+      }
     },
     {
       "id": "d06-quetzal",
@@ -767,8 +838,11 @@
         "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
         "en": "The quetzal lives in humid forests and has very long tail feathers."
       },
-      "template": "pages/d06-quetzal-v1.json",
-      "thumbnail": "thumbs/d06-quetzal.png"
+      "template": "pages/d06-quetzal-v2.json",
+      "thumbnail": "thumbs/d06-quetzal.png",
+      "previousTemplates": {
+        "1": "pages/d06-quetzal-v1.json"
+      }
     },
     {
       "id": "d07-perezoso",
@@ -787,8 +861,11 @@
         "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
         "en": "The sloth moves very slowly and spends almost all its life in the trees."
       },
-      "template": "pages/d07-perezoso-v1.json",
-      "thumbnail": "thumbs/d07-perezoso.png"
+      "template": "pages/d07-perezoso-v2.json",
+      "thumbnail": "thumbs/d07-perezoso.png",
+      "previousTemplates": {
+        "1": "pages/d07-perezoso-v1.json"
+      }
     },
     {
       "id": "d08-mono",
@@ -807,8 +884,11 @@
         "es": "Algunos monos usan la cola para sujetarse a las ramas.",
         "en": "Some monkeys use their tails to hold on to branches."
       },
-      "template": "pages/d08-mono-v1.json",
-      "thumbnail": "thumbs/d08-mono.png"
+      "template": "pages/d08-mono-v2.json",
+      "thumbnail": "thumbs/d08-mono.png",
+      "previousTemplates": {
+        "1": "pages/d08-mono-v1.json"
+      }
     },
     {
       "id": "d09-coati",
@@ -827,8 +907,11 @@
         "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
         "en": "The coati looks for food with its long snout and walks with its tail up."
       },
-      "template": "pages/d09-coati-v1.json",
-      "thumbnail": "thumbs/d09-coati.png"
+      "template": "pages/d09-coati-v2.json",
+      "thumbnail": "thumbs/d09-coati.png",
+      "previousTemplates": {
+        "1": "pages/d09-coati-v1.json"
+      }
     },
     {
       "id": "d10-helechos",
@@ -847,8 +930,11 @@
         "es": "Las hojas nuevas de los helechos nacen enrolladas.",
         "en": "New fern leaves start out curled up."
       },
-      "template": "pages/d10-helechos-v1.json",
-      "thumbnail": "thumbs/d10-helechos.png"
+      "template": "pages/d10-helechos-v2.json",
+      "thumbnail": "thumbs/d10-helechos.png",
+      "previousTemplates": {
+        "1": "pages/d10-helechos-v1.json"
+      }
     },
     {
       "id": "d11-orquideas",
@@ -867,8 +953,11 @@
         "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
         "en": "Many orchids grow on trees without harming them."
       },
-      "template": "pages/d11-orquideas-v1.json",
-      "thumbnail": "thumbs/d11-orquideas.png"
+      "template": "pages/d11-orquideas-v2.json",
+      "thumbnail": "thumbs/d11-orquideas.png",
+      "previousTemplates": {
+        "1": "pages/d11-orquideas-v1.json"
+      }
     },
     {
       "id": "d12-ranas-del-bosque",
@@ -887,8 +976,11 @@
         "es": "Las ranas absorben agua a través de la piel.",
         "en": "Frogs take in water through their skin."
       },
-      "template": "pages/d12-ranas-del-bosque-v1.json",
-      "thumbnail": "thumbs/d12-ranas-del-bosque.png"
+      "template": "pages/d12-ranas-del-bosque-v2.json",
+      "thumbnail": "thumbs/d12-ranas-del-bosque.png",
+      "previousTemplates": {
+        "1": "pages/d12-ranas-del-bosque-v1.json"
+      }
     },
     {
       "id": "d13-arbol-gigante",
@@ -947,10 +1039,11 @@
         "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
         "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
       },
-      "template": "pages/sendero-v2.json",
+      "template": "pages/sendero-v3.json",
       "thumbnail": "thumbs/sendero.png",
       "previousTemplates": {
-        "1": "pages/sendero-v1.json"
+        "1": "pages/sendero-v1.json",
+        "2": "pages/sendero-v2.json"
       }
     },
     {
@@ -990,8 +1083,11 @@
         "es": "Las mariposas sienten el sabor con las patas.",
         "en": "Butterflies taste with their feet."
       },
-      "template": "pages/a02-mariposa-v1.json",
-      "thumbnail": "thumbs/a02-mariposa.png"
+      "template": "pages/a02-mariposa-v2.json",
+      "thumbnail": "thumbs/a02-mariposa.png",
+      "previousTemplates": {
+        "1": "pages/a02-mariposa-v1.json"
+      }
     },
     {
       "id": "a03-colibri",
@@ -1090,8 +1186,11 @@
         "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
         "en": "The sloth moves very slowly and spends almost all its life in the trees."
       },
-      "template": "pages/a07-perezoso-v1.json",
-      "thumbnail": "thumbs/a07-perezoso.png"
+      "template": "pages/a07-perezoso-v2.json",
+      "thumbnail": "thumbs/a07-perezoso.png",
+      "previousTemplates": {
+        "1": "pages/a07-perezoso-v1.json"
+      }
     },
     {
       "id": "a08-mono",
@@ -1110,8 +1209,11 @@
         "es": "Algunos monos usan la cola para sujetarse a las ramas.",
         "en": "Some monkeys use their tails to hold on to branches."
       },
-      "template": "pages/a08-mono-v1.json",
-      "thumbnail": "thumbs/a08-mono.png"
+      "template": "pages/a08-mono-v2.json",
+      "thumbnail": "thumbs/a08-mono.png",
+      "previousTemplates": {
+        "1": "pages/a08-mono-v1.json"
+      }
     },
     {
       "id": "a09-coati",
@@ -1230,8 +1332,11 @@
         "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
         "en": "A waterfall forms when a river falls from a high place."
       },
-      "template": "pages/a14-cascada-v1.json",
-      "thumbnail": "thumbs/a14-cascada.png"
+      "template": "pages/a14-cascada-v2.json",
+      "thumbnail": "thumbs/a14-cascada.png",
+      "previousTemplates": {
+        "1": "pages/a14-cascada-v1.json"
+      }
     },
     {
       "id": "a15-sendero",
