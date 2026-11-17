@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05'} else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06'} else 1
 
 
 def leer_gris(ruta):
@@ -255,6 +255,12 @@ def procesar(art_id, tema_id, fuente, original):
     # siendo regiones propias, exentas del mínimo táctil.
     brillos = [a for a in list(g.area)
                if pequeno(a) and macizo[a] > 2.0]
+    if art_id == 'E06':
+        reflejo = int(zonas[256, 689])
+        if reflejo == 0 or not pequeno(reflejo):
+            raise ValueError('E06: la sonda debe quedar dentro del reflejo del ojo')
+        if reflejo not in brillos:
+            brillos.append(reflejo)
     for a in brillos:
         for otro in g.vec.pop(a, {}):
             g.vec[otro].pop(a, None)
@@ -272,6 +278,12 @@ def procesar(art_id, tema_id, fuente, original):
                  '2 huecos alrededor del tallo agrupados con el fondo'),
                 (((863, 1456), (578, 1538)),
                  'tallo estrecho agrupado con la hoja derecha')],
+        'E06': [(((70, 976), (507, 859), (689, 821), (831, 824)),
+                 '4 tramos de la rama agrupados en una región propia'),
+                (((492, 1333), (343, 1257), (259, 1239)),
+                 '3 plumas largas de la cola agrupadas en una región propia'),
+                (((693, 665), (729, 783), (582, 796), (849, 282)),
+                 'pico y patas agrupados con el pecho por su tamaño')],
     }
     agrupadas_a_mano = 0
     for puntos, nota in grupos_manuales.get(art_id, ()):
@@ -452,6 +464,9 @@ def procesar(art_id, tema_id, fuente, original):
     rng = np.random.default_rng(7)
     paleta = rng.integers(90, 245, size=(len(regiones) + 1, 3), dtype=np.uint8)
     paleta[0] = 255
+    if art_id == 'E06':
+        for brillo in brillos:
+            paleta[numero[brillo]] = 255
     previa = paleta[lienzo]
     previa[tinta_vec == 1] = (20, 20, 20)
     previa = cv2.resize(previa, (round(ancho * 0.5), round(alto * 0.5)),

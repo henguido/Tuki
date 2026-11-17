@@ -89,6 +89,7 @@ PREVIAS = {
     'e03-colibri': {'1': 'pages/e03-colibri-v1.json'},
     'e04-tucan': {'1': 'pages/e04-tucan-v1.json'},
     'e05-flor-tropical': {'1': 'pages/e05-flor-tropical-v1.json'},
+    'e06-quetzal': {'1': 'pages/e06-quetzal-v1.json'},
     'rana-en-la-hoja': {'1': 'pages/rana-en-la-hoja-v1.json'},
     'quetzal': {'1': 'pages/quetzal-v1.json'},
     'sendero': {'1': 'pages/sendero-v1.json'},

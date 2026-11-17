@@ -45,13 +45,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 2 huecos alrededor del tallo agrupados con el fondo
 - tallo estrecho agrupado con la hoja derecha
 
-## E06 · `e06-quetzal` (revisión 1)
+## E06 · `e06-quetzal` (revisión 2)
 
-- Original: `Quetzal sonriente en la rama-5.webp` → `E06.png` (1122 × 1402 px), SHA-256 `64ca321cd4b9073d…`
-- Lienzo: 1280 × 1600 (vertical); trazo 16.0 px; tinta que toca el marco: 1.1 %
-- **Retoque de arte** (`tool/laminas/corregir_e06.py`): se sustituyó el pico grande y curvo por un pico corto y se cerró el perfil de la cara. Fuente retocada: `tool/laminas/fuentes_corregidas/E06.png`.
-- huecos de trazo cerrados (542 px)
-- 9 zonas pequeñas agrupadas con su vecina
+- Original: `Quetzal sonriente en la rama-5.webp` → `E06.png` (1122 × 1402 px), SHA-256 `454f3ad37c15f1cb…`
+- Lienzo: 1280 × 1600 (vertical); trazo 16.0 px; tinta que toca el marco: 2.0 %
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E06.png`. Se redibujaron el perfil y el pico, los bordes de la rama junto al marco y la unión de la hoja derecha. El ojo queda separado de la ceja y su reflejo tiene una región propia.
+- Los cuatro tramos de la rama y las tres plumas largas de la cola forman dos regiones. El pico y las patas comparten color con el pecho por su tamaño.
 
 ## E07 · `e07-perezoso` (revisión 1)
 

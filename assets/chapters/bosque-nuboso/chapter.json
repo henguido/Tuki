@@ -149,8 +149,11 @@
         "es": "El quetzal vive en bosques húmedos y tiene unas plumas de cola muy largas.",
         "en": "The quetzal lives in humid forests and has very long tail feathers."
       },
-      "template": "pages/e06-quetzal-v1.json",
-      "thumbnail": "thumbs/e06-quetzal.png"
+      "template": "pages/e06-quetzal-v2.json",
+      "thumbnail": "thumbs/e06-quetzal.png",
+      "previousTemplates": {
+        "1": "pages/e06-quetzal-v1.json"
+      }
     },
     {
       "id": "e07-perezoso",
