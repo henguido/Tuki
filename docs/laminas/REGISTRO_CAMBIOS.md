@@ -67,12 +67,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (579 px)
 - 16 zonas pequeñas agrupadas con su vecina
 
-## E09 · `e09-coati` (revisión 1)
+## E09 · `e09-coati` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_03_58-3.webp` → `E09_coati.webp` (1122 × 1402 px), SHA-256 `72b8399cfe7a6469…`
-- Lienzo: 1280 × 1600 (vertical); trazo 17.6 px; tinta que toca el marco: 6.5 %
-- huecos de trazo cerrados (712 px)
-- 17 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E09.png`. Se cerró el párpado inferior junto a la pupila del ojo cercano y se continuó el borde inferior del tronco hasta el marco derecho.
+- Lienzo: 1280 × 1600 (vertical); trazo 17.6 px; tinta que toca el marco: 6.8 %
+- Los detalles blancos de los ojos y el reflejo de la nariz tienen regiones propias. Las orejas comparten color con la cabeza y los huecos entre las patas con el fondo.
 
 ## E10 · `e10-helechos` (revisión 1)
 

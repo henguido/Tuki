@@ -215,8 +215,11 @@
         "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
         "en": "The coati looks for food with its long snout and walks with its tail up."
       },
-      "template": "pages/e09-coati-v1.json",
-      "thumbnail": "thumbs/e09-coati.png"
+      "template": "pages/e09-coati-v2.json",
+      "thumbnail": "thumbs/e09-coati.png",
+      "previousTemplates": {
+        "1": "pages/e09-coati-v1.json"
+      }
     },
     {
       "id": "e10-helechos",

@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07'} else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09'} else 1
 
 
 def leer_gris(ruta):
@@ -259,7 +259,9 @@ def procesar(art_id, tema_id, fuente, original):
     brillos = [a for a in list(g.area)
                if pequeno(a) and macizo[a] > 2.0]
     sondas_reflejos = {'E06': ((689, 256),),
-                      'E07': ((483, 723), (271, 848))}
+                      'E07': ((483, 723), (271, 848)),
+                      'E09': ((837, 752), (1033, 694), (1188, 775),
+                              (781, 772), (1005, 648), (1080, 748), (1072, 687))}
     for x, y in sondas_reflejos.get(art_id, ()):
         reflejo = int(zonas[y, x])
         if reflejo == 0 or not pequeno(reflejo):
@@ -298,6 +300,12 @@ def procesar(art_id, tema_id, fuente, original):
                  '9 garras agrupadas en una región propia'),
                 (((211, 956), (579, 748)),
                  '2 manchas de los ojos agrupadas en una región propia')],
+        'E09': [(((907, 612), (939, 515), (972, 545), (597, 666)),
+                 'orejas pequeñas agrupadas con la cabeza'),
+                (((858, 104), (30, 30)),
+                 'rincón superior izquierdo agrupado con el cielo'),
+                (((1171, 607), (710, 1154), (372, 1201), (446, 1175)),
+                 'huecos entre las patas agrupados con el fondo')],
     }
     agrupadas_a_mano = 0
     for puntos, nota in grupos_manuales.get(art_id, ()):
@@ -481,6 +489,9 @@ def procesar(art_id, tema_id, fuente, original):
     if art_id in sondas_reflejos:
         for brillo in brillos:
             paleta[numero[brillo]] = 255
+    if art_id == 'E09':
+        # Distingue el suelo del tronco en la vista de comprobación.
+        paleta[mapa[1450, 497]] = (142, 184, 136)
     previa = paleta[lienzo]
     previa[tinta_vec == 1] = (20, 20, 20)
     previa = cv2.resize(previa, (round(ancho * 0.5), round(alto * 0.5)),
