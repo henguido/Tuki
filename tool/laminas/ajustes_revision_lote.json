@@ -2388,5 +2388,152 @@
         "gotas de la caída agrupadas con la espuma"
       ]
     ]
+  },
+  "D01": {
+    "revision": 2,
+    "trazos": [
+      "marcas revisadas en ramas, musgo, hojas, fondo, manchas de la rana, orilla y estambres"
+    ],
+    "reflejos": [
+      [
+        694,
+        474
+      ],
+      [
+        969,
+        441
+      ]
+    ],
+    "grupos": [
+      [
+        [
+          [
+            791,
+            467
+          ],
+          [
+            871,
+            489
+          ],
+          [
+            858,
+            444
+          ],
+          [
+            905,
+            407
+          ],
+          [
+            794,
+            517
+          ],
+          [
+            548,
+            593
+          ],
+          [
+            498,
+            583
+          ],
+          [
+            468,
+            650
+          ],
+          [
+            526,
+            679
+          ],
+          [
+            462,
+            745
+          ],
+          [
+            409,
+            710
+          ],
+          [
+            274,
+            750
+          ],
+          [
+            315,
+            724
+          ],
+          [
+            342,
+            777
+          ],
+          [
+            249,
+            816
+          ],
+          [
+            283,
+            875
+          ],
+          [
+            388,
+            838
+          ],
+          [
+            556,
+            896
+          ],
+          [
+            597,
+            955
+          ],
+          [
+            952,
+            772
+          ]
+        ],
+        "manchas cerradas de la rana conservadas con relleno propio"
+      ],
+      [
+        [
+          [
+            1358,
+            1154
+          ],
+          [
+            1324,
+            1174
+          ],
+          [
+            1388,
+            1188
+          ],
+          [
+            1342,
+            1219
+          ]
+        ],
+        "centros de los cuatro estambres separados de los pétalos"
+      ],
+      [
+        [
+          [
+            649,
+            1219
+          ],
+          [
+            547,
+            1274
+          ],
+          [
+            1104,
+            1083
+          ]
+        ],
+        "gotas sobre la hoja con relleno propio"
+      ]
+    ],
+    "detalles_finos": [
+      [
+        1358,
+        1154
+      ]
+    ]
   }
 }

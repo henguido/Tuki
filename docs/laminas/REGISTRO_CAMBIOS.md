@@ -264,16 +264,14 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Borde exterior de la hoja cerrado suavemente contra la pata trasera de la rana.
 - Se conservan las plantillas anteriores.
 
-## D01 · `d01-rana-en-la-hoja` (revisión 1)
+## D01 · `d01-rana-en-la-hoja` (revisión 2)
 
-- Original: `Rana arborícola en la selva tropical-1.webp` → `D01_rana-en-la-hoja.webp` (1312 × 1199 px), SHA-256 `4a8baed880298a9e…`
-- Lienzo: 1600 × 1462 (horizontal); trazo 10.8 px; tinta que toca el marco: 17.2 %
-- 1 motas de tinta eliminadas
-- huecos de trazo cerrados (500 px)
-- 11 contornos abiertos cerrados con tinta
-- 4 huecos diminutos absorbidos por la tinta
-- 2 brillos sobre tinta conservados como regiones propias
-- 53 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/D01.png`, SHA-256 `15d6a8e3696232129388f651f92ef81c1fed7288113a10c6a6767e3caba57925`.
+- Cortes de las ramas, hojas y orilla reparados con uniones suaves; musgo reconstruido por delante de la madera.
+- Vegetación junto a los ojos y la mandíbula continuada; árbol pequeño superior con copa y bifurcación definidas.
+- Óvalos de la frente, muslo y antebrazo cerrados y manchas de la rana con relleno propio.
+- Cuatro centros de estambres separados de los pétalos; gotas sobre la hoja conservadas como relleno propio.
+- Se mantienen los dos reflejos oculares y la plantilla anterior.
 
 ## D02 · `d02-mariposa` (revisión 2)
 

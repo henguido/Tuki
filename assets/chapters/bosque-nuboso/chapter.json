@@ -738,8 +738,11 @@
         "es": "Muchas ranas del bosque duermen de día sobre las hojas y salen de noche.",
         "en": "Many forest frogs sleep on leaves during the day and come out at night."
       },
-      "template": "pages/d01-rana-en-la-hoja-v1.json",
-      "thumbnail": "thumbs/d01-rana-en-la-hoja.png"
+      "template": "pages/d01-rana-en-la-hoja-v2.json",
+      "thumbnail": "thumbs/d01-rana-en-la-hoja.png",
+      "previousTemplates": {
+        "1": "pages/d01-rana-en-la-hoja-v1.json"
+      }
     },
     {
       "id": "d02-mariposa",
