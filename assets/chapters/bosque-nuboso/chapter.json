@@ -126,8 +126,11 @@
         "es": "Muchas flores de hibisco duran abiertas un solo día.",
         "en": "Many hibiscus flowers stay open for just one day."
       },
-      "template": "pages/e05-flor-tropical-v1.json",
-      "thumbnail": "thumbs/e05-flor-tropical.png"
+      "template": "pages/e05-flor-tropical-v2.json",
+      "thumbnail": "thumbs/e05-flor-tropical.png",
+      "previousTemplates": {
+        "1": "pages/e05-flor-tropical-v1.json"
+      }
     },
     {
       "id": "e06-quetzal",

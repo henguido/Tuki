@@ -35,12 +35,15 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - 4 tramos de la rama agrupados en una región propia
 - 8 zonas pequeñas agrupadas con su vecina
 
-## E05 · `e05-flor-tropical` (revisión 1)
+## E05 · `e05-flor-tropical` (revisión 2)
 
 - Original: `Flor de hibisco con hojas para colorear-4.webp` → `E05_flor-tropical.webp` (1122 × 1402 px), SHA-256 `bb65b4453e7636fe…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E05.png`. Se cerró el contorno del pistilo entre la punta central y la derecha.
 - Lienzo: 1280 × 1600 (vertical); trazo 22.0 px; tinta que toca el marco: 0.0 %
-- huecos de trazo cerrados (261 px)
-- 6 zonas pequeñas agrupadas con su vecina
+- huecos de trazo cerrados (270 px)
+- 3 puntas agrupadas con el centro de la flor
+- 2 huecos alrededor del tallo agrupados con el fondo
+- tallo estrecho agrupado con la hoja derecha
 
 ## E06 · `e06-quetzal` (revisión 1)
 

@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04'} else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05'} else 1
 
 
 def leer_gris(ruta):
@@ -262,18 +262,26 @@ def procesar(art_id, tema_id, fuente, original):
         cambios.append(
             f'{len(brillos)} brillos sobre tinta conservados como regiones propias')
 
+    # Sondas en el lienzo de 1280 × 1600 para partes de un mismo elemento.
+    grupos_manuales = {
+        'E04': [(((45, 1299), (379, 1214), (612, 1181), (798, 1147)),
+                 '4 tramos de la rama agrupados en una región propia')],
+        'E05': [(((639, 739), (941, 110), (994, 224), (830, 161)),
+                 '3 puntas agrupadas con el centro de la flor'),
+                (((159, 159), (759, 1182), (566, 1218)),
+                 '2 huecos alrededor del tallo agrupados con el fondo'),
+                (((863, 1456), (578, 1538)),
+                 'tallo estrecho agrupado con la hoja derecha')],
+    }
     agrupadas_a_mano = 0
-    if art_id == 'E04':
-        # Los cuatro tramos de la rama forman una sola pieza, interrumpida
-        # por la cola y las patas. Las sondas usan el lienzo de 1280 × 1600.
-        tramos = [int(zonas[y, x]) for x, y in
-                  ((45, 1299), (379, 1214), (612, 1181), (798, 1147))]
-        if len(set(tramos)) != 4 or 0 in tramos:
-            raise ValueError('E04: las sondas deben identificar cuatro tramos de rama')
-        for tramo in tramos[1:]:
-            g.unir(tramo, tramos[0])
-        agrupadas_a_mano = len(tramos) - 1
-        cambios.append('4 tramos de la rama agrupados en una región propia')
+    for puntos, nota in grupos_manuales.get(art_id, ()):
+        partes = [int(zonas[y, x]) for x, y in puntos]
+        if len(set(partes)) != len(puntos) or any(p not in g.vec for p in partes):
+            raise ValueError(f'{art_id}: sondas inválidas para {nota}')
+        for parte in partes[1:]:
+            g.unir(parte, partes[0])
+        agrupadas_a_mano += len(partes) - 1
+        cambios.append(nota)
 
     while True:
         chicos = [a for a in g.area if pequeno(a) and g.vec.get(a)]
