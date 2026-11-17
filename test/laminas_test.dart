@@ -10,6 +10,7 @@
 // anotado como tal en la matriz: rendimiento en Android y tacto real.
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
@@ -34,6 +35,10 @@ int _color(int i) =>
     ((40 + (i * 53) % 180) << 16) |
     ((40 + (i * 97) % 180) << 8) |
     (40 + (i * 29) % 180);
+
+/// Color de auditoría sin colisiones para identificar la región que realmente
+/// produjo cada píxel. Se mantiene lejos del blanco y del color de la tinta.
+int _auditColor(int i) => 0x400000 | (i + 1);
 
 int _rgbAt(ByteData bytes, int width, int x, int y) {
   final o = (y * width + x) * 4;
@@ -186,6 +191,72 @@ void main() {
         fugas.take(3).join(' '),
       );
 
+      // 4b. Barrido de proximidad: las sondas centrales anteriores detectan
+      // regiones equivocadas, pero no ejercitan los píxeles cercanos a un
+      // divisor visible. Se vuelve a pintar con un color único por región y
+      // se muestrean anillos alrededor de cada parte. Los puntos cubiertos por
+      // tinta se omiten; en papel visible, el color rasterizado debe coincidir
+      // con la misma región que seleccionaría un toque del motor.
+      var auditado = DrawingDocument.empty;
+      final indicePorId = <String, int>{};
+      for (var i = 0; i < template.regions.length; i++) {
+        indicePorId[template.regions[i].id] = i;
+        auditado = auditado.withFill(template.regions[i].id, _auditColor(i));
+      }
+      final pixelesAuditados = await pixeles(auditado);
+      final bordesFallidos = <String>[];
+      var muestrasBorde = 0;
+      const radios = [3.0, 7.0, 13.0];
+      for (final s in sondas) {
+        for (final p in (s['puntos'] as List).cast<List<dynamic>>()) {
+          final centro = Offset(
+            (p[0] as num).toDouble() + 0.5,
+            (p[1] as num).toDouble() + 0.5,
+          );
+          for (final radio in radios) {
+            for (var k = 0; k < 12; k++) {
+              final angulo = k * math.pi / 6;
+              final punto =
+                  centro + Offset(math.cos(angulo), math.sin(angulo)) * radio;
+              if (!box.contains(punto)) continue;
+              final x = punto.dx.floor(), y = punto.dy.floor();
+              // El último píxel toca el clip del lienzo y puede mezclar el
+              // color con transparencia por antialias. No representa una
+              // frontera entre dos zonas coloreables.
+              if (x <= box.left ||
+                  y <= box.top ||
+                  x >= box.right - 1 ||
+                  y >= box.bottom - 1) {
+                continue;
+              }
+              // Una lectura no blanca en la obra vacía es tinta visible. La
+              // línea debe permanecer encima del relleno y no es una muestra
+              // válida del color interior.
+              if (!_parecido(_rgbAt(vacio, ancho, x, y), 0xFFFFFF)) continue;
+              // El raster representa el centro del píxel leído, no la
+              // coordenada fraccionaria original del anillo.
+              final id = template.regionAt(Offset(x + 0.5, y + 0.5));
+              final indice = id == null ? null : indicePorId[id];
+              muestrasBorde++;
+              if (indice == null ||
+                  !_parecido(
+                    _rgbAt(pixelesAuditados, ancho, x, y),
+                    _auditColor(indice),
+                  )) {
+                bordesFallidos.add('${s['id']}@$x,$y→${id ?? 'ninguna'}');
+              }
+            }
+          }
+        }
+      }
+      anota(
+        'coherencia_contorno_relleno',
+        muestrasBorde > sondas.length * 3 &&
+            bordesFallidos.length / muestrasBorde < 0.001,
+        '${bordesFallidos.take(3).join(' ')} '
+            '(${bordesFallidos.length}/$muestrasBorde muestras)',
+      );
+
       // 5. Deshacer y rehacer: cada relleno recorre ambas pilas sin pérdida.
       var pasos = 0;
       while (controller.undo()) {
@@ -299,6 +370,13 @@ void main() {
         'aprobada': fallos.isEmpty,
         'pruebas': pruebas,
         'regiones': template.regions.length,
+        'regiones_multiparte': medidas['regiones_multiparte'],
+        'partes_maximas_en_una_region': sondas
+            .map((s) => s['partes'] as int)
+            .reduce(math.max),
+        'muestras_cercanas_a_contorno': muestrasBorde,
+        'discrepancias_subpixel_contorno': bordesFallidos.length,
+        'fidelidad_tinta': medidas['fidelidad_tinta'],
         'brillos_exentos': brillos,
         'diametro_min_dp_en_360dp': double.parse(
           (minimo *
