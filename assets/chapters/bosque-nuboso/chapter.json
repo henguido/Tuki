@@ -570,10 +570,11 @@
         "es": "El coatí busca comida con su hocico largo y camina con la cola levantada.",
         "en": "The coati looks for food with its long snout and walks with its tail up."
       },
-      "template": "pages/m09-coati-v2.json",
+      "template": "pages/m09-coati-v3.json",
       "thumbnail": "thumbs/m09-coati.png",
       "previousTemplates": {
-        "1": "pages/m09-coati-v1.json"
+        "1": "pages/m09-coati-v1.json",
+        "2": "pages/m09-coati-v2.json"
       }
     },
     {
@@ -593,10 +594,11 @@
         "es": "Las hojas nuevas de los helechos nacen enrolladas.",
         "en": "New fern leaves start out curled up."
       },
-      "template": "pages/m10-helechos-v2.json",
+      "template": "pages/m10-helechos-v3.json",
       "thumbnail": "thumbs/m10-helechos.png",
       "previousTemplates": {
-        "1": "pages/m10-helechos-v1.json"
+        "1": "pages/m10-helechos-v1.json",
+        "2": "pages/m10-helechos-v2.json"
       }
     },
     {
@@ -616,10 +618,11 @@
         "es": "Muchas orquídeas crecen sobre los árboles sin hacerles daño.",
         "en": "Many orchids grow on trees without harming them."
       },
-      "template": "pages/m11-orquideas-v2.json",
+      "template": "pages/m11-orquideas-v3.json",
       "thumbnail": "thumbs/m11-orquideas.png",
       "previousTemplates": {
-        "1": "pages/m11-orquideas-v1.json"
+        "1": "pages/m11-orquideas-v1.json",
+        "2": "pages/m11-orquideas-v2.json"
       }
     },
     {
@@ -639,10 +642,11 @@
         "es": "Las ranas absorben agua a través de la piel.",
         "en": "Frogs take in water through their skin."
       },
-      "template": "pages/m12-ranas-del-bosque-v2.json",
+      "template": "pages/m12-ranas-del-bosque-v3.json",
       "thumbnail": "thumbs/m12-ranas-del-bosque.png",
       "previousTemplates": {
-        "1": "pages/m12-ranas-del-bosque-v1.json"
+        "1": "pages/m12-ranas-del-bosque-v1.json",
+        "2": "pages/m12-ranas-del-bosque-v2.json"
       }
     },
     {
@@ -662,10 +666,11 @@
         "es": "En un árbol grande del bosque viven muchas plantas y animales.",
         "en": "Many plants and animals live on a big forest tree."
       },
-      "template": "pages/m13-arbol-gigante-v2.json",
+      "template": "pages/m13-arbol-gigante-v3.json",
       "thumbnail": "thumbs/m13-arbol-gigante.png",
       "previousTemplates": {
-        "1": "pages/m13-arbol-gigante-v1.json"
+        "1": "pages/m13-arbol-gigante-v1.json",
+        "2": "pages/m13-arbol-gigante-v2.json"
       }
     },
     {
@@ -685,10 +690,11 @@
         "es": "Una cascada se forma cuando un río cae desde un lugar alto.",
         "en": "A waterfall forms when a river falls from a high place."
       },
-      "template": "pages/m14-cascada-v2.json",
+      "template": "pages/m14-cascada-v3.json",
       "thumbnail": "thumbs/m14-cascada.png",
       "previousTemplates": {
-        "1": "pages/m14-cascada-v1.json"
+        "1": "pages/m14-cascada-v1.json",
+        "2": "pages/m14-cascada-v2.json"
       }
     },
     {
@@ -708,10 +714,11 @@
         "es": "En el bosque nuboso, las nubes pasan entre los árboles y dejan gotitas de agua en las hojas.",
         "en": "In the cloud forest, clouds drift between the trees and leave tiny water drops on the leaves."
       },
-      "template": "pages/m15-sendero-v2.json",
+      "template": "pages/m15-sendero-v3.json",
       "thumbnail": "thumbs/m15-sendero.png",
       "previousTemplates": {
-        "1": "pages/m15-sendero-v1.json"
+        "1": "pages/m15-sendero-v1.json",
+        "2": "pages/m15-sendero-v2.json"
       }
     },
     {

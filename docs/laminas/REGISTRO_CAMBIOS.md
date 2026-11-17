@@ -212,81 +212,57 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Las plantas tienen relleno independiente para utilizar con zoom. Las almohadillas de ambos pies comparten una región.
 - Las revisiones 1 y 2 se conservan para abrir los dibujos guardados.
 
-## M09 · `m09-coati` (revisión 2)
+## M09 · `m09-coati` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 19_45_07-7.webp` → `M09_coati.webp` (1122 × 1402 px), SHA-256 `fddab038bc1bb38d…`
-- Lienzo: 1280 × 1600 (vertical); trazo 13.2 px; tinta que toca el marco: 4.7 %
-- huecos de trazo cerrados (314 px)
-- 4 contornos abiertos cerrados con tinta
-- 3 brillos sobre tinta conservados como regiones propias
-- oreja trasera agrupada con la cabeza
-- 26 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M09.png`, SHA-256 `e3652317699b6b3f…`.
+- Musgo separado de la madera y las hojas. Se cerraron los trazos de la máscara, las patas y el centro de la flor superior.
+- La máscara se pinta separada del hocico. Los tres pies apoyados comparten relleno. Los pétalos y los centros pequeños de las flores tienen rellenos propios que se seleccionan con zoom.
+- Se conservan las revisiones 1 y 2 para abrir dibujos guardados.
 
-## M10 · `m10-helechos` (revisión 2)
+## M10 · `m10-helechos` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 19_45_08-8.webp` → `M10_helechos.webp` (1122 × 1402 px), SHA-256 `ad2c09c7a36c20a5…`
-- Lienzo: 1280 × 1600 (vertical); trazo 14.0 px; tinta que toca el marco: 4.8 %
-- huecos de trazo cerrados (437 px)
-- 3 contornos abiertos cerrados con tinta
-- 1 huecos diminutos absorbidos por la tinta
-- 2 brillos sobre tinta conservados como regiones propias
-- helecho pequeño izquierdo separado del fondo
-- helecho pequeño derecho separado del fondo
-- 16 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M10.png`, SHA-256 `d9a86526d862d206…`.
+- Se completaron las tres curvas del fondo marcadas a la derecha, hasta el contorno del helecho. Las franjas del paisaje tienen rellenos separados.
+- Se conservan las revisiones 1 y 2 para abrir los dibujos guardados.
 
-## M11 · `m11-orquideas` (revisión 2)
+## M11 · `m11-orquideas` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 23_04_03-5.webp` → `M11_orquideas.webp` (1122 × 1402 px), SHA-256 `6ca9f7407e6d9211…`
-- Lienzo: 1280 × 1600 (vertical); trazo 16.8 px; tinta que toca el marco: 3.6 %
-- huecos de trazo cerrados (104 px)
-- huecos entre flores y tallos pintados con el fondo
-- tallos estrechos agrupados con la hoja derecha
-- 9 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M11.png`, SHA-256 `abf83dbea97bb8b5204809398ae1a01a3a0bc93a05c58bf071b23551dfb8969b`.
+- Musgo colocado por encima de la rama, borde del arbusto continuado y base de los tallos y hojas apoyada sobre el suelo con uniones suaves.
+- Tallos separados de la hoja derecha; los tramos visibles del tallo superior comparten relleno. Detalles estrechos disponibles con ampliación.
+- Centros florales y troncos pequeños conservan rellenos independientes.
+- Se conservan las plantillas de las revisiones 1 y 2.
 
-## M12 · `m12-ranas-del-bosque` (revisión 2)
+## M12 · `m12-ranas-del-bosque` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 23_04_06-6.webp` → `M12_ranas-del-bosque.webp` (1122 × 1402 px), SHA-256 `76632d6465e0e2ae…`
-- Lienzo: 1280 × 1600 (vertical); trazo 15.6 px; tinta que toca el marco: 10.6 %
-- huecos de trazo cerrados (173 px)
-- 2 contornos abiertos cerrados con tinta
-- 2 huecos diminutos absorbidos por la tinta
-- 4 brillos sobre tinta conservados como regiones propias
-- 14 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M12.png`, SHA-256 `0c3ca48d405bb7d842f8bc3294d818cddf53d3a303b3ff394882caea3faf8a87`.
+- Bordes del fondo continuados hasta la silueta de la rana pequeña, sin invadir los ojos.
+- Bifurcación del árbol restaurada y tronco conservado como relleno independiente con ampliación.
+- Cuatro reflejos oculares conservados. Se mantienen las plantillas anteriores.
 
-## M13 · `m13-arbol-gigante` (revisión 2)
+## M13 · `m13-arbol-gigante` (revisión 3)
 
-- Original: `Árbol frondoso con raíces y hojas tropicales-3.webp` → `M13_arbol-gigante.webp` (1199 × 1312 px), SHA-256 `b32e35b3713c1661…`
-- Lienzo: 1462 × 1600 (vertical); trazo 12.0 px; tinta que toca el marco: 0.0 %
-- huecos de trazo cerrados (327 px)
-- 2 huecos diminutos absorbidos por la tinta
-- hojas de las copas izquierdas separadas de la copa
-- hojas de la copa derecha separadas de la copa
-- 27 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M13.png`, SHA-256 `d1f770b9f4d6dadcea6eb49db3bb9f1b42230bdcaab800a5cf601203a1770258`.
+- Bases de las matas central y derecha cerradas con curvas suaves, sin alterar las raíces.
+- Las tres matas de la base conservan rellenos independientes del fondo y admiten ampliación.
+- Se mantienen las plantillas anteriores.
 
-## M14 · `m14-cascada` (revisión 2)
+## M14 · `m14-cascada` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 23_04_14-8.webp` → `M14_cascada.webp` (1122 × 1402 px), SHA-256 `0ea758f57097f620…`
-- Fuente corregida: `tool/laminas/fuentes_corregidas/M14.png`, SHA-256 `a8ab0ee084881349…`.
-- Lienzo: 1280 × 1600 (vertical); trazo 15.2 px; tinta que toca el marco: 9.5 %
-- borde de la caída izquierda continuado hasta la espuma
-- huecos de trazo cerrados (222 px)
-- 2 contornos abiertos cerrados con tinta
-- 1 huecos diminutos absorbidos por la tinta
-- 2 brillos sobre tinta conservados como regiones propias
-- salpicaduras pintadas con el agua de la caída
-- 14 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M14.png`, SHA-256 `7d35006cd55474e570d1391d84fc060fc8f12eb8cfc021f285c743857ca7fee8`.
+- Unión superior del musgo cerrada con una curva suave; musgo por delante de la rama, con relleno propio.
+- Tramos visibles de madera reunidos a ambos lados del musgo.
+- Se conservan la corrección previa del borde de la cascada, los reflejos y las plantillas anteriores.
 
-## M15 · `m15-sendero` (revisión 2)
+## M15 · `m15-sendero` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 23_04_16-9.webp` → `M15_sendero.webp` (1122 × 1402 px), SHA-256 `44eb009a220aa369…`
-- Fuente corregida: `tool/laminas/fuentes_corregidas/M15.png`, SHA-256 `b8e6893f31f2664e…`.
-- Lienzo: 1280 × 1600 (vertical); trazo 14.0 px; tinta que toca el marco: 8.8 %
-- rama prolongada hasta el musgo del árbol y copa intermedia cerrada
-- huecos de trazo cerrados (225 px)
-- 3 contornos abiertos cerrados con tinta
-- vientre y garras pintados con el tucán
-- tramos de la rama separados del cielo
-- 22 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M15.png`, SHA-256 `f0aca25e5e4be4189050e9b3329d44650e0f70ae1aa468fc20729baf38920496`.
+- Ocho zonas marcadas revisadas: hojas superiores rehechas con bases y puntas continuas; tres uniones del musgo reconstruidas con curvas redondeadas y madera visible por detrás.
+- Bifurcación del árbol derecho limpia y base del árbol central unida a la vegetación inferior.
+- Ambas orillas continuadas hasta sus encuentros con la vegetación y la rana.
+- Rellenos del musgo y la madera separados; hojas superiores independientes y reflejos oculares conservados.
+- Borde exterior de la hoja cerrado suavemente contra la pata trasera de la rana.
+- Se conservan las plantillas anteriores.
 
 ## D01 · `d01-rana-en-la-hoja` (revisión 1)
 

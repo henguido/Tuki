@@ -1,249 +1,2392 @@
 {
   "E01": {
-    "reflejos": [[1067, 235], [418, 247], [1008, 277], [528, 279]],
+    "reflejos": [
+      [
+        1067,
+        235
+      ],
+      [
+        418,
+        247
+      ],
+      [
+        1008,
+        277
+      ],
+      [
+        528,
+        279
+      ]
+    ],
     "grupos": [
-      [[[823, 1428], [259, 1270], [716, 1187]], "partes visibles de la hoja reunidas"]
+      [
+        [
+          [
+            823,
+            1428
+          ],
+          [
+            259,
+            1270
+          ],
+          [
+            716,
+            1187
+          ]
+        ],
+        "partes visibles de la hoja reunidas"
+      ]
     ]
   },
   "E02": {
-    "reflejos": [[731, 659], [565, 661]]
+    "reflejos": [
+      [
+        731,
+        659
+      ],
+      [
+        565,
+        661
+      ]
+    ]
   },
   "E08": {
-    "reflejos": [[663, 564], [460, 649]],
+    "reflejos": [
+      [
+        663,
+        564
+      ],
+      [
+        460,
+        649
+      ]
+    ],
     "grupos": [
-      [[[641, 318], [1177, 311]], "tramos de la rama reunidos"],
-      [[[240, 921], [860, 429], [963, 882], [802, 306], [858, 305], [918, 313]], "brazo, dedos y cola pintados con el cuerpo del mono"],
-      [[[835, 1233], [561, 1245]], "plantas de los pies reunidas"],
-      [[[225, 172], [480, 131]], "hoja superior separada del fondo"],
-      [[[677, 123], [315, 866]], "hueco entre la oreja y el brazo pintado con el cielo"]
+      [
+        [
+          [
+            641,
+            318
+          ],
+          [
+            1177,
+            311
+          ]
+        ],
+        "tramos de la rama reunidos"
+      ],
+      [
+        [
+          [
+            240,
+            921
+          ],
+          [
+            860,
+            429
+          ],
+          [
+            963,
+            882
+          ],
+          [
+            802,
+            306
+          ],
+          [
+            858,
+            305
+          ],
+          [
+            918,
+            313
+          ]
+        ],
+        "brazo, dedos y cola pintados con el cuerpo del mono"
+      ],
+      [
+        [
+          [
+            835,
+            1233
+          ],
+          [
+            561,
+            1245
+          ]
+        ],
+        "plantas de los pies reunidas"
+      ],
+      [
+        [
+          [
+            225,
+            172
+          ],
+          [
+            480,
+            131
+          ]
+        ],
+        "hoja superior separada del fondo"
+      ],
+      [
+        [
+          [
+            677,
+            123
+          ],
+          [
+            315,
+            866
+          ]
+        ],
+        "hueco entre la oreja y el brazo pintado con el cielo"
+      ]
     ]
   },
   "E11": {
     "grupos": [
-      [[[1395, 204], [644, 1219], [936, 1215]], "huecos alrededor del tallo pintados con el fondo"],
-      [[[1166, 1461], [756, 1528]], "tallo estrecho agrupado con la hoja derecha"]
+      [
+        [
+          [
+            1395,
+            204
+          ],
+          [
+            644,
+            1219
+          ],
+          [
+            936,
+            1215
+          ]
+        ],
+        "huecos alrededor del tallo pintados con el fondo"
+      ],
+      [
+        [
+          [
+            1166,
+            1461
+          ],
+          [
+            756,
+            1528
+          ]
+        ],
+        "tallo estrecho agrupado con la hoja derecha"
+      ]
     ]
   },
   "E13": {
-    "trazos": ["contorno del tronco prolongado hasta la hoja izquierda"],
+    "trazos": [
+      "contorno del tronco prolongado hasta la hoja izquierda"
+    ],
     "grupos": [
-      [[[1159, 920], [641, 510], [451, 522], [1032, 568], [823, 593]], "huecos entre las ramas pintados con el cielo"],
-      [[[426, 331], [329, 474], [293, 1054], [140, 1072]], "hojas izquierdas agrupadas en una región de follaje"],
-      [[[1118, 535], [1002, 1110], [1169, 1156]], "hojas derechas agrupadas en una región de follaje"]
+      [
+        [
+          [
+            1159,
+            920
+          ],
+          [
+            641,
+            510
+          ],
+          [
+            451,
+            522
+          ],
+          [
+            1032,
+            568
+          ],
+          [
+            823,
+            593
+          ]
+        ],
+        "huecos entre las ramas pintados con el cielo"
+      ],
+      [
+        [
+          [
+            426,
+            331
+          ],
+          [
+            329,
+            474
+          ],
+          [
+            293,
+            1054
+          ],
+          [
+            140,
+            1072
+          ]
+        ],
+        "hojas izquierdas agrupadas en una región de follaje"
+      ],
+      [
+        [
+          [
+            1118,
+            535
+          ],
+          [
+            1002,
+            1110
+          ],
+          [
+            1169,
+            1156
+          ]
+        ],
+        "hojas derechas agrupadas en una región de follaje"
+      ]
     ]
   },
   "E14": {
     "grupos": [
-      [[[643, 686], [247, 932], [1233, 956], [204, 1077], [1329, 1078]], "salpicaduras agrupadas con el agua de la caída"]
+      [
+        [
+          [
+            643,
+            686
+          ],
+          [
+            247,
+            932
+          ],
+          [
+            1233,
+            956
+          ],
+          [
+            204,
+            1077
+          ],
+          [
+            1329,
+            1078
+          ]
+        ],
+        "salpicaduras agrupadas con el agua de la caída"
+      ]
     ]
   },
   "E15": {
     "grupos": [
-      [[[741, 104], [1101, 503], [482, 766], [387, 575], [1287, 544], [198, 587]], "cielo reunido entre las ramas y detrás de los árboles"]
+      [
+        [
+          [
+            741,
+            104
+          ],
+          [
+            1101,
+            503
+          ],
+          [
+            482,
+            766
+          ],
+          [
+            387,
+            575
+          ],
+          [
+            1287,
+            544
+          ],
+          [
+            198,
+            587
+          ]
+        ],
+        "cielo reunido entre las ramas y detrás de los árboles"
+      ]
     ]
   },
   "M01": {
-    "reflejos": [[1032, 338], [995, 386], [513, 416], [596, 450]],
-    "trazos": ["manchas de la frente y las patas redibujadas con contornos suaves", "contornos completados en la hoja superior derecha, el arbusto y las hojas del primer plano", "tramos débiles restaurados en las hojas de la izquierda"],
+    "reflejos": [
+      [
+        1032,
+        338
+      ],
+      [
+        995,
+        386
+      ],
+      [
+        513,
+        416
+      ],
+      [
+        596,
+        450
+      ]
+    ],
+    "trazos": [
+      "manchas de la frente y las patas redibujadas con contornos suaves",
+      "contornos completados en la hoja superior derecha, el arbusto y las hojas del primer plano",
+      "tramos débiles restaurados en las hojas de la izquierda"
+    ],
     "grupos": [
-      [[[468, 882], [752, 388], [840, 396], [795, 448], [449, 625], [482, 698], [1135, 508], [485, 799], [511, 819], [568, 847], [520, 930], [271, 967], [333, 988], [285, 1048], [350, 1121], [638, 1065], [674, 1137], [1025, 812], [1030, 878], [1020, 1043], [1000, 1100], [1120, 926], [1131, 1002]], "manchas de la rana agrupadas en un relleno de detalle"],
-      [[[406, 1145], [1089, 1057]], "patas traseras reunidas"],
-      [[[1223, 1347], [579, 1243], [201, 1342]], "partes de la hoja grande reunidas bajo las patas"],
-      [[[1213, 458], [1381, 433]], "hoja superior derecha separada del fondo"],
-      [[[1566, 1104], [1525, 1019], [1551, 1332], [1514, 1380], [1557, 1556]], "plantas del primer plano derecho separadas del fondo"],
-      [[[127, 649], [91, 394], [37, 436], [153, 436], [8, 497], [274, 478], [301, 561], [14, 550], [257, 580], [9, 585], [211, 680], [27, 637]], "hojas del penacho superior izquierdo separadas del fondo"],
-      [[[29, 1152], [45, 817], [90, 836], [136, 842], [162, 875], [106, 1010], [199, 1063], [195, 1121]], "hojas de los dos grupos inferiores separadas del fondo"],
-      [[[302, 842], [31, 993], [41, 1057]], "hueco junto a las hojas de la izquierda reunido con el fondo"],
-      [[[59, 1224], [30, 1298]], "hojas recortadas al lado de la pata separadas de la hoja grande"],
-      [[[1410, 1395], [453, 1570]], "fondo inferior separado de la hoja grande"]
+      [
+        [
+          [
+            468,
+            882
+          ],
+          [
+            752,
+            388
+          ],
+          [
+            840,
+            396
+          ],
+          [
+            795,
+            448
+          ],
+          [
+            449,
+            625
+          ],
+          [
+            482,
+            698
+          ],
+          [
+            1135,
+            508
+          ],
+          [
+            485,
+            799
+          ],
+          [
+            511,
+            819
+          ],
+          [
+            568,
+            847
+          ],
+          [
+            520,
+            930
+          ],
+          [
+            271,
+            967
+          ],
+          [
+            333,
+            988
+          ],
+          [
+            285,
+            1048
+          ],
+          [
+            350,
+            1121
+          ],
+          [
+            638,
+            1065
+          ],
+          [
+            674,
+            1137
+          ],
+          [
+            1025,
+            812
+          ],
+          [
+            1030,
+            878
+          ],
+          [
+            1020,
+            1043
+          ],
+          [
+            1000,
+            1100
+          ],
+          [
+            1120,
+            926
+          ],
+          [
+            1131,
+            1002
+          ]
+        ],
+        "manchas de la rana agrupadas en un relleno de detalle"
+      ],
+      [
+        [
+          [
+            406,
+            1145
+          ],
+          [
+            1089,
+            1057
+          ]
+        ],
+        "patas traseras reunidas"
+      ],
+      [
+        [
+          [
+            1223,
+            1347
+          ],
+          [
+            579,
+            1243
+          ],
+          [
+            201,
+            1342
+          ]
+        ],
+        "partes de la hoja grande reunidas bajo las patas"
+      ],
+      [
+        [
+          [
+            1213,
+            458
+          ],
+          [
+            1381,
+            433
+          ]
+        ],
+        "hoja superior derecha separada del fondo"
+      ],
+      [
+        [
+          [
+            1566,
+            1104
+          ],
+          [
+            1525,
+            1019
+          ],
+          [
+            1551,
+            1332
+          ],
+          [
+            1514,
+            1380
+          ],
+          [
+            1557,
+            1556
+          ]
+        ],
+        "plantas del primer plano derecho separadas del fondo"
+      ],
+      [
+        [
+          [
+            127,
+            649
+          ],
+          [
+            91,
+            394
+          ],
+          [
+            37,
+            436
+          ],
+          [
+            153,
+            436
+          ],
+          [
+            8,
+            497
+          ],
+          [
+            274,
+            478
+          ],
+          [
+            301,
+            561
+          ],
+          [
+            14,
+            550
+          ],
+          [
+            257,
+            580
+          ],
+          [
+            9,
+            585
+          ],
+          [
+            211,
+            680
+          ],
+          [
+            27,
+            637
+          ]
+        ],
+        "hojas del penacho superior izquierdo separadas del fondo"
+      ],
+      [
+        [
+          [
+            29,
+            1152
+          ],
+          [
+            45,
+            817
+          ],
+          [
+            90,
+            836
+          ],
+          [
+            136,
+            842
+          ],
+          [
+            162,
+            875
+          ],
+          [
+            106,
+            1010
+          ],
+          [
+            199,
+            1063
+          ],
+          [
+            195,
+            1121
+          ]
+        ],
+        "hojas de los dos grupos inferiores separadas del fondo"
+      ],
+      [
+        [
+          [
+            302,
+            842
+          ],
+          [
+            31,
+            993
+          ],
+          [
+            41,
+            1057
+          ]
+        ],
+        "hueco junto a las hojas de la izquierda reunido con el fondo"
+      ],
+      [
+        [
+          [
+            59,
+            1224
+          ],
+          [
+            30,
+            1298
+          ]
+        ],
+        "hojas recortadas al lado de la pata separadas de la hoja grande"
+      ],
+      [
+        [
+          [
+            1410,
+            1395
+          ],
+          [
+            453,
+            1570
+          ]
+        ],
+        "fondo inferior separado de la hoja grande"
+      ]
     ]
   },
   "M02": {
-    "reflejos": [[805, 593], [693, 606]],
-    "trazos": ["contornos del musgo y los estambres reconstruidos en las zonas marcadas"],
-    "grupos": [
-      [[[897, 292], [563, 322]], "puntas de las antenas separadas del cielo"],
-      [[[38, 234], [332, 134]], "rama reunida y separada del musgo"],
-      [[[134, 156], [219, 226], [98, 286]], "musgo de los tres remates reunido"],
-      [[[291, 1344], [266, 1304]], "estambres de la flor izquierda reunidos"],
-      [[[1178, 1345], [1167, 1291], [1140, 1314]], "estambres de la flor derecha reunidos"]
+    "reflejos": [
+      [
+        805,
+        593
+      ],
+      [
+        693,
+        606
+      ]
     ],
-    "detalles_finos": [[291, 1344], [1178, 1345]]
+    "trazos": [
+      "contornos del musgo y los estambres reconstruidos en las zonas marcadas"
+    ],
+    "grupos": [
+      [
+        [
+          [
+            897,
+            292
+          ],
+          [
+            563,
+            322
+          ]
+        ],
+        "puntas de las antenas separadas del cielo"
+      ],
+      [
+        [
+          [
+            38,
+            234
+          ],
+          [
+            332,
+            134
+          ]
+        ],
+        "rama reunida y separada del musgo"
+      ],
+      [
+        [
+          [
+            134,
+            156
+          ],
+          [
+            219,
+            226
+          ],
+          [
+            98,
+            286
+          ]
+        ],
+        "musgo de los tres remates reunido"
+      ],
+      [
+        [
+          [
+            291,
+            1344
+          ],
+          [
+            266,
+            1304
+          ]
+        ],
+        "estambres de la flor izquierda reunidos"
+      ],
+      [
+        [
+          [
+            1178,
+            1345
+          ],
+          [
+            1167,
+            1291
+          ],
+          [
+            1140,
+            1314
+          ]
+        ],
+        "estambres de la flor derecha reunidos"
+      ]
+    ],
+    "detalles_finos": [
+      [
+        291,
+        1344
+      ],
+      [
+        1178,
+        1345
+      ]
+    ]
   },
   "M03": {
-    "reflejos": [[671, 666], [544, 688]],
-    "trazos": ["borde inferior de la rama continuado sobre el musgo colgante"],
+    "reflejos": [
+      [
+        671,
+        666
+      ],
+      [
+        544,
+        688
+      ]
+    ],
+    "trazos": [
+      "borde inferior de la rama continuado sobre el musgo colgante"
+    ],
     "grupos": [
-      [[[115, 1237], [220, 1318]], "tallo agrupado con la hoja izquierda"]
+      [
+        [
+          [
+            115,
+            1237
+          ],
+          [
+            220,
+            1318
+          ]
+        ],
+        "tallo agrupado con la hoja izquierda"
+      ]
     ]
   },
   "M04": {
-    "reflejos": [[750, 524], [613, 550]],
-    "trazos": ["musgo separado de la rama izquierda y borde inferior de la nube derecha redibujado"],
+    "reflejos": [
+      [
+        750,
+        524
+      ],
+      [
+        613,
+        550
+      ]
+    ],
+    "trazos": [
+      "musgo separado de la rama izquierda y borde inferior de la nube derecha redibujado"
+    ],
     "grupos": [
-      [[[676, 856], [715, 1157], [662, 1155], [478, 1167], [531, 1155]], "garras pintadas con el pecho del tucán"]
+      [
+        [
+          [
+            676,
+            856
+          ],
+          [
+            715,
+            1157
+          ],
+          [
+            662,
+            1155
+          ],
+          [
+            478,
+            1167
+          ],
+          [
+            531,
+            1155
+          ]
+        ],
+        "garras pintadas con el pecho del tucán"
+      ]
     ]
   },
   "M05": {
-    "trazos": ["ambos bordes del pistilo completados junto a las anteras inferiores"],
+    "trazos": [
+      "ambos bordes del pistilo completados junto a las anteras inferiores"
+    ],
     "grupos": [
-      [[[801, 752], [906, 207], [1061, 224], [1016, 300], [846, 313], [978, 380], [824, 405], [931, 441]], "anteras reunidas con el pistilo"]
+      [
+        [
+          [
+            801,
+            752
+          ],
+          [
+            906,
+            207
+          ],
+          [
+            1061,
+            224
+          ],
+          [
+            1016,
+            300
+          ],
+          [
+            846,
+            313
+          ],
+          [
+            978,
+            380
+          ],
+          [
+            824,
+            405
+          ],
+          [
+            931,
+            441
+          ]
+        ],
+        "anteras reunidas con el pistilo"
+      ]
     ]
   },
   "M06": {
     "revision": 4,
-    "rellenos_protegidos": [[1242, 845], [443, 748]],
-    "reflejos": [[629, 201]],
-    "trazos": ["separación entre rama y musgo y retoques de contorno en las zonas marcadas"],
+    "rellenos_protegidos": [
+      [
+        1242,
+        845
+      ],
+      [
+        443,
+        748
+      ]
+    ],
+    "reflejos": [
+      [
+        629,
+        201
+      ]
+    ],
+    "trazos": [
+      "separación entre rama y musgo y retoques de contorno en las zonas marcadas"
+    ],
     "grupos": [
-      [[[861, 1199], [878, 1413], [938, 1185], [634, 1418]], "plumas largas de la cola separadas del fondo"],
-      [[[1243, 845], [202, 149]], "rama superior y rama central separadas del musgo"],
-      [[[438, 759], [415, 882], [1124, 732], [38, 353], [489, 673]], "musgo sobre la rama reunido con sus partes colgantes"],
-      [[[305, 882], [229, 1041], [173, 1039], [629, 1049], [568, 1058]], "huecos entre ramas de los árboles pequeños pintados con el fondo"],
-      [[[136, 1089], [598, 1103]], "troncos de los árboles pequeños separados de las copas"]
+      [
+        [
+          [
+            861,
+            1199
+          ],
+          [
+            878,
+            1413
+          ],
+          [
+            938,
+            1185
+          ],
+          [
+            634,
+            1418
+          ]
+        ],
+        "plumas largas de la cola separadas del fondo"
+      ],
+      [
+        [
+          [
+            1243,
+            845
+          ],
+          [
+            202,
+            149
+          ]
+        ],
+        "rama superior y rama central separadas del musgo"
+      ],
+      [
+        [
+          [
+            438,
+            759
+          ],
+          [
+            415,
+            882
+          ],
+          [
+            1124,
+            732
+          ],
+          [
+            38,
+            353
+          ],
+          [
+            489,
+            673
+          ]
+        ],
+        "musgo sobre la rama reunido con sus partes colgantes"
+      ],
+      [
+        [
+          [
+            305,
+            882
+          ],
+          [
+            229,
+            1041
+          ],
+          [
+            173,
+            1039
+          ],
+          [
+            629,
+            1049
+          ],
+          [
+            568,
+            1058
+          ]
+        ],
+        "huecos entre ramas de los árboles pequeños pintados con el fondo"
+      ],
+      [
+        [
+          [
+            136,
+            1089
+          ],
+          [
+            598,
+            1103
+          ]
+        ],
+        "troncos de los árboles pequeños separados de las copas"
+      ]
     ]
   },
   "M07": {
-    "reflejos": [[784, 469], [1023, 524]],
+    "reflejos": [
+      [
+        784,
+        469
+      ],
+      [
+        1023,
+        524
+      ]
+    ],
     "grupos": [
-      [[[463, 941], [116, 1026]], "tramos de la rama reunidos"],
-      [[[1040, 703], [900, 782], [949, 761], [989, 765], [859, 776], [834, 796], [803, 816], [343, 1166], [308, 1180], [268, 1182], [541, 1246], [577, 1242], [608, 1252]], "garras agrupadas con el extremo de la pata delantera"]
+      [
+        [
+          [
+            463,
+            941
+          ],
+          [
+            116,
+            1026
+          ]
+        ],
+        "tramos de la rama reunidos"
+      ],
+      [
+        [
+          [
+            1040,
+            703
+          ],
+          [
+            900,
+            782
+          ],
+          [
+            949,
+            761
+          ],
+          [
+            989,
+            765
+          ],
+          [
+            859,
+            776
+          ],
+          [
+            834,
+            796
+          ],
+          [
+            803,
+            816
+          ],
+          [
+            343,
+            1166
+          ],
+          [
+            308,
+            1180
+          ],
+          [
+            268,
+            1182
+          ],
+          [
+            541,
+            1246
+          ],
+          [
+            577,
+            1242
+          ],
+          [
+            608,
+            1252
+          ]
+        ],
+        "garras agrupadas con el extremo de la pata delantera"
+      ]
     ]
   },
   "M08": {
     "revision": 3,
-    "reflejos": [[755, 542], [697, 596]],
-    "trazos": ["musgo separado de la rama y contornos de las plantas de los pies y sus almohadillas reconstruidos"],
-    "grupos": [
-      [[[41, 556], [584, 245]], "rama separada por la mano reunida con el tronco"],
-      [[[618, 429], [868, 500], [866, 566]], "oreja derecha agrupada con el pelo"],
-      [[[287, 108], [349, 123]], "flor superior separada del cielo"],
-      [[[92, 202], [154, 161]], "musgo colgante separado de la madera"],
-      [[[881, 1034], [906, 956], [947, 962], [959, 986], [579, 1129], [603, 1054], [641, 1061], [653, 1082]], "almohadillas de los dos pies con relleno propio"],
-      [[[867, 972], [562, 1070]], "plantas de los pies reunidas y separadas de las piernas"]
+    "reflejos": [
+      [
+        755,
+        542
+      ],
+      [
+        697,
+        596
+      ]
     ],
-    "detalles_finos": [[867, 972]]
+    "trazos": [
+      "musgo separado de la rama y contornos de las plantas de los pies y sus almohadillas reconstruidos"
+    ],
+    "grupos": [
+      [
+        [
+          [
+            41,
+            556
+          ],
+          [
+            584,
+            245
+          ]
+        ],
+        "rama separada por la mano reunida con el tronco"
+      ],
+      [
+        [
+          [
+            618,
+            429
+          ],
+          [
+            868,
+            500
+          ],
+          [
+            866,
+            566
+          ]
+        ],
+        "oreja derecha agrupada con el pelo"
+      ],
+      [
+        [
+          [
+            287,
+            108
+          ],
+          [
+            349,
+            123
+          ]
+        ],
+        "flor superior separada del cielo"
+      ],
+      [
+        [
+          [
+            92,
+            202
+          ],
+          [
+            154,
+            161
+          ]
+        ],
+        "musgo colgante separado de la madera"
+      ],
+      [
+        [
+          [
+            881,
+            1034
+          ],
+          [
+            906,
+            956
+          ],
+          [
+            947,
+            962
+          ],
+          [
+            959,
+            986
+          ],
+          [
+            579,
+            1129
+          ],
+          [
+            603,
+            1054
+          ],
+          [
+            641,
+            1061
+          ],
+          [
+            653,
+            1082
+          ]
+        ],
+        "almohadillas de los dos pies con relleno propio"
+      ],
+      [
+        [
+          [
+            867,
+            972
+          ],
+          [
+            562,
+            1070
+          ]
+        ],
+        "plantas de los pies reunidas y separadas de las piernas"
+      ]
+    ],
+    "detalles_finos": [
+      [
+        867,
+        972
+      ]
+    ]
   },
   "M09": {
-    "reflejos": [[952, 713], [794, 753], [1077, 817]],
+    "revision": 3,
+    "reflejos": [
+      [
+        952,
+        713
+      ],
+      [
+        794,
+        753
+      ],
+      [
+        1077,
+        817
+      ]
+    ],
+    "trazos": [
+      "musgo separado de la madera, máscara cerrada, centro de flor y contornos de las patas restaurados"
+    ],
     "grupos": [
-      [[[812, 860], [849, 533], [898, 554]], "oreja trasera agrupada con la cabeza"]
+      [
+        [
+          [
+            862,
+            661
+          ],
+          [
+            849,
+            533
+          ],
+          [
+            898,
+            554
+          ]
+        ],
+        "oreja trasera agrupada con la cabeza"
+      ],
+      [
+        [
+          [
+            702,
+            794
+          ],
+          [
+            939,
+            673
+          ]
+        ],
+        "máscara de ambos ojos separada del hocico"
+      ],
+      [
+        [
+          [
+            127,
+            242
+          ],
+          [
+            526,
+            244
+          ],
+          [
+            963,
+            288
+          ],
+          [
+            935,
+            368
+          ],
+          [
+            1155,
+            474
+          ]
+        ],
+        "musgo colgante separado de las ramas y las hojas"
+      ],
+      [
+        [
+          [
+            200,
+            1198
+          ],
+          [
+            398,
+            1197
+          ],
+          [
+            589,
+            1232
+          ]
+        ],
+        "pies apoyados reunidos y separados de las piernas"
+      ],
+      [
+        [
+          [
+            1133,
+            312
+          ],
+          [
+            1078,
+            392
+          ],
+          [
+            1225,
+            448
+          ],
+          [
+            1161,
+            380
+          ]
+        ],
+        "pétalos de las flores superiores separados del fondo"
+      ],
+      [
+        [
+          [
+            1168,
+            325
+          ],
+          [
+            1107,
+            406
+          ],
+          [
+            1212,
+            417
+          ]
+        ],
+        "centros de las flores superiores con relleno propio"
+      ]
+    ],
+    "detalles_finos": [
+      [
+        200,
+        1198
+      ],
+      [
+        1133,
+        312
+      ],
+      [
+        1168,
+        325
+      ]
     ]
   },
   "M10": {
-    "reflejos": [[617, 589], [755, 609]],
+    "revision": 3,
+    "reflejos": [
+      [
+        617,
+        589
+      ],
+      [
+        755,
+        609
+      ]
+    ],
+    "trazos": [
+      "tres bordes del fondo continuados hasta el contorno del helecho"
+    ],
     "grupos": [
-      [[[66, 1073], [173, 758], [127, 788], [241, 820], [209, 863], [93, 840], [93, 902], [179, 942], [56, 979], [205, 1031]], "helecho pequeño izquierdo separado del fondo"],
-      [[[1125, 1236], [1084, 905], [1144, 910], [1040, 937], [1185, 957], [1029, 986], [1178, 1020], [1127, 1045], [1015, 1099], [1202, 1128], [983, 1173], [938, 1253]], "helecho pequeño derecho separado del fondo"]
+      [
+        [
+          [
+            66,
+            1073
+          ],
+          [
+            173,
+            758
+          ],
+          [
+            127,
+            788
+          ],
+          [
+            241,
+            820
+          ],
+          [
+            209,
+            863
+          ],
+          [
+            93,
+            840
+          ],
+          [
+            93,
+            902
+          ],
+          [
+            179,
+            942
+          ],
+          [
+            56,
+            979
+          ],
+          [
+            205,
+            1031
+          ]
+        ],
+        "helecho pequeño izquierdo separado del fondo"
+      ],
+      [
+        [
+          [
+            1125,
+            1236
+          ],
+          [
+            1084,
+            905
+          ],
+          [
+            1144,
+            910
+          ],
+          [
+            1040,
+            937
+          ],
+          [
+            1185,
+            957
+          ],
+          [
+            1029,
+            986
+          ],
+          [
+            1178,
+            1020
+          ],
+          [
+            1127,
+            1045
+          ],
+          [
+            1015,
+            1099
+          ],
+          [
+            1202,
+            1128
+          ],
+          [
+            983,
+            1173
+          ],
+          [
+            938,
+            1253
+          ]
+        ],
+        "helecho pequeño derecho separado del fondo"
+      ]
     ]
   },
   "M11": {
+    "revision": 3,
+    "trazos": [
+      "musgo colocado por encima de la rama y base de la planta apoyada en el suelo"
+    ],
     "grupos": [
-      [[[1140, 139], [748, 728], [479, 1272], [626, 1271]], "huecos entre flores y tallos pintados con el fondo"],
-      [[[948, 1358], [836, 715], [559, 1249], [677, 1300]], "tallos estrechos agrupados con la hoja derecha"]
+      [
+        [
+          [
+            1139,
+            140
+          ],
+          [
+            756,
+            729
+          ],
+          [
+            481,
+            1275
+          ],
+          [
+            622,
+            1276
+          ]
+        ],
+        "huecos entre flores y tallos pintados con el fondo"
+      ],
+      [
+        [
+          [
+            821,
+            768
+          ],
+          [
+            643,
+            1358
+          ]
+        ],
+        "tramos del tallo superior reunidos y separados de la hoja"
+      ],
+      [
+        [
+          [
+            248,
+            738
+          ],
+          [
+            311,
+            652
+          ],
+          [
+            224,
+            660
+          ]
+        ],
+        "tronco y ramas del árbol izquierdo"
+      ],
+      [
+        [
+          [
+            1087,
+            938
+          ],
+          [
+            1132,
+            925
+          ],
+          [
+            1042,
+            935
+          ]
+        ],
+        "tronco y ramas del árbol derecho"
+      ],
+      [
+        [
+          [
+            341,
+            84
+          ],
+          [
+            459,
+            21
+          ],
+          [
+            12,
+            270
+          ]
+        ],
+        "madera visible a ambos lados del musgo"
+      ]
+    ],
+    "detalles_finos": [
+      [
+        821,
+        768
+      ],
+      [
+        550,
+        1235
+      ],
+      [
+        248,
+        738
+      ],
+      [
+        1087,
+        938
+      ],
+      [
+        888,
+        470
+      ],
+      [
+        509,
+        958
+      ]
     ]
   },
   "M12": {
-    "reflejos": [[461, 509], [309, 549], [764, 757], [962, 810]]
+    "reflejos": [
+      [
+        461,
+        509
+      ],
+      [
+        309,
+        549
+      ],
+      [
+        764,
+        757
+      ],
+      [
+        962,
+        810
+      ]
+    ],
+    "revision": 3,
+    "trazos": [
+      "bordes del fondo continuados hasta el contorno de la rana pequeña y bifurcación del árbol restaurada"
+    ],
+    "detalles_finos": [
+      [
+        503,
+        467
+      ]
+    ]
   },
   "M13": {
     "grupos": [
-      [[[188, 828], [499, 228], [397, 219], [392, 282], [440, 326], [206, 499]], "hojas de las copas izquierdas separadas de la copa"],
-      [[[1231, 828], [1074, 479], [1172, 473], [1176, 549], [1103, 584]], "hojas de la copa derecha separadas de la copa"]
+      [
+        [
+          [
+            188,
+            828
+          ],
+          [
+            499,
+            228
+          ],
+          [
+            397,
+            219
+          ],
+          [
+            392,
+            282
+          ],
+          [
+            440,
+            326
+          ],
+          [
+            206,
+            499
+          ]
+        ],
+        "hojas de las copas izquierdas separadas de la copa"
+      ],
+      [
+        [
+          [
+            1231,
+            828
+          ],
+          [
+            1074,
+            479
+          ],
+          [
+            1172,
+            473
+          ],
+          [
+            1176,
+            549
+          ],
+          [
+            1103,
+            584
+          ]
+        ],
+        "hojas de la copa derecha separadas de la copa"
+      ]
+    ],
+    "revision": 3,
+    "trazos": [
+      "bases de las matas central y derecha cerradas con curvas suaves"
+    ],
+    "detalles_finos": [
+      [
+        129,
+        1532
+      ],
+      [
+        1284,
+        1542
+      ],
+      [
+        739,
+        1556
+      ]
     ]
   },
   "M14": {
-    "trazos": ["borde de la caída izquierda continuado hasta la espuma"],
-    "reflejos": [[315, 1157], [346, 1134]],
+    "trazos": [
+      "borde de la caída izquierda continuado hasta la espuma",
+      "unión del musgo con la rama cerrada mediante un borde redondeado"
+    ],
+    "reflejos": [
+      [
+        315,
+        1157
+      ],
+      [
+        346,
+        1134
+      ]
+    ],
     "grupos": [
-      [[[570, 935], [269, 871], [780, 887], [928, 919], [281, 977]], "salpicaduras pintadas con el agua de la caída"]
-    ]
+      [
+        [
+          [
+            570,
+            935
+          ],
+          [
+            269,
+            871
+          ],
+          [
+            780,
+            887
+          ],
+          [
+            928,
+            919
+          ],
+          [
+            281,
+            977
+          ]
+        ],
+        "salpicaduras pintadas con el agua de la caída"
+      ],
+      [
+        [
+          [
+            304,
+            134
+          ],
+          [
+            28,
+            304
+          ]
+        ],
+        "madera visible a ambos lados del musgo"
+      ]
+    ],
+    "revision": 3
   },
   "M15": {
-    "trazos": ["rama prolongada hasta el musgo del árbol y copa intermedia cerrada"],
+    "revision": 3,
+    "trazos": [
+      "ocho zonas marcadas rehechas con curvas suaves: hojas, tres uniones de musgo, bifurcación, base del árbol y ambas orillas junto a la vegetación y la rana",
+      "borde exterior de la hoja cerrado contra la pata trasera de la rana"
+    ],
+    "reflejos": [
+      [
+        988,
+        204
+      ],
+      [
+        388,
+        1153
+      ],
+      [
+        291,
+        1201
+      ]
+    ],
     "grupos": [
-      [[[929, 373], [980, 464], [924, 524], [1065, 521], [972, 536]], "vientre y garras pintados con el tucán"],
-      [[[789, 546], [607, 450]], "tramos de la rama separados del cielo"]
+      [
+        [
+          [
+            928,
+            374
+          ],
+          [
+            980,
+            464
+          ],
+          [
+            923,
+            530
+          ],
+          [
+            1067,
+            523
+          ],
+          [
+            972,
+            545
+          ]
+        ],
+        "vientre y garras pintados con el tucán"
+      ],
+      [
+        [
+          [
+            455,
+            150
+          ],
+          [
+            506,
+            404
+          ],
+          [
+            1182,
+            572
+          ]
+        ],
+        "madera visible reunida detrás del musgo"
+      ],
+      [
+        [
+          [
+            358,
+            332
+          ],
+          [
+            617,
+            453
+          ],
+          [
+            766,
+            598
+          ],
+          [
+            1126,
+            645
+          ]
+        ],
+        "musgo separado de la madera"
+      ]
+    ],
+    "detalles_finos": [
+      [
+        557,
+        957
+      ],
+      [
+        933,
+        927
+      ]
     ]
   },
   "D02": {
-    "reflejos": [[801, 589], [670, 623]]
+    "reflejos": [
+      [
+        801,
+        589
+      ],
+      [
+        670,
+        623
+      ]
+    ]
   },
   "D03": {
-    "reflejos": [[737, 419]],
+    "reflejos": [
+      [
+        737,
+        419
+      ]
+    ],
     "grupos": [
-      [[[481, 395], [846, 450]], "pico agrupado con la cabeza y separado del cielo"],
-      [[[535, 740], [509, 827], [484, 816], [533, 819]], "garras agrupadas con el vientre"]
+      [
+        [
+          [
+            481,
+            395
+          ],
+          [
+            846,
+            450
+          ]
+        ],
+        "pico agrupado con la cabeza y separado del cielo"
+      ],
+      [
+        [
+          [
+            535,
+            740
+          ],
+          [
+            509,
+            827
+          ],
+          [
+            484,
+            816
+          ],
+          [
+            533,
+            819
+          ]
+        ],
+        "garras agrupadas con el vientre"
+      ]
     ]
   },
   "D05": {
     "grupos": [
-      [[[795, 764], [1124, 296], [985, 393], [923, 421], [1050, 430], [895, 460], [868, 496], [1021, 520], [953, 551], [991, 554], [943, 587]], "pistilo y anteras reunidos en una región propia"]
+      [
+        [
+          [
+            795,
+            764
+          ],
+          [
+            1124,
+            296
+          ],
+          [
+            985,
+            393
+          ],
+          [
+            923,
+            421
+          ],
+          [
+            1050,
+            430
+          ],
+          [
+            895,
+            460
+          ],
+          [
+            868,
+            496
+          ],
+          [
+            1021,
+            520
+          ],
+          [
+            953,
+            551
+          ],
+          [
+            991,
+            554
+          ],
+          [
+            943,
+            587
+          ]
+        ],
+        "pistilo y anteras reunidos en una región propia"
+      ]
     ]
   },
   "D06": {
-    "reflejos": [[961, 175], [947, 197]],
+    "reflejos": [
+      [
+        961,
+        175
+      ],
+      [
+        947,
+        197
+      ]
+    ],
     "grupos": [
-      [[[909, 578], [931, 705], [793, 723]], "garras separadas de la rama y agrupadas con el pecho"],
-      [[[896, 799], [1435, 648], [217, 1035]], "tramos visibles de madera agrupados"]
+      [
+        [
+          [
+            909,
+            578
+          ],
+          [
+            931,
+            705
+          ],
+          [
+            793,
+            723
+          ]
+        ],
+        "garras separadas de la rama y agrupadas con el pecho"
+      ],
+      [
+        [
+          [
+            896,
+            799
+          ],
+          [
+            1435,
+            648
+          ],
+          [
+            217,
+            1035
+          ]
+        ],
+        "tramos visibles de madera agrupados"
+      ]
     ]
   },
   "D07": {
-    "reflejos": [[602, 585], [503, 657], [372, 698]],
+    "reflejos": [
+      [
+        602,
+        585
+      ],
+      [
+        503,
+        657
+      ],
+      [
+        372,
+        698
+      ]
+    ],
     "grupos": [
-      [[[1377, 274], [1514, 281], [971, 344], [1105, 392], [213, 321], [300, 382], [702, 358], [767, 439]], "tramos de madera reunidos a través de las garras"],
-      [[[829, 856], [1206, 242], [1244, 256], [1312, 232], [915, 298], [874, 307], [606, 323], [801, 296], [548, 319]], "garras agrupadas con el pelaje"]
+      [
+        [
+          [
+            1377,
+            274
+          ],
+          [
+            1514,
+            281
+          ],
+          [
+            971,
+            344
+          ],
+          [
+            1105,
+            392
+          ],
+          [
+            213,
+            321
+          ],
+          [
+            300,
+            382
+          ],
+          [
+            702,
+            358
+          ],
+          [
+            767,
+            439
+          ]
+        ],
+        "tramos de madera reunidos a través de las garras"
+      ],
+      [
+        [
+          [
+            829,
+            856
+          ],
+          [
+            1206,
+            242
+          ],
+          [
+            1244,
+            256
+          ],
+          [
+            1312,
+            232
+          ],
+          [
+            915,
+            298
+          ],
+          [
+            874,
+            307
+          ],
+          [
+            606,
+            323
+          ],
+          [
+            801,
+            296
+          ],
+          [
+            548,
+            319
+          ]
+        ],
+        "garras agrupadas con el pelaje"
+      ]
     ]
   },
   "D08": {
-    "reflejos": [[882, 264], [1009, 282]],
+    "reflejos": [
+      [
+        882,
+        264
+      ],
+      [
+        1009,
+        282
+      ]
+    ],
     "grupos": [
-      [[[1292, 639], [452, 818]], "rama reunida bajo la mano del mono"]
+      [
+        [
+          [
+            1292,
+            639
+          ],
+          [
+            452,
+            818
+          ]
+        ],
+        "rama reunida bajo la mano del mono"
+      ]
     ]
   },
   "D09": {
-    "reflejos": [[1016, 520], [1146, 634]],
+    "reflejos": [
+      [
+        1016,
+        520
+      ],
+      [
+        1146,
+        634
+      ]
+    ],
     "grupos": [
-      [[[973, 416], [1026, 359]], "oreja lejana separada del cielo"]
+      [
+        [
+          [
+            973,
+            416
+          ],
+          [
+            1026,
+            359
+          ]
+        ],
+        "oreja lejana separada del cielo"
+      ]
     ]
   },
   "D10": {
     "grupos": [
-      [[[312, 597], [327, 405], [359, 316], [404, 336]], "brote izquierdo agrupado con el helecho del mismo lado"],
-      [[[444, 775], [511, 581], [544, 569], [569, 586]], "brote central agrupado con el follaje inferior"]
+      [
+        [
+          [
+            312,
+            597
+          ],
+          [
+            327,
+            405
+          ],
+          [
+            359,
+            316
+          ],
+          [
+            404,
+            336
+          ]
+        ],
+        "brote izquierdo agrupado con el helecho del mismo lado"
+      ],
+      [
+        [
+          [
+            444,
+            775
+          ],
+          [
+            511,
+            581
+          ],
+          [
+            544,
+            569
+          ],
+          [
+            569,
+            586
+          ]
+        ],
+        "brote central agrupado con el follaje inferior"
+      ]
     ]
   },
   "D11": {
-    "reflejos": [[385, 95]],
+    "reflejos": [
+      [
+        385,
+        95
+      ]
+    ],
     "grupos": [
-      [[[907, 307], [948, 404], [957, 481]], "centro de la orquídea alta separado del paisaje"]
+      [
+        [
+          [
+            907,
+            307
+          ],
+          [
+            948,
+            404
+          ],
+          [
+            957,
+            481
+          ]
+        ],
+        "centro de la orquídea alta separado del paisaje"
+      ]
     ]
   },
   "D12": {
-    "reflejos": [[768, 69], [779, 85], [548, 152], [567, 123], [833, 443], [1052, 498]]
+    "reflejos": [
+      [
+        768,
+        69
+      ],
+      [
+        779,
+        85
+      ],
+      [
+        548,
+        152
+      ],
+      [
+        567,
+        123
+      ],
+      [
+        833,
+        443
+      ],
+      [
+        1052,
+        498
+      ]
+    ]
   },
   "D15": {
     "grupos": [
-      [[[697, 367], [446, 182], [1148, 199], [288, 283], [1307, 320], [19, 393], [159, 383], [1142, 403], [981, 638]], "huecos entre las ramas pintados con el cielo"]
+      [
+        [
+          [
+            697,
+            367
+          ],
+          [
+            446,
+            182
+          ],
+          [
+            1148,
+            199
+          ],
+          [
+            288,
+            283
+          ],
+          [
+            1307,
+            320
+          ],
+          [
+            19,
+            393
+          ],
+          [
+            159,
+            383
+          ],
+          [
+            1142,
+            403
+          ],
+          [
+            981,
+            638
+          ]
+        ],
+        "huecos entre las ramas pintados con el cielo"
+      ]
     ]
   },
   "A02": {
-    "reflejos": [[859, 582], [764, 618]],
+    "reflejos": [
+      [
+        859,
+        582
+      ],
+      [
+        764,
+        618
+      ]
+    ],
     "grupos": [
-      [[[807, 709], [849, 428], [676, 469]], "puntas de las antenas separadas del cielo"]
+      [
+        [
+          [
+            807,
+            709
+          ],
+          [
+            849,
+            428
+          ],
+          [
+            676,
+            469
+          ]
+        ],
+        "puntas de las antenas separadas del cielo"
+      ]
     ]
   },
   "A07": {
-    "reflejos": [[484, 598], [437, 649], [338, 684]]
+    "reflejos": [
+      [
+        484,
+        598
+      ],
+      [
+        437,
+        649
+      ],
+      [
+        338,
+        684
+      ]
+    ]
   },
   "A08": {
     "grupos": [
-      [[[417, 648], [1217, 535]], "orejas agrupadas en una región propia"]
+      [
+        [
+          [
+            417,
+            648
+          ],
+          [
+            1217,
+            535
+          ]
+        ],
+        "orejas agrupadas en una región propia"
+      ]
     ]
   },
   "A14": {
     "grupos": [
-      [[[284, 1096], [569, 955], [486, 991], [633, 1006], [672, 1016], [715, 978], [783, 990], [424, 1029], [849, 1036]], "gotas de la caída agrupadas con la espuma"]
+      [
+        [
+          [
+            284,
+            1096
+          ],
+          [
+            569,
+            955
+          ],
+          [
+            486,
+            991
+          ],
+          [
+            633,
+            1006
+          ],
+          [
+            672,
+            1016
+          ],
+          [
+            715,
+            978
+          ],
+          [
+            783,
+            990
+          ],
+          [
+            424,
+            1029
+          ],
+          [
+            849,
+            1036
+          ]
+        ],
+        "gotas de la caída agrupadas con la espuma"
+      ]
     ]
   }
 }
