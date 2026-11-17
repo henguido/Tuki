@@ -172,8 +172,11 @@
         "es": "El perezoso se mueve muy despacio y pasa casi toda su vida en los árboles.",
         "en": "The sloth moves very slowly and spends almost all its life in the trees."
       },
-      "template": "pages/e07-perezoso-v1.json",
-      "thumbnail": "thumbs/e07-perezoso.png"
+      "template": "pages/e07-perezoso-v2.json",
+      "thumbnail": "thumbs/e07-perezoso.png",
+      "previousTemplates": {
+        "1": "pages/e07-perezoso-v1.json"
+      }
     },
     {
       "id": "e08-mono",

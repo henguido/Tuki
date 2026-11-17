@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06'} else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07'} else 1
 
 
 def leer_gris(ruta):
@@ -246,19 +246,24 @@ def procesar(art_id, tema_id, fuente, original):
     # 5. Agrupación de zonas pequeñas.
     g = Grupos(n, areas.astype(np.int64).tolist(), diametros.tolist(), vecinos)
     diam_min = nivel['diametro'] * corto
+    # El centro circular de E07 tiene diámetro suficiente para el dedo,
+    # aunque su área sea menor que la recomendada para otras formas.
+    centro_flor = int(zonas[1415, 280]) if art_id == 'E07' else 0
 
     def pequeno(a):
-        return g.diam[a] < diam_min or g.area[a] < area_min
+        return g.diam[a] < diam_min or (a != centro_flor and g.area[a] < area_min)
 
     # Brillos: detalles blancos rodeados de tinta maciza (el reflejo de un
     # ojo). No se agrupan con nadie: quedarían del color de otra zona. Siguen
     # siendo regiones propias, exentas del mínimo táctil.
     brillos = [a for a in list(g.area)
                if pequeno(a) and macizo[a] > 2.0]
-    if art_id == 'E06':
-        reflejo = int(zonas[256, 689])
+    sondas_reflejos = {'E06': ((689, 256),),
+                      'E07': ((483, 723), (271, 848))}
+    for x, y in sondas_reflejos.get(art_id, ()):
+        reflejo = int(zonas[y, x])
         if reflejo == 0 or not pequeno(reflejo):
-            raise ValueError('E06: la sonda debe quedar dentro del reflejo del ojo')
+            raise ValueError(f'{art_id}: la sonda debe quedar dentro del reflejo del ojo')
         if reflejo not in brillos:
             brillos.append(reflejo)
     for a in brillos:
@@ -284,6 +289,15 @@ def procesar(art_id, tema_id, fuente, original):
                  '3 plumas largas de la cola agrupadas en una región propia'),
                 (((693, 665), (729, 783), (582, 796), (849, 282)),
                  'pico y patas agrupados con el pecho por su tamaño')],
+        'E07': [(((90, 418), (672, 531), (1230, 645)),
+                 '3 tramos de la rama agrupados en una región propia'),
+                (((1102, 1421), (704, 648)),
+                 'hueco entre los brazos agrupado con el fondo inferior'),
+                (((1092, 916), (471, 451), (522, 463), (589, 457), (767, 475),
+                  (822, 481), (892, 475), (971, 876), (1026, 871)),
+                 '9 garras agrupadas en una región propia'),
+                (((211, 956), (579, 748)),
+                 '2 manchas de los ojos agrupadas en una región propia')],
     }
     agrupadas_a_mano = 0
     for puntos, nota in grupos_manuales.get(art_id, ()):
@@ -464,7 +478,7 @@ def procesar(art_id, tema_id, fuente, original):
     rng = np.random.default_rng(7)
     paleta = rng.integers(90, 245, size=(len(regiones) + 1, 3), dtype=np.uint8)
     paleta[0] = 255
-    if art_id == 'E06':
+    if art_id in sondas_reflejos:
         for brillo in brillos:
             paleta[numero[brillo]] = 255
     previa = paleta[lienzo]

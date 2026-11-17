@@ -52,12 +52,13 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Fuente corregida: `tool/laminas/fuentes_corregidas/E06.png`. Se redibujaron el perfil y el pico, los bordes de la rama junto al marco y la unión de la hoja derecha. El ojo queda separado de la ceja y su reflejo tiene una región propia.
 - Los cuatro tramos de la rama y las tres plumas largas de la cola forman dos regiones. El pico y las patas comparten color con el pecho por su tamaño.
 
-## E07 · `e07-perezoso` (revisión 1)
+## E07 · `e07-perezoso` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_03_53-1.webp` → `E07_perezoso.webp` (1122 × 1402 px), SHA-256 `ccd7c5fbc468ad44…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E07.png`. Se cerró la base de la hoja superior izquierda y se ajustaron la mancha izquierda de la cara y el centro de la flor para que admitan el toque.
 - Lienzo: 1280 × 1600 (vertical); trazo 20.4 px; tinta que toca el marco: 1.9 %
-- huecos de trazo cerrados (565 px)
-- 13 zonas pequeñas agrupadas con su vecina
+- Los tramos de la rama comparten color, al igual que las nueve garras y las dos manchas de la cara en sus respectivas regiones. Los reflejos de los ojos y el centro de la flor tienen regiones propias.
+- El hueco entre los brazos se pinta con el fondo inferior.
 
 ## E08 · `e08-mono` (revisión 1)
 
