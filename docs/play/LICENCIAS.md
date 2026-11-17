@@ -6,10 +6,10 @@ preservada, SHA-256, procedencia conocida y estado jurídico.
 ## Resultado
 
 - 60/60 fuentes tienen identidad técnica y SHA-256.
-- 33 fuentes tienen nombres que registran generación con ChatGPT/OpenAI,
-  incluida la mariposa M02 generada específicamente para el proyecto.
-- 27 fuentes fueron entregadas al proyecto, pero sus nombres no identifican
-  autor, proveedor ni licencia.
+- 60/60 originales conservan credenciales C2PA que identifican `ChatGPT`,
+  `OpenAI Media Service API` y `trainedAlgorithmicMedia`, con fecha UTC por
+  archivo. Esto incluye las 27 fuentes que antes no tenían proveedor demostrado.
+- M02 además conserva una especificación de generación específica para TUKI.
 - 60/60 continúan bloqueadas para publicación hasta vincular evidencia que
   permita el uso comercial y la transformación en una app.
 - La conversión a JSON, limpieza de regiones y pruebas funcionales están
@@ -29,7 +29,16 @@ usuaria y en la medida permitida por la ley, esta conserva sus derechos sobre la
 entrada y posee la salida. También exigen que la persona usuaria tenga los
 derechos, licencias y permisos necesarios sobre la entrada, y advierten que una
 salida puede no ser única. Esto no autoriza referencias de terceros ni prueba
-qué cuenta generó los archivos.
+qué cuenta generó los archivos. La documentación oficial de OpenAI también
+aclara que C2PA es una señal de procedencia, no una prueba de propiedad legal,
+ausencia de edición o contexto correcto.
+
+## Cambio de clasificación de esta auditoría
+
+- Antes: 33 documentadas parcialmente y 27 sin procedencia demostrada.
+- Después: 60 documentadas como generación/exportación OpenAI mediante C2PA,
+  todas pendientes de autorización sobre cuenta y entradas/referencias.
+- Acreditadas para publicación: 0. No se elevó ninguna sin evidencia humana.
 
 ## Evidencia mínima aceptable por recurso
 
