@@ -185,15 +185,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - anteras reunidas con el pistilo
 - 1 zonas pequeñas agrupadas con su vecina
 
-## M06 · `quetzal` (revisión 3)
+## M06 · `quetzal` (revisión 4)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 23_04_18-10.webp` → `M06_quetzal.webp` (1122 × 1402 px), SHA-256 `c3a357b39530aa16…`
-- Lienzo: 1280 × 1600 (vertical); trazo 11.6 px; tinta que toca el marco: 10.2 %
-- 1 motas de tinta eliminadas
-- huecos de trazo cerrados (548 px)
-- 1 brillos sobre tinta conservados como regiones propias
-- plumas largas de la cola separadas del fondo
-- 59 zonas pequeñas agrupadas con su vecina
+- Fuente corregida: `tool/laminas/fuentes_corregidas/M06.png`, SHA-256 `8c685f96bd583b65…`.
+- Se continuó el borde de las ramas sobre el musgo y se restauraron los trazos marcados en los árboles pequeños, las hojas inferiores y el borde derecho.
+- El musgo cubre la parte superior y el frente de la rama y cae por el borde. Su relleno incluye el remate superior. Los huecos entre las ramas pequeñas se pintan con el fondo.
+- Las revisiones 1, 2 y 3 se conservan para los dibujos guardados.
 
 ## M07 · `m07-perezoso` (revisión 2)
 

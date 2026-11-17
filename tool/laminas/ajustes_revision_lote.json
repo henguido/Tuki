@@ -91,9 +91,16 @@
     ]
   },
   "M06": {
+    "revision": 4,
+    "rellenos_protegidos": [[1242, 845], [443, 748]],
     "reflejos": [[629, 201]],
+    "trazos": ["separación entre rama y musgo y retoques de contorno en las zonas marcadas"],
     "grupos": [
-      [[[861, 1199], [878, 1413], [938, 1185], [634, 1418]], "plumas largas de la cola separadas del fondo"]
+      [[[861, 1199], [878, 1413], [938, 1185], [634, 1418]], "plumas largas de la cola separadas del fondo"],
+      [[[1243, 845], [202, 149]], "rama superior y rama central separadas del musgo"],
+      [[[438, 759], [415, 882], [1124, 732], [38, 353], [489, 673]], "musgo sobre la rama reunido con sus partes colgantes"],
+      [[[305, 882], [229, 1041], [173, 1039], [629, 1049], [568, 1058]], "huecos entre ramas de los árboles pequeños pintados con el fondo"],
+      [[[136, 1089], [598, 1103]], "troncos de los árboles pequeños separados de las copas"]
     ]
   },
   "M07": {

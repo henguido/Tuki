@@ -71,7 +71,8 @@ def pagina_de(art_id, tema_id):
     else:
         pagina = f'{art_id.lower()}-{tema_id}'
         revision = 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10', 'E12'} else 1
-    return pagina, revision + (art_id in AJUSTES_LOTE)
+    ajustes = AJUSTES_LOTE.get(art_id)
+    return pagina, revision if ajustes is None else ajustes.get('revision', revision + 1)
 
 
 def leer_gris(ruta):
@@ -353,6 +354,20 @@ def procesar(art_id, tema_id, fuente, original):
         agrupadas_a_mano += len(partes) - 1
         cambios.append(nota)
 
+    protegidos = []
+    for x, y in ajustes.get('rellenos_protegidos', ()):
+        region = g.raiz(int(zonas[y, x]))
+        if region not in g.vec or pequeno(region):
+            raise ValueError(f'{art_id}: relleno protegido inválido')
+        protegidos.append(region)
+
+    def separar_protegidos():
+        for region in protegidos:
+            for otra in protegidos:
+                g.vec[region].pop(otra, None)
+
+    separar_protegidos()
+
     detalles_finos = set()
     for x, y in ajustes.get('detalles_finos', ()):
         detalle = g.raiz(int(zonas[y, x]))
@@ -370,6 +385,7 @@ def procesar(art_id, tema_id, fuente, original):
             break
         a = min(chicos, key=lambda k: g.area[k])
         g.unir(a, g.mejor_vecino(a))
+        separar_protegidos()
     por_minimo = n - len(g.area) - agrupadas_a_mano
     while len(g.area) - len(brillos) > nivel['tope']:
         candidatos = [k for k in g.area if g.vec.get(k)]
@@ -377,6 +393,7 @@ def procesar(art_id, tema_id, fuente, original):
             break
         a = min(candidatos, key=lambda k: g.area[k])
         g.unir(a, g.mejor_vecino(a))
+        separar_protegidos()
     por_tope = n - por_minimo - agrupadas_a_mano - len(g.area)
     if por_minimo:
         cambios.append(
@@ -549,6 +566,9 @@ def procesar(art_id, tema_id, fuente, original):
         paleta[mapa[860, 1120]] = (233, 218, 191)  # nube derecha
         paleta[mapa[130, 102]] = (117, 151, 186)  # rama izquierda
         paleta[mapa[300, 126]] = (112, 169, 126)  # musgo colgante
+    if art_id == 'M06':
+        paleta[mapa[748, 443]] = (127, 181, 139)  # musgo sobre la rama
+        paleta[mapa[845, 1242]] = (178, 136, 109)  # madera visible
     previa = paleta[lienzo]
     previa[tinta_vec == 1] = (20, 20, 20)
     previa = cv2.resize(previa, (round(ancho * 0.5), round(alto * 0.5)),
