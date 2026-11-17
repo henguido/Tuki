@@ -88,14 +88,13 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (156 px)
 - 1 zonas pequeñas agrupadas con su vecina
 
-## E12 · `e12-ranas-del-bosque` (revisión 1)
+## E12 · `e12-ranas-del-bosque` (revisión 2)
 
 - Original: `Ranas sonrientes en la selva tropical-2.webp` → `E12_ranas-del-bosque.webp` (1218 × 1292 px), SHA-256 `2863306af27a8a8c…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E12.png`, SHA-256 `2effc4602180bd6…`. Se redibujaron cuatro uniones de los pastos con curvas que siguen los trazos originales y se afinan hacia el centro.
 - Lienzo: 1508 × 1600 (vertical); trazo 15.6 px; tinta que toca el marco: 3.3 %
-- huecos de trazo cerrados (1456 px)
-- 1 contornos abiertos cerrados con tinta
-- 2 brillos sobre tinta conservados como regiones propias
-- 36 zonas pequeñas agrupadas con su vecina
+- Los ojos tienen regiones propias para sus detalles blancos. Las manchas y lenguas comparten un relleno de detalle. Las patas y los huecos entre ellas se asignaron a las ranas y al fondo, respectivamente.
+- Se separaron la vegetación, las rocas y el suelo, y se reunieron las partes de las hojas divididas por nervaduras.
 
 ## E13 · `e13-arbol-gigante` (revisión 1)
 

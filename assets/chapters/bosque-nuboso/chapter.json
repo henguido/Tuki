@@ -281,8 +281,11 @@
         "es": "Las ranas absorben agua a través de la piel.",
         "en": "Frogs take in water through their skin."
       },
-      "template": "pages/e12-ranas-del-bosque-v1.json",
-      "thumbnail": "thumbs/e12-ranas-del-bosque.png"
+      "template": "pages/e12-ranas-del-bosque-v2.json",
+      "thumbnail": "thumbs/e12-ranas-del-bosque.png",
+      "previousTemplates": {
+        "1": "pages/e12-ranas-del-bosque-v1.json"
+      }
     },
     {
       "id": "e13-arbol-gigante",

@@ -93,6 +93,7 @@ PREVIAS = {
     'e07-perezoso': {'1': 'pages/e07-perezoso-v1.json'},
     'e09-coati': {'1': 'pages/e09-coati-v1.json'},
     'e10-helechos': {'1': 'pages/e10-helechos-v1.json'},
+    'e12-ranas-del-bosque': {'1': 'pages/e12-ranas-del-bosque-v1.json'},
     'rana-en-la-hoja': {'1': 'pages/rana-en-la-hoja-v1.json'},
     'quetzal': {'1': 'pages/quetzal-v1.json'},
     'sendero': {'1': 'pages/sendero-v1.json'},

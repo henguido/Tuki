@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10'} else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10', 'E12'} else 1
 
 
 def leer_gris(ruta):
@@ -261,7 +261,10 @@ def procesar(art_id, tema_id, fuente, original):
     sondas_reflejos = {'E06': ((689, 256),),
                       'E07': ((483, 723), (271, 848)),
                       'E09': ((837, 752), (1033, 694), (1188, 775),
-                              (781, 772), (1005, 648), (1080, 748), (1072, 687))}
+                              (781, 772), (1005, 648), (1080, 748), (1072, 687)),
+                      'E12': ((439, 242), (794, 210), (522, 245), (805, 250),
+                              (836, 849), (906, 760), (896, 788), (1200, 910),
+                              (1136, 851))}
     for x, y in sondas_reflejos.get(art_id, ()):
         reflejo = int(zonas[y, x])
         if reflejo == 0 or not pequeno(reflejo):
@@ -275,7 +278,7 @@ def procesar(art_id, tema_id, fuente, original):
         cambios.append(
             f'{len(brillos)} brillos sobre tinta conservados como regiones propias')
 
-    # Sondas en el lienzo de 1280 × 1600 para partes de un mismo elemento.
+    # Sondas en las coordenadas del lienzo para partes de un mismo elemento.
     grupos_manuales = {
         'E04': [(((45, 1299), (379, 1214), (612, 1181), (798, 1147)),
                  '4 tramos de la rama agrupados en una región propia')],
@@ -306,6 +309,31 @@ def procesar(art_id, tema_id, fuente, original):
                  'rincón superior izquierdo agrupado con el cielo'),
                 (((1171, 607), (710, 1154), (372, 1201), (446, 1175)),
                  'huecos entre las patas agrupados con el fondo')],
+        'E12': [(((237, 139), (84, 170), (174, 263)),
+                 'partes de la hoja superior izquierda reunidas'),
+                (((0, 833), (121, 485)),
+                 'partes de la hoja izquierda agrupadas'),
+                (((988, 426), (895, 621)),
+                 'hojas estrechas de la planta derecha agrupadas'),
+                (((1361, 544), (1158, 510)),
+                 'partes de la hoja derecha agrupadas'),
+                (((1316, 896), (721, 724), (591, 1313), (689, 1525),
+                  (180, 1176), (110, 1261), (327, 1283), (94, 1368)),
+                 'pastos y hojas pequeñas agrupados en una región de vegetación'),
+                (((96, 1076), (0, 1009)),
+                 'partes de la roca izquierda agrupadas'),
+                (((455, 484), (591, 852)),
+                 'pata delantera superior agrupada con su rana'),
+                (((1005, 1194), (886, 1228), (783, 1206), (1319, 1304)),
+                 'patas inferiores agrupadas con su rana'),
+                (((631, 503), (953, 1025), (343, 380), (262, 533), (300, 596),
+                  (199, 602), (132, 684), (126, 778), (1211, 1012), (1316, 1055),
+                  (1367, 1126), (1258, 1137), (1324, 1149), (1386, 1243)),
+                 'manchas y lenguas agrupadas en una región de detalle'),
+                (((557, 1404), (967, 1323)),
+                 'hueco entre patas inferiores agrupado con el suelo'),
+                (((980, 128), (527, 832)),
+                 'hueco entre patas superiores agrupado con el fondo')],
     }
     agrupadas_a_mano = 0
     for puntos, nota in grupos_manuales.get(art_id, ()):
