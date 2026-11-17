@@ -74,12 +74,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Lienzo: 1280 × 1600 (vertical); trazo 17.6 px; tinta que toca el marco: 6.8 %
 - Los detalles blancos de los ojos y el reflejo de la nariz tienen regiones propias. Las orejas comparten color con la cabeza y los huecos entre las patas con el fondo.
 
-## E10 · `e10-helechos` (revisión 1)
+## E10 · `e10-helechos` (revisión 2)
 
 - Original: `Imagen de ChatGPT 12 nov 2026, 23_04_01-4.webp` → `E10_helechos.webp` (1122 × 1402 px), SHA-256 `f2a55777b66823cb…`
-- Lienzo: 1280 × 1600 (vertical); trazo 19.6 px; tinta que toca el marco: 0.0 %
-- huecos de trazo cerrados (722 px)
-- 7 zonas pequeñas agrupadas con su vecina
+- Fuente nueva: `tool/laminas/fuentes_corregidas/E10.png` (1122 × 1402 px), SHA-256 `34054830849c87cf…`
+- Lienzo: 1280 × 1600 (vertical); trazo 24.0 px; tinta que toca el marco: 0.0 %
+- Se redibujó la composición con un tallo continuo por helecho y sin líneas de suelo. Los helechos, la roca, los pétalos, el centro y las dos hojas de la flor tienen rellenos propios.
 
 ## E11 · `e11-orquideas` (revisión 1)
 

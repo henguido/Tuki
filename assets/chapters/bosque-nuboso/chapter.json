@@ -238,8 +238,11 @@
         "es": "Las hojas nuevas de los helechos nacen enrolladas.",
         "en": "New fern leaves start out curled up."
       },
-      "template": "pages/e10-helechos-v1.json",
-      "thumbnail": "thumbs/e10-helechos.png"
+      "template": "pages/e10-helechos-v2.json",
+      "thumbnail": "thumbs/e10-helechos.png",
+      "previousTemplates": {
+        "1": "pages/e10-helechos-v1.json"
+      }
     },
     {
       "id": "e11-orquideas",

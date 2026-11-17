@@ -66,7 +66,7 @@ PAGINAS_PREVIAS = {'E01': ('rana-en-la-hoja', 2), 'M06': ('quetzal', 2),
 def pagina_de(art_id, tema_id):
     if art_id in PAGINAS_PREVIAS:
         return PAGINAS_PREVIAS[art_id]
-    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09'} else 1
+    return f'{art_id.lower()}-{tema_id}', 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10'} else 1
 
 
 def leer_gris(ruta):
