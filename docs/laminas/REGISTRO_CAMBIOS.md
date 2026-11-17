@@ -18,11 +18,12 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - huecos de trazo cerrados (185 px)
 - 3 zonas pequeñas agrupadas con su vecina
 
-## E03 · `e03-colibri` (revisión 1)
+## E03 · `e03-colibri` (revisión 2)
 
 - Original: `Colibrí y flor de hibisco-2.webp` → `E03_colibri.webp` (1122 × 1402 px), SHA-256 `6238da7b408ee556…`
+- Fuente corregida: `tool/laminas/fuentes_corregidas/E03.png`. Se unieron los dos extremos del trazo en la base del ala delantera, donde el relleno pasaba al pecho.
 - Lienzo: 1280 × 1600 (vertical); trazo 19.6 px; tinta que toca el marco: 0.0 %
-- huecos de trazo cerrados (351 px)
+- huecos de trazo cerrados (352 px)
 - 5 zonas pequeñas agrupadas con su vecina
 
 ## E04 · `e04-tucan` (revisión 1)

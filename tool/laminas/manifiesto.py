@@ -86,6 +86,7 @@ TEMAS = [
 
 # Plantillas anteriores de las páginas que ya existían.
 PREVIAS = {
+    'e03-colibri': {'1': 'pages/e03-colibri-v1.json'},
     'rana-en-la-hoja': {'1': 'pages/rana-en-la-hoja-v1.json'},
     'quetzal': {'1': 'pages/quetzal-v1.json'},
     'sendero': {'1': 'pages/sendero-v1.json'},

@@ -80,8 +80,11 @@
         "es": "El colibrí puede volar hacia atrás.",
         "en": "A hummingbird can fly backwards."
       },
-      "template": "pages/e03-colibri-v1.json",
-      "thumbnail": "thumbs/e03-colibri.png"
+      "template": "pages/e03-colibri-v2.json",
+      "thumbnail": "thumbs/e03-colibri.png",
+      "previousTemplates": {
+        "1": "pages/e03-colibri-v1.json"
+      }
     },
     {
       "id": "e04-tucan",
