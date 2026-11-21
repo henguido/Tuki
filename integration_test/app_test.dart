@@ -3,7 +3,9 @@
 //   flutter drive --debug -d <dispositivo> \
 //     --target integration_test/app_test.dart \
 //     --driver test_driver/integration_test.dart \
-//     -P tukiIntegrationTest=true --keep-app-running
+// El target integration_test activa automáticamente el paquete aislado
+// dev.tukiapp.tuki_little_adventures.qa.integration. Nunca ejecutar estas
+// pruebas contra dev.tukiapp.tuki_little_adventures.qa.
 //
 // Usa una base de datos propia (tuki_itest.sqlite) para no tocar las obras
 // de la app instalada.

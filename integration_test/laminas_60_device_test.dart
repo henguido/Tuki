@@ -3,7 +3,9 @@
 //   flutter drive --debug -d <id> \
 //     --target integration_test/laminas_60_device_test.dart \
 //     --driver test_driver/integration_test.dart \
-//     -P tukiIntegrationTest=true --keep-app-running
+// El target integration_test activa automáticamente el paquete aislado
+// dev.tukiapp.tuki_little_adventures.qa.integration. Nunca ejecutar estas
+// pruebas contra dev.tukiapp.tuki_little_adventures.qa.
 //
 // Usa una base de datos exclusiva para QA; no toca las obras de la app normal.
 // Por cada lámina comprueba carga/render, relleno, pincel, deshacer, zoom,

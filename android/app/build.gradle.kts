@@ -6,8 +6,10 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val flutterTarget = providers.gradleProperty("target").orNull.orEmpty()
 val isIntegrationTest =
-    providers.gradleProperty("tukiIntegrationTest").orNull == "true"
+    providers.gradleProperty("tukiIntegrationTest").orNull == "true" ||
+        flutterTarget.replace('\\', '/').contains("integration_test/")
 val allowUnsignedRelease =
     providers.gradleProperty("tukiAllowUnsignedRelease").orNull == "true"
 val releasePropertiesFile = rootProject.file("key.properties")

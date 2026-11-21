@@ -3,7 +3,9 @@
 //   flutter drive --profile -d <id> \
 //     --target integration_test/laminas_rendimiento_test.dart \
 //     --driver test_driver/integration_test.dart \
-//     -P tukiIntegrationTest=true --keep-app-running
+// El target integration_test activa automáticamente el paquete aislado
+// dev.tukiapp.tuki_little_adventures.qa.integration. Nunca ejecutar estas
+// pruebas contra dev.tukiapp.tuki_little_adventures.qa.
 //
 // Abre una lámina de cada nivel (y las dos más pesadas), mide la carga y los
 // fotogramas mientras se pinta con el pincel y se rellena, e imprime una
