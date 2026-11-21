@@ -67,7 +67,9 @@ abstract final class DrawingRenderer {
       // Las plantillas conectadas demostraron 0 solape visible y pueden omitir
       // papel blanco. Las revisiones antiguas conservan el orden de capas:
       // una región blanca superior puede ocultar un relleno inferior.
-      if (template.regionModel == 'connected-paper-v1' && color == kWhite) {
+      if ((template.regionModel == 'connected-paper-v1' ||
+              template.regionModel == 'visible-paper-v2') &&
+          color == kWhite) {
         continue;
       }
       fill.color = Color(0xFF000000 | color);

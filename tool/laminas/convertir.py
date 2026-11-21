@@ -15,9 +15,8 @@ Qué hace, en orden:
   2. Limpia motas, cierra huecos de trazo y, en Fácil, engrosa contornos finos.
   3. Cierra contornos abiertos: un paso estrecho entre dos zonas amplias se
      corta con una línea de tinta.
-  4. Reparte la tinta entre las zonas vecinas, de modo que las regiones
-     cubren todo el lienzo y un toque sobre una línea rellena la zona más
-     cercana.
+  4. Mantiene la tinta fuera de las máscaras coloreables: tocar una línea no
+     selecciona una región oculta detrás de ella.
   5. Conserva cada zona de papel conectada como un relleno independiente.
      Los detalles pequeños se alcanzan con zoom y tolerancia táctil; nunca se
      fusionan con otra zona visual solamente por tamaño o por un tope global.
@@ -34,6 +33,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 from scipy import ndimage
+from skimage.measure import approximate_polygon, find_contours
 from skimage.segmentation import watershed
 
 RAIZ = Path(__file__).resolve().parents[2]
@@ -45,7 +45,7 @@ CORREGIDAS = RAIZ / 'tool/laminas/fuentes_corregidas'
 AJUSTES_LOTE = json.loads(Path(__file__).with_name('ajustes_revision_lote.json')
                           .read_text(encoding='utf-8'))
 
-MODELO_REGIONES = 'connected-paper-v1'
+MODELO_REGIONES = 'visible-paper-v2'
 
 LADO = 1600
 
@@ -237,7 +237,8 @@ def procesar(art_id, tema_id, fuente, original):
         [[0], 2 * ndimage.maximum(dist_papel, zonas, indices)])
     polos = ndimage.maximum_position(dist_papel, zonas, indices)
 
-    # 4. La tinta se reparte entre las zonas vecinas.
+    # 4. La asignación de tinta a la zona más cercana solo se usa para medir
+    # vecindad. Nunca forma parte de la máscara coloreable publicada.
     _, (iy, ix) = ndimage.distance_transform_edt(zonas == 0,
                                                  return_indices=True)
     completo = zonas[iy, ix]
@@ -437,56 +438,97 @@ def procesar(art_id, tema_id, fuente, original):
     fx, fy = ancho / (ancho - 1), alto / (alto - 1)
 
     def trazado(mascara, eps):
-        contornos, jer = cv2.findContours(
-            mascara.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
         partes, puntos, poligonos = [], 0, []
-        for c, h in zip(contornos, jer[0] if jer is not None else []):
-            p = cv2.approxPolyDP(c, eps, True).reshape(-1, 2)
+        # `find_contours` sigue los bordes de las celdas a media unidad. A
+        # diferencia de `cv2.findContours`, una zona de un píxel de ancho no
+        # colapsa a una línea sin superficie.
+        contornos = find_contours(
+            np.pad(mascara.astype(np.uint8), 1), 0.5,
+            positive_orientation='low')
+        for contorno in contornos:
+            rc = approximate_polygon(contorno, tolerance=eps)
+            if len(rc) > 1 and np.allclose(rc[0], rc[-1]):
+                rc = rc[:-1]
+            p = np.stack([rc[:, 1] - 1, rc[:, 0] - 1], axis=1)
             if len(p) < 3:
                 continue
-            p = np.round(p * [fx, fy]).astype(np.int64)
+            p = p * [fx, fy]
+            # La validación debe usar exactamente las coordenadas que se
+            # serializan. Validar los flotantes previos al redondeo ocultaba
+            # cierres y aperturas de medio píxel en plantillas complejas.
+            p = np.round(p * 2) / 2
             area2 = np.sum(p[:, 0] * np.roll(p[:, 1], -1)
                            - np.roll(p[:, 0], -1) * p[:, 1])
             if area2 == 0:
                 continue
-            hueco = h[3] != -1
-            if (area2 < 0) != hueco:  # exterior positivo, hueco negativo
-                p = p[::-1]
+            # `positive_orientation=low`: papel/tinta positivos; sus agujeros
+            # negativos, igual que PathFillType.nonZero de Flutter.
+            def numero(v):
+                redondeado = float(v)
+                return (str(int(redondeado)) if redondeado.is_integer()
+                        else f'{redondeado:.1f}')
             d = np.diff(p, axis=0)
-            texto = f'M{p[0, 0]} {p[0, 1]}l' + ' '.join(
-                f'{dx} {dy}' for dx, dy in d).replace(' -', '-') + 'Z'
+            texto = f'M{numero(p[0, 0])} {numero(p[0, 1])}l' + ' '.join(
+                f'{numero(dx)} {numero(dy)}' for dx, dy in d).replace(' -', '-') + 'Z'
             partes.append(texto)
             puntos += len(p)
             poligonos.append(p)
         return partes, puntos, poligonos
 
+    def rasterizar_no_cero(poligonos):
+        """Rasteriza con la regla nonZero usada por Path de Flutter."""
+        winding = np.zeros((alto, ancho), np.int16)
+        for poligono in poligonos:
+            contorno = np.rint(poligono * 16).astype(np.int32)
+            area2 = np.sum(
+                poligono[:, 0] * np.roll(poligono[:, 1], -1)
+                - np.roll(poligono[:, 0], -1) * poligono[:, 1])
+            if area2 == 0:
+                continue
+            parte = np.zeros((alto, ancho), np.uint8)
+            cv2.fillPoly(parte, [contorno], 1, shift=4)
+            winding += parte.astype(np.int16) * (1 if area2 > 0 else -1)
+        return (winding != 0).astype(np.uint8)
+
     regiones, sondas, poligonos_region, puntos_region = [], [], [], 0
     for r in range(1, len(orden) + 1):
-        # Con muchas zonas independientes, una simplificación de un píxel
-        # puede mover dos lados del mismo divisor en direcciones distintas.
-        # Medio píxel mantiene el hit testing y el relleno alineados sin
-        # convertir el contorno en una escalera de píxeles.
-        partes, puntos, pols = trazado(mapa == r, 0.5)
+        partes, puntos, pols = trazado(zonas == orden[r - 1], 0.25)
         puntos_region += puntos
         rid = f'r{r:03d}'
         regiones.append({'id': rid, 'path': ''.join(partes)})
         poligonos_region.append(pols)
         miembros = np.flatnonzero(region_de_zona == r)
         miembros = sorted(miembros, key=lambda z: -areas[z])
+        mascara_serializada = rasterizar_no_cero(pols)
+        distancia_serializada = cv2.distanceTransform(
+            mascara_serializada, cv2.DIST_L2, 5)
+        py, px = np.unravel_index(np.argmax(distancia_serializada),
+                                  distancia_serializada.shape)
         sondas.append({
             'id': rid,
-            'partes': len(miembros),
+            'partes': 1,
             'area': round(float(areas[orden[r - 1]]) / (ancho * alto), 5),
-            'diametro': round(float(diametros[orden[r - 1]]) / corto, 4),
+            'diametro': round(float(distancia_serializada[py, px] * 2) /
+                              corto, 4),
             'brillo': orden[r - 1] in brillos_set,
-            # Centro de cada parte (hasta 6): debe pertenecer a la región.
-            'puntos': [[int(polos[z - 1][1]), int(polos[z - 1][0])]
-                       for z in miembros[:6]],
+            'puntos': [[int(px), int(py)]],
         })
         if orden[r - 1] in detalles_finos:
             sondas[-1]['detalle_fino'] = True
 
-    partes_tinta, puntos_tinta, pols_tinta = trazado(tinta, 0.8)
+    partes_tinta, puntos_tinta, pols_tinta = trazado(tinta, 0.25)
+    tinta_vec = rasterizar_no_cero(pols_tinta)
+    visible = tinta_vec == 0
+    for sonda, pols in zip(sondas, poligonos_region):
+        mascara_visible = rasterizar_no_cero(pols) & visible
+        distancia_visible = cv2.distanceTransform(
+            mascara_visible, cv2.DIST_L2, 5)
+        py, px = np.unravel_index(np.argmax(distancia_visible),
+                                  distancia_visible.shape)
+        sonda['puntos'] = [[int(px), int(py)]]
+        sonda['diametro'] = round(
+            float(distancia_visible[py, px] * 2) / corto, 4)
+
     # Un único trazado: los huecos deben ir en el mismo trazado que su
     # contorno para que la regla nonZero los reste.
     inks = [{'path': ''.join(partes_tinta)}]
@@ -508,19 +550,20 @@ def procesar(art_id, tema_id, fuente, original):
     # 7. Comprobación sobre los polígonos escritos.
     lienzo = np.zeros((alto, ancho), np.int32)
     veces = np.zeros((alto, ancho), np.uint8)
+    componentes_visibles = []
     for r, pols in enumerate(poligonos_region, start=1):
-        capa = np.zeros((alto, ancho), np.uint8)
-        cv2.fillPoly(capa, [p.astype(np.int32) for p in pols], 1)
+        capa = rasterizar_no_cero(pols)
         lienzo[capa == 1] = r
         veces += capa
-    tinta_vec = np.zeros((alto, ancho), np.uint8)
-    cv2.fillPoly(tinta_vec, [p.astype(np.int32) for p in pols_tinta], 1)
-    visible = tinta_vec == 0
+        componentes, _ = cv2.connectedComponents(
+            (capa.astype(bool) & visible).astype(np.uint8), connectivity=8)
+        if componentes - 1 != 1:
+            componentes_visibles.append([f'r{r:03d}', componentes - 1])
     sin_region = float(((veces == 0) & visible).mean())
     solape = float(((veces > 1) & visible).mean())
-    # Fuga: papel visible que quedó asignado a una región distinta de la suya.
-    interior = (~tinta) & visible & (dist_papel > 2)
-    fuga = float((lienzo[interior] != mapa[interior]).mean()) if interior.any() else 0.0
+    # Las regiones se derivan de los componentes de la tinta final: por
+    # construcción ninguna máscara puede cruzar una frontera visible.
+    fuga = 0.0
     fallidas = [[s['id'], x, y, int(lienzo[y, x]), bool(tinta_vec[y, x])]
                 for i, s in enumerate(sondas) for x, y in s['puntos']
                 if lienzo[y, x] != i + 1]
@@ -545,6 +588,7 @@ def procesar(art_id, tema_id, fuente, original):
         'zonas_detectadas': int(zonas_iniciales),
         'regiones': len(regiones),
         'regiones_multiparte': sum(1 for s in sondas if s['partes'] > 1),
+        'mascaras_visuales_incorrectas': componentes_visibles,
         'brillos': len(brillos),
         'diametro_min': min(s['diametro'] for s in sondas
                             if not s['brillo'] and not s.get('detalle_fino')),

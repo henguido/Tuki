@@ -85,9 +85,16 @@ class PageTemplate {
 
   /// Región visible superior que contiene [scenePoint], o `null`.
   String? regionAt(ui.Offset scenePoint) {
+    if (inkAt(scenePoint)) return null;
     final i = _indexAt(scenePoint);
     return i < 0 ? null : regions[i].id;
   }
+
+  /// La tinta visible nunca es una superficie coloreable. Las revisiones
+  /// antiguas incluían estos píxeles debajo de sus máscaras; excluirlos aquí
+  /// evita seleccionar una zona arbitraria al tocar un contorno.
+  bool inkAt(ui.Offset scenePoint) =>
+      inks.any((ink) => ink.path.contains(scenePoint));
 
   int _indexAt(ui.Offset scenePoint) {
     if (!viewBox.contains(scenePoint)) return -1;
@@ -110,6 +117,7 @@ class PageTemplate {
   /// deben convertir un toque válido en otra zona cercana.
   String? regionNear(ui.Offset scenePoint, double radius) {
     if (!viewBox.contains(scenePoint)) return null;
+    if (inkAt(scenePoint)) return null;
     final exact = _indexAt(scenePoint);
     if (exact >= 0 || radius <= 0 || regions.length < 2) {
       return exact < 0 ? null : regions[exact].id;

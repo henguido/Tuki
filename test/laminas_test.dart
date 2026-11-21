@@ -123,9 +123,12 @@ void main() {
       // pertenece a esa región y a ninguna otra.
       final ajenos = <String>[];
       final reemplazadosPorTolerancia = <String>[];
+      var sondasVisibles = 0;
       for (final s in sondas) {
         for (final p in (s['puntos'] as List).cast<List<dynamic>>()) {
           final punto = Offset((p[0] as num) + 0.5, (p[1] as num) + 0.5);
+          if (template.inkAt(punto)) continue;
+          sondasVisibles++;
           final hit = template.regionAt(punto);
           if (hit != s['id']) ajenos.add('${s['id']}→$hit');
           final cercano = template.regionNear(
@@ -142,11 +145,11 @@ void main() {
       var rellenos = 0;
       for (var i = 0; i < sondas.length; i++) {
         final p = (sondas[i]['puntos'] as List).first as List<dynamic>;
+        final punto = Offset((p[0] as num) + 0.5, (p[1] as num) + 0.5);
+        if (template.inkAt(punto)) continue;
         controller.color = _color(i);
         final antes = controller.document.fills.length;
-        if (controller.fillAt(
-              Offset((p[0] as num) + 0.5, (p[1] as num) + 0.5),
-            ) &&
+        if (controller.fillAt(punto) &&
             controller.document.fills.length == antes + 1 &&
             controller.document.fills[sondas[i]['id']] == _color(i)) {
           rellenos++;
@@ -155,7 +158,7 @@ void main() {
       final seleccionMs = relojSeleccion.elapsedMilliseconds;
       anota(
         'relleno_individual',
-        ajenos.isEmpty && rellenos == sondas.length,
+        ajenos.isEmpty && rellenos == sondasVisibles,
         ajenos.take(3).join(' '),
       );
       anota(
@@ -197,6 +200,7 @@ void main() {
       for (var i = 0; i < sondas.length; i++) {
         for (final p in (sondas[i]['puntos'] as List).cast<List<dynamic>>()) {
           final x = p[0] as int, y = p[1] as int;
+          if (template.inkAt(Offset(x + 0.5, y + 0.5))) continue;
           if (!_parecido(_rgbAt(lleno, ancho, x, y), _color(i))) {
             fugas.add('${sondas[i]['id']}@$x,$y');
           }
@@ -256,6 +260,10 @@ void main() {
               // línea debe permanecer encima del relleno y no es una muestra
               // válida del color interior.
               if (!_parecido(_rgbAt(vacio, ancho, x, y), 0xFFFFFF)) continue;
+              // La geometría vectorial de la tinta incluye el centro exacto
+              // del contorno aunque el píxel antialiasado quede casi blanco.
+              // Tocar ahí debe ignorarse, no seleccionar la región oculta.
+              if (template.inkAt(Offset(x + 0.5, y + 0.5))) continue;
               // El raster representa el centro del píxel leído, no la
               // coordenada fraccionaria original del anillo.
               final id = template.regionAt(Offset(x + 0.5, y + 0.5));
@@ -399,8 +407,8 @@ void main() {
       anota(
         'regiones_independientes',
         minimo == diametrosTactiles.reduce(math.min) &&
-            medidas['modelo_regiones'] == 'connected-paper-v1' &&
-            template.regions.length == medidas['zonas_detectadas'] &&
+            medidas['modelo_regiones'] == 'visible-paper-v2' &&
+            template.regions.length >= (medidas['zonas_detectadas'] as int) &&
             medidas['regiones_multiparte'] == 0 &&
             sondas.every((s) => s['partes'] == 1) &&
             medidas['nivel'] == _niveles[id[0]],

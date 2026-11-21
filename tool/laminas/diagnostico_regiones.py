@@ -41,7 +41,7 @@ def _subpaths(path_data):
             i += 1
             if command in 'Zz':
                 if len(points) >= 3:
-                    paths.append(np.rint(points).astype(np.int32))
+                    paths.append(np.asarray(points, dtype=np.float64))
                 points = []
                 continue
         if command in ('M', 'm'):
@@ -71,14 +71,16 @@ def _signed_area(contour):
 
 def _mask(path_data, width, height):
     contours = _subpaths(path_data)
-    mask = np.zeros((height, width), np.uint8)
-    exterior = [c for c in contours if _signed_area(c) > 0]
-    holes = [c for c in contours if _signed_area(c) < 0]
-    if exterior:
-        cv2.fillPoly(mask, exterior, 1)
-    if holes:
-        cv2.fillPoly(mask, holes, 0)
-    return mask
+    winding = np.zeros((height, width), np.int16)
+    for contour in contours:
+        area = _signed_area(contour)
+        if area == 0:
+            continue
+        part = np.zeros((height, width), np.uint8)
+        raster = np.rint(contour * 16).astype(np.int32)
+        cv2.fillPoly(part, [raster], 1, shift=4)
+        winding += part.astype(np.int16) * (1 if area > 0 else -1)
+    return (winding != 0).astype(np.uint8)
 
 
 def _load(art_id):
@@ -182,10 +184,51 @@ def diagnose(art_id, output, touch=None, region_id=None):
     return evidence
 
 
+def audit_visual_components(art_id):
+    """Detecta regiones que la tinta final divide en varias áreas visibles."""
+    validation, template = _load(art_id)
+    _, _, width, height = template['viewBox']
+    ink = np.zeros((height, width), np.uint8)
+    for shape in template.get('inks', []):
+        ink |= _mask(shape['path'], width, height)
+    failures = []
+    for region in template['regions']:
+        mask = _mask(region['path'], width, height)
+        visible = mask & (ink == 0)
+        count, _, stats, centroids = cv2.connectedComponentsWithStats(
+            visible, connectivity=8)
+        components = []
+        for index in range(1, count):
+            area = int(stats[index, cv2.CC_STAT_AREA])
+            components.append({
+                'area': area,
+                'centroid': [round(float(v), 1) for v in centroids[index]],
+                'bounds': [int(stats[index, key]) for key in (
+                    cv2.CC_STAT_LEFT, cv2.CC_STAT_TOP,
+                    cv2.CC_STAT_WIDTH, cv2.CC_STAT_HEIGHT)],
+            })
+        components.sort(key=lambda item: item['area'], reverse=True)
+        if len(components) > 1:
+            failures.append({
+                'region': region['id'],
+                'visible_pixels': int(visible.sum()),
+                'components': components,
+            })
+    return {
+        'art_id': art_id,
+        'template': validation['plantilla'],
+        'revision': template['revision'],
+        'regions': len(template['regions']),
+        'incorrect_masks': len(failures),
+        'failures': failures,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('art_id', nargs='?')
     parser.add_argument('--all', action='store_true')
+    parser.add_argument('--audit-components', action='store_true')
     parser.add_argument('--touch', nargs=2, type=int, metavar=('X', 'Y'))
     parser.add_argument('--region')
     parser.add_argument('--output', type=Path, default=DEFAULT_OUTPUT)
@@ -196,6 +239,11 @@ def main():
            if args.all else [args.art_id.upper()])
     summary = []
     for art_id in ids:
+        if args.audit_components:
+            item = audit_visual_components(art_id)
+            summary.append(item)
+            print(art_id, item['incorrect_masks'], 'máscaras visuales divididas')
+            continue
         validation, _ = _load(art_id)
         touch = tuple(args.touch) if args.touch else tuple(
             validation['sondas'][0]['puntos'][0])
@@ -205,7 +253,10 @@ def main():
               item['visible_pixels_affected'], 'px',
               item['connected_components_affected'], 'componentes')
     if args.all:
-        (args.output / 'resumen.json').write_text(
+        args.output.mkdir(parents=True, exist_ok=True)
+        name = ('auditoria_componentes.json' if args.audit_components
+                else 'resumen.json')
+        (args.output / name).write_text(
             json.dumps(summary, ensure_ascii=False, indent=2) + '\n',
             encoding='utf-8', newline='\n')
 

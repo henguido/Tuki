@@ -1,0 +1,1592 @@
+[
+  {
+    "art_id": "E01",
+    "template": "assets/chapters/bosque-nuboso/pages/rana-en-la-hoja-v5.json",
+    "revision": 5,
+    "regions": 13,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E02",
+    "template": "assets/chapters/bosque-nuboso/pages/e02-mariposa-v4.json",
+    "revision": 4,
+    "regions": 22,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E03",
+    "template": "assets/chapters/bosque-nuboso/pages/e03-colibri-v4.json",
+    "revision": 4,
+    "regions": 19,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E04",
+    "template": "assets/chapters/bosque-nuboso/pages/e04-tucan-v4.json",
+    "revision": 4,
+    "regions": 35,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E05",
+    "template": "assets/chapters/bosque-nuboso/pages/e05-flor-tropical-v4.json",
+    "revision": 4,
+    "regions": 15,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E06",
+    "template": "assets/chapters/bosque-nuboso/pages/e06-quetzal-v4.json",
+    "revision": 4,
+    "regions": 24,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E07",
+    "template": "assets/chapters/bosque-nuboso/pages/e07-perezoso-v4.json",
+    "revision": 4,
+    "regions": 30,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E08",
+    "template": "assets/chapters/bosque-nuboso/pages/e08-mono-v4.json",
+    "revision": 4,
+    "regions": 36,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E09",
+    "template": "assets/chapters/bosque-nuboso/pages/e09-coati-v4.json",
+    "revision": 4,
+    "regions": 46,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E10",
+    "template": "assets/chapters/bosque-nuboso/pages/e10-helechos-v4.json",
+    "revision": 4,
+    "regions": 8,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E11",
+    "template": "assets/chapters/bosque-nuboso/pages/e11-orquideas-v4.json",
+    "revision": 4,
+    "regions": 13,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E12",
+    "template": "assets/chapters/bosque-nuboso/pages/e12-ranas-del-bosque-v4.json",
+    "revision": 4,
+    "regions": 57,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E13",
+    "template": "assets/chapters/bosque-nuboso/pages/e13-arbol-gigante-v4.json",
+    "revision": 4,
+    "regions": 29,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E14",
+    "template": "assets/chapters/bosque-nuboso/pages/e14-cascada-v4.json",
+    "revision": 4,
+    "regions": 15,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "E15",
+    "template": "assets/chapters/bosque-nuboso/pages/e15-sendero-v4.json",
+    "revision": 4,
+    "regions": 20,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M01",
+    "template": "assets/chapters/bosque-nuboso/pages/m01-rana-en-la-hoja-v4.json",
+    "revision": 4,
+    "regions": 106,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M02",
+    "template": "assets/chapters/bosque-nuboso/pages/m02-mariposa-v4.json",
+    "revision": 4,
+    "regions": 48,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M03",
+    "template": "assets/chapters/bosque-nuboso/pages/m03-colibri-v4.json",
+    "revision": 4,
+    "regions": 26,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M04",
+    "template": "assets/chapters/bosque-nuboso/pages/m04-tucan-v4.json",
+    "revision": 4,
+    "regions": 36,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M05",
+    "template": "assets/chapters/bosque-nuboso/pages/m05-flor-tropical-v4.json",
+    "revision": 4,
+    "regions": 19,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M06",
+    "template": "assets/chapters/bosque-nuboso/pages/quetzal-v6.json",
+    "revision": 6,
+    "regions": 120,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M07",
+    "template": "assets/chapters/bosque-nuboso/pages/m07-perezoso-v4.json",
+    "revision": 4,
+    "regions": 62,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M08",
+    "template": "assets/chapters/bosque-nuboso/pages/m08-mono-v5.json",
+    "revision": 5,
+    "regions": 86,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M09",
+    "template": "assets/chapters/bosque-nuboso/pages/m09-coati-v5.json",
+    "revision": 5,
+    "regions": 76,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M10",
+    "template": "assets/chapters/bosque-nuboso/pages/m10-helechos-v5.json",
+    "revision": 5,
+    "regions": 84,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M11",
+    "template": "assets/chapters/bosque-nuboso/pages/m11-orquideas-v5.json",
+    "revision": 5,
+    "regions": 45,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M12",
+    "template": "assets/chapters/bosque-nuboso/pages/m12-ranas-del-bosque-v5.json",
+    "revision": 5,
+    "regions": 56,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M13",
+    "template": "assets/chapters/bosque-nuboso/pages/m13-arbol-gigante-v5.json",
+    "revision": 5,
+    "regions": 56,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M14",
+    "template": "assets/chapters/bosque-nuboso/pages/m14-cascada-v5.json",
+    "revision": 5,
+    "regions": 58,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "M15",
+    "template": "assets/chapters/bosque-nuboso/pages/m15-sendero-v5.json",
+    "revision": 5,
+    "regions": 70,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D01",
+    "template": "assets/chapters/bosque-nuboso/pages/d01-rana-en-la-hoja-v4.json",
+    "revision": 4,
+    "regions": 145,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D02",
+    "template": "assets/chapters/bosque-nuboso/pages/d02-mariposa-v5.json",
+    "revision": 5,
+    "regions": 217,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D03",
+    "template": "assets/chapters/bosque-nuboso/pages/d03-colibri-v4.json",
+    "revision": 4,
+    "regions": 121,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D04",
+    "template": "assets/chapters/bosque-nuboso/pages/d04-tucan-v3.json",
+    "revision": 3,
+    "regions": 138,
+    "incorrect_masks": 2,
+    "failures": [
+      {
+        "region": "r012",
+        "visible_pixels": 32779,
+        "components": [
+          {
+            "area": 30465,
+            "centroid": [
+              787.8,
+              1317.7
+            ],
+            "bounds": [
+              654,
+              1188,
+              409,
+              274
+            ]
+          },
+          {
+            "area": 2314,
+            "centroid": [
+              614.6,
+              1435.6
+            ],
+            "bounds": [
+              591,
+              1387,
+              59,
+              75
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r050",
+        "visible_pixels": 10741,
+        "components": [
+          {
+            "area": 9071,
+            "centroid": [
+              1511.3,
+              1353.2
+            ],
+            "bounds": [
+              1452,
+              1228,
+              129,
+              234
+            ]
+          },
+          {
+            "area": 1670,
+            "centroid": [
+              1443.3,
+              1222.2
+            ],
+            "bounds": [
+              1427,
+              1177,
+              35,
+              90
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "D05",
+    "template": "assets/chapters/bosque-nuboso/pages/d05-flor-tropical-v4.json",
+    "revision": 4,
+    "regions": 106,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D06",
+    "template": "assets/chapters/bosque-nuboso/pages/d06-quetzal-v4.json",
+    "revision": 4,
+    "regions": 137,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D07",
+    "template": "assets/chapters/bosque-nuboso/pages/d07-perezoso-v4.json",
+    "revision": 4,
+    "regions": 111,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D08",
+    "template": "assets/chapters/bosque-nuboso/pages/d08-mono-v4.json",
+    "revision": 4,
+    "regions": 101,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D09",
+    "template": "assets/chapters/bosque-nuboso/pages/d09-coati-v4.json",
+    "revision": 4,
+    "regions": 166,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D10",
+    "template": "assets/chapters/bosque-nuboso/pages/d10-helechos-v4.json",
+    "revision": 4,
+    "regions": 157,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D11",
+    "template": "assets/chapters/bosque-nuboso/pages/d11-orquideas-v4.json",
+    "revision": 4,
+    "regions": 164,
+    "incorrect_masks": 1,
+    "failures": [
+      {
+        "region": "r023",
+        "visible_pixels": 16624,
+        "components": [
+          {
+            "area": 16196,
+            "centroid": [
+              483.8,
+              1567.6
+            ],
+            "bounds": [
+              297,
+              1512,
+              338,
+              88
+            ]
+          },
+          {
+            "area": 428,
+            "centroid": [
+              250.6,
+              1595.5
+            ],
+            "bounds": [
+              216,
+              1586,
+              68,
+              14
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "D12",
+    "template": "assets/chapters/bosque-nuboso/pages/d12-ranas-del-bosque-v4.json",
+    "revision": 4,
+    "regions": 121,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D13",
+    "template": "assets/chapters/bosque-nuboso/pages/d13-arbol-gigante-v3.json",
+    "revision": 3,
+    "regions": 195,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D14",
+    "template": "assets/chapters/bosque-nuboso/pages/d14-cascada-v3.json",
+    "revision": 3,
+    "regions": 188,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "D15",
+    "template": "assets/chapters/bosque-nuboso/pages/sendero-v5.json",
+    "revision": 5,
+    "regions": 85,
+    "incorrect_masks": 1,
+    "failures": [
+      {
+        "region": "r041",
+        "visible_pixels": 7173,
+        "components": [
+          {
+            "area": 4761,
+            "centroid": [
+              1449.7,
+              935.1
+            ],
+            "bounds": [
+              1417,
+              794,
+              45,
+              243
+            ]
+          },
+          {
+            "area": 2412,
+            "centroid": [
+              1443.9,
+              749.7
+            ],
+            "bounds": [
+              1421,
+              716,
+              41,
+              76
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A01",
+    "template": "assets/chapters/bosque-nuboso/pages/a01-rana-en-la-hoja-v3.json",
+    "revision": 3,
+    "regions": 194,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "A02",
+    "template": "assets/chapters/bosque-nuboso/pages/a02-mariposa-v4.json",
+    "revision": 4,
+    "regions": 329,
+    "incorrect_masks": 1,
+    "failures": [
+      {
+        "region": "r001",
+        "visible_pixels": 390103,
+        "components": [
+          {
+            "area": 388067,
+            "centroid": [
+              767.6,
+              545.4
+            ],
+            "bounds": [
+              139,
+              61,
+              1141,
+              1100
+            ]
+          },
+          {
+            "area": 2036,
+            "centroid": [
+              740.7,
+              45.2
+            ],
+            "bounds": [
+              689,
+              25,
+              94,
+              42
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A03",
+    "template": "assets/chapters/bosque-nuboso/pages/a03-colibri-v3.json",
+    "revision": 3,
+    "regions": 455,
+    "incorrect_masks": 2,
+    "failures": [
+      {
+        "region": "r001",
+        "visible_pixels": 177613,
+        "components": [
+          {
+            "area": 177603,
+            "centroid": [
+              962.7,
+              539.5
+            ],
+            "bounds": [
+              321,
+              51,
+              959,
+              948
+            ]
+          },
+          {
+            "area": 10,
+            "centroid": [
+              521.8,
+              496.6
+            ],
+            "bounds": [
+              521,
+              495,
+              3,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r002",
+        "visible_pixels": 140725,
+        "components": [
+          {
+            "area": 140699,
+            "centroid": [
+              696.0,
+              1037.2
+            ],
+            "bounds": [
+              247,
+              708,
+              964,
+              610
+            ]
+          },
+          {
+            "area": 26,
+            "centroid": [
+              520.3,
+              773.2
+            ],
+            "bounds": [
+              518,
+              770,
+              7,
+              9
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A04",
+    "template": "assets/chapters/bosque-nuboso/pages/a04-tucan-v3.json",
+    "revision": 3,
+    "regions": 510,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "A05",
+    "template": "assets/chapters/bosque-nuboso/pages/a05-flor-tropical-v3.json",
+    "revision": 3,
+    "regions": 315,
+    "incorrect_masks": 0,
+    "failures": []
+  },
+  {
+    "art_id": "A06",
+    "template": "assets/chapters/bosque-nuboso/pages/a06-quetzal-v3.json",
+    "revision": 3,
+    "regions": 362,
+    "incorrect_masks": 1,
+    "failures": [
+      {
+        "region": "r017",
+        "visible_pixels": 13140,
+        "components": [
+          {
+            "area": 10666,
+            "centroid": [
+              1147.9,
+              441.1
+            ],
+            "bounds": [
+              1018,
+              397,
+              262,
+              90
+            ]
+          },
+          {
+            "area": 2474,
+            "centroid": [
+              1168.5,
+              504.3
+            ],
+            "bounds": [
+              1124,
+              452,
+              105,
+              112
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A07",
+    "template": "assets/chapters/bosque-nuboso/pages/a07-perezoso-v4.json",
+    "revision": 4,
+    "regions": 431,
+    "incorrect_masks": 3,
+    "failures": [
+      {
+        "region": "r008",
+        "visible_pixels": 21665,
+        "components": [
+          {
+            "area": 21438,
+            "centroid": [
+              1062.8,
+              171.9
+            ],
+            "bounds": [
+              856,
+              100,
+              424,
+              145
+            ]
+          },
+          {
+            "area": 227,
+            "centroid": [
+              1047.2,
+              198.7
+            ],
+            "bounds": [
+              1039,
+              189,
+              15,
+              23
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r020",
+        "visible_pixels": 11479,
+        "components": [
+          {
+            "area": 11462,
+            "centroid": [
+              1169.3,
+              1260.7
+            ],
+            "bounds": [
+              1058,
+              1214,
+              222,
+              120
+            ]
+          },
+          {
+            "area": 17,
+            "centroid": [
+              1253.2,
+              1232.7
+            ],
+            "bounds": [
+              1251,
+              1231,
+              6,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r092",
+        "visible_pixels": 3328,
+        "components": [
+          {
+            "area": 1851,
+            "centroid": [
+              91.9,
+              1029.8
+            ],
+            "bounds": [
+              67,
+              994,
+              48,
+              79
+            ]
+          },
+          {
+            "area": 1477,
+            "centroid": [
+              45.8,
+              1002.5
+            ],
+            "bounds": [
+              0,
+              983,
+              73,
+              54
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A08",
+    "template": "assets/chapters/bosque-nuboso/pages/a08-mono-v4.json",
+    "revision": 4,
+    "regions": 735,
+    "incorrect_masks": 3,
+    "failures": [
+      {
+        "region": "r093",
+        "visible_pixels": 3699,
+        "components": [
+          {
+            "area": 2282,
+            "centroid": [
+              87.8,
+              1557.9
+            ],
+            "bounds": [
+              62,
+              1518,
+              49,
+              82
+            ]
+          },
+          {
+            "area": 1417,
+            "centroid": [
+              58.9,
+              1577.6
+            ],
+            "bounds": [
+              38,
+              1542,
+              38,
+              58
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r133",
+        "visible_pixels": 2516,
+        "components": [
+          {
+            "area": 1727,
+            "centroid": [
+              1245.0,
+              113.9
+            ],
+            "bounds": [
+              1205,
+              92,
+              75,
+              42
+            ]
+          },
+          {
+            "area": 789,
+            "centroid": [
+              1255.3,
+              92.9
+            ],
+            "bounds": [
+              1214,
+              82,
+              66,
+              33
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r177",
+        "visible_pixels": 1731,
+        "components": [
+          {
+            "area": 1649,
+            "centroid": [
+              16.8,
+              493.5
+            ],
+            "bounds": [
+              0,
+              440,
+              51,
+              121
+            ]
+          },
+          {
+            "area": 60,
+            "centroid": [
+              42.2,
+              467.9
+            ],
+            "bounds": [
+              39,
+              461,
+              7,
+              14
+            ]
+          },
+          {
+            "area": 22,
+            "centroid": [
+              43.9,
+              455.2
+            ],
+            "bounds": [
+              42,
+              451,
+              5,
+              9
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A09",
+    "template": "assets/chapters/bosque-nuboso/pages/a09-coati-v3.json",
+    "revision": 3,
+    "regions": 915,
+    "incorrect_masks": 1,
+    "failures": [
+      {
+        "region": "r035",
+        "visible_pixels": 7861,
+        "components": [
+          {
+            "area": 7551,
+            "centroid": [
+              454.0,
+              1535.4
+            ],
+            "bounds": [
+              364,
+              1481,
+              189,
+              119
+            ]
+          },
+          {
+            "area": 310,
+            "centroid": [
+              352.6,
+              1488.7
+            ],
+            "bounds": [
+              336,
+              1482,
+              31,
+              19
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A10",
+    "template": "assets/chapters/bosque-nuboso/pages/a10-helechos-v3.json",
+    "revision": 3,
+    "regions": 816,
+    "incorrect_masks": 6,
+    "failures": [
+      {
+        "region": "r016",
+        "visible_pixels": 13229,
+        "components": [
+          {
+            "area": 12993,
+            "centroid": [
+              992.6,
+              1486.6
+            ],
+            "bounds": [
+              925,
+              1413,
+              175,
+              187
+            ]
+          },
+          {
+            "area": 236,
+            "centroid": [
+              951.4,
+              1591.1
+            ],
+            "bounds": [
+              936,
+              1578,
+              31,
+              22
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r018",
+        "visible_pixels": 12227,
+        "components": [
+          {
+            "area": 11995,
+            "centroid": [
+              729.8,
+              1507.6
+            ],
+            "bounds": [
+              594,
+              1432,
+              305,
+              168
+            ]
+          },
+          {
+            "area": 232,
+            "centroid": [
+              894.9,
+              1477.5
+            ],
+            "bounds": [
+              883,
+              1467,
+              25,
+              23
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r020",
+        "visible_pixels": 11299,
+        "components": [
+          {
+            "area": 11282,
+            "centroid": [
+              574.5,
+              87.3
+            ],
+            "bounds": [
+              404,
+              0,
+              371,
+              196
+            ]
+          },
+          {
+            "area": 17,
+            "centroid": [
+              683.5,
+              0.8
+            ],
+            "bounds": [
+              680,
+              0,
+              8,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r032",
+        "visible_pixels": 9321,
+        "components": [
+          {
+            "area": 9299,
+            "centroid": [
+              941.0,
+              228.4
+            ],
+            "bounds": [
+              831,
+              178,
+              220,
+              107
+            ]
+          },
+          {
+            "area": 22,
+            "centroid": [
+              945.6,
+              221.5
+            ],
+            "bounds": [
+              943,
+              219,
+              6,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r383",
+        "visible_pixels": 561,
+        "components": [
+          {
+            "area": 539,
+            "centroid": [
+              10.1,
+              412.7
+            ],
+            "bounds": [
+              0,
+              396,
+              28,
+              39
+            ]
+          },
+          {
+            "area": 22,
+            "centroid": [
+              25.9,
+              397.8
+            ],
+            "bounds": [
+              23,
+              395,
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r612",
+        "visible_pixels": 128,
+        "components": [
+          {
+            "area": 121,
+            "centroid": [
+              1275.6,
+              950.0
+            ],
+            "bounds": [
+              1268,
+              943,
+              12,
+              21
+            ]
+          },
+          {
+            "area": 7,
+            "centroid": [
+              1278.7,
+              967.9
+            ],
+            "bounds": [
+              1278,
+              966,
+              2,
+              5
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A11",
+    "template": "assets/chapters/bosque-nuboso/pages/a11-orquideas-v3.json",
+    "revision": 3,
+    "regions": 648,
+    "incorrect_masks": 5,
+    "failures": [
+      {
+        "region": "r005",
+        "visible_pixels": 34096,
+        "components": [
+          {
+            "area": 34022,
+            "centroid": [
+              434.5,
+              1435.7
+            ],
+            "bounds": [
+              222,
+              1337,
+              352,
+              262
+            ]
+          },
+          {
+            "area": 74,
+            "centroid": [
+              456.1,
+              1482.4
+            ],
+            "bounds": [
+              452,
+              1477,
+              9,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r025",
+        "visible_pixels": 11905,
+        "components": [
+          {
+            "area": 11362,
+            "centroid": [
+              1187.9,
+              893.6
+            ],
+            "bounds": [
+              999,
+              834,
+              281,
+              155
+            ]
+          },
+          {
+            "area": 543,
+            "centroid": [
+              1267.7,
+              987.4
+            ],
+            "bounds": [
+              1255,
+              966,
+              25,
+              42
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r049",
+        "visible_pixels": 7240,
+        "components": [
+          {
+            "area": 7148,
+            "centroid": [
+              540.2,
+              1307.1
+            ],
+            "bounds": [
+              402,
+              1275,
+              261,
+              101
+            ]
+          },
+          {
+            "area": 92,
+            "centroid": [
+              536.9,
+              1289.8
+            ],
+            "bounds": [
+              532,
+              1284,
+              11,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r111",
+        "visible_pixels": 2854,
+        "components": [
+          {
+            "area": 1744,
+            "centroid": [
+              1233.3,
+              1202.7
+            ],
+            "bounds": [
+              1169,
+              1187,
+              111,
+              40
+            ]
+          },
+          {
+            "area": 1110,
+            "centroid": [
+              1256.0,
+              1180.0
+            ],
+            "bounds": [
+              1225,
+              1164,
+              55,
+              35
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r584",
+        "visible_pixels": 42,
+        "components": [
+          {
+            "area": 39,
+            "centroid": [
+              871.0,
+              1598.1
+            ],
+            "bounds": [
+              863,
+              1596,
+              16,
+              4
+            ]
+          },
+          {
+            "area": 3,
+            "centroid": [
+              859.0,
+              1599.0
+            ],
+            "bounds": [
+              858,
+              1599,
+              3,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A12",
+    "template": "assets/chapters/bosque-nuboso/pages/a12-ranas-del-bosque-v3.json",
+    "revision": 3,
+    "regions": 474,
+    "incorrect_masks": 2,
+    "failures": [
+      {
+        "region": "r068",
+        "visible_pixels": 5129,
+        "components": [
+          {
+            "area": 5124,
+            "centroid": [
+              226.3,
+              1527.7
+            ],
+            "bounds": [
+              102,
+              1489,
+              241,
+              111
+            ]
+          },
+          {
+            "area": 5,
+            "centroid": [
+              89.2,
+              1598.8
+            ],
+            "bounds": [
+              88,
+              1598,
+              4,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r264",
+        "visible_pixels": 1088,
+        "components": [
+          {
+            "area": 700,
+            "centroid": [
+              1262.9,
+              127.1
+            ],
+            "bounds": [
+              1244,
+              111,
+              36,
+              34
+            ]
+          },
+          {
+            "area": 388,
+            "centroid": [
+              1267.1,
+              107.2
+            ],
+            "bounds": [
+              1250,
+              99,
+              30,
+              25
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A13",
+    "template": "assets/chapters/bosque-nuboso/pages/a13-arbol-gigante-v3.json",
+    "revision": 3,
+    "regions": 1155,
+    "incorrect_masks": 2,
+    "failures": [
+      {
+        "region": "r002",
+        "visible_pixels": 26916,
+        "components": [
+          {
+            "area": 25585,
+            "centroid": [
+              726.5,
+              1471.2
+            ],
+            "bounds": [
+              514,
+              1320,
+              484,
+              280
+            ]
+          },
+          {
+            "area": 1228,
+            "centroid": [
+              972.6,
+              1299.7
+            ],
+            "bounds": [
+              917,
+              1284,
+              109,
+              38
+            ]
+          },
+          {
+            "area": 92,
+            "centroid": [
+              566.3,
+              1542.5
+            ],
+            "bounds": [
+              561,
+              1538,
+              12,
+              10
+            ]
+          },
+          {
+            "area": 11,
+            "centroid": [
+              900.3,
+              1344.5
+            ],
+            "bounds": [
+              898,
+              1344,
+              6,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r054",
+        "visible_pixels": 4828,
+        "components": [
+          {
+            "area": 4812,
+            "centroid": [
+              1187.2,
+              857.0
+            ],
+            "bounds": [
+              1071,
+              794,
+              206,
+              133
+            ]
+          },
+          {
+            "area": 16,
+            "centroid": [
+              1099.2,
+              863.6
+            ],
+            "bounds": [
+              1098,
+              861,
+              3,
+              7
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A14",
+    "template": "assets/chapters/bosque-nuboso/pages/a14-cascada-v4.json",
+    "revision": 4,
+    "regions": 343,
+    "incorrect_masks": 1,
+    "failures": [
+      {
+        "region": "r061",
+        "visible_pixels": 5233,
+        "components": [
+          {
+            "area": 5043,
+            "centroid": [
+              1230.0,
+              1046.2
+            ],
+            "bounds": [
+              1160,
+              993,
+              120,
+              112
+            ]
+          },
+          {
+            "area": 190,
+            "centroid": [
+              1275.0,
+              1025.4
+            ],
+            "bounds": [
+              1266,
+              1016,
+              14,
+              30
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "art_id": "A15",
+    "template": "assets/chapters/bosque-nuboso/pages/a15-sendero-v3.json",
+    "revision": 3,
+    "regions": 669,
+    "incorrect_masks": 2,
+    "failures": [
+      {
+        "region": "r066",
+        "visible_pixels": 4583,
+        "components": [
+          {
+            "area": 3048,
+            "centroid": [
+              1064.8,
+              1556.7
+            ],
+            "bounds": [
+              1019,
+              1528,
+              115,
+              72
+            ]
+          },
+          {
+            "area": 1535,
+            "centroid": [
+              1079.3,
+              1578.0
+            ],
+            "bounds": [
+              1044,
+              1554,
+              76,
+              46
+            ]
+          }
+        ]
+      },
+      {
+        "region": "r115",
+        "visible_pixels": 2808,
+        "components": [
+          {
+            "area": 1800,
+            "centroid": [
+              1247.5,
+              1533.3
+            ],
+            "bounds": [
+              1203,
+              1507,
+              77,
+              71
+            ]
+          },
+          {
+            "area": 1008,
+            "centroid": [
+              1261.9,
+              1578.2
+            ],
+            "bounds": [
+              1239,
+              1546,
+              41,
+              54
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
