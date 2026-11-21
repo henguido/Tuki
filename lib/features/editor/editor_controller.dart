@@ -103,6 +103,15 @@ class EditorController extends ChangeNotifier {
     return true;
   }
 
+  /// Reinicia únicamente la obra abierta. Se conserva como una acción normal
+  /// para que pueda deshacerse y rehacerse durante esta sesión.
+  bool resetDrawing() {
+    cancelStroke();
+    if (_document.isEmpty) return false;
+    _commit(DrawingDocument.empty);
+    return true;
+  }
+
   void startStroke(Offset scenePoint) {
     if (_tool == EditorTool.fill) return;
     if (!template.viewBox.contains(scenePoint)) return;

@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../app/dependencies.dart';
 import '../../app/theme.dart';
@@ -57,6 +60,8 @@ class _EditorScreenState extends State<EditorScreen> {
   // Conserva zoom y gesto al pasar de vertical a horizontal.
   final GlobalKey<DrawingCanvasState> _canvasKey = GlobalKey();
   bool _navigating = false;
+  bool _fullscreen = false;
+  bool _toolsVisible = true;
 
   @override
   void didChangeDependencies() {
@@ -108,6 +113,9 @@ class _EditorScreenState extends State<EditorScreen> {
 
   @override
   void dispose() {
+    if (_fullscreen) {
+      unawaited(SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge));
+    }
     _controller?.dispose();
     _saver?.dispose();
     super.dispose();
@@ -161,6 +169,43 @@ class _EditorScreenState extends State<EditorScreen> {
   }
 
   Future<void> _back() => _guarded((nav) async => nav.pop());
+
+  Future<void> _setFullscreen(bool value) async {
+    if (_fullscreen == value) return;
+    setState(() {
+      _fullscreen = value;
+      if (value) _toolsVisible = true;
+    });
+    await SystemChrome.setEnabledSystemUIMode(
+      value ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
+    );
+  }
+
+  Future<void> _confirmReset() async {
+    final controller = _controller;
+    if (controller == null || controller.document.isEmpty) return;
+    final l = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l.resetDrawingTitle),
+        content: Text(l.resetDrawingBody),
+        actions: [
+          TextButton(
+            key: const ValueKey('reset-cancel'),
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l.cancel),
+          ),
+          FilledButton(
+            key: const ValueKey('reset-confirm'),
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l.reset),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) controller.resetDrawing();
+  }
 
   /// Siguiente lámina: guarda y avanza conservando el origen para Volver.
   /// En la última, vuelve a Láminas.
@@ -275,6 +320,124 @@ class _EditorScreenState extends State<EditorScreen> {
             label: l.funFactButton,
             onPressed: () => showFunFact(context, _page),
           );
+    final resetButton = ListenableBuilder(
+      listenable: controller,
+      builder: (context, _) => TukiRoundButton(
+        key: const ValueKey('editor-reset-drawing'),
+        icon: Icons.restart_alt_rounded,
+        label: l.resetDrawing,
+        onPressed: controller.document.isEmpty ? null : _confirmReset,
+      ),
+    );
+    final fullscreenButton = TukiRoundButton(
+      key: const ValueKey('editor-fullscreen'),
+      icon: Icons.fullscreen_rounded,
+      label: l.fullscreen,
+      onPressed: () => _setFullscreen(true),
+    );
+
+    if (_fullscreen) {
+      return PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, _) {
+          if (!didPop) _setFullscreen(false);
+        },
+        child: Scaffold(
+          body: SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final wide = constraints.maxWidth > constraints.maxHeight;
+                return Stack(
+                  children: [
+                    Positioned.fill(child: canvas),
+                    Positioned(
+                      left: 8,
+                      top: 8,
+                      right: 8,
+                      child: Row(
+                        children: [
+                          TukiRoundButton(
+                            key: const ValueKey('editor-exit-fullscreen'),
+                            icon: Icons.fullscreen_exit_rounded,
+                            label: l.exitFullscreen,
+                            onPressed: () => _setFullscreen(false),
+                          ),
+                          const SizedBox(width: 8),
+                          undoButton,
+                          const SizedBox(width: 8),
+                          redoButton,
+                          const Spacer(),
+                          TukiRoundButton(
+                            key: const ValueKey('editor-toggle-tools'),
+                            icon: _toolsVisible
+                                ? Icons.visibility_off_rounded
+                                : Icons.palette_rounded,
+                            label: _toolsVisible ? l.hideTools : l.showTools,
+                            onPressed: () =>
+                                setState(() => _toolsVisible = !_toolsVisible),
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (_toolsVisible)
+                      Align(
+                        alignment: wide
+                            ? Alignment.centerRight
+                            : Alignment.bottomCenter,
+                        child: Container(
+                          key: const ValueKey('fullscreen-tool-panel'),
+                          width: wide
+                              ? (constraints.maxWidth * 0.3).clamp(250, 340)
+                              : null,
+                          constraints: BoxConstraints(
+                            maxHeight: wide
+                                ? constraints.maxHeight - 80
+                                : constraints.maxHeight * 0.38,
+                          ),
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: TukiColors.surface.withValues(alpha: 0.96),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: TukiColors.divider),
+                          ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                EditorToolPanel(
+                                  controller: controller,
+                                  vertical: wide,
+                                  starterPalette: _page.level.starterPalette,
+                                ),
+                                const SizedBox(height: 8),
+                                OutlinedButton.icon(
+                                  key: const ValueKey(
+                                    'fullscreen-reset-drawing',
+                                  ),
+                                  onPressed: controller.document.isEmpty
+                                      ? null
+                                      : _confirmReset,
+                                  icon: const Icon(Icons.restart_alt_rounded),
+                                  label: Text(l.resetDrawing),
+                                  style: OutlinedButton.styleFrom(
+                                    minimumSize: const Size(48, 48),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                );
+              },
+            ),
+          ),
+        ),
+      );
+    }
 
     return PopScope(
       canPop: false,
@@ -319,6 +482,10 @@ class _EditorScreenState extends State<EditorScreen> {
                                     funFact,
                                     const SizedBox(width: 8),
                                   ],
+                                  resetButton,
+                                  const SizedBox(width: 8),
+                                  fullscreenButton,
+                                  const SizedBox(width: 8),
                                   undoButton,
                                   const SizedBox(width: 8),
                                   redoButton,
@@ -398,7 +565,24 @@ class _EditorScreenState extends State<EditorScreen> {
                         ],
                       ),
                       const SizedBox(height: 8),
-                      Expanded(child: canvas),
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            Positioned.fill(child: canvas),
+                            Positioned(
+                              top: 8,
+                              right: 8,
+                              child: Row(
+                                children: [
+                                  resetButton,
+                                  const SizedBox(width: 8),
+                                  fullscreenButton,
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       const SizedBox(height: 8),
                       // Con texto muy ampliado los controles se desplazan;
                       // el lienzo conserva al menos la mitad del alto.

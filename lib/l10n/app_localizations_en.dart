@@ -86,6 +86,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get redo => 'Redo';
 
   @override
+  String get resetDrawing => 'Reset drawing';
+
+  @override
+  String get resetDrawingTitle => 'Reset this drawing?';
+
+  @override
+  String get resetDrawingBody =>
+      'Colors and strokes on this page will be cleared. You can undo this while the editor stays open.';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get fullscreen => 'Full screen';
+
+  @override
+  String get exitFullscreen => 'Exit full screen';
+
+  @override
+  String get showTools => 'Show tools';
+
+  @override
+  String get hideTools => 'Hide tools';
+
+  @override
   String get tools => 'Tools';
 
   @override

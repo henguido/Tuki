@@ -69,6 +69,34 @@ void main() {
       expect(frog.regionAt(const Offset(-1, 500)), isNull);
       expect(frog.regionAt(const Offset(500, 1000.5)), isNull);
     });
+
+    test('una línea de tinta nunca selecciona la región oculta debajo', () {
+      final divided = PageTemplate.fromJson({
+        'schemaVersion': 1,
+        'revision': 2,
+        'regionModel': 'visible-paper-v2',
+        'viewBox': [0, 0, 100, 100],
+        'regions': [
+          {'id': 'izquierda', 'path': 'M0 0L51 0L51 100L0 100Z'},
+          {'id': 'derecha', 'path': 'M49 0L100 0L100 100L49 100Z'},
+        ],
+        'outlines': [],
+        'inks': [
+          {'path': 'M49 0L51 0L51 100L49 100Z'},
+        ],
+      });
+      final controller = EditorController(
+        template: divided,
+        touchTolerance: 0.1,
+      )..color = red;
+
+      expect(divided.regionAt(const Offset(50, 50)), isNull);
+      expect(divided.regionNear(const Offset(50, 50), 10), isNull);
+      expect(controller.fillAt(const Offset(50, 50)), isFalse);
+      expect(controller.document.fills, isEmpty);
+      expect(controller.fillAt(const Offset(25, 50)), isTrue);
+      expect(controller.document.fills, {'izquierda': red});
+    });
   });
 
   group('relleno (A02)', () {
@@ -267,6 +295,24 @@ void main() {
       expect(reopened.document.fills, {'hoja': red});
       expect(reopened.canUndo, false);
       expect(reopened.canRedo, false);
+    });
+
+    test('reiniciar vacía solo la obra y se puede deshacer y rehacer', () {
+      c.fillAt(pointIn(frog, 'hoja'));
+      c.tool = EditorTool.brush;
+      c.startStroke(const Offset(100, 100));
+      c.extendStroke(const Offset(140, 120));
+      c.endStroke();
+      final beforeReset = c.document;
+
+      expect(c.resetDrawing(), true);
+      expect(c.document, DrawingDocument.empty);
+      expect(commits.last, DrawingDocument.empty);
+      expect(c.undo(), true);
+      expect(c.document, beforeReset);
+      expect(c.redo(), true);
+      expect(c.document, DrawingDocument.empty);
+      expect(c.resetDrawing(), false, reason: 'vacío no crea otra acción');
     });
   });
 

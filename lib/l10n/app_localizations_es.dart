@@ -86,6 +86,31 @@ class AppLocalizationsEs extends AppLocalizations {
   String get redo => 'Rehacer';
 
   @override
+  String get resetDrawing => 'Reiniciar dibujo';
+
+  @override
+  String get resetDrawingTitle => '¿Reiniciar este dibujo?';
+
+  @override
+  String get resetDrawingBody =>
+      'Se borrarán los colores y trazos de esta lámina. Podrás deshacerlo mientras mantengas el editor abierto.';
+
+  @override
+  String get reset => 'Reiniciar';
+
+  @override
+  String get fullscreen => 'Pantalla completa';
+
+  @override
+  String get exitFullscreen => 'Salir de pantalla completa';
+
+  @override
+  String get showTools => 'Mostrar herramientas';
+
+  @override
+  String get hideTools => 'Ocultar herramientas';
+
+  @override
   String get tools => 'Herramientas';
 
   @override

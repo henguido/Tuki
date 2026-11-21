@@ -236,6 +236,54 @@ abstract class AppLocalizations {
   /// **'Rehacer'**
   String get redo;
 
+  /// No description provided for @resetDrawing.
+  ///
+  /// In es, this message translates to:
+  /// **'Reiniciar dibujo'**
+  String get resetDrawing;
+
+  /// No description provided for @resetDrawingTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Reiniciar este dibujo?'**
+  String get resetDrawingTitle;
+
+  /// No description provided for @resetDrawingBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Se borrarán los colores y trazos de esta lámina. Podrás deshacerlo mientras mantengas el editor abierto.'**
+  String get resetDrawingBody;
+
+  /// No description provided for @reset.
+  ///
+  /// In es, this message translates to:
+  /// **'Reiniciar'**
+  String get reset;
+
+  /// No description provided for @fullscreen.
+  ///
+  /// In es, this message translates to:
+  /// **'Pantalla completa'**
+  String get fullscreen;
+
+  /// No description provided for @exitFullscreen.
+  ///
+  /// In es, this message translates to:
+  /// **'Salir de pantalla completa'**
+  String get exitFullscreen;
+
+  /// No description provided for @showTools.
+  ///
+  /// In es, this message translates to:
+  /// **'Mostrar herramientas'**
+  String get showTools;
+
+  /// No description provided for @hideTools.
+  ///
+  /// In es, this message translates to:
+  /// **'Ocultar herramientas'**
+  String get hideTools;
+
   /// No description provided for @tools.
   ///
   /// In es, this message translates to:

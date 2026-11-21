@@ -860,6 +860,83 @@ void main() {
     });
   });
 
+  testWidgets('reiniciar confirma, persiste y participa en Deshacer/Rehacer', (
+    tester,
+  ) async {
+    final h = await TestHarness.create();
+    await pumpApp(tester, h);
+    await openFrogFromHome(tester);
+    await tapScene(tester, pointIn(frog, 'cuerpo'));
+    expect(row(h, 'rana-en-la-hoja')!.document.isEmpty, false);
+
+    await tester.tap(find.byKey(const ValueKey('editor-reset-drawing')));
+    await tester.pumpAndSettle();
+    expect(find.text('¿Reiniciar este dibujo?'), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('reset-cancel')));
+    await tester.pumpAndSettle();
+    expect(row(h, 'rana-en-la-hoja')!.document.fills, {'cuerpo': leafGreen});
+
+    await tester.tap(find.byKey(const ValueKey('editor-reset-drawing')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('reset-confirm')));
+    await tester.pumpAndSettle();
+    expect(row(h, 'rana-en-la-hoja')!.document, DrawingDocument.empty);
+
+    await tester.tap(find.byKey(const ValueKey('editor-undo')));
+    await tester.pumpAndSettle();
+    expect(row(h, 'rana-en-la-hoja')!.document.fills, {'cuerpo': leafGreen});
+    await tester.tap(find.byKey(const ValueKey('editor-redo')));
+    await tester.pumpAndSettle();
+    expect(row(h, 'rana-en-la-hoja')!.document, DrawingDocument.empty);
+
+    await tester.tap(find.byKey(const ValueKey('editor-back')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('page-rana-en-la-hoja')));
+    await tester.pumpAndSettle();
+    expect(row(h, 'rana-en-la-hoja')!.document, DrawingDocument.empty);
+    expect(
+      tester.getSemantics(find.byKey(const ValueKey('editor-reset-drawing'))),
+      isSemantics(isButton: true, isEnabled: false, hasEnabledState: true),
+    );
+  });
+
+  testWidgets('pantalla completa conserva obra y ofrece panel ocultable', (
+    tester,
+  ) async {
+    final h = await TestHarness.create();
+    await pumpApp(tester, h);
+    await openFrogFromHome(tester);
+    await tapScene(tester, pointIn(frog, 'cuerpo'));
+    final normalCanvas = tester.getSize(
+      find.byKey(const ValueKey('drawing-canvas')),
+    );
+
+    await tester.tap(find.byKey(const ValueKey('editor-fullscreen')));
+    await tester.pumpAndSettle();
+    expect(
+      find.byKey(const ValueKey('editor-exit-fullscreen')),
+      findsOneWidget,
+    );
+    expect(find.byKey(const ValueKey('fullscreen-tool-panel')), findsOneWidget);
+    expect(
+      tester.getSize(find.byKey(const ValueKey('drawing-canvas'))).height,
+      greaterThan(normalCanvas.height),
+    );
+    expect(row(h, 'rana-en-la-hoja')!.document.fills, {'cuerpo': leafGreen});
+
+    await tester.tap(find.byKey(const ValueKey('editor-toggle-tools')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('fullscreen-tool-panel')), findsNothing);
+    await tester.tap(find.byKey(const ValueKey('editor-toggle-tools')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('fullscreen-tool-panel')), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('editor-exit-fullscreen')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('editor-fullscreen')), findsOneWidget);
+    expect(row(h, 'rana-en-la-hoja')!.document.fills, {'cuerpo': leafGreen});
+  });
+
   testWidgets('A09: exportar desde el área de adultos y cancelar después', (
     tester,
   ) async {
