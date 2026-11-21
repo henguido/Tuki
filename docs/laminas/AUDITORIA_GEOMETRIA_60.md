@@ -1,5 +1,12 @@
 # Auditoría de geometría y fugas de color — 60 láminas
 
+> **Auditoría histórica, sustituida parcialmente:** esta ejecución comprobó
+> que hit testing y render coincidían para cada `region.id`, pero no verificó
+> que sus componentes fueran zonas coloreables independientes. Esa limitación
+> permitió el defecto multiparte. La corrección vigente y su prueba visual
+> están en
+> [INFORME_MOTOR_COLOREADO_CONECTADO.md](INFORME_MOTOR_COLOREADO_CONECTADO.md).
+
 Fecha: 2026-11-15  
 Rama: `codex/tuki-geometry-leak-audit`
 

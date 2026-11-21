@@ -1828,14 +1828,34 @@
     ]
   },
   "D02": {
+    "revision": 3,
     "reflejos": [
       [
-        801,
-        589
+        680,
+        587
       ],
       [
-        670,
-        623
+        575,
+        615
+      ]
+    ],
+    "trazos": [
+      "lámina regenerada con paneles y motivos en las alas, orquídeas, helechos, árboles, hojas con nervaduras y gotas",
+      "bifurcación superior derecha cerrada y nube prolongada detrás de la mariposa"
+    ],
+    "grupos": [
+      [
+        [
+          [
+            519,
+            471
+          ],
+          [
+            681,
+            471
+          ]
+        ],
+        "nube continua detrás de las antenas"
       ]
     ]
   },

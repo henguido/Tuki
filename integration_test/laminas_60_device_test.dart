@@ -135,6 +135,25 @@ void main() {
       await _waitFor(tester, find.text('Guardado'));
       final fillMs = fill.elapsedMilliseconds;
 
+      var legacySeparated = false;
+      final formerlyShared = switch (page.artId) {
+        'A10' => const (Offset(359.5, 169.5), Offset(47.5, 80.5)),
+        'D02' => const (Offset(676, 280), Offset(516, 101)),
+        _ => null,
+      };
+      if (formerlyShared != null) {
+        final first = template.regionAt(formerlyShared.$1);
+        final second = template.regionAt(formerlyShared.$2);
+        expect(first, isNotNull, reason: '${page.artId}: zona histórica A');
+        expect(second, isNotNull, reason: '${page.artId}: zona histórica B');
+        expect(first, isNot(second), reason: '${page.artId}: zonas separadas');
+        await _tapScene(tester, formerlyShared.$1);
+        await _tapScene(tester, formerlyShared.$2);
+        final separated = await deps.drawings.find(_chapterId, page.id);
+        expect(separated!.document.fills.keys, containsAll([first, second]));
+        legacySeparated = true;
+      }
+
       await tester.tap(find.byKey(const ValueKey('tool-brush')));
       final viewport = tester
           .state<DrawingCanvasState>(find.byType(DrawingCanvas))
@@ -201,7 +220,7 @@ void main() {
 
       // ignore: avoid_print
       print(
-        'LAMINA_60 ${jsonEncode({'artId': page.artId, 'pagina': page.id, 'nivel': page.level.id, 'orientacion': template.viewBox.width > template.viewBox.height ? 'horizontal' : 'vertical', 'regiones': template.regions.length, 'carga_ms': loadMs, 'relleno_guardado_ms': fillMs, 'relleno': 'ok', 'pincel': 'ok', 'borrador': 'ok', 'deshacer': 'ok', 'rehacer': 'ok', 'zoom': 'ok', 'guardado': 'ok', 'reapertura': 'ok'})}',
+        'LAMINA_60 ${jsonEncode({'artId': page.artId, 'pagina': page.id, 'nivel': page.level.id, 'orientacion': template.viewBox.width > template.viewBox.height ? 'horizontal' : 'vertical', 'regiones': template.regions.length, 'carga_ms': loadMs, 'relleno_guardado_ms': fillMs, 'relleno': 'ok', 'zonas_antes_compartidas': legacySeparated ? 'separadas' : 'no_aplica', 'pincel': 'ok', 'borrador': 'ok', 'deshacer': 'ok', 'rehacer': 'ok', 'zoom': 'ok', 'guardado': 'ok', 'reapertura': 'ok'})}',
       );
 
       await tester.tap(find.byKey(const ValueKey('editor-back')));

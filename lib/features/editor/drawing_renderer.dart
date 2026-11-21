@@ -63,7 +63,14 @@ abstract final class DrawingRenderer {
     canvas.drawRect(template.viewBox, Paint()..color = const Color(0xFFFFFFFF));
     final fill = Paint()..style = PaintingStyle.fill;
     for (final region in template.regions) {
-      fill.color = Color(0xFF000000 | document.fillOf(region.id));
+      final color = document.fillOf(region.id);
+      // Las plantillas conectadas demostraron 0 solape visible y pueden omitir
+      // papel blanco. Las revisiones antiguas conservan el orden de capas:
+      // una región blanca superior puede ocultar un relleno inferior.
+      if (template.regionModel == 'connected-paper-v1' && color == kWhite) {
+        continue;
+      }
+      fill.color = Color(0xFF000000 | color);
       canvas.drawPath(region.path, fill);
     }
   }

@@ -122,14 +122,23 @@ void main() {
       // 3. Relleno individual: el centro de cada parte de cada región
       // pertenece a esa región y a ninguna otra.
       final ajenos = <String>[];
+      final reemplazadosPorTolerancia = <String>[];
       for (final s in sondas) {
         for (final p in (s['puntos'] as List).cast<List<dynamic>>()) {
           final punto = Offset((p[0] as num) + 0.5, (p[1] as num) + 0.5);
           final hit = template.regionAt(punto);
           if (hit != s['id']) ajenos.add('${s['id']}→$hit');
+          final cercano = template.regionNear(
+            punto,
+            template.viewBox.longestSide * 0.02,
+          );
+          if (cercano != s['id']) {
+            reemplazadosPorTolerancia.add('${s['id']}→$cercano');
+          }
         }
       }
       final controller = EditorController(template: template);
+      final relojSeleccion = Stopwatch()..start();
       var rellenos = 0;
       for (var i = 0; i < sondas.length; i++) {
         final p = (sondas[i]['puntos'] as List).first as List<dynamic>;
@@ -143,10 +152,16 @@ void main() {
           rellenos++;
         }
       }
+      final seleccionMs = relojSeleccion.elapsedMilliseconds;
       anota(
         'relleno_individual',
         ajenos.isEmpty && rellenos == sondas.length,
         ajenos.take(3).join(' '),
+      );
+      anota(
+        'tolerancia_conserva_acierto_exacto',
+        reemplazadosPorTolerancia.isEmpty,
+        reemplazadosPorTolerancia.take(3).join(' '),
       );
       final pintado = controller.document;
 
@@ -168,6 +183,14 @@ void main() {
       reloj.reset();
       final lleno = await pixeles(pintado);
       final pintaMs = reloj.elapsedMilliseconds;
+      if (Platform.environment['TUKI_PRINT_REGION_METRICS'] == '1') {
+        // ignore: avoid_print
+        print(
+          'TUKI_REGION_METRIC $id regions=${template.regions.length} '
+          'load_ms=$cargaMs select_all_ms=$seleccionMs paint_all_ms=$pintaMs '
+          'kb=${archivo.lengthSync() ~/ 1024}',
+        );
+      }
       final vacio = await pixeles(DrawingDocument.empty);
       final ancho = DrawingRenderer.pixelSize(template, lado).width;
       final fugas = <String>[];
@@ -257,23 +280,37 @@ void main() {
             '(${bordesFallidos.length}/$muestrasBorde muestras)',
       );
 
-      // 5. Deshacer y rehacer: cada relleno recorre ambas pilas sin pérdida.
+      // 5. Deshacer y rehacer: una secuencia representativa recorre ambas
+      // pilas sin pérdida. El controlador conserva deliberadamente 200 pasos,
+      // por lo que no se usa aquí el documento de auditoría completo.
+      final historial = EditorController(template: template);
+      final pasosHistorial = math.min(40, sondas.length);
+      for (var i = 0; i < pasosHistorial; i++) {
+        final p = (sondas[i]['puntos'] as List).first as List<dynamic>;
+        historial.color = _color(i);
+        expect(
+          historial.fillAt(Offset((p[0] as num) + 0.5, (p[1] as num) + 0.5)),
+          true,
+          reason: '$id ${sondas[i]['id']}',
+        );
+      }
+      final pintadoHistorial = historial.document;
       var pasos = 0;
-      while (controller.undo()) {
+      while (historial.undo()) {
         pasos++;
       }
       anota(
         'deshacer',
-        pasos == sondas.length && controller.document.isEmpty,
+        pasos == pasosHistorial && historial.document.isEmpty,
         '$pasos pasos',
       );
       var rehechos = 0;
-      while (controller.redo()) {
+      while (historial.redo()) {
         rehechos++;
       }
       anota(
         'rehacer',
-        rehechos == sondas.length && controller.document == pintado,
+        rehechos == pasosHistorial && historial.document == pintadoHistorial,
         '$rehechos pasos',
       );
 
@@ -351,21 +388,24 @@ void main() {
       }
       anota('zoom_y_orientacion', encaje.isEmpty, encaje.join(' '));
 
-      // 10. Tacto: diámetro mínimo sin contar brillos ni detalles para zoom.
+      // 10. Independencia: la unidad de relleno es cada zona de papel
+      // conectada. Los detalles pequeños se usan con zoom; nunca se fusionan
+      // con otra zona solamente para alcanzar un diámetro o un tope global.
       final minimo = (medidas['diametro_min'] as num).toDouble();
-      final exigido = (medidas['diametro_min_exigido'] as num).toDouble();
       final brillos = sondas.where((s) => s['brillo'] == true).length;
       final diametrosTactiles = sondas
           .where((s) => s['brillo'] != true && s['detalle_fino'] != true)
           .map((s) => (s['diametro'] as num).toDouble());
       anota(
-        'tacto_del_nivel',
+        'regiones_independientes',
         minimo == diametrosTactiles.reduce(math.min) &&
-            minimo >= exigido &&
-            template.regions.length - brillos <=
-                (medidas['tope_regiones'] as int) &&
+            medidas['modelo_regiones'] == 'connected-paper-v1' &&
+            template.regions.length == medidas['zonas_detectadas'] &&
+            medidas['regiones_multiparte'] == 0 &&
+            sondas.every((s) => s['partes'] == 1) &&
             medidas['nivel'] == _niveles[id[0]],
-        'mínimo ${(minimo * 100).toStringAsFixed(1)} %',
+        '${template.regions.length} zonas; mínimo '
+            '${(minimo * 100).toStringAsFixed(1)} %',
       );
 
       matriz[id] = {
@@ -396,6 +436,7 @@ void main() {
         'kb': archivo.lengthSync() ~/ 1024,
         'host_carga_ms': cargaMs,
         'host_pintado_ms': pintaMs,
+        'host_seleccion_todas_ms': seleccionMs,
         'rehacer': pruebas['rehacer'],
         'rendimiento_android': 'pendiente de dispositivo',
         'tacto_real': 'pendiente de dispositivo',
@@ -403,6 +444,69 @@ void main() {
       expect(fallos, isEmpty, reason: id);
     });
   }
+
+  test(
+    'A10 reproduce y corrige el relleno de componentes desconectados',
+    () async {
+      final anterior = PageTemplate.fromJson(
+        jsonDecode(
+          File('assets/chapters/bosque-nuboso/pages/a10-helechos-v1.json')
+              .readAsStringSync(),
+        ) as Map<String, dynamic>,
+      );
+      final medidas = jsonDecode(
+        File('tool/laminas/validacion/A10.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
+      final corregida = PageTemplate.fromJson(
+        jsonDecode(File(medidas['plantilla'] as String).readAsStringSync())
+            as Map<String, dynamic>,
+      );
+      const puntoA = Offset(359.5, 169.5);
+      const puntoB = Offset(47.5, 80.5);
+
+      expect(anterior.regionAt(puntoA), 'r002');
+      expect(anterior.regionAt(puntoB), 'r002');
+      expect(corregida.regionAt(puntoA), isNot(corregida.regionAt(puntoB)));
+
+      final viejo = EditorController(template: anterior)..color = 0xE53935;
+      expect(viejo.fillAt(puntoA), true);
+      final nuevo = EditorController(template: corregida)..color = 0xE53935;
+      expect(nuevo.fillAt(puntoA), true);
+
+      Future<ByteData> pixels(
+        PageTemplate template,
+        DrawingDocument document,
+      ) async {
+        final image = await DrawingRenderer.toImage(
+          template,
+          document,
+          maxSide: template.viewBox.longestSide.round(),
+        );
+        final data = (await image.toByteData())!;
+        image.dispose();
+        return data;
+      }
+
+      final width = DrawingRenderer.pixelSize(
+        corregida,
+        corregida.viewBox.longestSide.round(),
+      ).width;
+      final antes = await pixels(anterior, viejo.document);
+      final despues = await pixels(corregida, nuevo.document);
+      expect(_parecido(_rgbAt(antes, width, 359, 169), 0xE53935), true);
+      expect(_parecido(_rgbAt(antes, width, 47, 80), 0xE53935), true);
+      expect(_parecido(_rgbAt(despues, width, 359, 169), 0xE53935), true);
+      expect(_parecido(_rgbAt(despues, width, 47, 80), 0xFFFFFF), true);
+
+      nuevo.color = 0x1E88E5;
+      expect(nuevo.fillAt(puntoB), true);
+      final separados = await pixels(corregida, nuevo.document);
+      expect(_parecido(_rgbAt(separados, width, 359, 169), 0xE53935), true);
+      expect(_parecido(_rgbAt(separados, width, 47, 80), 0x1E88E5), true);
+      expect(nuevo.undo(), true);
+      expect(nuevo.redo(), true);
+    },
+  );
 
   test('la caché raster conserva visualmente A10 y A13', () async {
     final repository = diskCatalog();

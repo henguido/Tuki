@@ -653,11 +653,11 @@ void main() {
   });
 
   group('editor según el nivel de la lámina', () {
-    test('tolerancia táctil: un toque junto a una figura la rellena', () {
+    test('tolerancia táctil: un acierto exacto nunca cambia de región', () {
       final frog = loadTemplateFile('rana-en-la-hoja-v1.json');
       const nearDrop = Offset(277, 310); // fondo, a ~12 unidades de la gota
       expect(frog.regionAt(nearDrop), 'fondo');
-      expect(frog.regionNear(nearDrop, 25), 'gota-1');
+      expect(frog.regionNear(nearDrop, 25), 'fondo');
       // Lejos de cualquier figura sigue siendo el fondo.
       expect(frog.regionNear(const Offset(500, 100), 25), 'fondo');
       // Un toque exacto sobre una figura no cambia.
@@ -666,7 +666,7 @@ void main() {
 
       final easy = EditorController(template: frog, touchTolerance: 0.025);
       expect(easy.fillAt(nearDrop), true);
-      expect(easy.document.fills.keys, ['gota-1']);
+      expect(easy.document.fills.keys, ['fondo']);
       final exact = EditorController(template: frog);
       expect(exact.fillAt(nearDrop), true);
       expect(exact.document.fills.keys, ['fondo']);

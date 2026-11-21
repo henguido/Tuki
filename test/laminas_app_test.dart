@@ -68,6 +68,13 @@ Future<void> openPage(WidgetTester tester, String level, String page) async {
   );
 }
 
+int templateRevision(String artId) {
+  final validation = jsonDecode(
+    File('tool/laminas/validacion/$artId.json').readAsStringSync(),
+  ) as Map<String, dynamic>;
+  return validation['revision'] as int;
+}
+
 void main() {
   setUpAll(loadFonts);
 
@@ -162,7 +169,7 @@ void main() {
     await tapScene(tester, point);
     StoredDrawing row() => h.drawings.rows['$chapter/a10-helechos']!;
     expect(row().document.fills.keys, [region]);
-    expect(row().templateRevision, 1);
+    expect(row().templateRevision, templateRevision('A10'));
 
     await tester.tap(find.byKey(const ValueKey('editor-undo')));
     await tester.pumpAndSettle();

@@ -1,0 +1,18 @@
+{
+  "art_id": "A10",
+  "template": "assets/chapters/bosque-nuboso/pages/a10-helechos-v2.json",
+  "revision": 2,
+  "region_model": "connected-paper-v1",
+  "touch": [
+    359,
+    169
+  ],
+  "selected_region": "r015",
+  "visible_pixels_affected": 16935,
+  "connected_components_affected": 1,
+  "component_areas": [
+    16935
+  ],
+  "highlight": "A10_r015_seleccion.png",
+  "region_map": "A10_ids.jpg"
+}

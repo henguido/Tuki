@@ -18,9 +18,9 @@ Qué hace, en orden:
   4. Reparte la tinta entre las zonas vecinas, de modo que las regiones
      cubren todo el lienzo y un toque sobre una línea rellena la zona más
      cercana.
-  5. Agrupa las zonas demasiado pequeñas para el dedo con la vecina con la que
-     comparten más frontera, hasta cumplir los mínimos y el tope del nivel.
-     Una región puede tener varias partes: se rellenan juntas.
+  5. Conserva cada zona de papel conectada como un relleno independiente.
+     Los detalles pequeños se alcanzan con zoom y tolerancia táctil; nunca se
+     fusionan con otra zona visual solamente por tamaño o por un tope global.
   6. Vectoriza regiones y tinta como polígonos cerrados (regla nonZero).
   7. Comprueba el resultado rasterizando los polígonos escritos.
 """
@@ -44,6 +44,8 @@ PREVIAS = RAIZ / 'docs/laminas/previas'
 CORREGIDAS = RAIZ / 'tool/laminas/fuentes_corregidas'
 AJUSTES_LOTE = json.loads(Path(__file__).with_name('ajustes_revision_lote.json')
                           .read_text(encoding='utf-8'))
+
+MODELO_REGIONES = 'connected-paper-v1'
 
 LADO = 1600
 
@@ -72,7 +74,15 @@ def pagina_de(art_id, tema_id):
         pagina = f'{art_id.lower()}-{tema_id}'
         revision = 2 if art_id in {'E03', 'E04', 'E05', 'E06', 'E07', 'E09', 'E10', 'E12'} else 1
     ajustes = AJUSTES_LOTE.get(art_id)
-    return pagina, revision if ajustes is None else ajustes.get('revision', revision + 1)
+    revision = revision if ajustes is None else ajustes.get('revision', revision + 1)
+    validacion = VALIDACION / f'{art_id}.json'
+    if validacion.exists():
+        anterior = json.loads(validacion.read_text(encoding='utf-8'))
+        if anterior.get('modelo_regiones') == MODELO_REGIONES:
+            revision = int(anterior['revision'])
+        else:
+            revision = max(revision, int(anterior['revision']) + 1)
+    return pagina, revision
 
 
 def leer_gris(ruta):
@@ -285,6 +295,7 @@ def procesar(art_id, tema_id, fuente, original):
     if brillos:
         cambios.append(
             f'{len(brillos)} brillos sobre tinta conservados como regiones propias')
+    cambios_sin_agrupaciones = list(cambios)
 
     # Sondas en las coordenadas del lienzo para partes de un mismo elemento.
     grupos_manuales = {
@@ -402,11 +413,23 @@ def procesar(art_id, tema_id, fuente, original):
         cambios.append(
             f'{por_tope} zonas más agrupadas para no superar {nivel["tope"]} regiones')
 
+    # La agrupación anterior se conserva arriba temporalmente para validar las
+    # sondas históricas del arte, pero ya no decide la unidad de relleno. La
+    # geometría conectada original es la fuente de verdad: una línea visible
+    # separa dos zonas coloreables aunque sean pequeñas o compartan color.
+    cambios = cambios_sin_agrupaciones
+    detalles_finos = {
+        int(zonas[y, x]) for x, y in ajustes.get('detalles_finos', ())
+    }
+    if detalles_finos:
+        cambios.append(
+            f'{len(detalles_finos)} detalles finos independientes para usar con zoom')
+    cambios.append(
+        f'{n} zonas de papel conectadas conservadas como rellenos independientes')
     brillos_set = set(brillos)
-    raices = np.array([0] + [g.raiz(i) for i in range(1, n + 1)])
-    orden = sorted(g.area, key=lambda k: -g.area[k])
-    numero = {r: i + 1 for i, r in enumerate(orden)}
-    region_de_zona = np.array([0] + [numero[r] for r in raices[1:]])
+    orden = sorted(range(1, n + 1), key=lambda k: -areas[k])
+    numero = {zona: i + 1 for i, zona in enumerate(orden)}
+    region_de_zona = np.array([0] + [numero[z] for z in range(1, n + 1)])
     mapa = region_de_zona[completo]  # región (1..R) de cada píxel
 
     # 6. Vectorización. Los contornos se estiran medio píxel para que los
@@ -439,7 +462,11 @@ def procesar(art_id, tema_id, fuente, original):
 
     regiones, sondas, poligonos_region, puntos_region = [], [], [], 0
     for r in range(1, len(orden) + 1):
-        partes, puntos, pols = trazado(mapa == r, 1.0)
+        # Con muchas zonas independientes, una simplificación de un píxel
+        # puede mover dos lados del mismo divisor en direcciones distintas.
+        # Medio píxel mantiene el hit testing y el relleno alineados sin
+        # convertir el contorno en una escalera de píxeles.
+        partes, puntos, pols = trazado(mapa == r, 0.5)
         puntos_region += puntos
         rid = f'r{r:03d}'
         regiones.append({'id': rid, 'path': ''.join(partes)})
@@ -449,8 +476,8 @@ def procesar(art_id, tema_id, fuente, original):
         sondas.append({
             'id': rid,
             'partes': len(miembros),
-            'area': round(float(g.area[orden[r - 1]]) / (ancho * alto), 5),
-            'diametro': round(float(g.diam[orden[r - 1]]) / corto, 4),
+            'area': round(float(areas[orden[r - 1]]) / (ancho * alto), 5),
+            'diametro': round(float(diametros[orden[r - 1]]) / corto, 4),
             'brillo': orden[r - 1] in brillos_set,
             # Centro de cada parte (hasta 6): debe pertenecer a la región.
             'puntos': [[int(polos[z - 1][1]), int(polos[z - 1][0])]
@@ -467,6 +494,7 @@ def procesar(art_id, tema_id, fuente, original):
     plantilla = {
         'schemaVersion': 1,
         'revision': revision,
+        'regionModel': MODELO_REGIONES,
         'viewBox': [0, 0, ancho, alto],
         'regions': regiones,
         'outlines': [],
@@ -503,6 +531,7 @@ def procesar(art_id, tema_id, fuente, original):
 
     medidas = {
         'id': art_id,
+        'modelo_regiones': MODELO_REGIONES,
         'pagina': pagina,
         'plantilla': destino.relative_to(RAIZ).as_posix(),
         'revision': revision,

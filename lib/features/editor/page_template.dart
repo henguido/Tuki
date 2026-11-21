@@ -40,7 +40,9 @@ class PageTemplate {
     required this.regions,
     required this.outlines,
     this.inks = const [],
-  });
+    this.regionModel,
+  }) : _regionIds = {for (final region in regions) region.id},
+       _regionGrid = _buildRegionGrid(viewBox, regions);
 
   static const int supportedSchemaVersion = 1;
 
@@ -49,6 +51,37 @@ class PageTemplate {
   final List<TemplateRegion> regions;
   final List<TemplateOutline> outlines;
   final List<TemplateInk> inks;
+  final String? regionModel;
+  final Set<String> _regionIds;
+  final List<List<int>> _regionGrid;
+
+  static const int _gridSide = 24;
+
+  static List<List<int>> _buildRegionGrid(
+    ui.Rect box,
+    List<TemplateRegion> regions,
+  ) {
+    final cells = List.generate(_gridSide * _gridSide, (_) => <int>[]);
+    int cell(double value, double start, double extent) =>
+        (((value - start) / extent * _gridSide).floor()).clamp(
+          0,
+          _gridSide - 1,
+        );
+    for (var i = 0; i < regions.length; i++) {
+      final bounds = regions[i].path.getBounds().intersect(box);
+      if (bounds.isEmpty) continue;
+      final left = cell(bounds.left, box.left, box.width);
+      final top = cell(bounds.top, box.top, box.height);
+      final right = cell(bounds.right, box.left, box.width);
+      final bottom = cell(bounds.bottom, box.top, box.height);
+      for (var y = top; y <= bottom; y++) {
+        for (var x = left; x <= right; x++) {
+          cells[y * _gridSide + x].add(i);
+        }
+      }
+    }
+    return cells;
+  }
 
   /// Región visible superior que contiene [scenePoint], o `null`.
   String? regionAt(ui.Offset scenePoint) {
@@ -58,18 +91,27 @@ class PageTemplate {
 
   int _indexAt(ui.Offset scenePoint) {
     if (!viewBox.contains(scenePoint)) return -1;
-    for (var i = regions.length - 1; i >= 0; i--) {
+    final x =
+        (((scenePoint.dx - viewBox.left) / viewBox.width * _gridSide).floor())
+            .clamp(0, _gridSide - 1);
+    final y =
+        (((scenePoint.dy - viewBox.top) / viewBox.height * _gridSide).floor())
+            .clamp(0, _gridSide - 1);
+    final candidates = _regionGrid[y * _gridSide + x];
+    for (var n = candidates.length - 1; n >= 0; n--) {
+      final i = candidates[n];
       if (regions[i].path.contains(scenePoint)) return i;
     }
     return -1;
   }
 
-  /// Como [regionAt], con tolerancia para dedos pequeños: si el toque cae en
-  /// el fondo (la primera región) pero a menos de [radius] de una figura, se
-  /// elige la figura más presente alrededor del toque.
+  /// Como [regionAt], con tolerancia únicamente para un hueco geométrico.
+  /// Un acierto exacto siempre gana: el orden o el tamaño de una región nunca
+  /// deben convertir un toque válido en otra zona cercana.
   String? regionNear(ui.Offset scenePoint, double radius) {
+    if (!viewBox.contains(scenePoint)) return null;
     final exact = _indexAt(scenePoint);
-    if (exact != 0 || radius <= 0 || regions.length < 2) {
+    if (exact >= 0 || radius <= 0 || regions.length < 2) {
       return exact < 0 ? null : regions[exact].id;
     }
     final votes = <int, int>{};
@@ -79,10 +121,10 @@ class PageTemplate {
         final i = _indexAt(
           scenePoint + ui.Offset(math.cos(a), math.sin(a)) * r,
         );
-        if (i > 0) votes[i] = (votes[i] ?? 0) + 1;
+        if (i >= 0) votes[i] = (votes[i] ?? 0) + 1;
       }
     }
-    if (votes.isEmpty) return regions[0].id;
+    if (votes.isEmpty) return null;
     var best = votes.keys.first;
     for (final e in votes.entries) {
       if (e.value > votes[best]! || (e.value == votes[best] && e.key > best)) {
@@ -92,7 +134,7 @@ class PageTemplate {
     return regions[best].id;
   }
 
-  bool hasRegion(String id) => regions.any((r) => r.id == id);
+  bool hasRegion(String id) => _regionIds.contains(id);
 
   factory PageTemplate.fromJson(Map<String, dynamic> json) {
     T req<T>(Map<String, dynamic> m, String key, String where) {
@@ -110,6 +152,10 @@ class PageTemplate {
     final revision = req<int>(json, 'revision', 'plantilla');
     if (revision < 1) {
       throw TemplateFormatException('revision debe ser >= 1');
+    }
+    final regionModel = json['regionModel'];
+    if (regionModel != null && regionModel is! String) {
+      throw TemplateFormatException('regionModel debe ser texto');
     }
     final vb = req<List<dynamic>>(json, 'viewBox', 'plantilla');
     if (vb.length != 4 || vb.any((v) => v is! num || !v.isFinite)) {
@@ -193,6 +239,7 @@ class PageTemplate {
       regions: regions,
       outlines: outlines,
       inks: inks,
+      regionModel: regionModel as String?,
     );
   }
 }

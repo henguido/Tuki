@@ -1,5 +1,11 @@
 # Las 60 láminas de El bosque nuboso — informe
 
+> **Nota de 2026-11-20:** la política descrita aquí de agrupar zonas pequeñas
+> quedó obsoleta porque hacía que un toque coloreara componentes visuales
+> independientes. La corrección y las métricas vigentes se documentan en
+> [INFORME_MOTOR_COLOREADO_CONECTADO.md](INFORME_MOTOR_COLOREADO_CONECTADO.md).
+> Este archivo se conserva como evidencia histórica de la conversión inicial.
+
 13 de noviembre de 2026 · rama `feature/laminas-60` (parte de `feature/niveles-edades`, commit `65c448e`). `master` no se tocó.
 
 ## Resumen

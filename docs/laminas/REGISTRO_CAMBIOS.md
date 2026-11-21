@@ -273,14 +273,14 @@ Todas las láminas se normalizan a 1600 px de lado mayor y se vectorizan; debajo
 - Cuatro centros de estambres separados de los pétalos; gotas sobre la hoja conservadas como relleno propio.
 - Se mantienen los dos reflejos oculares y la plantilla anterior.
 
-## D02 · `d02-mariposa` (revisión 2)
+## D02 · `d02-mariposa` (revisión 3)
 
-- Original: `Imagen de ChatGPT 12 nov 2026, 19_44_54-1.webp` → `D02_mariposa.webp` (1122 × 1402 px), SHA-256 `53b1bb97af635bf0…`
-- Lienzo: 1280 × 1600 (vertical); trazo 18.0 px; tinta que toca el marco: 3.5 %
-- huecos de trazo cerrados (67 px)
-- 1 contornos abiertos cerrados con tinta
-- 2 brillos sobre tinta conservados como regiones propias
-- 1 zonas pequeñas agrupadas con su vecina
+- Fuente regenerada: `tool/laminas/fuentes_corregidas/D02.png`, SHA-256 `1f142342918d1d842eebfdf74871b2da9a5e34c03a4238a871c788154da1da1c`.
+- Mariposa con paneles curvos, anillos y motivos de gotas en las cuatro alas.
+- Entorno enriquecido con orquídeas, helechos, árboles, musgo, hojas con nervaduras y gotas de agua.
+- Contornos de la vegetación revisados para separar los rellenos; dos reflejos oculares conservados.
+- Bifurcación superior derecha cerrada y nube continuada detrás de la antena con un relleno compartido.
+- Se mantienen las plantillas de las revisiones 1 y 2.
 
 ## D03 · `d03-colibri` (revisión 2)
 
