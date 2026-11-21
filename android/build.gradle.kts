@@ -14,6 +14,14 @@ rootProject.layout.buildDirectory.value(newBuildDir)
 subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
+
+    configurations.configureEach {
+        resolutionStrategy.force(
+            "androidx.test:runner:1.3.0",
+            "androidx.test:rules:1.2.0",
+            "androidx.test.espresso:espresso-core:3.3.0",
+        )
+    }
 }
 subprojects {
     project.evaluationDependsOn(":app")
